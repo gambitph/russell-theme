@@ -13,6 +13,21 @@
 
 get_header(); ?>
 
+    <div class="russell_left_content">
+        <h1>RUSSELL</h1>
+        <i class='line'></i>
+        <!--<h5 class='small'>Lorem ipsum dolor sit amet</h5>-->
+    	<small>Lorem ipsum dolor sit amet</small>
+    	<div class='content'>
+    		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sed lacus erat. Pellentesque tristique ut nunc sit vamet feugiat. Pellentesque sit amet sollicitudin nisi, eget ultricies elit. Maecenas dui orci, consequat vitae blandit vitae, pulvinar non diam. Mauris eu tortor placerat, bibendum massa quis, sodales ligula.</p>
+    		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sed lacus erat. Pellentesque tristique ut nunc sit vamet feugiat. Pellentesque sit amet sollicitudin nisi, eget ultricies elit. Maecenas dui orci, consequat vitae blandit vitae, pulvinar non diam. Mauris eu tortor placerat, bibendum massa quis, sodales ligula.</p>
+    	</div>
+    </div>
+    
+    <div class='russell_right_images'>
+    	<div class='russell_right_images_wrapper'></div>
+    </div>
+    
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
