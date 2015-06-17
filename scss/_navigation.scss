@@ -1,0 +1,129 @@
+@import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
+@import url(http://fonts.googleapis.com/css?family=Roboto+Slab:300,700);
+
+body {
+    margin: 0;
+	overflow: hidden;
+	font-family: 'Roboto Slab', serif;
+	font-size: 15px;
+	line-height: 1.6em;
+	color: #646464;
+}
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Montserrat', sans-serif;
+	text-transform: uppercase;
+	line-height: 1.1em;
+	color: #333333;
+}
+h1 {
+	font-size: 2.5em;
+}
+h2 {
+	font-size: 2em;
+}
+h3 {
+	font-size: 1.7em;
+}
+h4 {
+	font-size: 1.4em;
+}
+h5 {
+	font-size: 1em;
+}
+h6 {
+	font-size: .7em;
+}
+i.line {
+	display: block;
+	height: 1px;
+	width: 30px;
+	background: #646464;
+	margin: 0 auto;
+}
+body.page #masthead, 
+body.single #masthead {
+    top: 90px;
+    position: fixed;
+    width: 50%;
+    height: 100vh;
+    background-size: cover;
+}
+body.page #content, 
+body.single #content {
+    width: 50%;
+    float: right;
+    right: 0;
+    position: absolute;
+    overflow-y: auto;
+    overflow-x: hidden;
+    bottom: 0;
+    top: 90px;
+    box-sizing: border-box;
+}
+body.page #colophon, 
+body.single #colophon {
+    width: 70%;
+    max-width: 710px;
+    margin: 0 auto;
+}
+body.page .main-navigtaion, body.page .main-navigation li,
+body.single .main-navigtaion, body.single .main-navigation li {
+    float: none;
+    display: inline-block;
+    padding: 1em 1em;
+}
+body.page #site-navigation,
+body.single #site-navigation {
+    text-align: center;
+    width: 100%;
+    position: fixed;
+    top: 15px;
+    padding-left: 100px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 20px;
+}
+body.page .site-branding,
+body.single .site-branding {
+    font-weight: 100;
+    padding: 25px;
+    position: fixed;
+    top: 0;
+    display: inline-block;
+}
+body.page #primary,
+body.single #primary {
+    width: 70%;
+    max-width: 710px;
+    margin: 0 auto;
+}
+body.page h1.site-title,
+body.single h1.site-title {
+    font-weight: 100;
+    font-size: 1.5em;
+    text-decoration: none;
+    color: #646464;
+    text-align: center;
+}
+h1.site-title a {
+    text-decoration: none;
+    color: #646464;
+}
+h2.site-description {
+    font-size: 1em;
+    color: #646464;
+}
+body.page ul > li > a,
+body.single ul > li > a {
+    color: #646464;
+}
+h1.entry-title {
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    line-height: 1.1em;
+    color: #333333;
+    margin: 0 0 15px;
+    text-align: center;
+}
+header.entry-header {
+    padding: 50px;
+}

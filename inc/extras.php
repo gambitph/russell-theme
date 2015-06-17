@@ -69,3 +69,16 @@ if ( version_compare( $GLOBALS['wp_version'], '4.1', '<' ) ) :
 	}
 	add_action( 'wp_head', 'russell_render_title' );
 endif;
+
+function russell_create_social_icons() {
+	global $titan;
+	
+	for ( $i = 0; $i <= 10; $i++ ) {
+		$url = $titan->getOption( 'social_' . $i );
+		if ( empty( $url ) ) {
+			continue;
+		}
+		
+		echo "<a href='{$url}' target='_blank'></a>";
+	}
+}

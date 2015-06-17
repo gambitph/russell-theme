@@ -55,6 +55,23 @@ function russell_create_options() {
 		'css' => 'h1, h2, h3, h4, h5, h6 { value }',
 	) );
 	
+	/**
+	 * Social Icons
+	 */
+	$section = $titan->createThemeCustomizerSection( array(
+	    'name' => __( 'Social Icons', 'russell' ),
+		'panel' => __( 'Theme Options & Colors', 'russel' ),
+		'desc' => 'Social link icons are placed on the top of your site. Paste the links to your social profiles below.'
+	) );
+
+	for ( $i = 0; $i <= 10; $i++ ) {
+		$section->createOption( array(
+		    'name' => $i ? '' : __( 'Social Links', 'russell' ),
+		    'id' => 'social_' . $i,
+		    'type' => 'text',
+		) );
+	}
+	
 	
 	/**
 	 * Create an admin panel & tabs
