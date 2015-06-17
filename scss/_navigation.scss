@@ -1,0 +1,16 @@
+body.page .main-navigtaion, body.page .main-navigation li,
+body.single .main-navigtaion, body.single .main-navigation li {
+    float: none;
+    display: inline-block;
+    padding: 1em 1em;
+}
+body.page #site-navigation,
+body.single #site-navigation {
+    text-align: center;
+    width: 100%;
+    position: fixed;
+    top: 15px;
+    padding-left: 100px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 20px;
+}
