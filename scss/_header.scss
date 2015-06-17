@@ -1,0 +1,33 @@
+header.entry-header {
+    padding: 50px;
+}
+body.page .site-branding,
+body.single .site-branding, {
+    font-weight: 100;
+    padding: 25px;
+    position: fixed;
+    top: 0;
+    display: inline-block;
+}
+body.page #primary,
+body.single #primary {
+    width: 70%;
+    max-width: 710px;
+    margin: 0 auto;
+}
+body.page h1.site-title,
+body.single h1.site-title {
+    font-weight: 100;
+    font-size: 1.5em;
+    text-decoration: none;
+    color: #646464;
+    text-align: center;
+}
+body.page #masthead, 
+body.single #masthead {
+    top: 90px;
+    position: fixed;
+    width: 50%;
+    height: 100vh;
+    background-size: cover;
+}

@@ -1,0 +1,12 @@
+body.page #content, 
+body.single #content {
+    width: 50%;
+    float: right;
+    right: 0;
+    position: absolute;
+    overflow-y: auto;
+    overflow-x: hidden;
+    bottom: 0;
+    top: 90px;
+    box-sizing: border-box;
+}
