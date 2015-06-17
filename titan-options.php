@@ -7,14 +7,14 @@
  */
 
 
-add_action( 'tf_create_options', 'russel_create_options' );
+add_action( 'tf_create_options', 'russell_create_options' );
 
 /**
  * Initialize Titan & options here
  */
-function russel_create_options() {
+function russell_create_options() {
 
-	$titan = TitanFramework::getInstance( 'russel' );
+	$titan = TitanFramework::getInstance( 'russell' );
 	
 	
 	/**
@@ -23,23 +23,23 @@ function russel_create_options() {
 	 */
 	
 	$section = $titan->createThemeCustomizerSection( array(
-	    'name' => __( 'Theme Options', 'russel' ),
+	    'name' => __( 'Theme Options', 'russell' ),
 	) );
 	
 	$section->createOption( array(
-	    'name' => __( 'Background Color', 'russel' ),
+	    'name' => __( 'Background Color', 'russell' ),
 	    'id' => 'sample_color1',
 	    'type' => 'color',
-	    'desc' => __( 'This color changes the background of your theme', 'russel' ),
+	    'desc' => __( 'This color changes the background of your theme', 'russell' ),
 	    'default' => '#FFFFFF',
 		'css' => 'body { background-color: value }',
 	) );
 	
 	$section->createOption( array(
-	    'name' => __( 'Headings Font', 'russel' ),
+	    'name' => __( 'Headings Font', 'russell' ),
 	    'id' => 'headings_font',
 	    'type' => 'font',
-	    'desc' => __( 'Select the font for all headings in the site', 'russel' ),
+	    'desc' => __( 'Select the font for all headings in the site', 'russell' ),
 		'show_color' => false,
 		'show_font_size' => false,
 	    'show_font_weight' => false,
@@ -62,18 +62,18 @@ function russel_create_options() {
 	 */
 	
 	$adminPanel = $titan->createAdminPanel( array(
-	    'name' => __( 'Theme Settings', 'russel' ),
+	    'name' => __( 'Theme Settings', 'russell' ),
 	) );
 	
 	$generalTab = $adminPanel->createTab( array(
-	    'name' => __( 'General', 'russel' ),
+	    'name' => __( 'General', 'russell' ),
 	) );
 
 	$generalTab->createOption( array(
-	    'name' => __( 'Custom Javascript Code', 'russel' ),
+	    'name' => __( 'Custom Javascript Code', 'russell' ),
 	    'id' => 'custom_js',
 	    'type' => 'code',
-	    'desc' => __( 'If you want to add some additional Javascript code into your site, add them here and it will be included in the frontend header. No need to add <code>script</code> tags', 'russel' ),
+	    'desc' => __( 'If you want to add some additional Javascript code into your site, add them here and it will be included in the frontend header. No need to add <code>script</code> tags', 'russell' ),
 	    'lang' => 'javascript',
 	) );
 	
@@ -83,14 +83,14 @@ function russel_create_options() {
 	
 	
 	$footerTab = $adminPanel->createTab( array(
-	    'name' => __( 'Footer', 'russel' ),
+	    'name' => __( 'Footer', 'russell' ),
 	) );
 	
 	$footerTab->createOption( array(
-		'name' => __( 'Copyright Text', 'russel' ),
+		'name' => __( 'Copyright Text', 'russell' ),
 		'id' => 'copyright',
 		'type' => 'text',
-		'desc' => __( 'Enter your copyright text here (sample only)', 'russel' ),
+		'desc' => __( 'Enter your copyright text here (sample only)', 'russell' ),
 	) );
 	
 	$footerTab->createOption( array(

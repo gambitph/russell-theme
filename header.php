@@ -4,7 +4,7 @@
  *
  * Displays all of the <head> section and everything up till <div id="content">
  *
- * @package russel
+ * @package russell
  */
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
@@ -21,9 +21,9 @@
 <div id="page" class="hfeed site">
  
     
-    <?php echo '00000'; russel_latest_post( 1, 1, 71 ); ?>
+    <?php echo '00000'; russell_latest_post( 1, 1, 71 ); ?>
     
-	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'russel' ); ?></a>
+	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'russell' ); ?></a>
     <header id="masthead" class="site-header" role="banner">
 		<div class="site-branding">
 			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
@@ -32,7 +32,7 @@
 		</div><!-- .site-branding -->
 
 		<nav id="site-navigation" class="main-navigation" role="navigation">
-			<button class="menu-toggle" aria-controls="menu" aria-expanded="false"><?php _e( 'Primary Menu', 'russel' ); ?></button>
+			<button class="menu-toggle" aria-controls="menu" aria-expanded="false"><?php _e( 'Primary Menu', 'russell' ); ?></button>
 			<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
 		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->

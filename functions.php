@@ -1,8 +1,8 @@
 <?php
 /**
- * russel functions and definitions
+ * russell functions and definitions
  *
- * @package russel
+ * @package russell
  */
 
 /**
@@ -12,7 +12,7 @@ if ( ! isset( $content_width ) ) {
 	$content_width = 640; /* pixels */
 }
 
-if ( ! function_exists( 'russel_setup' ) ) :
+if ( ! function_exists( 'russell_setup' ) ) :
 /**
  * Sets up theme defaults and registers support for various WordPress features.
  *
@@ -20,15 +20,15 @@ if ( ! function_exists( 'russel_setup' ) ) :
  * runs before the init hook. The init hook is too late for some features, such
  * as indicating support for post thumbnails.
  */
-function russel_setup() {
+function russell_setup() {
 
 	/*
 	 * Make theme available for translation.
 	 * Translations can be filed in the /languages/ directory.
-	 * If you're building a theme based on russel, use a find and replace
-	 * to change 'russel' to the name of your theme in all the template files
+	 * If you're building a theme based on russell, use a find and replace
+	 * to change 'russell' to the name of your theme in all the template files
 	 */
-	load_theme_textdomain( 'russel', get_template_directory() . '/languages' );
+	load_theme_textdomain( 'russell', get_template_directory() . '/languages' );
 
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
@@ -50,7 +50,7 @@ function russel_setup() {
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
-		'primary' => __( 'Primary Menu', 'russel' ),
+		'primary' => __( 'Primary Menu', 'russell' ),
 	) );
 
 	/*
@@ -70,22 +70,22 @@ function russel_setup() {
 	) );
 
 	// Set up the WordPress core custom background feature.
-	add_theme_support( 'custom-background', apply_filters( 'russel_custom_background_args', array(
+	add_theme_support( 'custom-background', apply_filters( 'russell_custom_background_args', array(
 		'default-color' => 'ffffff',
 		'default-image' => '',
 	) ) );
 }
-endif; // russel_setup
-add_action( 'after_setup_theme', 'russel_setup' );
+endif; // russell_setup
+add_action( 'after_setup_theme', 'russell_setup' );
 
 /**
  * Register widget area.
  *
  * @link http://codex.wordpress.org/Function_Reference/register_sidebar
  */
-function russel_widgets_init() {
+function russell_widgets_init() {
 	register_sidebar( array(
-		'name'          => __( 'Sidebar', 'russel' ),
+		'name'          => __( 'Sidebar', 'russell' ),
 		'id'            => 'sidebar-1',
 		'description'   => '',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
@@ -94,23 +94,23 @@ function russel_widgets_init() {
 		'after_title'   => '</h1>',
 	) );
 }
-add_action( 'widgets_init', 'russel_widgets_init' );
+add_action( 'widgets_init', 'russell_widgets_init' );
 
 /**
  * Enqueue scripts and styles.
  */
-function russel_scripts() {
-	wp_enqueue_style( 'russel-style', get_stylesheet_uri() );
+function russell_scripts() {
+	wp_enqueue_style( 'russell-style', get_stylesheet_uri() );
 
-	wp_enqueue_script( 'russel-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
+	wp_enqueue_script( 'russell-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
 
-	wp_enqueue_script( 'russel-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
+	wp_enqueue_script( 'russell-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
-add_action( 'wp_enqueue_scripts', 'russel_scripts' );
+add_action( 'wp_enqueue_scripts', 'russell_scripts' );
 
 /**
 *   Get 20 Latest Posts
