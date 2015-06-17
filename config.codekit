@@ -83,6 +83,8 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+<<<<<<< HEAD
+=======
 	"\/css\/style.css": {
 		"fileType": 16,
 		"ignore": 0,
@@ -92,6 +94,7 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+>>>>>>> origin/master
 	"\/footer.php": {
 		"fileType": 8192,
 		"ignore": 0,
@@ -274,6 +277,8 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+<<<<<<< HEAD
+=======
 	"\/scss\/_navigation.scss": {
 		"createSourceMap": 0,
 		"debugStyle": 0,
@@ -322,6 +327,7 @@
 		"shouldRunBless": 0,
 		"useLibsass": 0
 		},
+>>>>>>> origin/master
 	"\/search.php": {
 		"fileType": 8192,
 		"ignore": 0,
@@ -349,6 +355,18 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+<<<<<<< HEAD
+	"\/style.css": {
+		"fileType": 16,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/style.css",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+=======
+>>>>>>> origin/master
 	"\/titan-framework-checker.php": {
 		"fileType": 8192,
 		"ignore": 0,
