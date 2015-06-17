@@ -12,50 +12,28 @@
  */
 
 get_header(); ?>
-
-    <div class="russell_left_content">
-        <h1>RUSSELL</h1>
-        <i class='line'></i>
-        <!--<h5 class='small'>Lorem ipsum dolor sit amet</h5>-->
-    	<small>Lorem ipsum dolor sit amet</small>
-    	<div class='content'>
-    		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sed lacus erat. Pellentesque tristique ut nunc sit vamet feugiat. Pellentesque sit amet sollicitudin nisi, eget ultricies elit. Maecenas dui orci, consequat vitae blandit vitae, pulvinar non diam. Mauris eu tortor placerat, bibendum massa quis, sodales ligula.</p>
-    		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce sed lacus erat. Pellentesque tristique ut nunc sit vamet feugiat. Pellentesque sit amet sollicitudin nisi, eget ultricies elit. Maecenas dui orci, consequat vitae blandit vitae, pulvinar non diam. Mauris eu tortor placerat, bibendum massa quis, sodales ligula.</p>
-    	</div>
-    </div>
-    
-    <div class='russell_right_images'>
-    	<div class='russell_right_images_wrapper'></div>
-    </div>
-    
+<div class="russell_left_content">
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
+        
+        	<?php if ( have_posts() ) : ?>
 
-		<?php if ( have_posts() ) : ?>
+    			<?php russel_paging_nav(); ?>
 
-			<?php /* Start the Loop */ ?>
-			<?php while ( have_posts() ) : the_post(); ?>
-
-				<?php
-					/* Include the Post-Format-specific template for the content.
-					 * If you want to override this in a child theme, then include a file
-					 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-					 */
-					get_template_part( 'content', get_post_format() );
-				?>
-
-			<?php endwhile; ?>
+    		<?php else : ?>
 
 			<?php russell_paging_nav(); ?>
 
-		<?php else : ?>
+		    <?php else : ?>
 
 			<?php get_template_part( 'content', 'none' ); ?>
 
-		<?php endif; ?>
-
+		    <?php endif; ?>
+		
 		</main><!-- #main -->
+        <?php get_footer(); ?>
+        
+<div class="russell_right_content">asdasdas</div>
+        
 	</div><!-- #primary -->
-
 <?php //get_sidebar(); ?>
-<?php get_footer(); ?>

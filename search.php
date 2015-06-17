@@ -39,7 +39,8 @@ get_header(); ?>
 		<?php endif; ?>
 
 		</main><!-- #main -->
+		<?php get_footer(); ?>
+        
 	</section><!-- #primary -->
 
 <?php //get_sidebar(); ?>
-<?php get_footer(); ?>
