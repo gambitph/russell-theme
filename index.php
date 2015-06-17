@@ -12,28 +12,29 @@
  */
 
 get_header(); ?>
+
 <div class="russell_left_content">
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
-        
-        	<?php if ( have_posts() ) : ?>
 
-    			<?php russel_paging_nav(); ?>
+		<?php if ( have_posts() ) : ?>
 
-    		<?php else : ?>
-
+			
 			<?php russell_paging_nav(); ?>
 
-		    <?php else : ?>
+		<?php else : ?>
 
 			<?php get_template_part( 'content', 'none' ); ?>
 
-		    <?php endif; ?>
-		
+		<?php endif; ?>
+
 		</main><!-- #main -->
         <?php get_footer(); ?>
         
-<div class="russell_right_content">asdasdas</div>
-        
+    <div class='russell_right_images'>
+    	<div class='russell_right_images_wrapper'></div>
+    </div>
+</div>
+	
 	</div><!-- #primary -->
 <?php //get_sidebar(); ?>

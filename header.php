@@ -65,8 +65,6 @@ if ( ! empty( $headerImageUrl ) ) {
 <body <?php body_class( $bodyClasses ); ?>>
 <div id="page" class="hfeed site">
    
-    <?php echo '00000'; russell_latest_post( 1, 1, 71 ); ?>
-    
 	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'russell' ); ?></a>
 
     <header id="masthead" class="site-header" role="banner">
