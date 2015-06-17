@@ -55,6 +55,14 @@ function russell_create_options() {
 		'css' => 'h1, h2, h3, h4, h5, h6 { value }',
 	) );
 	
+	$section->createOption( array(
+	    'name' => __( 'Site Description', 'russell' ),
+	    'id' => 'site_elaboration',
+	    'type' => 'textarea',
+	    'desc' => __( 'What is your site all about? You can write the details here.', 'russell' ),
+	) );
+
+	
 	/**
 	 * Social Icons
 	 */
