@@ -14,11 +14,25 @@
 get_header(); ?>
 
 <div class="russell_left_content">
+	<div class="site-branding">
+		<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+		<i class='line'></i>
+		<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
+	</div><!-- .site-branding -->
+    
+    <div class="site-elaboration">
+	    <?php
+		if ( class_exists( 'TitanFramework' ) ) {
+			$titan = TitanFramework::getInstance( 'russell' );
+			echo esc_attr( $titan->getOption( 'site_elaboration' ) ); 
+		}
+		?>
+	</div>
+	
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
-
+        
 		<?php if ( have_posts() ) : ?>
-
 			
 			<?php russell_paging_nav(); ?>
 

@@ -78,7 +78,6 @@ function russell_create_social_icons() {
 		if ( empty( $url ) ) {
 			continue;
 		}
-		
 		echo "<a href='{$url}' target='_blank'></a>";
 	}
 }

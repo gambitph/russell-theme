@@ -1,14 +1,7 @@
 body.home .site-branding, {
-    font-weight: 100;
     padding: 25px;
-    position: fixed;
-    top: 0;
-    display: inline-block;
-}
-body.home #primary {
-    width: 70%;
-    max-width: 710px;
-    margin: 0 auto;
+    position: relative;
+    text-align: center;
 }
 body.home h1.site-title {
     font-weight: 100;
@@ -18,42 +11,38 @@ body.home h1.site-title {
     text-align: center;
 }
 body.home #masthead {
-    top: 90px;
-    position: fixed;
-    width: 50%;
-    height: 100vh;
-    background-size: cover;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 110px;
+    width: 100vw;
+    border-bottom: 1px solid #eee;
+    position: absolute;
+    z-index: 3;
+    box-sizing: border-box;
 }
 body.home #content {
-    padding: 50px;
-    width: 50%;
-    float: left;
+    width: 38.2vw;
     left: 0;
     position: absolute;
     overflow-y: auto;
     overflow-x: hidden;
     bottom: 0;
-    top: 90px;
     box-sizing: border-box;
+    top: 80px;
 }
 body.home .main-navigtaion, body.home .main-navigation li {
     float: none;
     display: inline-block;
     padding: 1em 1em;
+    font-weight: bold;
 }
 body.home #site-navigation {
     text-align: center;
-    width: 100%;
+    width: 38.2vw;
     position: fixed;
-    top: 15px;
-    padding-left: 100px;
-    border-bottom: 1px solid #eee;
+    top: 25px;
     padding-bottom: 20px;
-}
-body.home #colophon {
-    width: 70%;
-    max-width: 710px;
-    margin: 0 auto;
 }
 body.home ul > li > a {
     color: #646464;
@@ -74,3 +63,29 @@ body.home .russell_left_content {
 body.home .russell_right_content {
     display: none
 } 
+i.line {
+	display: block;
+	height: 1px;
+	width: 30px;
+	background: #646464;
+	margin: 0 auto;
+}
+body.home h1.site-title {
+    font-size: 3em;
+    margin: 0 0 15px;
+}
+body.home h2.site-description {
+    font-size: 12px;
+    line-height: 1.6em;
+    color: #999;
+    font-style: italic;
+    text-transform: none;
+    margin: 0 0 15px;
+}
+body.home i {
+    margin: 0 auto 15px;
+    text-align: center
+}
+body.home .site-elaboration {
+    margin: 0 0 15px;
+}

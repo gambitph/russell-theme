@@ -1,5 +1,4 @@
 /*
-<<<<<<< HEAD
 Theme Name: Russell
 Theme URI: http://underscores.me/
 Author: Underscores.me
@@ -14,7 +13,7 @@ Tags:
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
 
-russel is based on Underscores http://underscores.me/, (C) 2012-2015 Automattic, Inc.
+russell is based on Underscores http://underscores.me/, (C) 2012-2015 Automattic, Inc.
 
 Resetting and rebuilding styles have been helped along thanks to the fine work of
 Eric Meyer http://meyerweb.com/eric/tools/css/reset/index.html
@@ -683,55 +682,18 @@ object {
 .gallery-caption {
   display: block; }
 
-body {
-  margin: 0;
-  overflow: hidden;
-  font-family: 'Roboto Slab', serif;
-  font-size: 15px;
-  line-height: 1.6em;
-  color: #646464; }
-
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Montserrat', sans-serif;
-  text-transform: uppercase;
-  line-height: 1.1em;
-  color: #333333; }
-
-h1 {
-  font-size: 2.5em; }
-
-h2 {
-  font-size: 2em; }
-
-h3 {
-  font-size: 1.7em; }
-
-h4 {
-  font-size: 1.4em; }
-
-h5 {
-  font-size: 1em; }
-
-h6 {
-  font-size: .7em; }
-
-i.line {
-  display: block;
-  height: 1px;
-  width: 30px;
-  background: #646464;
-  margin: 0 auto; }
-
 body.page.admin-bar #masthead,
 body.single.admin-bar #masthead,
 body.home.admin-bar #masthead,
 body.page.admin-bar .site-branding,
 body.single.admin-bar .site-branding,
-body.home.admin-bar .site-branding,
 body.page.admin-bar #site-navigation,
 body.single.admin-bar #site-navigation,
 body.home.admin-bar #site-navigation {
   margin-top: 32px; }
+
+body.home.admin-bar .social-navigation {
+  margin-top: -30px; }
 
 body.page #content,
 body.single #content {
@@ -752,16 +714,9 @@ body.single #colophon {
   margin: 0 auto; }
 
 body.home .site-branding {
-  font-weight: 100;
   padding: 25px;
-  position: fixed;
-  top: 0;
-  display: inline-block; }
-
-body.home #primary {
-  width: 70%;
-  max-width: 710px;
-  margin: 0 auto; }
+  position: relative;
+  text-align: center; }
 
 body.home h1.site-title {
   font-weight: 100;
@@ -771,54 +726,38 @@ body.home h1.site-title {
   text-align: center; }
 
 body.home #masthead {
-  top: 90px;
-  position: fixed;
-  width: 50%;
-  height: 100vh;
-  background-size: cover; }
-
-body.page #content,
-body.single #content {
-  width: 50%;
-  float: right;
+  top: 0;
   right: 0;
-}
+  left: 0;
+  height: 110px;
+  width: 100vw;
+  border-bottom: 1px solid #eee;
+  position: absolute;
+  z-index: 3;
+  box-sizing: border-box; }
+
 body.home #content {
-  padding: 50px;
-  width: 50%;
-  float: left;
+  width: 38.2vw;
   left: 0;
   position: absolute;
   overflow-y: auto;
   overflow-x: hidden;
   bottom: 0;
-  top: 90px;
-  box-sizing: border-box; 
-}
-body.page #colophon,
-body.single #colophon {
-  width: 70%;
-  max-width: 710px;
-  margin: 0 auto; }
+  box-sizing: border-box;
+  top: 80px; }
 
 body.home .main-navigtaion, body.home .main-navigation li {
   float: none;
   display: inline-block;
-  padding: 1em 1em; 
-}
+  padding: 1em 1em;
+  font-weight: bold; }
+
 body.home #site-navigation {
   text-align: center;
-  width: 100%;
+  width: 38.2vw;
   position: fixed;
-  top: 15px;
-  padding-left: 100px;
-  border-bottom: 1px solid #eee;
-  padding-bottom: 20px; 
-}
-body.home #colophon {
-  width: 70%;
-  max-width: 710px;
-  margin: 0 auto; }
+  top: 25px;
+  padding-bottom: 20px; }
 
 body.home ul > li > a {
   color: #646464; }
@@ -837,11 +776,37 @@ body.home .russell_left_content {
   box-sizing: border-box; }
 
 body.home .russell_right_content {
-  display: none; 
-}
+  display: none; }
+
+i.line {
+  display: block;
+  height: 1px;
+  width: 30px;
+  background: #646464;
+  margin: 0 auto; }
+
+body.home h1.site-title {
+  font-size: 3em;
+  margin: 0 0 15px; }
+
+body.home h2.site-description {
+  font-size: 12px;
+  line-height: 1.6em;
+  color: #999;
+  font-style: italic;
+  text-transform: none;
+  margin: 0 0 15px; }
+
+body.home i {
+  margin: 0 auto 15px;
+  text-align: center; }
+
+body.home .site-elaboration {
+  margin: 0 0 15px; }
+
 header.entry-header {
-  padding: 50px; 
-}
+  padding: 50px; }
+
 body.page .site-branding,
 body.single .site-branding {
   font-weight: 100;
@@ -863,28 +828,7 @@ body.single h1.site-title {
   text-decoration: none;
   color: #646464;
   text-align: center; }
-h1.site-title a {
-  text-decoration: none;
-  color: #646464; }
 
-h2.site-description {
-  font-size: 1em;
-  color: #646464; }
-
-body.page ul > li > a,
-body.single ul > li > a {
-  color: #646464; }
-
-h1.entry-title {
-  font-family: 'Montserrat', sans-serif;
-  text-transform: uppercase;
-  line-height: 1.1em;
-  color: #333333;
-  margin: 0 0 15px;
-  text-align: center; }
-
-header.entry-header {
-  padding: 50px; }
 body.page #masthead,
 body.single #masthead {
   top: 90px;
@@ -909,24 +853,31 @@ body.single #site-navigation {
   border-bottom: 1px solid #eee;
   padding-bottom: 20px; }
 
+.social-navigation {
+  position: absolute;
+  right: 0;
+  padding: 30px 50px 30px 30px;
+  top: 10px; }
+
 .social-navigation a {
   display: inline-block;
   height: 20px;
   width: 30px;
   vertical-align: middle;
-  float: right;
   text-align: center;
-  line-height: 20px; }
+  line-height: 20px;
+  text-decoration: none;
+  padding: 0 25px; }
   .social-navigation a:before {
     font-family: 'genericons';
     display: block;
-    font-size: 20px;
+    font-size: 30px;
     -webkit-transition: all .4s;
     -moz-transition: all .4s;
     -ms-transition: all .4s;
     -o-transition: all .4s;
     transition: all .4s;
-    color: #fff; }
+    color: #646464; }
   .social-navigation a:hover:before {
     color: orange; }
 

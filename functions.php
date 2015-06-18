@@ -101,6 +101,13 @@ add_action( 'widgets_init', 'russell_widgets_init' );
  * Enqueue scripts and styles.
  */
 function russell_scripts() {
+    
+    // Use our copy of genericons instead of Jetpack's since we are using a newer version
+	// wp_deregister_style( 'genericons' );
+
+	if ( ! wp_script_is( 'genericons', 'registered' ) ) {
+		wp_enqueue_style( 'genericons', get_template_directory_uri() . '/fonts/genericons.css' );
+	}
 	wp_enqueue_style( 'russell-style', get_stylesheet_uri() );
 
 	wp_enqueue_script( 'russell-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
