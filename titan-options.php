@@ -55,7 +55,10 @@ function russell_create_options() {
 		'css' => 'h1, h2, h3, h4, h5, h6 { value }',
 	) );
 	
-	$section->createOption( array(
+	$siteDescription = $titan->createThemeCustomizerSection( array(
+        'name' => 'title_tagline',
+    ) );
+	$siteDescription->createOption( array(
 	    'name' => __( 'Site Description', 'russell' ),
 	    'id' => 'site_elaboration',
 	    'type' => 'textarea',

@@ -3,9 +3,10 @@ body.single.admin-bar #masthead,
 body.home.admin-bar #masthead,
 body.page.admin-bar .site-branding,
 body.single.admin-bar .site-branding,
-body.home.admin-bar .site-branding,
 body.page.admin-bar #site-navigation,
 body.single.admin-bar #site-navigation,
-body.home.admin-bar #site-navigation {
+body.home.admin-bar #site-navigation,
+body.home.admin-bar .social-navigation,
+body.home.admin-bar #content {
     margin-top: 32px ;
 }

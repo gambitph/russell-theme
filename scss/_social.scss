@@ -1,22 +1,28 @@
+.social-navigation {
+    position: absolute;
+	right: 0;
+	padding: 30px 50px 30px 30px;
+	top: 10px;
+}
 .social-navigation a {
 	display: inline-block;
 	height: 20px;
 	width: 30px;
 	vertical-align: middle;
-	float: right;
 	text-align: center;
 	line-height: 20px;
-	
+	text-decoration: none;
+	padding: 0 25px;
 	&:before {
 		font-family: 'genericons';
 		display: block;
-		font-size: 20px;
+		font-size: 30px;
 	    -webkit-transition: all .4s;
 	    -moz-transition: all .4s;
 	    -ms-transition: all .4s;
 	    -o-transition: all .4s;
 	    transition: all .4s;
-		color: #fff;
+		color: #646464;
 	}
 	&:hover {
 		&:before {
