@@ -10,3 +10,15 @@ body.single #content {
     top: 90px;
     box-sizing: border-box;
 }
+body.single .category {
+    font-size: 12px;
+    line-height: 1.6em;
+    color: #999;
+    font-style: italic;
+    text-transform: none;
+    margin: 0 0 15px;
+    text-align: center;
+}
+body.single h1.entry-title {
+    margin: 0 0 15px;
+}

@@ -709,6 +709,18 @@ body.single #content {
   top: 90px;
   box-sizing: border-box; }
 
+body.single .category {
+  font-size: 12px;
+  line-height: 1.6em;
+  color: #999;
+  font-style: italic;
+  text-transform: none;
+  margin: 0 0 15px;
+  text-align: center; }
+
+body.single h1.entry-title {
+  margin: 0 0 15px; }
+
 body.page #colophon,
 body.single #colophon {
   width: 70%;
@@ -859,7 +871,7 @@ body.single #site-navigation {
   padding-bottom: 20px; }
 
 body.page .social-navigation,
-body.page .social-navigation {
+body.single .social-navigation {
   position: fixed;
   right: 0;
   padding: 20px 40px 30px 30px;
@@ -1006,7 +1018,8 @@ i.line {
   height: 1px;
   width: 30px;
   background: #646464;
-  margin: 0 auto; }
+  margin: 0 auto;
+  margin: 0 auto 15px; }
 
 h1.site-title a {
   text-decoration: none;
@@ -1025,5 +1038,4 @@ h1.entry-title {
   text-transform: uppercase;
   line-height: 1.1em;
   color: #333333;
-  margin: 0 0 15px;
   text-align: center; }
