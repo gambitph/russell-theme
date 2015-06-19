@@ -690,13 +690,16 @@ body.single.admin-bar .site-branding,
 body.page.admin-bar #site-navigation,
 body.single.admin-bar #site-navigation,
 body.home.admin-bar #site-navigation,
-body.home.admin-bar .social-navigation,
-body.home.admin-bar #content {
+body.home.admin-bar #content,
+body.page.admin-bar #content,
+body.single.admin-bar #content,
+body.page.admin-bar .social-navigation,
+body.single.admin-bar .social-navigation {
   margin-top: 32px; }
 
 body.page #content,
 body.single #content {
-  width: 50%;
+  width: 38.2vw;
   float: right;
   right: 0;
   position: absolute;
@@ -830,17 +833,20 @@ body.single h1.site-title {
 
 body.page #masthead,
 body.single #masthead {
+  width: 61.8vw;
+  left: 0;
   top: 90px;
   position: fixed;
-  width: 50%;
   height: 100vh;
-  background-size: cover; }
+  background-size: cover;
+  background-position: center; }
 
 body.page .main-navigtaion, body.page .main-navigation li,
 body.single .main-navigtaion, body.single .main-navigation li {
   float: none;
   display: inline-block;
-  padding: 1em 1em; }
+  padding: 1em 1em;
+  font-weight: bold; }
 
 body.page #site-navigation,
 body.single #site-navigation {
@@ -851,6 +857,13 @@ body.single #site-navigation {
   padding-left: 100px;
   border-bottom: 1px solid #eee;
   padding-bottom: 20px; }
+
+body.page .social-navigation,
+body.page .social-navigation {
+  position: fixed;
+  right: 0;
+  padding: 20px 40px 30px 30px;
+  top: 10px; }
 
 .social-navigation {
   position: absolute;

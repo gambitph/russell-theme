@@ -6,7 +6,10 @@ body.single.admin-bar .site-branding,
 body.page.admin-bar #site-navigation,
 body.single.admin-bar #site-navigation,
 body.home.admin-bar #site-navigation,
-body.home.admin-bar .social-navigation,
-body.home.admin-bar #content {
+body.home.admin-bar #content,
+body.page.admin-bar #content,
+body.single.admin-bar #content,
+body.page.admin-bar .social-navigation,
+body.single.admin-bar .social-navigation {
     margin-top: 32px ;
 }

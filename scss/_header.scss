@@ -25,9 +25,11 @@ body.single h1.site-title {
 }
 body.page #masthead, 
 body.single #masthead {
+    width: 61.8vw;
+    left: 0;
     top: 90px;
     position: fixed;
-    width: 50%;
     height: 100vh;
     background-size: cover;
+    background-position: center;
 }
