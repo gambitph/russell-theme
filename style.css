@@ -689,11 +689,10 @@ body.page.admin-bar .site-branding,
 body.single.admin-bar .site-branding,
 body.page.admin-bar #site-navigation,
 body.single.admin-bar #site-navigation,
-body.home.admin-bar #site-navigation {
+body.home.admin-bar #site-navigation,
+body.home.admin-bar .social-navigation,
+body.home.admin-bar #content {
   margin-top: 32px; }
-
-body.home.admin-bar .social-navigation {
-  margin-top: -30px; }
 
 body.page #content,
 body.single #content {
