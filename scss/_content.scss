@@ -7,7 +7,7 @@ body.single #content {
     overflow-y: auto;
     overflow-x: hidden;
     bottom: 0;
-    top: 90px;
+    top: 82px;
     box-sizing: border-box;
 }
 body.single .category {
@@ -21,4 +21,12 @@ body.single .category {
 }
 body.single h1.entry-title {
     margin: 0 0 15px;
+}
+body.single .site-branding h1.site-title, body.page .site-branding  h1.site-title {
+    font-size: 25px ;
+}
+body.single .site-branding h2.site-description, body.page .site-branding h2.site-description {
+    font-style: normal;
+    font-weight: 100;
+    font-size: 15px;
 }

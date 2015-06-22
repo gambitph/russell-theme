@@ -706,7 +706,7 @@ body.single #content {
   overflow-y: auto;
   overflow-x: hidden;
   bottom: 0;
-  top: 90px;
+  top: 82px;
   box-sizing: border-box; }
 
 body.single .category {
@@ -720,6 +720,14 @@ body.single .category {
 
 body.single h1.entry-title {
   margin: 0 0 15px; }
+
+body.single .site-branding h1.site-title, body.page .site-branding h1.site-title {
+  font-size: 25px; }
+
+body.single .site-branding h2.site-description, body.page .site-branding h2.site-description {
+  font-style: normal;
+  font-weight: 100;
+  font-size: 15px; }
 
 body.page #colophon,
 body.single #colophon {
@@ -740,10 +748,10 @@ body.home h1.site-title {
   text-align: center; }
 
 body.home #masthead {
-  top: 0;
+  top: 5px;
   right: 0;
   left: 0;
-  height: 110px;
+  height: 75px;
   width: 100vw;
   border-bottom: 1px solid #eee;
   position: absolute;
@@ -758,7 +766,7 @@ body.home #content {
   overflow-x: hidden;
   bottom: 0;
   box-sizing: border-box;
-  top: 80px; }
+  top: 49px; }
 
 body.home .main-navigtaion, body.home .main-navigation li {
   float: none;
@@ -770,7 +778,7 @@ body.home #site-navigation {
   text-align: center;
   width: 38.2vw;
   position: fixed;
-  top: 25px;
+  top: 15px;
   padding-bottom: 20px; }
 
 body.home ul > li > a {
@@ -847,7 +855,7 @@ body.page #masthead,
 body.single #masthead {
   width: 61.8vw;
   left: 0;
-  top: 90px;
+  top: 82px;
   position: fixed;
   height: 100vh;
   background-size: cover;
@@ -860,12 +868,17 @@ body.single .main-navigtaion, body.single .main-navigation li {
   padding: 1em 1em;
   font-weight: bold; }
 
+body.home .main-navigtaion, body.home .main-navigation ul,
+body.page .main-navigtaion, body.page .main-navigation ul,
+body.single .main-navigtaion, body.single .main-navigation ul {
+  font-size: 15px; }
+
 body.page #site-navigation,
 body.single #site-navigation {
   text-align: center;
   width: 100%;
   position: fixed;
-  top: 15px;
+  top: 16px;
   padding-left: 100px;
   border-bottom: 1px solid #eee;
   padding-bottom: 20px; }
@@ -880,7 +893,7 @@ body.single .social-navigation {
 .social-navigation {
   position: absolute;
   right: 0;
-  padding: 30px 50px 30px 30px;
+  padding: 12px 30px 30px 30px;
   top: 10px; }
 
 .social-navigation a {
@@ -981,7 +994,10 @@ body.single .social-navigation {
 .social-navigation a[href*="twitch.tv"]:before {
   content: "\f516"; }
 
-body {
+body,
+body.home .site-elaboration,
+body.page .site-content,
+body.single .site-content {
   margin: 0;
   overflow: hidden;
   font-family: 'Roboto Slab', serif;
@@ -1039,3 +1055,6 @@ h1.entry-title {
   line-height: 1.1em;
   color: #333333;
   text-align: center; }
+
+body.page #reply-title.comment-reply-title {
+  color: #646464; }

@@ -5,12 +5,17 @@ body.single .main-navigtaion, body.single .main-navigation li {
     padding: 1em 1em;
     font-weight: bold;
 }
+body.home .main-navigtaion, body.home .main-navigation ul,
+body.page .main-navigtaion, body.page .main-navigation ul,
+body.single .main-navigtaion, body.single .main-navigation ul {
+    font-size: 15px;
+}
 body.page #site-navigation,
 body.single #site-navigation {
     text-align: center;
     width: 100%;
     position: fixed;
-    top: 15px;
+    top: 16px;
     padding-left: 100px;
     border-bottom: 1px solid #eee;
     padding-bottom: 20px;

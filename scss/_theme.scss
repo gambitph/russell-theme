@@ -1,7 +1,10 @@
 @import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
 @import url(http://fonts.googleapis.com/css?family=Roboto+Slab:300,700);
 
-body {
+body,
+body.home .site-elaboration,
+body.page .site-content,
+body.single .site-content {
     margin: 0;
 	overflow: hidden;
 	font-family: 'Roboto Slab', serif;
@@ -59,4 +62,8 @@ h1.entry-title {
     line-height: 1.1em;
     color: #333333;
     text-align: center;
+}
+
+body.page #reply-title.comment-reply-title {
+    color: #646464;
 }
