@@ -7,7 +7,13 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-
+        <i class='line'></i>
+        <div class="category">
+            <?php 
+                $category = get_the_category();
+                echo $category[0]->cat_name; 
+            ?>
+        </div>
 		<div class="entry-meta">
 			<?php russell_posted_on(); ?>
 		</div><!-- .entry-meta -->

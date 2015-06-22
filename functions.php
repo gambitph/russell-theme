@@ -237,6 +237,30 @@ add_action( 'wp_ajax_get_post_tags', 'russell_get_post_tags' );
 add_action( 'wp_ajax_nopriv_get_post_tags', 'russell_get_post_tags' );
 
 /**
+*   Get caption of featured image
+*/
+function russell_image_caption( $id ) {
+    $attachment = get_post( $id );
+    	$imageInfo =  array(
+    		'alt' => get_post_meta( $attachment->ID, '_wp_attachment_image_alt', true ),
+    		'caption' => $attachment->post_excerpt,
+    		'description' => $attachment->post_content,
+    		'href' => get_permalink( $attachment->ID ),
+    		'src' => $attachment->guid,
+    		'title' => $attachment->post_title
+    );
+    echo $imageInfo['caption'];
+    // $post = get_post();
+    //     $image = wp_get_attachment_image( $post->ID );
+    //     //var_dump($image);
+    //     $link = get_post_meta( $image, '_hero-box-tile-link-to', true );
+    //     var_dump($link);
+    //     $caption = $image->post_excerpt;
+    //     //var_dump($caption);
+    //     //echo $caption;
+}
+
+/**
  * Implement the Custom Header feature.
  */
 //require get_template_directory() . '/inc/custom-header.php';

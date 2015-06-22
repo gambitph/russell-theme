@@ -690,13 +690,16 @@ body.single.admin-bar .site-branding,
 body.page.admin-bar #site-navigation,
 body.single.admin-bar #site-navigation,
 body.home.admin-bar #site-navigation,
-body.home.admin-bar .social-navigation,
-body.home.admin-bar #content {
+body.home.admin-bar #content,
+body.page.admin-bar #content,
+body.single.admin-bar #content,
+body.page.admin-bar .social-navigation,
+body.single.admin-bar .social-navigation {
   margin-top: 32px; }
 
 body.page #content,
 body.single #content {
-  width: 50%;
+  width: 38.2vw;
   float: right;
   right: 0;
   position: absolute;
@@ -705,6 +708,18 @@ body.single #content {
   bottom: 0;
   top: 90px;
   box-sizing: border-box; }
+
+body.single .category {
+  font-size: 12px;
+  line-height: 1.6em;
+  color: #999;
+  font-style: italic;
+  text-transform: none;
+  margin: 0 0 15px;
+  text-align: center; }
+
+body.single h1.entry-title {
+  margin: 0 0 15px; }
 
 body.page #colophon,
 body.single #colophon {
@@ -771,7 +786,7 @@ body.home .russell_left_content {
   overflow-y: auto;
   overflow-x: hidden;
   bottom: 0;
-  top: 31px;
+  top: 30px;
   box-sizing: border-box; }
 
 body.home .russell_right_content {
@@ -830,17 +845,20 @@ body.single h1.site-title {
 
 body.page #masthead,
 body.single #masthead {
+  width: 61.8vw;
+  left: 0;
   top: 90px;
   position: fixed;
-  width: 50%;
   height: 100vh;
-  background-size: cover; }
+  background-size: cover;
+  background-position: center; }
 
 body.page .main-navigtaion, body.page .main-navigation li,
 body.single .main-navigtaion, body.single .main-navigation li {
   float: none;
   display: inline-block;
-  padding: 1em 1em; }
+  padding: 1em 1em;
+  font-weight: bold; }
 
 body.page #site-navigation,
 body.single #site-navigation {
@@ -851,6 +869,13 @@ body.single #site-navigation {
   padding-left: 100px;
   border-bottom: 1px solid #eee;
   padding-bottom: 20px; }
+
+body.page .social-navigation,
+body.single .social-navigation {
+  position: fixed;
+  right: 0;
+  padding: 20px 40px 30px 30px;
+  top: 10px; }
 
 .social-navigation {
   position: absolute;
@@ -993,7 +1018,8 @@ i.line {
   height: 1px;
   width: 30px;
   background: #646464;
-  margin: 0 auto; }
+  margin: 0 auto;
+  margin: 0 auto 15px; }
 
 h1.site-title a {
   text-decoration: none;
@@ -1012,5 +1038,4 @@ h1.entry-title {
   text-transform: uppercase;
   line-height: 1.1em;
   color: #333333;
-  margin: 0 0 15px;
   text-align: center; }

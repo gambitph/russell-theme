@@ -1,6 +1,6 @@
 body.page #content, 
 body.single #content {
-    width: 50%;
+    width: 38.2vw;
     float: right;
     right: 0;
     position: absolute;
@@ -9,4 +9,16 @@ body.single #content {
     bottom: 0;
     top: 90px;
     box-sizing: border-box;
+}
+body.single .category {
+    font-size: 12px;
+    line-height: 1.6em;
+    color: #999;
+    font-style: italic;
+    text-transform: none;
+    margin: 0 0 15px;
+    text-align: center;
+}
+body.single h1.entry-title {
+    margin: 0 0 15px;
 }
