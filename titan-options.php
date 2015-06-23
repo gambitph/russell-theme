@@ -124,4 +124,310 @@ function russell_create_options() {
 	$footerTab->createOption( array(
 	    'type' => 'save',
 	) );
+	
+	
+	/**
+	 * Fonts
+	 */
+	$section = $titan->createThemeCustomizerSection( array(
+	    'name' => __( 'Fonts', 'russell' ),
+		'panel' => __( 'Theme Options & Colors', 'russell' ),
+		'desc' => __( 'Change the fonts used across your site', 'russell' ),
+	) );
+	$section->createOption( array(
+	    'name' => __( 'Headings Font', 'russell' ),
+	    'id' => 'russell_headings_font',
+	    'type' => 'font',
+	    'desc' => __( 'Select the font for all headings in the site', 'russell' ),
+		'show_color' => false,
+		'show_font_size' => false,
+	    'show_font_weight' => false,
+	    'show_font_style' => false,
+	    //'show_line_height' => false,
+	    'show_letter_spacing' => false,
+	    //'show_text_transform' => false,
+	    'show_font_variant' => false,
+	    'show_text_shadow' => false,
+	    'default' => array(
+	        'font-family' => 'Montserrat', sans-serif,
+	        'text-transform' => 'capitalize',
+			'line-height' => '1.1em',
+	    ),
+		'css' => 'h1, h2, h3, h4, h5, h6, .main-navigation ul a
+		{ value }',
+	) );
+	$section->createOption( array(
+	    'name' => __( 'Heading 1 Size', 'russell' ),
+	    'id' => 'russell_heading1_font',
+	    'type' => 'font',
+	    'desc' => __( 'The size of all <code>h1</code> headings', 'russell' ),
+		'show_font_family' => false,
+		'show_color' => false,
+		// 'show_font_size' => false,
+	    'show_font_weight' => false,
+	    'show_font_style' => false,
+	    'show_line_height' => false,
+	    // 'show_letter_spacing' => false,
+	    // 'show_text_transform' => false,
+	    'show_font_variant' => false,
+	    'show_text_shadow' => false,
+	    'default' => array(
+	        'font-size' => '48px',
+			'letter-spacing' => 'normal',
+			'text-transform' => 'normal',
+	    ),
+		'css' => 'body.home h1.site-title
+		{ value }',
+	) );
+	$section->createOption( array(
+	    'name' => __( 'Heading 2 Size', 'russell' ),
+	    'id' => 'russell_heading2_font',
+	    'type' => 'font',
+	    'desc' => __( 'The size of all <code>h2</code> headings', 'russell' ),
+		'show_font_family' => false,
+		'show_color' => false,
+		// 'show_font_size' => false,
+	    'show_font_weight' => false,
+	    //'show_font_style' => false,
+	    'show_line_height' => false,
+	    // 'show_letter_spacing' => false,
+	    // 'show_text_transform' => false,
+	    'show_font_variant' => false,
+	    'show_text_shadow' => false,
+	    'default' => array(
+	        'font-size' => '15px',
+	        'font-style' => 'italic',
+			'letter-spacing' => 'normal',
+			'text-transform' => 'normal',
+	    ),
+		'css' => 'body.home h2.site-description, body.single .category { value }
+		@media screen and (max-width: 710px) {
+			h1 { value }
+		}',
+	) );
+	$section->createOption( array(
+	    'name' => __( 'Heading 3 Size', 'russell' ),
+	    'id' => 'russell_heading3_font',
+	    'type' => 'font',
+	    'desc' => __( 'The size of all <code>h3</code> headings', 'russell' ),
+		'show_font_family' => false,
+		'show_color' => false,
+		// 'show_font_size' => false,
+	    'show_font_weight' => false,
+	    'show_font_style' => false,
+	    'show_line_height' => false,
+	    // 'show_letter_spacing' => false,
+	    // 'show_text_transform' => false,
+	    'show_font_variant' => false,
+	    'show_text_shadow' => false,
+	    'default' => array(
+	        'font-size' => '28px',
+			'letter-spacing' => 'normal',
+			'text-transform' => 'normal',
+	    ),
+		'css' => 'h3 { value }
+		@media screen and (max-width: 710px) {
+			h2 { value }
+		}',
+	) );
+    $section->createOption( array(
+	    'name' => __( 'Heading 4 Size', 'russell' ),
+	    'id' => 'russell_heading4_font',
+	    'type' => 'font',
+	    'desc' => __( 'The size of all <code>h4</code> headings', 'russell' ),
+		'show_font_family' => false,
+		'show_color' => false,
+		// 'show_font_size' => false,
+	    'show_font_weight' => false,
+	    'show_font_style' => false,
+	    'show_line_height' => false,
+	    // 'show_letter_spacing' => false,
+	    'show_text_transform' => false,
+	    'show_font_variant' => false,
+	    'show_text_shadow' => false,
+	    'default' => array(
+	        'font-size' => '22px',
+			'letter-spacing' => 'normal',
+	    ),
+		'css' => 'h4,
+		body div#jp-relatedposts div.jp-relatedposts-items .jp-relatedposts-post .jp-relatedposts-post-title a
+		{ value }
+		@media screen and (max-width: 710px) {
+			h3, h4 { value }
+		}',
+	) );
+	
+	$section->createOption( array(
+	    'name' => __( 'Heading 5 Size', 'russell' ),
+	    'id' => 'russell_heading5_font',
+	    'type' => 'font',
+	    'desc' => __( 'The size of all <code>h5</code> headings', 'russell' ),
+		'show_font_family' => false,
+		'show_color' => false,
+		// 'show_font_size' => false,
+	    'show_font_weight' => false,
+	    'show_font_style' => false,
+	    'show_line_height' => false,
+	    // 'show_letter_spacing' => false,
+	    'show_text_transform' => false,
+	    'show_font_variant' => false,
+	    'show_text_shadow' => false,
+	    'default' => array(
+	        'font-size' => '16px',
+			'letter-spacing' => 'normal',
+	    ),
+		'css' => 'h5
+		{ value }
+		@media screen and (max-width: 710px) {
+			h5 { value }
+		}',
+	) );
+	
+	$section->createOption( array(
+	    'name' => __( 'Heading 6 Size', 'russell' ),
+	    'id' => 'russell_heading6_font',
+	    'type' => 'font',
+	    'desc' => __( 'The size of all <code>h6</code> headings', 'russell' ),
+		'show_font_family' => false,
+		'show_color' => false,
+		// 'show_font_size' => false,
+	    'show_font_weight' => false,
+	    'show_font_style' => false,
+	    'show_line_height' => false,
+	    // 'show_letter_spacing' => false,
+	    'show_text_transform' => false,
+	    'show_font_variant' => false,
+	    'show_text_shadow' => false,
+	    'default' => array(
+	        'font-size' => '14px',
+			'letter-spacing' => 'normal',
+	    ),
+		'css' => 'h6
+		{ value }
+		@media screen and (max-width: 710px) {
+			h6 { value }
+		}',
+	) );
+	$section->createOption( array(
+	    'name' => __( 'Body Font', 'russell' ),
+	    'id' => 'russell_body_font',
+	    'type' => 'font',
+	    'desc' => __( 'The normal body font', 'russell' ),
+		// 'show_font_family' => false,
+		'show_color' => false,
+		// 'show_font_size' => false,
+	    // 'show_font_weight' => false,
+	    'show_font_style' => false,
+	    // 'show_line_height' => false,
+	    // 'show_letter_spacing' => false,
+	    'show_text_transform' => false,
+	    'show_font_variant' => false,
+	    'show_text_shadow' => false,
+	    'default' => array(
+			'font-family' => 'Roboto Slab', regular,
+	        'font-size' => '15px',
+	        'line-height' => '1.6em',
+			'letter-spacing' => 'normal',
+			'font-weight' => '100',
+	    ),
+		'css' => 'body { value }',
+	) );
+	
+	// $section->createOption( array(
+// 	    'name' => __( 'Smaller Body Font', 'russell' ),
+// 	    'id' => 'body_font_small',
+// 	    'type' => 'font',
+// 	    'desc' => __( 'The smaller body font found in various places in the theme', 'russell' ),
+// 		'show_font_family' => false,
+// 		'show_color' => false,
+// 		// 'show_font_size' => false,
+// 	    'show_font_weight' => false,
+// 	    'show_font_style' => false,
+// 	    'show_line_height' => false,
+// 	    // 'show_letter_spacing' => false,
+// 	    'show_text_transform' => false,
+// 	    'show_font_variant' => false,
+// 	    'show_text_shadow' => false,
+// 	    'default' => array(
+// 	        'font-size' => '12px',
+// 			// 'line-height' => '1.5em',
+// 			'letter-spacing' => 'normal',
+// 	    ),
+// 		'css' => 'article .entry-footer,
+// 		.entry-meta,
+// 		.entry-header .cat-links, .entry-header #breadcrumbs,
+// 		.page-header .taxonomy-description,
+// 		.navigation .nav-previous a span, .navigation .nav-next a span,
+// 		#comments .comment-metadata > a, #comments .comment-metadata > a:visited,
+// 		#comments .comment-reply-link,
+// 		#comments .logged-in-as,
+// 		body div#jp-relatedposts div.jp-relatedposts-items .jp-relatedposts-post .jp-relatedposts-post-context, body div#jp-relatedposts div.jp-relatedposts-items .jp-relatedposts-post .jp-relatedposts-post-date,
+// 		.featured-content figcaption span
+// 		{ value }
+// 		',
+// 	) );
+
+    /**
+	 *   Site title, font and color options
+	 */
+
+	 /**
+ 	 * Navigation
+ 	 */
+ 	$section = $titan->createThemeCustomizerSection( array(
+ 	    'name' => __( 'Header & Social', 'russell' ),
+ 		'panel' => __( 'Theme Options & Colors', 'russell' ),
+ 		'desc' => __( 'The main navigation bar', 'russell' ),
+ 	) );
+ 	$section->createOption( array(
+	    'name' => __( 'Background Color', 'russell' ),
+	    'id' => 'header_color_bg',
+	    'type' => 'color',
+		'default' => '#ffffff',
+		'css' => '#masthead { background-color: value }'
+	) );
+    $section->createOption( array(
+	    'name' => __( 'Main Menu Text Color', 'russell' ),
+	    'id' => 'navbar_text_color',
+	    'type' => 'color',
+		'default' => '#646464',
+		'css' => '#masthead ul > li > a { color: value }'
+	) );
+	$section->createOption( array(
+	    'name' => __( 'Social Icons Color', 'russell' ),
+	    'id' => 'social_text_color',
+	    'type' => 'color',
+		'default' => '#646464',
+		'css' => '#masthead .social-navigation a:before { color: value }'
+	) );
+	$section->createOption( array(
+	    'name' => __( 'Social Icons Hover Color', 'russell' ),
+	    'id' => 'social_hover_text_color',
+	    'type' => 'color',
+		'default' => 'orange',
+		'css' => '#masthead .social-navigation a:hover:before { color: value }'
+	) );   
+	
+	
+	/**
+	 * Footer copyright
+	 */
+	// $section = $titan->createThemeCustomizerSection( array(
+	//         'name' => __( 'Footer Copyright Area', 'russell' ),
+	//         'panel' => __( 'Theme Options & Colors', 'russell' ),
+	//         'desc' => __( 'Colors & text of the bottom-most copyright area of the site', 'russell' ),
+	//     ) );
+	//     $section->createOption( array(
+	//         'name' => __( 'Copyright Text', 'russell' ),
+	//         'id' => 'footer_copyright_text',
+	//         'type' => 'text',
+	//         'default' => '&copy; ' . date( 'Y' ) . ', theme created by Gambit',
+	//     ) );
+	//     $section->createOption( array(
+	//         'name' => __( 'Text Color', 'verdant' ),
+	//         'id' => 'footer_copyright_text_color',
+	//         'type' => 'color',
+	//         'default' => '#ffffff',
+	//         'css' => '.site-info-container, .site-info-container a:hover, .site-info-container a:visited:hover { color: value }',
+	//     ) );
 }
