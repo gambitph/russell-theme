@@ -1,5 +1,6 @@
-body.page #content, 
-body.single #content {
+body.page.has-header-image #content, 
+body.single.has-header-image #content {
+    padding-top: 0px;
     width: 38.2vw;
     float: right;
     right: 0;
@@ -7,7 +8,7 @@ body.single #content {
     overflow-y: auto;
     overflow-x: hidden;
     bottom: 0;
-    top: 79px;
+    top: 75px;
     box-sizing: border-box;
 }
 body.single .category {
@@ -30,12 +31,27 @@ body.single .site-branding h2.site-description, body.page .site-branding h2.site
     font-weight: 100;
     font-size: 15px;
 }
-body.page .russell_left_content {
+body.page .russell_left_content,
+body.single .russell_left_content {
     width: 61.8vw;
     left: 0;
-    top: 79px;
+    top: 75px;
     position: fixed;
     height: 100vh;
     background-size: cover;
     background-position: center;
+}
+body.error404 #content,
+body.page #content,
+body.single #content {
+    padding-top: 100px;
+    width: 100%;
+    margin: 0 auto;
+    right: 0;
+    top: 75px;
+    position: absolute;
+    overflow-y: auto;
+    overflow-x: hidden;
+    bottom: 0;
+    box-sizing: border-box;
 }

@@ -52,15 +52,15 @@ if ( is_single() || is_page() ) {
 }
 if ( ! empty( $headerImageUrl ) ) {
 	$bodyClasses = ' has-header-image';
-}
-if ( is_page() || is_single() ) {
-    ?>
-    <style id="regala_header">
-    	header#masthead .russell_left_content{
-    		background-image: linear-gradient(45deg, rgba(<?php echo $headerImageGradientColor ?>,<?php echo $stop1Opacity ?>) 0%,rgba(<?php echo $headerImageGradientColor ?>,<?php echo $stop2Opacity ?>) 48%,rgba(<?php echo $headerImageGradientColor ?>, <?php echo $stop3Opacity ?>) 100%), url( <?php echo esc_url( $headerImageUrl ) ?> );
-    	}
-    </style>
-<?php } ?>
+    if ( is_page() || is_single() ) {
+        ?>
+        <style id="regala_header">
+        	header#masthead .russell_left_content{
+        		background-image: linear-gradient(45deg, rgba(<?php echo $headerImageGradientColor ?>,<?php echo $stop1Opacity ?>) 0%,rgba(<?php echo $headerImageGradientColor ?>,<?php echo $stop2Opacity ?>) 48%,rgba(<?php echo $headerImageGradientColor ?>, <?php echo $stop3Opacity ?>) 100%), url( <?php echo esc_url( $headerImageUrl ) ?> );
+        	}
+        </style>
+    <?php }
+} ?>
 
 </head>
 
