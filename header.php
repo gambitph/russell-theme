@@ -53,13 +53,15 @@ if ( is_single() || is_page() ) {
 if ( ! empty( $headerImageUrl ) ) {
 	$bodyClasses = ' has-header-image';
 }
+if ( is_page() || is_single() ) {
+    ?>
+    <style id="regala_header">
+    	header#masthead .russell_left_content{
+    		background-image: linear-gradient(45deg, rgba(<?php echo $headerImageGradientColor ?>,<?php echo $stop1Opacity ?>) 0%,rgba(<?php echo $headerImageGradientColor ?>,<?php echo $stop2Opacity ?>) 48%,rgba(<?php echo $headerImageGradientColor ?>, <?php echo $stop3Opacity ?>) 100%), url( <?php echo esc_url( $headerImageUrl ) ?> );
+    	}
+    </style>
+<?php } ?>
 
-?>
-<style id="regala_header">
-	header#masthead {
-		background-image: linear-gradient(45deg, rgba(<?php echo $headerImageGradientColor ?>,<?php echo $stop1Opacity ?>) 0%,rgba(<?php echo $headerImageGradientColor ?>,<?php echo $stop2Opacity ?>) 48%,rgba(<?php echo $headerImageGradientColor ?>, <?php echo $stop3Opacity ?>) 100%), url( <?php echo esc_url( $headerImageUrl ) ?> );
-	}
-</style>
 </head>
 
 <body <?php body_class( $bodyClasses ); ?>>
@@ -68,29 +70,31 @@ if ( ! empty( $headerImageUrl ) ) {
 	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'russell' ); ?></a>
 
     <header id="masthead" class="site-header" role="banner">
-		<?php
-		if ( is_page() || is_single() ) { ?>
-		    <div class="feature-image-caption">
-    	        <?php 
-                    $id = get_post_thumbnail_id();
-                    russell_image_caption( $id );
-                ?>
-            </div>
-        <?php } ?>
+		<div class="russell_left_content">
+		    <?php
+    		if ( is_page() || is_single() ) { ?>
+    		    <div class="feature-image-caption">
+        	        <?php 
+                        $id = get_post_thumbnail_id();
+                        russell_image_caption( $id );
+                    ?>
+                </div>
+            <?php } ?>
 		
-		<?php
-		    if ( is_page() || is_single() ) { ?>
-        		<div class="site-branding">
-        			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-        			<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
-        		</div><!-- .site-branding -->
-    	<?php } ?> 
+    		<?php
+    		    if ( is_page() || is_single() ) { ?>
+            		<div class="site-branding">
+            			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+            			<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
+            		</div><!-- .site-branding -->
+        	<?php } ?> 
     	
-		<nav id="site-navigation" class="main-navigation" role="navigation">
-			<button class="menu-toggle" aria-controls="menu" aria-expanded="false"><?php _e( 'Primary Menu', 'russell' ); ?></button>
-			<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
-		</nav><!-- #site-navigation -->
-		<span class='social-navigation'><?php russell_create_social_icons() ?></span>
+    		<nav id="site-navigation" class="main-navigation" role="navigation">
+    			<button class="menu-toggle" aria-controls="menu" aria-expanded="false"><?php _e( 'Primary Menu', 'russell' ); ?></button>
+    			<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
+    		</nav><!-- #site-navigation -->
+    		<span class='social-navigation'><?php russell_create_social_icons() ?></span>
+    	</div>
 	</header><!-- #masthead -->
 
 	<div id="content" class="site-content">

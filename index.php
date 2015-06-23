@@ -44,10 +44,7 @@ get_header(); ?>
 		</main><!-- #main -->
         <?php get_footer(); ?>
         
-    <div class='russell_right_images'>
-    	<div class='russell_right_images_wrapper'></div>
     </div>
-</div>
 	
 	</div><!-- #primary -->
 <?php //get_sidebar(); ?>
