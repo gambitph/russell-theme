@@ -685,16 +685,19 @@ object {
 body.page.admin-bar #masthead,
 body.single.admin-bar #masthead,
 body.home.admin-bar #masthead,
-body.page.admin-bar .site-branding,
-body.single.admin-bar .site-branding,
 body.page.admin-bar #site-navigation,
 body.single.admin-bar #site-navigation,
 body.home.admin-bar #site-navigation,
 body.home.admin-bar #content,
 body.page.admin-bar #content,
 body.single.admin-bar #content,
+body.page.admin-bar .site-branding,
+body.single.admin-bar .site-branding,
 body.page.admin-bar .social-navigation,
-body.single.admin-bar .social-navigation {
+body.single.admin-bar .social-navigation,
+body.home.admin-bar .social-navigation,
+body.page.admin-bar .russell_left_content,
+body.single.admin-bar .russell_left_content {
   margin-top: 32px; }
 
 body.page #content,
@@ -706,7 +709,7 @@ body.single #content {
   overflow-y: auto;
   overflow-x: hidden;
   bottom: 0;
-  top: 82px;
+  top: 79px;
   box-sizing: border-box; }
 
 body.single .category {
@@ -728,6 +731,15 @@ body.single .site-branding h2.site-description, body.page .site-branding h2.site
   font-style: normal;
   font-weight: 100;
   font-size: 15px; }
+
+body.page .russell_left_content {
+  width: 61.8vw;
+  left: 0;
+  top: 79px;
+  position: fixed;
+  height: 100vh;
+  background-size: cover;
+  background-position: center; }
 
 body.page #colophon,
 body.single #colophon {
@@ -784,7 +796,7 @@ body.home #site-navigation {
 body.home ul > li > a {
   color: #646464; }
 
-body.home .russell_left_content {
+body.home #content.site-content .russell_left_content {
   width: 38.2vw;
   left: 0;
   border-right: 1px solid #eee;
@@ -853,13 +865,22 @@ body.single h1.site-title {
 
 body.page #masthead,
 body.single #masthead {
-  width: 61.8vw;
+  top: 5px;
+  right: 0;
   left: 0;
-  top: 82px;
-  position: fixed;
-  height: 100vh;
-  background-size: cover;
-  background-position: center; }
+  height: 75px;
+  width: 100vw;
+  border-bottom: 1px solid #eee;
+  position: absolute;
+  z-index: 3;
+  box-sizing: border-box;
+  /*width: 61.8vw;
+          left: 0;
+          top: 82px;
+          position: fixed;
+          height: 100vh;
+          background-size: cover;
+          background-position: center;*/ }
 
 body.page .main-navigtaion, body.page .main-navigation li,
 body.single .main-navigtaion, body.single .main-navigation li {
@@ -880,18 +901,17 @@ body.single #site-navigation {
   position: fixed;
   top: 16px;
   padding-left: 100px;
-  border-bottom: 1px solid #eee;
   padding-bottom: 20px; }
 
 body.page .social-navigation,
 body.single .social-navigation {
   position: fixed;
   right: 0;
-  padding: 20px 40px 30px 30px;
+  padding: 12px 30px 30px 30px;
   top: 10px; }
 
 .social-navigation {
-  position: absolute;
+  position: fixed;
   right: 0;
   padding: 12px 30px 30px 30px;
   top: 10px; }
