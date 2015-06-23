@@ -2,6 +2,11 @@
 /**
  * @package russell
  */
+
+$attachments = get_attached_media( 'image' );
+if ( $attachments ) {
+	russell_single_scripts_and_styles();
+}
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>

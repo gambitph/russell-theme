@@ -128,7 +128,7 @@ function russell_single_scripts_and_styles() {
 	wp_enqueue_script( 'single-php', get_template_directory_uri() . '/js/min/single-min.js', array(), '20150623', true );
 	wp_enqueue_style( 'owl-carousel', get_template_directory_uri() . '/css/owl.carousel.css' );
 }
-add_filter( "single_template", "russell_single_scripts_and_styles" );
+//add_filter( "single_template", "russell_single_scripts_and_styles" );
 
 /**
 *   Get 20 Latest Posts
