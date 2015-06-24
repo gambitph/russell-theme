@@ -6,15 +6,16 @@
  *
  * @package russell
  */
+global $titan; 
 ?>
 
 	</div><!-- #content -->
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
 		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'http://wordpress.org/', 'russell' ) ); ?>"><?php printf( __( 'Proudly powered by %s', 'russell' ), 'WordPress' ); ?></a>
-			<span class="sep"> | </span>
-			<?php printf( __( 'Theme: %1$s by %2$s.', 'russell' ), 'russell', '<a href="http://underscores.me/" rel="designer">Underscores.me</a>' ); ?>
+    		<?php
+    		echo $titan->getOption( 'footer_copyright_text' );
+    		?>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->

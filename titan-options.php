@@ -412,22 +412,22 @@ function russell_create_options() {
 	/**
 	 * Footer copyright
 	 */
-	// $section = $titan->createThemeCustomizerSection( array(
-	//         'name' => __( 'Footer Copyright Area', 'russell' ),
-	//         'panel' => __( 'Theme Options & Colors', 'russell' ),
-	//         'desc' => __( 'Colors & text of the bottom-most copyright area of the site', 'russell' ),
-	//     ) );
-	//     $section->createOption( array(
-	//         'name' => __( 'Copyright Text', 'russell' ),
-	//         'id' => 'footer_copyright_text',
-	//         'type' => 'text',
-	//         'default' => '&copy; ' . date( 'Y' ) . ', theme created by Gambit',
-	//     ) );
-	//     $section->createOption( array(
-	//         'name' => __( 'Text Color', 'verdant' ),
-	//         'id' => 'footer_copyright_text_color',
-	//         'type' => 'color',
-	//         'default' => '#ffffff',
-	//         'css' => '.site-info-container, .site-info-container a:hover, .site-info-container a:visited:hover { color: value }',
-	//     ) );
+	$section = $titan->createThemeCustomizerSection( array(
+       'name' => __( 'Footer Copyright Area', 'russell' ),
+       'panel' => __( 'Theme Options & Colors', 'russell' ),
+       'desc' => __( 'Colors & text of the bottom-most copyright area of the site', 'russell' ),
+    ) );
+	$section->createOption( array(
+       'name' => __( 'Copyright Text', 'russell' ),
+       'id' => 'footer_copyright_text',
+       'type' => 'text',
+       'default' => '&copy; ' . date( 'Y' ) . ', theme created by Gambit',
+    ) );
+	$section->createOption( array(
+       'name' => __( 'Text Color', 'russell' ),
+       'id' => 'footer_copyright_text_color',
+       'type' => 'color',
+       'default' => '#000000',
+       'css' => '#colophon.site-footer .site-info { color: value }',
+    ) );
 }
