@@ -202,6 +202,28 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
+	"\/js\/min\/owl.carousel.min.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/js\/min\/owl.carousel.min.js",
+		"outputAbbreviatedPath": "\/js\/min\/min\/owl.carousel.min-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/js\/min\/single-min.js": {
+		"fileType": 64,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/js\/min\/single-min.js",
+		"outputAbbreviatedPath": "\/js\/min\/min\/single-min-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
 	"\/js\/navigation.js": {
 		"fileType": 64,
 		"ignore": 0,
@@ -224,12 +246,12 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/js\/owl.carousel.min.js": {
+	"\/js\/single.js": {
 		"fileType": 64,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/js\/owl.carousel.min.js",
-		"outputAbbreviatedPath": "\/js\/min\/owl.carousel.min-min.js",
+		"inputAbbreviatedPath": "\/js\/single.js",
+		"outputAbbreviatedPath": "\/js\/min\/single-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
