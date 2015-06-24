@@ -767,8 +767,6 @@ body.single #colophon {
   margin: 0 auto; }
 
 body.home .site-branding {
-  padding: 25px;
-  position: relative;
   text-align: center; }
 
 body.home h1.site-title {
@@ -790,14 +788,15 @@ body.home #masthead {
   box-sizing: border-box; }
 
 body.home #content {
-  width: 38.2vw;
-  left: 0;
+  padding-top: 100px;
+  width: 100%;
+  margin: 0 auto;
+  top: 75px;
   position: absolute;
   overflow-y: auto;
   overflow-x: hidden;
   bottom: 0;
-  box-sizing: border-box;
-  top: 49px; }
+  box-sizing: border-box; }
 
 body.home .main-navigtaion, body.home .main-navigation li {
   float: none;
@@ -816,17 +815,9 @@ body.home ul > li > a {
   color: #646464; }
 
 body.home #content.site-content .russell_left_content {
-  width: 38.2vw;
-  left: 0;
-  border-right: 1px solid #eee;
-  z-index: 2;
-  padding: 50px;
-  position: absolute;
-  overflow-y: auto;
-  overflow-x: hidden;
-  bottom: 0;
-  top: 30px;
-  box-sizing: border-box; }
+  width: 70%;
+  max-width: 710px;
+  margin: 0 auto; }
 
 body.home .russell_right_content {
   display: none; }
@@ -855,7 +846,8 @@ body.home i {
   text-align: center; }
 
 body.home .site-elaboration {
-  margin: 0 0 15px; }
+  margin: 0 0 15px;
+  padding-top: 50px; }
 
 header.entry-header {
   padding: 80px 0 20px 0; }
