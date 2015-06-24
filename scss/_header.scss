@@ -1,5 +1,8 @@
 header.entry-header {
-    padding: 50px;
+    padding: 80px 0 20px 0
+}
+body.error404 .page-header {
+    padding: 50px 0;
 }
 body.page .site-branding,
 body.single .site-branding, {
@@ -10,7 +13,8 @@ body.single .site-branding, {
     display: inline-block;
 }
 body.page #primary,
-body.single #primary {
+body.single #primary,
+body.error404 #primary {
     width: 70%;
     max-width: 710px;
     margin: 0 auto;
@@ -25,7 +29,15 @@ body.single h1.site-title {
 }
 body.page #masthead, 
 body.single #masthead {
-    top: 5px;
+    top: 0;
+    position: fixed;
+    height: 75px;
+    width: 100vw;
+    border-bottom: 1px solid #eee;
+}
+body.page.has-header-image #masthead,
+body.single.has-header-image #masthead {
+    top:0;
     right: 0;
     left: 0;
     height: 75px;
@@ -34,11 +46,10 @@ body.single #masthead {
     position: absolute;
     z-index: 3;
     box-sizing: border-box;
-/*width: 61.8vw;
-        left: 0;
-        top: 82px;
-        position: fixed;
-        height: 100vh;
-        background-size: cover;
-        background-position: center;*/
+}
+body.error404 #masthead.site-header {
+    position: fixed;
+    height: 75px;
+    width: 100vw;
+    border-bottom: 1px solid #eee;
 }
