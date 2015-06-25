@@ -9,7 +9,7 @@ body.home h1.site-title {
     text-align: center;
 }
 body.home #masthead {
-    top: 5px;
+    top: 0;
     right: 0;
     left: 0;
     height: 75px;
@@ -80,4 +80,8 @@ body.home i {
 body.home .site-elaboration {
     margin: 0 0 15px;
     padding-top: 50px;
+}
+body.home #masthead h1.site-title,
+body.home #masthead h2.site-description {
+    display: none;
 }

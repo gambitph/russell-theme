@@ -271,6 +271,16 @@ function russell_image_caption( $id ) {
 }
 
 /**
+*   Get attached image of post
+*/
+function russell_get_attached( $id ) {
+    $media = get_attached_media( 'image', $id );
+    //$image = get_post_thumbnail($media, 32);
+    var_dump($media);
+    echo $media;
+}
+
+/**
  * Implement the Custom Header feature.
  */
 //require get_template_directory() . '/inc/custom-header.php';
