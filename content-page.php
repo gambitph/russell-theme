@@ -20,10 +20,12 @@ if ( $attachments ) {
 	<div class="entry-content">
 	    <?php the_content(); ?>
 		<?php
-			wp_link_pages( array(
-				'before' => '<div class="page-links">' . __( 'Pages:', 'russell' ),
-				'after'  => '</div>',
-			) );
+			if ( ! is_front() ) {
+				wp_link_pages( array(
+					'before' => '<div class="page-links">' . __( 'Pages:', 'russell' ),
+					'after'  => '</div>',
+				) );
+			}
 		?>
 	</div><!-- .entry-content -->
 
