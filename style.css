@@ -171,7 +171,11 @@ i {
   font-style: italic; }
 
 blockquote {
-  margin: 0 1.5em; }
+	margin: 0px 1.5em;
+	padding: 5px;
+	border: 1px solid #EEE;
+	margin-bottom: 1.5em;
+}
 
 address {
   margin: 0 0 1.5em; }

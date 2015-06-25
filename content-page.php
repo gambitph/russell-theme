@@ -20,7 +20,7 @@ if ( $attachments ) {
 	<div class="entry-content">
 	    <?php the_content(); ?>
 		<?php
-			if ( ! is_front() ) {
+			if ( ! is_home() ) {
 				wp_link_pages( array(
 					'before' => '<div class="page-links">' . __( 'Pages:', 'russell' ),
 					'after'  => '</div>',
