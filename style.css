@@ -689,11 +689,8 @@ body.page.admin-bar #site-navigation,
 body.single.admin-bar #site-navigation,
 body.home.admin-bar #site-navigation,
 body.error404.admin-bar #site-navigation,
-body.search.admin-bar #site-navigation,
-body.home.admin-bar #content,
 body.page.admin-bar #content,
 body.single.admin-bar #content,
-body.error404.admin-bar #content,
 body.search.admin-bar #content,
 body.page.admin-bar .site-branding,
 body.single.admin-bar .site-branding,
@@ -702,6 +699,7 @@ body.single.admin-bar .social-navigation,
 body.home.admin-bar .social-navigation,
 body.error404.admin-bar .social-navigation,
 body.search.admin-bar .social-navigation,
+body.archive.admin-bar .social-navigation,
 body.page.admin-bar .russell_left_content,
 body.single.admin-bar .russell_left_content {
   margin-top: 32px; }
@@ -752,7 +750,8 @@ body.single .russell_left_content {
 body.error404 #content,
 body.page #content,
 body.single #content,
-body.search #content {
+body.search #content,
+body.archive #content {
   padding-top: 100px;
   width: 100%;
   margin: 0 auto;
@@ -908,9 +907,9 @@ body.single.has-header-image #masthead {
   box-sizing: border-box; }
 
 body.error404 #masthead.site-header,
-body.search #masthead.site-header {
+body.search #masthead.site-header,
+body.archive #masthead.site-header {
   position: fixed;
-  height: 75px;
   width: 100vw;
   border-bottom: 1px solid #eee; }
 
@@ -935,7 +934,8 @@ body.search .entry-meta {
 body.page .main-navigtaion, body.page .main-navigation li,
 body.single .main-navigtaion, body.single .main-navigation li,
 body.error404 .main-navigtaion, body.error404 .main-navigation li,
-body.search .main-navigation, body.search .main-navigation li {
+body.search .main-navigation, body.search .main-navigation li,
+body.archive .main-navigation, body.archive .main-navigation li {
   float: none;
   display: inline-block;
   padding: 1em 1em;
@@ -944,35 +944,33 @@ body.search .main-navigation, body.search .main-navigation li {
 body.home .main-navigtaion, body.home .main-navigation ul,
 body.page .main-navigtaion, body.page .main-navigation ul,
 body.single .main-navigtaion, body.single .main-navigation ul,
-body.error404 .main-navigation, body.error404 .main-navigation ul {
+body.error404 .main-navigation, body.error404 .main-navigation ul,
+body.archive .main-navigation, body.archive .main-navigation ul {
   font-size: 15px; }
 
 body.page #site-navigation,
 body.single #site-navigation {
   text-align: center;
-  width: 100%;
+  padding: 18px;
   position: fixed;
-  top: 16px;
-  padding-left: 100px;
-  padding-bottom: 20px; }
+  top: 0; }
 
 body.page .social-navigation,
 body.single .social-navigation,
 body.error404 .social-navigation,
-body.search .social-navigation {
-  position: fixed;
-  right: 0;
-  padding: 12px 30px 30px 30px;
-  top: 10px; }
+body.search .social-navigation,
+body.archvie .social-navigation {
+  display: inline-block;
+  float: right;
+  padding: 30px;
+  top: 0; }
 
 body.error404 #site-navigation,
-body.search #site-navigation {
+body.search #site-navigation,
+body.archive #site-navigation {
   left: 0;
-  width: 100%;
-  position: fixed;
   top: 0;
-  padding-left: 100px;
-  padding-bottom: 20px; }
+  padding-left: 100px; }
 
 .social-navigation {
   position: fixed;

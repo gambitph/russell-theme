@@ -239,7 +239,7 @@ add_action( 'wp_ajax_nopriv_get_post', 'russell_get_post' );
 */
 function russell_get_post_tags() {
     $tags = get_terms( 'post_tag', array('fields' => 'id=>name', 'get' => 'all', ) );
-    
+    var_dump($tags);
     echo json_encode( $tags );
     die();
 }

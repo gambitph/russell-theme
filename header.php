@@ -70,11 +70,11 @@ if ( ! empty( $headerImageUrl ) ) {
     <a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'russell' ); ?></a>
 
     <header id="masthead" class="site-header" role="banner">
-        <?php 
-            if ( is_page() || is_single() ) {
-                verdant_feature_logo();
-            }
-        ?>
+    <?php 
+        if ( is_page() || is_single() ) {
+            verdant_feature_logo();
+        }
+    ?>
 		<div class="russell_left_content">
 		    <?php
     		if ( is_page() || is_single() ) { ?>

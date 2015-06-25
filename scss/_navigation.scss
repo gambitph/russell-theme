@@ -1,7 +1,8 @@
 body.page .main-navigtaion, body.page .main-navigation li,
 body.single .main-navigtaion, body.single .main-navigation li,
 body.error404 .main-navigtaion, body.error404 .main-navigation li,
-body.search .main-navigation, body.search .main-navigation li {
+body.search .main-navigation, body.search .main-navigation li,
+body.archive .main-navigation, body.archive .main-navigation li {
     float: none;
     display: inline-block;
     padding: 1em 1em;
@@ -10,33 +11,31 @@ body.search .main-navigation, body.search .main-navigation li {
 body.home .main-navigtaion, body.home .main-navigation ul,
 body.page .main-navigtaion, body.page .main-navigation ul,
 body.single .main-navigtaion, body.single .main-navigation ul,
-body.error404 .main-navigation, body.error404 .main-navigation ul {
+body.error404 .main-navigation, body.error404 .main-navigation ul,
+body.archive .main-navigation, body.archive .main-navigation ul {
     font-size: 15px;
 }
 body.page #site-navigation,
 body.single #site-navigation {
     text-align: center;
-    width: 100%;
+    padding: 18px;
     position: fixed;
-    top: 16px;
-    padding-left: 100px;
-    padding-bottom: 20px;
+    top: 0;
 }
 body.page .social-navigation,
 body.single .social-navigation,
 body.error404 .social-navigation,
-body.search .social-navigation {
-    position: fixed;
-    right: 0;
-    padding: 12px 30px 30px 30px;
-    top: 10px;
+body.search .social-navigation,
+body.archvie .social-navigation {
+    display: inline-block;
+    float: right;
+    padding: 30px;
+    top: 0;
 }
 body.error404 #site-navigation,
-body.search #site-navigation {
+body.search #site-navigation,
+body.archive #site-navigation {
     left: 0;
-    width: 100%;
-    position: fixed;
     top: 0;
     padding-left: 100px;
-    padding-bottom: 20px;
 }

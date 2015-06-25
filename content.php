@@ -11,16 +11,17 @@ if ( has_post_thumbnail() ) {
 }
 
 if ( ! empty( $featuredImage ) ) {
-    ?>
-	<style>
-	article.post-<?php the_ID(); ?> {
-        background: linear-gradient(45deg, rgba(41,51,56,0.7) 0%,rgba(41,51,56,0.4) 48%,rgba(41,51,56,0.14) 100%), url( <?php echo esc_url( $featuredImage[0] ) ?> );
-	}
-	</style>
-	<?php
     
-}
-?>
+    if ( is_page() || is_single() )  { ?> 
+	    <style>
+    	article.post-<?php the_ID(); ?> {
+            background: linear-gradient(45deg, rgba(41,51,56,0.7) 0%,rgba(41,51,56,0.4) 48%,rgba(41,51,56,0.14) 100%), url( <?php echo esc_url( $featuredImage[0] ) ?> );
+    	}
+    	</style>
+	<?php } ?> 
+	
+<?php } ?>
+
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
 		<?php the_title( sprintf( '<h1 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h1>' ); ?>
