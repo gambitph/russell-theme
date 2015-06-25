@@ -689,16 +689,19 @@ body.page.admin-bar #site-navigation,
 body.single.admin-bar #site-navigation,
 body.home.admin-bar #site-navigation,
 body.error404.admin-bar #site-navigation,
+body.search.admin-bar #site-navigation,
 body.home.admin-bar #content,
 body.page.admin-bar #content,
 body.single.admin-bar #content,
 body.error404.admin-bar #content,
+body.search.admin-bar #content,
 body.page.admin-bar .site-branding,
 body.single.admin-bar .site-branding,
 body.page.admin-bar .social-navigation,
 body.single.admin-bar .social-navigation,
 body.home.admin-bar .social-navigation,
 body.error404.admin-bar .social-navigation,
+body.search.admin-bar .social-navigation,
 body.page.admin-bar .russell_left_content,
 body.single.admin-bar .russell_left_content {
   margin-top: 32px; }
@@ -748,7 +751,8 @@ body.single .russell_left_content {
 
 body.error404 #content,
 body.page #content,
-body.single #content {
+body.single #content,
+body.search #content {
   padding-top: 100px;
   width: 100%;
   margin: 0 auto;
@@ -869,7 +873,8 @@ body.single .site-branding {
 
 body.page #primary,
 body.single #primary,
-body.error404 #primary {
+body.error404 #primary,
+body.search #primary {
   width: 70%;
   max-width: 710px;
   margin: 0 auto; }
@@ -902,7 +907,8 @@ body.single.has-header-image #masthead {
   z-index: 3;
   box-sizing: border-box; }
 
-body.error404 #masthead.site-header {
+body.error404 #masthead.site-header,
+body.search #masthead.site-header {
   position: fixed;
   height: 75px;
   width: 100vw;
@@ -920,9 +926,16 @@ body.single .logo-feature img {
   height: 75px;
   max-width: 260px; }
 
+body.search h1.entry-title {
+  margin: 0 0 15px; }
+
+body.search .entry-meta {
+  text-align: center; }
+
 body.page .main-navigtaion, body.page .main-navigation li,
 body.single .main-navigtaion, body.single .main-navigation li,
-body.error404 .main-navigtaion, body.error404 .main-navigation li {
+body.error404 .main-navigtaion, body.error404 .main-navigation li,
+body.search .main-navigation, body.search .main-navigation li {
   float: none;
   display: inline-block;
   padding: 1em 1em;
@@ -945,17 +958,19 @@ body.single #site-navigation {
 
 body.page .social-navigation,
 body.single .social-navigation,
-body.error404 .social-navigation {
+body.error404 .social-navigation,
+body.search .social-navigation {
   position: fixed;
   right: 0;
   padding: 12px 30px 30px 30px;
   top: 10px; }
 
-body.error404 #site-navigation {
+body.error404 #site-navigation,
+body.search #site-navigation {
   left: 0;
   width: 100%;
   position: fixed;
-  top: 16px;
+  top: 0;
   padding-left: 100px;
   padding-bottom: 20px; }
 
@@ -1118,12 +1133,14 @@ body.page ul > li > a,
 body.single ul > li > a {
   color: #646464; }
 
-h1.entry-title {
+h1.entry-title,
+body.search h1.entry-title a {
   font-family: 'Montserrat', sans-serif;
   text-transform: uppercase;
   line-height: 1.1em;
   color: #333333;
-  text-align: center; }
+  text-align: center;
+  text-decoration: none; }
 
 body.page #reply-title.comment-reply-title {
   color: #646464; }
