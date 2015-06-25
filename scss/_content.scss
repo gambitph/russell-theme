@@ -43,7 +43,9 @@ body.single .russell_left_content {
 }
 body.error404 #content,
 body.page #content,
-body.single #content {
+body.single #content,
+body.search #content,
+body.archive #content {
     padding-top: 100px;
     width: 100%;
     margin: 0 auto;

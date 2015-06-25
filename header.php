@@ -67,9 +67,14 @@ if ( ! empty( $headerImageUrl ) ) {
 <body <?php body_class( $bodyClasses ); ?>>
 <div id="page" class="hfeed site">
    
-	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'russell' ); ?></a>
+    <a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'russell' ); ?></a>
 
     <header id="masthead" class="site-header" role="banner">
+    <?php 
+        if ( is_page() || is_single() ) {
+            verdant_feature_logo();
+        }
+    ?>
 		<div class="russell_left_content">
 		    <?php
     		if ( is_page() || is_single() ) { ?>
@@ -82,13 +87,14 @@ if ( ! empty( $headerImageUrl ) ) {
             <?php } ?>
 		
     		<?php
-    		    if ( is_page() || is_single() ) { ?>
+    		    if ( is_home() ) { ?>
             		<div class="site-branding">
             			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
             			<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
             		</div><!-- .site-branding -->
         	<?php } ?> 
-    	
+    	    <?php //echo russell_get_attached( '1', '12', '14' ); ?>
+        
     		<nav id="site-navigation" class="main-navigation" role="navigation">
     			<button class="menu-toggle" aria-controls="menu" aria-expanded="false"><?php _e( 'Primary Menu', 'russell' ); ?></button>
     			<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
@@ -96,5 +102,11 @@ if ( ! empty( $headerImageUrl ) ) {
     		<span class='social-navigation'><?php russell_create_social_icons() ?></span>
     	</div>
 	</header><!-- #masthead -->
-
+    
+    
 	<div id="content" class="site-content">
+        <?php 
+    	if ( is_front_page() ) {
+    		verdant_feature_logo();
+    	}
+    	?>

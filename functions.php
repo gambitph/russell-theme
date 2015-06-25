@@ -239,7 +239,7 @@ add_action( 'wp_ajax_nopriv_get_post', 'russell_get_post' );
 */
 function russell_get_post_tags() {
     $tags = get_terms( 'post_tag', array('fields' => 'id=>name', 'get' => 'all', ) );
-    
+    var_dump($tags);
     echo json_encode( $tags );
     die();
 }
@@ -268,6 +268,16 @@ function russell_image_caption( $id ) {
     //     $caption = $image->post_excerpt;
     //     //var_dump($caption);
     //     //echo $caption;
+}
+
+/**
+*   Get attached image of post
+*/
+function russell_get_attached( $id ) {
+    $media = get_attached_media( 'image', $id );
+    //$image = get_post_thumbnail($media, 32);
+    var_dump($media);
+    echo $media;
 }
 
 /**

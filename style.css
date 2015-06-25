@@ -719,16 +719,17 @@ body.page.admin-bar #site-navigation,
 body.single.admin-bar #site-navigation,
 body.home.admin-bar #site-navigation,
 body.error404.admin-bar #site-navigation,
-body.home.admin-bar #content,
 body.page.admin-bar #content,
 body.single.admin-bar #content,
-body.error404.admin-bar #content,
+body.search.admin-bar #content,
 body.page.admin-bar .site-branding,
 body.single.admin-bar .site-branding,
 body.page.admin-bar .social-navigation,
 body.single.admin-bar .social-navigation,
 body.home.admin-bar .social-navigation,
 body.error404.admin-bar .social-navigation,
+body.search.admin-bar .social-navigation,
+body.archive.admin-bar .social-navigation,
 body.page.admin-bar .russell_left_content,
 body.single.admin-bar .russell_left_content {
   margin-top: 32px; }
@@ -778,7 +779,9 @@ body.single .russell_left_content {
 
 body.error404 #content,
 body.page #content,
-body.single #content {
+body.single #content,
+body.search #content,
+body.archive #content {
   padding-top: 100px;
   width: 100%;
   margin: 0 auto;
@@ -797,8 +800,6 @@ body.single #colophon {
   margin: 0 auto; }
 
 body.home .site-branding {
-  padding: 25px;
-  position: relative;
   text-align: center; }
 
 body.home h1.site-title {
@@ -809,7 +810,7 @@ body.home h1.site-title {
   text-align: center; }
 
 body.home #masthead {
-  top: 5px;
+  top: 0;
   right: 0;
   left: 0;
   height: 75px;
@@ -820,14 +821,15 @@ body.home #masthead {
   box-sizing: border-box; }
 
 body.home #content {
-  width: 38.2vw;
-  left: 0;
+  padding-top: 100px;
+  width: 100%;
+  margin: 0 auto;
+  top: 75px;
   position: absolute;
   overflow-y: auto;
   overflow-x: hidden;
   bottom: 0;
-  box-sizing: border-box;
-  top: 49px; }
+  box-sizing: border-box; }
 
 body.home .main-navigtaion, body.home .main-navigation li {
   float: none;
@@ -846,17 +848,9 @@ body.home ul > li > a {
   color: #646464; }
 
 body.home #content.site-content .russell_left_content {
-  width: 38.2vw;
-  left: 0;
-  border-right: 1px solid #eee;
-  z-index: 2;
-  padding: 50px;
-  position: absolute;
-  overflow-y: auto;
-  overflow-x: hidden;
-  bottom: 0;
-  top: 30px;
-  box-sizing: border-box; }
+  width: 70%;
+  max-width: 710px;
+  margin: 0 auto; }
 
 body.home .russell_right_content {
   display: none; }
@@ -885,7 +879,12 @@ body.home i {
   text-align: center; }
 
 body.home .site-elaboration {
-  margin: 0 0 15px; }
+  margin: 0 0 15px;
+  padding-top: 50px; }
+
+body.home #masthead h1.site-title,
+body.home #masthead h2.site-description {
+  display: none; }
 
 header.entry-header {
   padding: 80px 0 20px 0; }
@@ -903,7 +902,8 @@ body.single .site-branding {
 
 body.page #primary,
 body.single #primary,
-body.error404 #primary {
+body.error404 #primary,
+body.search #primary {
   width: 70%;
   max-width: 710px;
   margin: 0 auto; }
@@ -936,15 +936,36 @@ body.single.has-header-image #masthead {
   z-index: 3;
   box-sizing: border-box; }
 
-body.error404 #masthead.site-header {
+body.error404 #masthead.site-header,
+body.search #masthead.site-header,
+body.archive #masthead.site-header {
   position: fixed;
-  height: 75px;
   width: 100vw;
   border-bottom: 1px solid #eee; }
 
+body.home .logo-feature {
+  max-width: 260px;
+  height: auto;
+  margin: 0 auto; }
+  body.home .logo-feature .site-logo-link img {
+    margin-bottom: 20px; }
+
+body.page .logo-feature img,
+body.single .logo-feature img {
+  height: 75px;
+  max-width: 260px; }
+
+body.search h1.entry-title {
+  margin: 0 0 15px; }
+
+body.search .entry-meta {
+  text-align: center; }
+
 body.page .main-navigtaion, body.page .main-navigation li,
 body.single .main-navigtaion, body.single .main-navigation li,
-body.error404 .main-navigtaion, body.error404 .main-navigation li {
+body.error404 .main-navigtaion, body.error404 .main-navigation li,
+body.search .main-navigation, body.search .main-navigation li,
+body.archive .main-navigation, body.archive .main-navigation li {
   float: none;
   display: inline-block;
   padding: 1em 1em;
@@ -953,33 +974,33 @@ body.error404 .main-navigtaion, body.error404 .main-navigation li {
 body.home .main-navigtaion, body.home .main-navigation ul,
 body.page .main-navigtaion, body.page .main-navigation ul,
 body.single .main-navigtaion, body.single .main-navigation ul,
-body.error404 .main-navigation, body.error404 .main-navigation ul {
+body.error404 .main-navigation, body.error404 .main-navigation ul,
+body.archive .main-navigation, body.archive .main-navigation ul {
   font-size: 15px; }
 
 body.page #site-navigation,
 body.single #site-navigation {
   text-align: center;
-  width: 100%;
+  padding: 18px;
   position: fixed;
-  top: 16px;
-  padding-left: 100px;
-  padding-bottom: 20px; }
+  top: 0; }
 
 body.page .social-navigation,
 body.single .social-navigation,
-body.error404 .social-navigation {
-  position: fixed;
-  right: 0;
-  padding: 12px 30px 30px 30px;
-  top: 10px; }
+body.error404 .social-navigation,
+body.search .social-navigation,
+body.archvie .social-navigation {
+  display: inline-block;
+  float: right;
+  padding: 30px;
+  top: 0; }
 
-body.error404 #site-navigation {
+body.error404 #site-navigation,
+body.search #site-navigation,
+body.archive #site-navigation {
   left: 0;
-  width: 100%;
-  position: fixed;
-  top: 16px;
-  padding-left: 100px;
-  padding-bottom: 20px; }
+  top: 0;
+  padding-left: 100px; }
 
 .social-navigation {
   position: fixed;
@@ -1140,12 +1161,14 @@ body.page ul > li > a,
 body.single ul > li > a {
   color: #646464; }
 
-h1.entry-title {
+h1.entry-title,
+body.search h1.entry-title a {
   font-family: 'Montserrat', sans-serif;
   text-transform: uppercase;
   line-height: 1.1em;
   color: #333333;
-  text-align: center; }
+  text-align: center;
+  text-decoration: none; }
 
 body.page #reply-title.comment-reply-title {
   color: #646464; }

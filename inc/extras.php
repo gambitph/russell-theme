@@ -18,6 +18,9 @@ function russell_body_classes( $classes ) {
 	if ( is_multi_author() ) {
 		$classes[] = 'group-blog';
 	}
+   
+    // logo feature
+	//$classes[] = $titan->getOption( 'logo_frontpage_feature' ) && is_front_page() ? 'has-logo-feature' : 'no-logo-feature';
 
 	return $classes;
 }
@@ -81,3 +84,33 @@ function russell_create_social_icons() {
 		echo "<a href='{$url}' target='_blank'></a>";
 	}
 }
+
+function verdant_feature_logo() {
+	global $titan;
+	
+	// if ( ! $titan->getOption( 'logo_frontpage_feature' ) ) {
+	//         return;
+	//     }
+	//     
+	?>
+	<div class='logo-feature'>
+		<?php 
+		if ( function_exists( 'jetpack_the_site_logo' ) ) {
+			jetpack_the_site_logo();
+		} else {
+			?>
+			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+			<?php
+		}
+		
+		$motto = $titan->getOption( 'logo_frontpage_motto' );
+		if ( ! empty( $motto ) ):
+			?>
+			<h1 class="logo-feature-motto" style="color: <?php echo $titan->getOption( 'logo_frontpage_motto_color' ) ?>"><?php echo $motto ?></h1>
+			<?php
+		endif;
+		?>
+	</div>
+	<?php
+}
+

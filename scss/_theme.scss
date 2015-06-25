@@ -56,12 +56,14 @@ body.page ul > li > a,
 body.single ul > li > a {
     color: #646464;
 }
-h1.entry-title {
+h1.entry-title,
+body.search h1.entry-title a {
     font-family: 'Montserrat', sans-serif;
     text-transform: uppercase;
     line-height: 1.1em;
     color: #333333;
     text-align: center;
+    text-decoration: none;
 }
 
 body.page #reply-title.comment-reply-title {

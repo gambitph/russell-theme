@@ -15,7 +15,6 @@ get_header(); ?>
 
 <div class="russell_left_content">
 	<div class="site-branding">
-		<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 		<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
 	</div><!-- .site-branding -->
     
@@ -33,7 +32,7 @@ get_header(); ?>
         
 		<?php if ( have_posts() ) : ?>
 			
-			<?php russell_paging_nav(); ?>
+			<?php //russell_paging_nav(); ?>
 
 		<?php else : ?>
 
@@ -43,8 +42,8 @@ get_header(); ?>
 
 		</main><!-- #main -->
         <?php get_footer(); ?>
+        <?php get_sidebar(); ?>
         
     </div>
 	
 	</div><!-- #primary -->
-<?php //get_sidebar(); ?>
