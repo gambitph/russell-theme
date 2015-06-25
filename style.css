@@ -413,7 +413,7 @@ a:active {
   box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
   float: left;
   position: absolute;
-  top: 1.5em;
+  top: 4.2em;
   left: -999em;
   z-index: 99999; }
 
@@ -459,6 +459,10 @@ a:active {
   float: right;
   text-align: right;
   width: 50%; }
+
+.sub-menu {
+	background-color: white;
+}
 
 /*--------------------------------------------------------------
 6.0 Accessibility
@@ -802,12 +806,12 @@ body.home #content {
 body.home .main-navigtaion, body.home .main-navigation li {
   float: none;
   display: inline-block;
-  padding: 1em 1em;
+  padding: 1em 1em 2em 1em;
   font-weight: bold; }
 
 body.home #site-navigation {
   text-align: center;
-  width: 38.2vw;
+  /* width: 38.2vw; */
   position: fixed;
   top: 15px;
   padding-bottom: 20px; }

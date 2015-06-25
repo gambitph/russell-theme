@@ -22,39 +22,6 @@ function russell_create_options() {
 	 * You should put options here that change the look of your theme.
 	 */
 	
-	$section = $titan->createThemeCustomizerSection( array(
-	    'name' => __( 'Theme Options', 'russell' ),
-	) );
-	
-	$section->createOption( array(
-	    'name' => __( 'Background Color', 'russell' ),
-	    'id' => 'sample_color1',
-	    'type' => 'color',
-	    'desc' => __( 'This color changes the background of your theme', 'russell' ),
-	    'default' => '#FFFFFF',
-		'css' => 'body { background-color: value }',
-	) );
-	
-	$section->createOption( array(
-	    'name' => __( 'Headings Font', 'russell' ),
-	    'id' => 'headings_font',
-	    'type' => 'font',
-	    'desc' => __( 'Select the font for all headings in the site', 'russell' ),
-		'show_color' => false,
-		'show_font_size' => false,
-	    'show_font_weight' => false,
-	    'show_font_style' => false,
-	    'show_line_height' => false,
-	    'show_letter_spacing' => false,
-	    'show_text_transform' => false,
-	    'show_font_variant' => false,
-	    'show_text_shadow' => false,
-	    'default' => array(
-	        'font-family' => 'Fauna One',
-	    ),
-		'css' => 'h1, h2, h3, h4, h5, h6 { value }',
-	) );
-	
 	$siteDescription = $titan->createThemeCustomizerSection( array(
         'name' => 'title_tagline',
     ) );
@@ -332,7 +299,6 @@ function russell_create_options() {
 	    ),
 		'css' => 'body { value }',
 	) );
-	
 	// $section->createOption( array(
 // 	    'name' => __( 'Smaller Body Font', 'russell' ),
 // 	    'id' => 'body_font_small',
