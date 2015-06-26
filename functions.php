@@ -237,14 +237,17 @@ add_action( 'wp_ajax_nopriv_get_post', 'russell_get_post' );
 /**
 *   Get all tags of all posts
 */
-function russell_get_post_tags() {
-    $tags = get_terms( 'post_tag', array('fields' => 'id=>name', 'get' => 'all', ) );
-    var_dump($tags);
-    echo json_encode( $tags );
+function ajax_russell_get_post_tags() {
+    echo json_encode( russell_get_post_tags() );
     die();
 }
-add_action( 'wp_ajax_get_post_tags', 'russell_get_post_tags' );
-add_action( 'wp_ajax_nopriv_get_post_tags', 'russell_get_post_tags' );
+
+function russell_get_post_tags() {
+    $tags = get_terms( 'post_tag', array('fields' => 'id=>name', 'get' => 'all', ) );
+    return $tags;
+}
+add_action( 'wp_ajax_get_post_tags', 'ajax_russell_get_post_tags' );
+add_action( 'wp_ajax_nopriv_get_post_tags', 'ajax_russell_get_post_tags' );
 
 /**
 *   Get caption of featured image

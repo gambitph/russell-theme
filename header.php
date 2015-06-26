@@ -86,14 +86,7 @@ if ( ! empty( $headerImageUrl ) ) {
                 </div>
             <?php } ?>
 		
-    		<?php
-    		    if ( is_home() ) { ?>
-            		<div class="site-branding">
-            			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-            			<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
-            		</div><!-- .site-branding -->
-        	<?php } ?> 
-    	    <?php //echo russell_get_attached( '1', '12', '14' ); ?>
+    		    	    <?php //echo russell_get_attached( '1', '12', '14' ); ?>
         
     		<nav id="site-navigation" class="main-navigation" role="navigation">
     			<button class="menu-toggle" aria-controls="menu" aria-expanded="false"><?php _e( 'Primary Menu', 'russell' ); ?></button>
@@ -105,8 +98,4 @@ if ( ! empty( $headerImageUrl ) ) {
     
     
 	<div id="content" class="site-content">
-        <?php 
-    	if ( is_front_page() ) {
-    		russell_feature_logo();
-    	}
-    	?>
+        

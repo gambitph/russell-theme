@@ -20,7 +20,17 @@ get_header(); ?>
 					the_archive_description( '<div class="taxonomy-description">', '</div>' );
 				?>
 			</header><!-- .page-header -->
-
+            
+            
+            <?php /* Start the Loop */ ?>
+            <div class="tangina"></div>
+            <?php asdasdasD ?>
+            <?php $tags = get_terms( 'post_tag', array('fields' => 'id=>name', 'get' => 'all', ) );
+            var_dump($tags);
+            echo $tags; ?>
+            
+            <?php //russell_get_post_tags(); ?>
+            
 			<?php russell_paging_nav(); ?>
 
 		<?php else : ?>

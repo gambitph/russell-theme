@@ -87,30 +87,15 @@ function russell_create_social_icons() {
 
 function russell_feature_logo() {
 	global $titan;
-	
 	// if ( ! $titan->getOption( 'logo_frontpage_feature' ) ) {
 	//         return;
 	//     }
-	//     
-	?>
-	<div class='logo-feature'>
-		<?php 
-		if ( function_exists( 'jetpack_the_site_logo' ) ) {
-			jetpack_the_site_logo();
-		} else {
-			?>
-			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-			<?php
-		}
+	//
+	$thelogo = '<h1 class="site-title"><a href="' . esc_url( get_home_url( '/' ) ) . '" rel="home">' . get_bloginfo( 'name' ) . '</a></h1>';
+	$imglogo = '<div class="logo-feature">' . jetpack_the_site_logo() . '</div>';
 		
+		$logo = ( jetpack_has_site_logo() ? $imglogo : $thelogo );
+		echo $logo;
 		$motto = $titan->getOption( 'logo_frontpage_motto' );
-		if ( ! empty( $motto ) ):
-			?>
-			<h1 class="logo-feature-motto" style="color: <?php echo $titan->getOption( 'logo_frontpage_motto_color' ) ?>"><?php echo $motto ?></h1>
-			<?php
-		endif;
-		?>
-	</div>
-	<?php
 }
 
