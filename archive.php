@@ -20,18 +20,21 @@ get_header(); ?>
 					the_archive_description( '<div class="taxonomy-description">', '</div>' );
 				?>
 			</header><!-- .page-header -->
-            
-            
+			
             <?php /* Start the Loop */ ?>
-            <div class="tangina"></div>
-            <?php asdasdasD ?>
-            <?php $tags = get_terms( 'post_tag', array('fields' => 'id=>name', 'get' => 'all', ) );
-            var_dump($tags);
-            echo $tags; ?>
-            
-            <?php //russell_get_post_tags(); ?>
-            
-			<?php russell_paging_nav(); ?>
+            <?php while ( have_posts() ) : the_post(); ?>
+
+				<?php
+					/* Include the Post-Format-specific template for the content.
+					 * If you want to override this in a child theme, then include a file
+					 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
+					 */
+					get_template_part( 'content', get_post_format() );
+				?>
+
+			<?php endwhile; ?>
+			
+         	<?php russell_paging_nav(); ?>
 
 		<?php else : ?>
 
