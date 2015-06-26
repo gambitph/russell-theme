@@ -455,7 +455,7 @@ a:active {
   .main-navigation ul {
     display: none; } }
 
-.paging-navigation {
+.paging-navigation, .post-navigation {
 	position: absolute;
 	top: 0;
 	right: 0;
@@ -976,17 +976,18 @@ body.search #masthead.site-header,
 body.archive #masthead.site-header {
   position: fixed;
   width: 100vw;
-  border-bottom: 1px solid #eee; }
+  border-bottom: 1px solid #eee; 
+  height: 75px;}
 
-body.home .logo-feature {
+body.home .site-logo-link {
   max-width: 260px;
   height: auto;
   margin: 0 auto; }
-  body.home .logo-feature .site-logo-link img {
+  body.home .site-logo-link .site-logo-link img {
     margin-bottom: 20px; }
 
-body.page .logo-feature img,
-body.single .logo-feature img {
+body.page .site-logo-link img,
+body.single .site-logo-link img {
   height: 75px;
   max-width: 260px; }
 
