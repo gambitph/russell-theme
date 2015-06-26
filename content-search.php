@@ -6,9 +6,14 @@
  *
  * @package russell
  */
+$sticky = '';
+
+if ( is_sticky() ) {
+	$sticky = 'sticky';
+}
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class( $sticky ); ?>>
 	<header class="entry-header">
 		<?php the_title( sprintf( '<h1 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h1>' ); ?>
 

@@ -101,15 +101,15 @@ function russell_entry_footer() {
 	// Hide category and tag text for pages.
 	if ( 'post' == get_post_type() ) {
 		/* translators: used between list items, there is a space after the comma */
-		$categories_list = get_the_category_list( __( ', ', 'russell' ) );
-		if ( $categories_list && russell_categorized_blog() ) {
-			printf( '<span class="cat-links">' . __( 'Posted in %1$s', 'russell' ) . '</span>', $categories_list );
-		}
+		//$categories_list = get_the_category_list( __( ', ', 'russell' ) );
+		//if ( $categories_list && russell_categorized_blog() ) {
+		//	printf( '<span class="cat-links">' . __( 'Posted in %1$s', 'russell' ) . '</span>', $categories_list );
+		//}
 
 		/* translators: used between list items, there is a space after the comma */
 		$tags_list = get_the_tag_list( '', __( ', ', 'russell' ) );
 		if ( $tags_list ) {
-			printf( '<span class="tags-links">' . __( 'Tagged %1$s', 'russell' ) . '</span>', $tags_list );
+			printf( '<span class="tags-links">' . __( 'Tagged as %1$s', 'russell' ) . '</span>', $tags_list );
 		}
 	}
 

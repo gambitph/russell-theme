@@ -2,14 +2,13 @@
 /**
  * @package russell
  */
-
-$attachments = get_attached_media( 'image' );
-if ( $attachments ) {
-	russell_single_scripts_and_styles();
+$sticky = '';
+if ( is_sticky() ) {
+	$sticky = 'sticky';
 }
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class( $sticky ); ?>>
 	<header class="entry-header">
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
         <i class='line'></i>

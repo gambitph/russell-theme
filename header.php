@@ -77,7 +77,7 @@ if ( ! empty( $headerImageUrl ) ) {
     ?>
 		<div class="russell_left_content">
 		    <?php
-    		if ( is_page() || is_single() ) { ?>
+    		if ( ( is_page() || is_single() ) && has_post_thumbnail() ) { ?>
     		    <div class="feature-image-caption">
         	        <?php 
                         $id = get_post_thumbnail_id();

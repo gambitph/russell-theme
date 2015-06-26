@@ -100,6 +100,10 @@ nav,
 section {
   display: block; }
 
+article {
+	padding: 15px;
+}
+
 ol,
 ul {
   list-style: none; }
@@ -157,8 +161,8 @@ h5,
 h6 {
   clear: both; }
 
-p {
-  margin-bottom: 1.5em; }
+/*p {
+  margin-bottom: 1.5em; } */
 
 b,
 strong {
@@ -420,9 +424,11 @@ a:active {
   box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
   float: left;
   position: absolute;
-  top: 4.2em;
+  top: 2.2em;
   left: -999em;
-  z-index: 99999; }
+  z-index: 99999;
+  margin-top: 1.5em;
+}
 
 .main-navigation ul ul ul {
   left: -999em;
@@ -588,11 +594,27 @@ a:active {
 	text-align: center;
 }
 
+.entry-footer {
+	text-align: center;
+	margin-top: 20px;
+}
+
+.edit-link {
+	display: block;
+}
+
+.post-password-form {
+	text-align: center;
+	margin-bottom: 20px;
+}
+
 /*--------------------------------------------------------------
 10.1 Posts and pages
 --------------------------------------------------------------*/
 .sticky {
-  display: block; }
+  display: block; 
+  border: 1px solid #EEE;
+}
 
 .hentry {
   margin: 0 0 1.5em; }
@@ -612,7 +634,9 @@ a:active {
 
 .page-links {
   clear: both;
-  margin: 0 0 1.5em; }
+  margin: 0 0 1.5em; 
+  text-align: center;
+}
 
 /*--------------------------------------------------------------
 10.2 Asides
@@ -629,6 +653,10 @@ a:active {
 
 .bypostauthor {
   display: block; }
+  
+.comments-title {
+	padding: 20px 0;
+}
 
 /*--------------------------------------------------------------
 11.0 Infinite scroll
@@ -965,7 +993,7 @@ body.single .logo-feature img {
 body.search h1.entry-title {
   margin: 0 0 15px; }
 
-body.search .entry-meta {
+body.search .entry-meta, .entry-meta {
   text-align: center; }
 
 body.page .main-navigtaion, body.page .main-navigation li,
