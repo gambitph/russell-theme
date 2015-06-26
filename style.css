@@ -1,19 +1,19 @@
 /*
 Theme Name: Russell
-Theme URI: http://www.gambit.ph/
-Author: Gambit Technologies, Inc.
-Author URI: http://www.gambit.ph/
+Theme URI: http://underscores.me/
+Author: Underscores.me
+Author URI: http://underscores.me/
 Description: Showcase your content with pictures. Lots of it.
 Version: 1.0.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: russell
-Tags: white, gray, black, light, two-columns, custom-menu, theme-options, translation-ready, photoblogging, featured-images
+Tags:
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
 
-Russell is based on Underscores http://underscores.me/, (C) 2012-2015 Automattic, Inc.
+russell is based on Underscores http://underscores.me/, (C) 2012-2015 Automattic, Inc.
 
 Resetting and rebuilding styles have been helped along thanks to the fine work of
 Eric Meyer http://meyerweb.com/eric/tools/css/reset/index.html
@@ -171,11 +171,7 @@ i {
   font-style: italic; }
 
 blockquote {
-	margin: 0px 1.5em;
-	padding: 5px;
-	border: 1px solid #EEE;
-	margin-bottom: 1.5em;
-}
+  margin: 0 1.5em; }
 
 address {
   margin: 0 0 1.5em; }
@@ -409,9 +405,6 @@ a:active {
   float: left;
   position: relative; }
 
-.main-navigation li > a {
-    padding-bottom: 1em; }
-
 .main-navigation a {
   display: block;
   text-decoration: none; }
@@ -420,7 +413,7 @@ a:active {
   box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
   float: left;
   position: absolute;
-  top: 4.2em;
+  top: 1.5em;
   left: -999em;
   z-index: 99999; }
 
@@ -448,15 +441,6 @@ a:active {
 
   .main-navigation ul {
     display: none; } }
-
-.paging-navigation {
-	position: absolute;
-	top: 0;
-	right: 0;
-	border-left: 1px solid #EEE;
-	border-bottom: 1px solid #EEE;
-}	
-
 .site-main .comment-navigation,
 .site-main .paging-navigation,
 .site-main .post-navigation {
@@ -475,20 +459,6 @@ a:active {
   float: right;
   text-align: right;
   width: 50%; }
-
-.nav-previous, .nav-next {
-    padding: 10px;
-    font-size: 2em;
-    text-decoration: none;
-}
-
-.nav-previous > a, .nav-next > a {
-    text-decoration: none;
-}
-
-.sub-menu {
-	background-color: white;
-}
 
 /*--------------------------------------------------------------
 6.0 Accessibility
@@ -726,6 +696,7 @@ body.error404.admin-bar #site-navigation,
 body.page.admin-bar #content,
 body.single.admin-bar #content,
 body.search.admin-bar #content,
+body.error404.admin-bar #content,
 body.page.admin-bar .site-branding,
 body.single.admin-bar .site-branding,
 body.page.admin-bar .social-navigation,
@@ -838,12 +809,12 @@ body.home #content {
 body.home .main-navigtaion, body.home .main-navigation li {
   float: none;
   display: inline-block;
-  padding: 1em 1em 2em 1em;
+  padding: 1em 1em;
   font-weight: bold; }
 
 body.home #site-navigation {
   text-align: center;
-  /* width: 38.2vw; */
+  width: 38.2vw;
   position: fixed;
   top: 15px;
   padding-bottom: 20px; }
@@ -948,7 +919,8 @@ body.search #masthead.site-header,
 body.archive #masthead.site-header {
   position: fixed;
   width: 100vw;
-  border-bottom: 1px solid #eee; }
+  border-bottom: 1px solid #eee;
+  height: 75px; }
 
 body.home .logo-feature {
   max-width: 260px;
