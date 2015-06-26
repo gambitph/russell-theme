@@ -15,6 +15,7 @@ get_header(); ?>
 
 <div class="russell_left_content">
 	<div class="site-branding">
+		<?php wp_head(); ?>
 		<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
 	</div><!-- .site-branding -->
     
@@ -28,21 +29,9 @@ get_header(); ?>
 	</div>
 	
 	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
-        
-		<?php if ( have_posts() ) : ?>
-			
-			<?php //russell_paging_nav(); ?>
 
-		<?php else : ?>
-
-			<?php get_template_part( 'content', 'none' ); ?>
-
-		<?php endif; ?>
-
-		</main><!-- #main -->
         <?php get_footer(); ?>
-        <?php get_sidebar(); ?>
+        <?php //get_sidebar(); ?>
         
     </div>
 	

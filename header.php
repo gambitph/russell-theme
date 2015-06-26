@@ -72,7 +72,7 @@ if ( ! empty( $headerImageUrl ) ) {
     <header id="masthead" class="site-header" role="banner">
     <?php 
         if ( is_page() || is_single() ) {
-            verdant_feature_logo();
+            russell_feature_logo();
         }
     ?>
 		<div class="russell_left_content">
@@ -107,6 +107,6 @@ if ( ! empty( $headerImageUrl ) ) {
 	<div id="content" class="site-content">
         <?php 
     	if ( is_front_page() ) {
-    		verdant_feature_logo();
+    		russell_feature_logo();
     	}
     	?>

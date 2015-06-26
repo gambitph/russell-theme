@@ -85,7 +85,7 @@ function russell_create_social_icons() {
 	}
 }
 
-function verdant_feature_logo() {
+function russell_feature_logo() {
 	global $titan;
 	
 	// if ( ! $titan->getOption( 'logo_frontpage_feature' ) ) {

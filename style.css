@@ -584,6 +584,10 @@ a:active {
 /*--------------------------------------------------------------
 10.0 Content
 --------------------------------------------------------------*/
+.site-footer {
+	text-align: center;
+}
+
 /*--------------------------------------------------------------
 10.1 Posts and pages
 --------------------------------------------------------------*/
@@ -880,7 +884,10 @@ body.home i {
 
 body.home .site-elaboration {
   margin: 0 0 15px;
-  padding-top: 50px; }
+  padding-top: 10px; 
+  padding-bottom: 40px; 
+  text-align: center;
+}
 
 body.home #masthead h1.site-title,
 body.home #masthead h2.site-description {

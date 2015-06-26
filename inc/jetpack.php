@@ -22,7 +22,7 @@ add_action( 'after_setup_theme', 'russell_jetpack_setup' );
  * Make all videos responsive
  * @see http://jetpack.me/support/site-logo/
  */
-function verdant_jetpack_site_logo() {
+function russell_jetpack_site_logo() {
 	$args = array(
 	    'header-text' => array(
 	        'site-title',
@@ -32,4 +32,4 @@ function verdant_jetpack_site_logo() {
 	);
 	add_theme_support( 'site-logo', $args );
 }
-add_action( 'after_setup_theme', 'verdant_jetpack_site_logo' );
+add_action( 'after_setup_theme', 'russell_jetpack_site_logo' );
