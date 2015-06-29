@@ -273,9 +273,13 @@ function russell_selected_post_tags() {
         // get tags for found posts
         $recent_tags = array();
         
-        while ( have_posts() ) : the_post();
-            foreach(get_the_tags() as $t) $recent_tags[$t->slug] = $t->name; // this adds to the array in the form ['slug']=>'name'
-        endwhile;
+        $tags = get_the_tags();
+        if ( $tags ) {
+            while ( have_posts() ) : the_post();
+            //var_dump( get_the_tags() );
+                foreach( $tags as $t ) { $recent_tags[$t->slug] = $t->name; } // this adds to the array in the form ['slug']=>'name'
+            endwhile;
+        }
         
         // de-dupe
         $recent_tags = array_unique($recent_tags);
