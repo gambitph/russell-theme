@@ -17,27 +17,15 @@ get_header(); ?>
 			</header><!-- .page-header -->
 
 			<?php /* Start the Loop */ ?>
-			<?php while ( have_posts() ) : the_post(); ?>
-				<?php 
-				$tags = russell_get_post_tags();
-				if ( ! empty( $tags ) ) {
-				    echo "<ul>";
-				}
-				foreach ( $tags as $tagID => $tagName ) {
-				    ?>
-				    <li><a href='#'><?php echo $tagName ?></a></li>
-				    <?php
-				}
-				if ( ! empty( $tags ) ) {
-				    echo "</ul>";
-				}
-				
+			<?php russell_selected_post_tags(); ?>
+			<?php while ( have_posts() ) : the_post(); 
+					
 				/**
 				 * Run the loop for the search to output the results.
 				 * If you want to overload this in a child theme then include a file
 				 * called content-search.php and that will be used instead.
 				 */
-				get_template_part( 'content', 'search' );
+				//get_template_part( 'content', 'search' );
 				?>
 
 			<?php endwhile; ?>

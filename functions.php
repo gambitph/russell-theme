@@ -263,24 +263,31 @@ function russell_image_caption( $id ) {
     		'title' => $attachment->post_title
     );
     echo $imageInfo['caption'];
-    // $post = get_post();
-    //     $image = wp_get_attachment_image( $post->ID );
-    //     //var_dump($image);
-    //     $link = get_post_meta( $image, '_hero-box-tile-link-to', true );
-    //     var_dump($link);
-    //     $caption = $image->post_excerpt;
-    //     //var_dump($caption);
-    //     //echo $caption;
 }
 
 /**
-*   Get attached image of post
+*   Get tags of the selected posts
 */
-function russell_get_attached( $id ) {
-    $media = get_attached_media( 'image', $id );
-    //$image = get_post_thumbnail($media, 32);
-    var_dump($media);
-    echo $media;
+function russell_selected_post_tags() {
+    if ( have_posts() ) {
+        // get tags for found posts
+        $recent_tags = array();
+        
+        while ( have_posts() ) : the_post();
+            foreach(get_the_tags() as $t) $recent_tags[$t->slug] = $t->name; // this adds to the array in the form ['slug']=>'name'
+        endwhile;
+        
+        // de-dupe
+        $recent_tags = array_unique($recent_tags);
+        // sort
+        natcasesort($recent_tags);
+
+        foreach( $recent_tags as $tags ) {
+            ?>
+		    <li><a href='<?php echo get_permalink(); ?>'><?php echo $tags ?></a></li>
+		    <?php    
+        }
+    }                     
 }
 
 /**

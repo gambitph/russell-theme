@@ -1,19 +1,19 @@
 /*
 Theme Name: Russell
-Theme URI: http://www.gambit.ph/
-Author: Gambit Technologies, Inc.
-Author URI: http://www.gambit.ph/
+Theme URI: http://underscores.me/
+Author: Underscores.me
+Author URI: http://underscores.me/
 Description: Showcase your content with pictures. Lots of it.
 Version: 1.0.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: russell
-Tags: white, gray, black, light, two-columns, custom-menu, theme-options, translation-ready, photoblogging, featured-images
+Tags:
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
 
-Russell is based on Underscores http://underscores.me/, (C) 2012-2015 Automattic, Inc.
+russell is based on Underscores http://underscores.me/, (C) 2012-2015 Automattic, Inc.
 
 Resetting and rebuilding styles have been helped along thanks to the fine work of
 Eric Meyer http://meyerweb.com/eric/tools/css/reset/index.html
@@ -100,10 +100,6 @@ nav,
 section {
   display: block; }
 
-article {
-	padding: 15px;
-}
-
 ol,
 ul {
   list-style: none; }
@@ -161,8 +157,8 @@ h5,
 h6 {
   clear: both; }
 
-/*p {
-  margin-bottom: 1.5em; } */
+p {
+  margin-bottom: 1.5em; }
 
 b,
 strong {
@@ -175,11 +171,7 @@ i {
   font-style: italic; }
 
 blockquote {
-	margin: 0px 1.5em;
-	padding: 5px;
-	border: 1px solid #EEE;
-	margin-bottom: 1.5em;
-}
+  margin: 0 1.5em; }
 
 address {
   margin: 0 0 1.5em; }
@@ -413,9 +405,6 @@ a:active {
   float: left;
   position: relative; }
 
-.main-navigation li > a {
-    padding-bottom: 1em; }
-
 .main-navigation a {
   display: block;
   text-decoration: none; }
@@ -424,11 +413,9 @@ a:active {
   box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
   float: left;
   position: absolute;
-  top: 2.2em;
+  top: 1.5em;
   left: -999em;
-  z-index: 99999;
-  margin-top: 1.5em;
-}
+  z-index: 99999; }
 
 .main-navigation ul ul ul {
   left: -999em;
@@ -454,15 +441,6 @@ a:active {
 
   .main-navigation ul {
     display: none; } }
-
-.paging-navigation, .post-navigation {
-	position: absolute;
-	top: 0;
-	right: 0;
-	border-left: 1px solid #EEE;
-	border-bottom: 1px solid #EEE;
-}	
-
 .site-main .comment-navigation,
 .site-main .paging-navigation,
 .site-main .post-navigation {
@@ -481,20 +459,6 @@ a:active {
   float: right;
   text-align: right;
   width: 50%; }
-
-.nav-previous, .nav-next {
-    padding: 10px;
-    font-size: 2em;
-    text-decoration: none;
-}
-
-.nav-previous > a, .nav-next > a {
-    text-decoration: none;
-}
-
-.sub-menu {
-	background-color: white;
-}
 
 /*--------------------------------------------------------------
 6.0 Accessibility
@@ -590,31 +554,11 @@ a:active {
 /*--------------------------------------------------------------
 10.0 Content
 --------------------------------------------------------------*/
-.site-footer {
-	text-align: center;
-}
-
-.entry-footer {
-	text-align: center;
-	margin-top: 20px;
-}
-
-.edit-link {
-	display: block;
-}
-
-.post-password-form {
-	text-align: center;
-	margin-bottom: 20px;
-}
-
 /*--------------------------------------------------------------
 10.1 Posts and pages
 --------------------------------------------------------------*/
 .sticky {
-  display: block; 
-  border: 1px solid #EEE;
-}
+  display: block; }
 
 .hentry {
   margin: 0 0 1.5em; }
@@ -634,9 +578,7 @@ a:active {
 
 .page-links {
   clear: both;
-  margin: 0 0 1.5em; 
-  text-align: center;
-}
+  margin: 0 0 1.5em; }
 
 /*--------------------------------------------------------------
 10.2 Asides
@@ -653,10 +595,6 @@ a:active {
 
 .bypostauthor {
   display: block; }
-  
-.comments-title {
-	padding: 20px 0;
-}
 
 /*--------------------------------------------------------------
 11.0 Infinite scroll
@@ -754,6 +692,8 @@ body.error404.admin-bar #site-navigation,
 body.page.admin-bar #content,
 body.single.admin-bar #content,
 body.search.admin-bar #content,
+body.error404.admin-bar #content,
+body.archive.admin-bar #content,
 body.page.admin-bar .site-branding,
 body.single.admin-bar .site-branding,
 body.page.admin-bar .social-navigation,
@@ -811,9 +751,7 @@ body.single .russell_left_content {
 
 body.error404 #content,
 body.page #content,
-body.single #content,
-body.search #content,
-body.archive #content {
+body.single #content {
   padding-top: 100px;
   width: 100%;
   margin: 0 auto;
@@ -824,6 +762,32 @@ body.archive #content {
   overflow-x: hidden;
   bottom: 0;
   box-sizing: border-box; }
+
+body.search #content,
+body.archive #content {
+  padding-top: 0px;
+  width: 38.2vw;
+  left: 0;
+  position: absolute;
+  overflow-y: auto;
+  overflow-x: hidden;
+  bottom: 0;
+  top: 75px;
+  box-sizing: border-box;
+  border-right: 1px solid #eee; }
+
+body.search header.page-header,
+body.archive header.page-header {
+  padding: 80px 0 20px 0; }
+
+body.search li,
+body.archive li {
+  list-style: none; }
+
+body.search a,
+body.archive a {
+  text-decoration: none;
+  color: #646464; }
 
 body.page #colophon,
 body.single #colophon {
@@ -866,12 +830,12 @@ body.home #content {
 body.home .main-navigtaion, body.home .main-navigation li {
   float: none;
   display: inline-block;
-  padding: 1em 1em 2em 1em;
+  padding: 1em 1em;
   font-weight: bold; }
 
 body.home #site-navigation {
   text-align: center;
-  /* width: 38.2vw; */
+  width: 38.2vw;
   position: fixed;
   top: 15px;
   padding-bottom: 20px; }
@@ -912,14 +876,7 @@ body.home i {
 
 body.home .site-elaboration {
   margin: 0 0 15px;
-  padding-top: 10px; 
-  padding-bottom: 40px; 
-  text-align: center;
-}
-
-body.home #masthead h1.site-title,
-body.home #masthead h2.site-description {
-  display: none; }
+  padding-top: 50px; }
 
 header.entry-header {
   padding: 80px 0 20px 0; }
@@ -938,7 +895,8 @@ body.single .site-branding {
 body.page #primary,
 body.single #primary,
 body.error404 #primary,
-body.search #primary {
+body.search #primary,
+body.archive #primary {
   width: 70%;
   max-width: 710px;
   margin: 0 auto; }
@@ -949,7 +907,7 @@ body.single h1.site-title {
   font-size: 1.5em;
   text-decoration: none;
   color: #646464;
-  text-align: center; }
+  padding: 25px 45px; }
 
 body.page #masthead,
 body.single #masthead {
@@ -976,25 +934,25 @@ body.search #masthead.site-header,
 body.archive #masthead.site-header {
   position: fixed;
   width: 100vw;
-  border-bottom: 1px solid #eee; 
-  height: 75px;}
+  border-bottom: 1px solid #eee;
+  height: 75px; }
 
-body.home .site-logo-link {
+body.home .logo-feature {
   max-width: 260px;
   height: auto;
   margin: 0 auto; }
-  body.home .site-logo-link .site-logo-link img {
+  body.home .logo-feature .site-logo-link img {
     margin-bottom: 20px; }
 
-body.page .site-logo-link img,
-body.single .site-logo-link img {
+body.page .logo-feature img,
+body.single .logo-feature img {
   height: 75px;
   max-width: 260px; }
 
 body.search h1.entry-title {
   margin: 0 0 15px; }
 
-body.search .entry-meta, .entry-meta {
+body.search .entry-meta {
   text-align: center; }
 
 body.page .main-navigtaion, body.page .main-navigation li,
@@ -1017,7 +975,7 @@ body.archive .main-navigation, body.archive .main-navigation ul {
 body.page #site-navigation,
 body.single #site-navigation {
   text-align: center;
-  padding: 18px;
+  padding: 15px;
   position: fixed;
   top: 0; }
 
@@ -1028,7 +986,7 @@ body.search .social-navigation,
 body.archvie .social-navigation {
   display: inline-block;
   float: right;
-  padding: 30px;
+  padding: 25px;
   top: 0; }
 
 body.error404 #site-navigation,
@@ -1052,11 +1010,11 @@ body.archive #site-navigation {
   text-align: center;
   line-height: 20px;
   text-decoration: none;
-  padding: 0 25px; }
+  padding: 0 20px; }
   .social-navigation a:before {
     font-family: 'genericons';
     display: block;
-    font-size: 30px;
+    font-size: 25px;
     -webkit-transition: all .4s;
     -moz-transition: all .4s;
     -ms-transition: all .4s;

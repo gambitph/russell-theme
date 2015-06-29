@@ -15,7 +15,8 @@ body.single .site-branding, {
 body.page #primary,
 body.single #primary,
 body.error404 #primary,
-body.search #primary {
+body.search #primary,
+body.archive #primary {
     width: 70%;
     max-width: 710px;
     margin: 0 auto;
@@ -26,7 +27,7 @@ body.single h1.site-title {
     font-size: 1.5em;
     text-decoration: none;
     color: #646464;
-    text-align: center;
+    padding: 25px 45px;
 }
 body.page #masthead, 
 body.single #masthead {

@@ -43,9 +43,7 @@ body.single .russell_left_content {
 }
 body.error404 #content,
 body.page #content,
-body.single #content,
-body.search #content,
-body.archive #content {
+body.single #content {
     padding-top: 100px;
     width: 100%;
     margin: 0 auto;
@@ -56,4 +54,31 @@ body.archive #content {
     overflow-x: hidden;
     bottom: 0;
     box-sizing: border-box;
+}
+
+body.search #content,
+body.archive #content {
+    padding-top: 0px;
+    width: 38.2vw;
+    left: 0;
+    position: absolute;
+    overflow-y: auto;
+    overflow-x: hidden;
+    bottom: 0;
+    top: 75px;
+    box-sizing: border-box;
+    border-right: 1px solid #eee;
+}
+body.search header.page-header,
+body.archive header.page-header {
+    padding: 80px 0 20px 0;
+}
+body.search li,
+body.archive li {
+    list-style: none;
+}
+body.search a,
+body.archive a {
+    text-decoration: none;
+    color: #646464;
 }
