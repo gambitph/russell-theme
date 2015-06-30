@@ -789,6 +789,9 @@ body.archive a {
   text-decoration: none;
   color: #646464; }
 
+#colophon {
+  clear: both; }
+
 body.page #colophon,
 body.single #colophon {
   width: 75%;
@@ -844,8 +847,8 @@ body.home ul > li > a {
   color: #646464; }
 
 body.home #content.site-content .russell_left_content {
-  width: 70%;
-  max-width: 710px;
+  width: 75%;
+  max-width: 800px;
   margin: 0 auto; }
 
 body.home .russell_right_content {
@@ -995,6 +998,9 @@ body.archive #site-navigation {
   left: 0;
   top: 0;
   padding-left: 100px; }
+
+.footer-widgets {
+  padding-top: 50px; }
 
 #footer-left,
 #footer-right {
