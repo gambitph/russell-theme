@@ -281,12 +281,15 @@ function russell_selected_post_tags() {
         $recent_tags = array_unique($recent_tags);
         // sort
         natcasesort($recent_tags);
-
+		
+		echo "<ul>";
+		
         foreach( $recent_tags as $tags ) {
             ?>
-		    <li><a href='<?php echo get_permalink(); ?>'><?php echo $tags ?></a></li>
+		    <li><?php echo $tags ?></li>
 		    <?php    
         }
+		echo "</ul>";
     }                     
 }
 

@@ -21,11 +21,7 @@ get_header(); ?>
 				?>
 			</header><!-- .page-header -->
 
-			<?php russell_paging_nav(); ?>
-
-		<?php else : ?>
-
-			<?php get_template_part( 'content', 'none' ); ?>
+			<?php russell_selected_post_tags() ?>
 
 		<?php endif; ?>
 
