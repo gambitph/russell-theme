@@ -291,6 +291,17 @@ function russell_selected_post_tags() {
 }
 
 /**
+ *  Makes it so that archives are pulled with infinite amount all the time.
+ */
+function russell_all_archives( $query ) {
+    if ( is_archive() ) {
+        $query->set( 'posts_per_page', -1 );
+        return;
+    }
+}
+add_action( 'pre_get_posts', 'russell_all_archives', 1 );
+
+/**
  * Implement the Custom Header feature.
  */
 //require get_template_directory() . '/inc/custom-header.php';
