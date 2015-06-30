@@ -86,14 +86,23 @@ add_action( 'after_setup_theme', 'russell_setup' );
  */
 function russell_widgets_init() {
 	register_sidebar( array(
-		'name'          => __( 'Sidebar', 'russell' ),
-		'id'            => 'sidebar-1',
-		'description'   => '',
+		'name'          => __( 'Sidebar Left', 'russell' ),
+		'id'            => 'sidebar-left',
+		'description'   => __( 'The left widget area', 'russell' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
 		'before_title'  => '<h1 class="widget-title">',
 		'after_title'   => '</h1>',
 	) );
+	register_sidebar( array(
+		'name'          => __( 'Sidebar Right', 'russell' ),
+		'id'            => 'sidebar-right',
+		'description'   => __( 'The right widget area', 'russell' ),
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h4 class="widget-title">',
+		'after_title'   => '</h4>',
+	) );    
 }
 add_action( 'widgets_init', 'russell_widgets_init' );
 
@@ -273,9 +282,13 @@ function russell_selected_post_tags() {
         // get tags for found posts
         $recent_tags = array();
         
-        while ( have_posts() ) : the_post();
-            foreach(get_the_tags() as $t) $recent_tags[$t->slug] = $t->name; // this adds to the array in the form ['slug']=>'name'
-        endwhile;
+        $tags = get_the_tags();
+        if ( $tags ) {
+            while ( have_posts() ) : the_post();
+            //var_dump( get_the_tags() );
+                foreach( $tags as $t ) { $recent_tags[$t->slug] = $t->name; } // this adds to the array in the form ['slug']=>'name'
+            endwhile;
+        }
         
         // de-dupe
         $recent_tags = array_unique($recent_tags);
