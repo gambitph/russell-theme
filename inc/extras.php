@@ -96,6 +96,6 @@ function russell_feature_logo() {
 		
 		$logo = ( jetpack_has_site_logo() ? $imglogo : $thelogo );
 		echo $logo;
-		$motto = $titan->getOption( 'logo_frontpage_motto' );
+	
 }
 
