@@ -1009,6 +1009,11 @@ body.archive #site-navigation {
   top: 0;
   padding-left: 100px; }
 
+.main-navigation ul ul.sub-menu {
+  text-align: left;
+  margin-top: 15px;
+  top: 2em; }
+
 .footer-widgets {
   padding-top: 50px; }
 
