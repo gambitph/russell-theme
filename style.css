@@ -554,12 +554,6 @@ a:active {
 /*--------------------------------------------------------------
 10.0 Content
 --------------------------------------------------------------*/
-
-.site-footer {
-	text-align: center;
-	padding-top: 25px;
-}
-  
 /*--------------------------------------------------------------
 10.1 Posts and pages
 --------------------------------------------------------------*/
@@ -585,10 +579,6 @@ a:active {
 .page-links {
   clear: both;
   margin: 0 0 1.5em; }
-
-.error404 .content-area{
-	text-align: center;
-}
 
 /*--------------------------------------------------------------
 10.2 Asides
@@ -847,11 +837,10 @@ body.home .main-navigtaion, body.home .main-navigation li {
   font-weight: bold; }
 
 body.home #site-navigation {
-  text-align: center;
-  width: 38.2vw;
+  padding-left: 25px;
+  left: 0;
   position: fixed;
-  top: 15px;
-  padding-bottom: 20px; }
+  top: 15px; }
 
 body.home ul > li > a {
   color: #646464; }
@@ -950,17 +939,9 @@ body.archive #masthead.site-header {
   border-bottom: 1px solid #eee;
   height: 75px; }
 
-body.home .logo-feature {
-  max-width: 260px;
-  height: auto;
-  margin: 0 auto; }
-  body.home .logo-feature .site-logo-link img {
-    margin-bottom: 20px; }
-
-body.page .logo-feature img,
-body.single .logo-feature img {
+.site-logo-link img {
   height: 75px;
-  max-width: 260px; }
+  width: auto; }
 
 body.search h1.entry-title {
   margin: 0 0 15px; }

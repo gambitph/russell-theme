@@ -37,11 +37,10 @@ body.home .main-navigtaion, body.home .main-navigation li {
     font-weight: bold;
 }
 body.home #site-navigation {
-    text-align: center;
-    width: 38.2vw;
+    padding-left: 25px;
+    left: 0;
     position: fixed;
     top: 15px;
-    padding-bottom: 20px;
 }
 body.home ul > li > a {
     color: #646464;

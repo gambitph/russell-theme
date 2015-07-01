@@ -58,18 +58,9 @@ body.archive #masthead.site-header {
     border-bottom: 1px solid #eee;
     height: 75px;
 }
-body.home .logo-feature {
-	max-width: 260px;
-	height: auto;
-	margin: 0 auto;
-	.site-logo-link img {
-		margin-bottom: 20px;
-	}
-}
-body.page .logo-feature img,
-body.single .logo-feature img {
+.site-logo-link img {
     height: 75px;
-    max-width: 260px
+    width: auto;
 }
 body.search h1.entry-title {
     margin: 0 0 15px;
