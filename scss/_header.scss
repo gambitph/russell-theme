@@ -62,7 +62,8 @@ body.home .site-logo-link img {
     height: auto;
     width: 100%;
 }
-.site-logo-link {
+body.singe .site-logo-link,
+body.page .site-logo-link {
     position: relative;
     z-index: 9999;
 }
