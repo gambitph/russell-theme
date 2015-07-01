@@ -58,6 +58,10 @@ body.archive #masthead.site-header {
     border-bottom: 1px solid #eee;
     height: 75px;
 }
+body.home .site-logo-link img {
+    height: auto;
+    width: 100%;
+}
 .site-logo-link img {
     height: 75px;
     width: auto;
