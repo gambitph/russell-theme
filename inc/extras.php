@@ -77,7 +77,9 @@ function russell_create_social_icons() {
 	global $titan;
 	
 	for ( $i = 0; $i <= 10; $i++ ) {
-		$url = $titan->getOption( 'social_' . $i );
+		if ( class_exists( 'TitanFramework' ) ) {
+		    $url = $titan->getOption( 'social_' . $i );
+		}
 		if ( empty( $url ) ) {
 			continue;
 		}
@@ -92,10 +94,13 @@ function russell_feature_logo() {
 	//     }
 	//
 	$thelogo = '<h1 class="site-title"><a href="' . esc_url( get_home_url( '/' ) ) . '" rel="home">' . get_bloginfo( 'name' ) . '</a></h1>';
-	$imglogo = '<div class="logo-feature">' . jetpack_the_site_logo() . '</div>';
-		
-		$logo = ( jetpack_has_site_logo() ? $imglogo : $thelogo );
-		echo $logo;
-	
+
+	if ( function_exists( 'jetpack_the_site_logo' ) ) {    
+	    $imglogo = '<div class="logo-feature">' . jetpack_the_site_logo() . '</div>';
+	}	
+	    if ( function_exists( 'jetpack_has_site_logo' ) ) {    
+	        $logo = ( jetpack_has_site_logo() ? $imglogo : $thelogo );
+	        echo $logo;
+        }
 }
 

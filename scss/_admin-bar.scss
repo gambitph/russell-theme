@@ -1,28 +1,12 @@
 body.page.admin-bar #masthead,
 body.single.admin-bar #masthead,
 body.home.admin-bar #masthead,
-
-body.page.admin-bar #site-navigation,
-body.single.admin-bar #site-navigation,
-body.home.admin-bar #site-navigation,
-body.error404.admin-bar #site-navigation,
-
-body.page.admin-bar #content,
-body.single.admin-bar #content,
-body.search.admin-bar #content,
-body.error404.admin-bar #content,
-body.archive.admin-bar #content,
-
+body.admin-bar #site-navigation,
+body.admin-bar #content,
+body.admin-bar.has-header-image #content,
 body.page.admin-bar .site-branding,
 body.single.admin-bar .site-branding,
-
-body.page.admin-bar .social-navigation,
-body.single.admin-bar .social-navigation,
-body.home.admin-bar .social-navigation,
-body.error404.admin-bar .social-navigation,
-body.search.admin-bar .social-navigation,
-body.archive.admin-bar .social-navigation,
-
+body.admin-bar .social-navigation,
 body.page.admin-bar .russell_left_content,
 body.single.admin-bar .russell_left_content {
     margin-top: 32px ;

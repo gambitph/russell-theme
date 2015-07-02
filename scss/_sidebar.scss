@@ -20,3 +20,8 @@ body .footer-widgets.active-footers-1 {
         margin: 20px;
     }
 }
+body.has-header-image .footer-widgets.active-footers-1 #footer-left,
+body.has-header-image .footer-widgets.active-footers-1 #footer-right {
+    width: 100%;
+    margin: 0;
+}

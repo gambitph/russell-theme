@@ -18,12 +18,12 @@ get_header(); ?>
 
 			<?php /* Start the Loop */ ?>
 			<?php russell_selected_post_tags(); ?>
+            <?php get_footer(); ?>
 
 		<?php endif; ?>
 
 		</main><!-- #main -->
-		<?php get_footer(); ?>
-        
+		
 	</section><!-- #primary -->
 
 <?php //get_sidebar(); ?>

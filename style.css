@@ -554,13 +554,6 @@ a:active {
 /*--------------------------------------------------------------
 10.0 Content
 --------------------------------------------------------------*/
-.site-footer {
-  	text-align: center;
-  	padding-top: 25px;
-} 
-.site-elaboration {
-	text-align: center;
-}
 /*--------------------------------------------------------------
 10.1 Posts and pages
 --------------------------------------------------------------*/
@@ -586,11 +579,6 @@ a:active {
 .page-links {
   clear: both;
   margin: 0 0 1.5em; }
-
-.error404 .content-area {
-  	text-align: center;
-}
-  
 
 /*--------------------------------------------------------------
 10.2 Asides
@@ -697,23 +685,12 @@ object {
 body.page.admin-bar #masthead,
 body.single.admin-bar #masthead,
 body.home.admin-bar #masthead,
-body.page.admin-bar #site-navigation,
-body.single.admin-bar #site-navigation,
-body.home.admin-bar #site-navigation,
-body.error404.admin-bar #site-navigation,
-body.page.admin-bar #content,
-body.single.admin-bar #content,
-body.search.admin-bar #content,
-body.error404.admin-bar #content,
-body.archive.admin-bar #content,
+body.admin-bar #site-navigation,
+body.admin-bar #content,
+body.admin-bar.has-header-image #content,
 body.page.admin-bar .site-branding,
 body.single.admin-bar .site-branding,
-body.page.admin-bar .social-navigation,
-body.single.admin-bar .social-navigation,
-body.home.admin-bar .social-navigation,
-body.error404.admin-bar .social-navigation,
-body.search.admin-bar .social-navigation,
-body.archive.admin-bar .social-navigation,
+body.admin-bar .social-navigation,
 body.page.admin-bar .russell_left_content,
 body.single.admin-bar .russell_left_content {
   margin-top: 32px; }
@@ -766,7 +743,6 @@ body.page #content,
 body.single #content {
   padding-top: 100px;
   width: 100%;
-  margin: 0 auto;
   right: 0;
   top: 75px;
   position: absolute;
@@ -805,7 +781,8 @@ body.archive a {
   clear: both; }
 
 body.page #colophon,
-body.single #colophon {
+body.single #colophon,
+body.archive #colophon {
   width: 75%;
   max-width: 800px;
   margin: 0 auto; }
@@ -834,7 +811,6 @@ body.home #masthead {
 body.home #content {
   padding-top: 100px;
   width: 100%;
-  margin: 0 auto;
   top: 75px;
   position: absolute;
   overflow-y: auto;
@@ -967,7 +943,7 @@ body.page .site-logo-link {
 body.search h1.entry-title {
   margin: 0 0 15px; }
 
-body.search .entry-meta {
+.entry-meta {
   text-align: center; }
 
 body.page .main-navigtaion, body.page .main-navigation li,
@@ -1009,7 +985,8 @@ body.search #site-navigation,
 body.archive #site-navigation {
   left: 0;
   top: 0;
-  padding-left: 100px; }
+  padding-left: 100px;
+  position: fixed; }
 
 .main-navigation ul ul.sub-menu {
   text-align: left;
@@ -1035,6 +1012,11 @@ body .footer-widgets.active-footers-1 #footer-left,
 body .footer-widgets.active-footers-1 #footer-right {
   width: 780px;
   margin: 20px; }
+
+body.has-header-image .footer-widgets.active-footers-1 #footer-left,
+body.has-header-image .footer-widgets.active-footers-1 #footer-right {
+  width: 100%;
+  margin: 0; }
 
 .social-navigation {
   position: fixed;

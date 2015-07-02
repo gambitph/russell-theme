@@ -14,7 +14,11 @@ global $titan;
 	<footer id="colophon" class="site-footer" role="contentinfo">
 		<div class="site-info">
     		<?php
-    		echo $titan->getOption( 'footer_copyright_text' );
+    		if ( class_exists( 'TitanFramework' ) ) {
+    		    echo $titan->getOption( 'footer_copyright_text' );
+    		} else {
+    		    echo "&copy 2015 theme created by Gambit";
+    		}
     		?>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->

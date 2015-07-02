@@ -25,8 +25,7 @@ get_header(); ?>
             <?php russell_selected_post_tags(); ?>
 
 		<?php endif; ?>
-
-		</main><!-- #main -->
+		</main><!-- #main -->        
+		<?php get_footer(); ?>
 	</div><!-- #primary -->
 
-<?php get_footer(); ?>

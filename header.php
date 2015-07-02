@@ -8,8 +8,10 @@
  */
  
 global $titan;
-$titan = TitanFramework::getInstance( 'russell' );
- 
+if ( class_exists( 'TitanFramework' ) ) {
+    $titan = TitanFramework::getInstance( 'russell' );
+}
+
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
