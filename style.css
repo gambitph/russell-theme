@@ -777,6 +777,16 @@ body.archive a {
   text-decoration: none;
   color: #646464; }
 
+.site-footer {
+  text-align: center;
+  padding-top: 25px; }
+
+.site-elaboration {
+  text-align: center; }
+
+.error404 .content-area {
+  text-align: center; }
+
 #colophon {
   clear: both; }
 
