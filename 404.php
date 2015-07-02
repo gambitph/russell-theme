@@ -21,10 +21,10 @@ get_header(); ?>
 					<?php get_search_form(); ?>
 
 				</div><!-- .page-content -->
-				<?php get_footer(); ?>
-                
+				
 			</section><!-- .error-404 -->
 
 		</main><!-- #main -->
+	    <?php get_footer(); ?>
 	</div><!-- #primary -->
 

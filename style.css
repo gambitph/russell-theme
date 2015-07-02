@@ -756,7 +756,6 @@ body.archive #content {
   padding-top: 0px;
   width: 38.2vw;
   left: 0;
-  position: absolute;
   overflow-y: auto;
   overflow-x: hidden;
   bottom: 0;
@@ -792,7 +791,8 @@ body.archive a {
 
 body.page #colophon,
 body.single #colophon,
-body.archive #colophon {
+body.archive #colophon,
+body.search #colophon {
   width: 75%;
   max-width: 800px;
   margin: 0 auto; }
@@ -956,9 +956,9 @@ body.search h1.entry-title {
 .entry-meta {
   text-align: center; }
 
-body.page .main-navigtaion, body.page .main-navigation li,
-body.single .main-navigtaion, body.single .main-navigation li,
-body.error404 .main-navigtaion, body.error404 .main-navigation li,
+body.page .main-navigation, body.page .main-navigation li,
+body.single .main-navigation, body.single .main-navigation li,
+body.error404 .main-navigation, body.error404 .main-navigation li,
 body.search .main-navigation, body.search .main-navigation li,
 body.archive .main-navigation, body.archive .main-navigation li {
   float: none;
@@ -966,9 +966,9 @@ body.archive .main-navigation, body.archive .main-navigation li {
   padding: 1em 1em;
   font-weight: bold; }
 
-body.home .main-navigtaion, body.home .main-navigation ul,
-body.page .main-navigtaion, body.page .main-navigation ul,
-body.single .main-navigtaion, body.single .main-navigation ul,
+body.home .main-navigation, body.home .main-navigation ul,
+body.page .main-navigation, body.page .main-navigation ul,
+body.single .main-navigation, body.single .main-navigation ul,
 body.error404 .main-navigation, body.error404 .main-navigation ul,
 body.archive .main-navigation, body.archive .main-navigation ul {
   font-size: 15px; }
