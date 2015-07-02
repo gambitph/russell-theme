@@ -350,7 +350,7 @@ function russell_create_options() {
 	    'id' => 'header_color_bg',
 	    'type' => 'color',
 		'default' => '#ffffff',
-		'css' => '#masthead { background-color: value }'
+		'css' => '#masthead, .sub-menu { background-color: value }'
 	) );
     $section->createOption( array(
 	    'name' => __( 'Main Menu Text Color', 'russell' ),
