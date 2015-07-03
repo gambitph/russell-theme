@@ -787,13 +787,14 @@ body.archive a {
 .error404 .content-area {
   text-align: center; }
 
-#colophon {
-  clear: both; }
+.feature-image-caption {
+  bottom: 0;
+  position: fixed;
+  padding: 20px;
+  color: white; }
 
-body.page #colophon,
-body.single #colophon,
-body.archive #colophon,
-body.search #colophon {
+#colophon {
+  clear: both;
   width: 75%;
   max-width: 800px; }
 

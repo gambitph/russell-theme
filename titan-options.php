@@ -29,6 +29,7 @@ function russell_create_options() {
 	    'name' => __( 'Site Description', 'russell' ),
 	    'id' => 'site_elaboration',
 	    'type' => 'textarea',
+	    'default' => __( 'Donec congue ultricies nisl nec ultricies. Maecenas porttitor maximus eros eget luctus. Donec dictum tempor elit iaculis molestie. Nulla efficitur id velit a ornare. Praesent quis ex mattis, tempor nunc sed, consequat diam. Nullam efficitur mi non magna mollis, non pretium orci vestibulum. Mauris molestie risus tincidunt risus condimentum dignissim. Nunc sagittis, ipsum eu vulputate mollis, dui metus facilisis tellus, ac ultrices nibh eros non risus.', 'russell' ),
 	    'desc' => __( 'What is your site all about? You can write the details here.', 'russell' ),
 	) );
 
