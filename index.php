@@ -16,10 +16,12 @@ get_header(); ?>
 <div class="russell_left_content">
 	<div class="site-branding">
 		<?php //wp_head(); 
-		    if ( function_exists( 'russell_jetpack_site_logo' ) ) { 
+		    if ( class_exists( 'Jetpack' ) ) { 
 		        russell_feature_logo();
-	        }
-		    ?>
+	        } else { ?>
+	            <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+	        <?php }
+	        ?>
 		<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
 	</div><!-- .site-branding -->
     
