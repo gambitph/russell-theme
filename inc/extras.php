@@ -97,7 +97,9 @@ function russell_feature_logo() {
 
 	if ( function_exists( 'jetpack_the_site_logo' ) ) {    
 	    $imglogo = '<div class="logo-feature">' . jetpack_the_site_logo() . '</div>';
-	}	
+	} else {
+	    echo $thelogo;
+	}
 	    if ( function_exists( 'jetpack_has_site_logo' ) ) {    
 	        $logo = ( jetpack_has_site_logo() ? $imglogo : $thelogo );
 	        echo $logo;
