@@ -71,6 +71,15 @@ body.page .site-logo-link {
     height: 75px;
     width: auto;
 }
+.site-logo-link, .site-header {
+	a:hover,
+	a:focus,
+	a:active,
+	a:visited {
+	  border: 0;
+	  border-bottom: 0;
+    }
+}
 body.search h1.entry-title {
     margin: 0 0 15px;
 }

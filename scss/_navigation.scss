@@ -3,10 +3,18 @@ body.single .main-navigation, body.single .main-navigation li,
 body.error404 .main-navigation, body.error404 .main-navigation li,
 body.search .main-navigation, body.search .main-navigation li,
 body.archive .main-navigation, body.archive .main-navigation li {
-    float: none;
-    display: inline-block;
-    padding: 1em 1em;
-    font-weight: bold;
+  float: none;
+  display: inline-block;
+  font-weight: bold; }
+  
+body.page .main-navigation, body.page .main-navigation li,
+body.single .main-navigation, body.single .main-navigation li,
+body.error404 .main-navigation, body.error404 .main-navigation li,
+body.search .main-navigation, body.search .main-navigation li,
+body.archive .main-navigation, body.archive .main-navigation li {
+	a{
+    padding: 1em 1em 1.9em;
+	}
 }
 body.home .main-navigation, body.home .main-navigation ul,
 body.page .main-navigation, body.page .main-navigation ul,
@@ -42,6 +50,7 @@ body.archive #site-navigation {
 }
 .main-navigation ul ul.sub-menu {
     text-align: left;
-    margin-top: 15px;
+    margin-top: 29px;
     top: 2em;
+	background-color: #fff;
 }

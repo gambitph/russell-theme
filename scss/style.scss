@@ -406,17 +406,17 @@ textarea {
 5.1 Links
 --------------------------------------------------------------*/
 a {
-	color: royalblue;
+	color: black;
 }
 
 a:visited {
-	color: purple;
+	color: black;
 }
 
 a:hover,
 a:focus,
 a:active {
-	color: midnightblue;
+	color: black;
 }
 
 /*--------------------------------------------------------------
@@ -427,6 +427,7 @@ a:active {
 	display: block;
 	float: left;
 	width: 100%;
+	text-transform: uppercase;
 }
 
 .main-navigation ul {

@@ -377,15 +377,15 @@ textarea {
 5.1 Links
 --------------------------------------------------------------*/
 a {
-  color: royalblue; }
+  color: black; }
 
 a:visited {
-  color: purple; }
+  color: black; }
 
 a:hover,
 a:focus,
 a:active {
-  color: midnightblue; }
+  color: black; }
 
 /*--------------------------------------------------------------
 5.2 Menus
@@ -394,7 +394,8 @@ a:active {
   clear: both;
   display: block;
   float: left;
-  width: 100%; }
+  width: 100%;
+  text-transform: uppercase; }
 
 .main-navigation ul {
   list-style: none;
@@ -695,6 +696,15 @@ body.page.admin-bar .russell_left_content,
 body.single.admin-bar .russell_left_content {
   margin-top: 32px; }
 
+.site-content a,
+.site-content a:hover,
+.site-content a:focus,
+.site-content a:active,
+.site-content a:visited {
+  text-decoration: none;
+  border-bottom: 1px solid black;
+  color: black; }
+
 body.page.has-header-image #content,
 body.single.has-header-image #content {
   padding-top: 0px;
@@ -948,6 +958,16 @@ body.page .site-logo-link {
   height: 75px;
   width: auto; }
 
+.site-logo-link a:hover,
+.site-logo-link a:focus,
+.site-logo-link a:active,
+.site-logo-link a:visited, .site-header a:hover,
+.site-header a:focus,
+.site-header a:active,
+.site-header a:visited {
+  border: 0;
+  border-bottom: 0; }
+
 body.search h1.entry-title {
   margin: 0 0 15px; }
 
@@ -961,8 +981,14 @@ body.search .main-navigation, body.search .main-navigation li,
 body.archive .main-navigation, body.archive .main-navigation li {
   float: none;
   display: inline-block;
-  padding: 1em 1em;
   font-weight: bold; }
+
+body.page .main-navigation a, body.page .main-navigation li a,
+body.single .main-navigation a, body.single .main-navigation li a,
+body.error404 .main-navigation a, body.error404 .main-navigation li a,
+body.search .main-navigation a, body.search .main-navigation li a,
+body.archive .main-navigation a, body.archive .main-navigation li a {
+  padding: 1em 1em 1.9em; }
 
 body.home .main-navigation, body.home .main-navigation ul,
 body.page .main-navigation, body.page .main-navigation ul,
@@ -998,8 +1024,9 @@ body.archive #site-navigation {
 
 .main-navigation ul ul.sub-menu {
   text-align: left;
-  margin-top: 15px;
-  top: 2em; }
+  margin-top: 29px;
+  top: 2em;
+  background-color: #fff; }
 
 .footer-widgets {
   padding-top: 50px; }

@@ -1,3 +1,14 @@
+.site-content {
+	a,
+	a:hover,
+	a:focus,
+	a:active,
+	a:visited {
+		text-decoration: none;
+	    border-bottom: 1px solid black;
+		color: black;
+	};
+}
 body.page.has-header-image #content, 
 body.single.has-header-image #content {
     padding-top: 0px;
