@@ -12,7 +12,6 @@ body.home h1.site-title {
     text-align: center;
 }
 body.home #content {
-    padding-top: 100px;
     width: 100%;
     top: 75px;
     position: absolute;
@@ -24,10 +23,16 @@ body.home #content {
 body.home ul > li > a {
     color: #646464;
 }
-body.home #content.site-content .russell_left_content {
-    width: 75%;
-    max-width: 800px;
-    margin: 0 auto;
+.russell_left_content_home {
+    padding: 80px 50px 50px 50px;
+    width: 38.2vw;
+    overflow-y: auto;
+    overflow-x: hidden;
+    bottom: 0;
+    box-sizing: border-box;
+    border-right: 1px solid #eee;
+    height: 100%;
+    position: absolute;
 }
 body.home .russell_right_content {
     display: none

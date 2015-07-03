@@ -37,7 +37,6 @@ if ( ! empty( $featuredImage ) ) {
 				__( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'russell' ),
 				the_title( '<span class="screen-reader-text">"', '"</span>', false )
 			) );
-			asdasda
 		?>
 
 		<?php

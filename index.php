@@ -14,7 +14,7 @@
 get_header(); ?>
 <?php 
     if ( is_home() ) {
-    ?> <div class="russell_left_content">
+    ?> <div class="russell_left_content_home">
     <div class="site-branding">
 		<?php //wp_head(); 
 		    if ( class_exists( 'Jetpack' ) ) { 
@@ -27,16 +27,17 @@ get_header(); ?>
 	        ?>
 		<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
 	</div><!-- .site-branding -->
-    
-    <div class="site-elaboration">
-	    <?php
-		if ( class_exists( 'TitanFramework' ) ) {
-			$titan = TitanFramework::getInstance( 'russell' );
-			echo esc_attr( $titan->getOption( 'site_elaboration' ) ); 
-		}
-		?>
-	</div>
-	
+    <?php 
+    if ( class_exists( 'TitanFramework' ) ) { ?>
+        <div class="site-elaboration">
+    	    <?php
+    		if ( class_exists( 'TitanFramework' ) ) {
+    			$titan = TitanFramework::getInstance( 'russell' );
+    			echo esc_attr( $titan->getOption( 'site_elaboration' ) ); 
+    		}
+    	    ?>
+    	</div>
+    <?php } ?>
 	<div id="primary" class="content-area">
 
         <?php get_sidebar(); ?>
