@@ -388,7 +388,7 @@ function russell_create_options() {
        'name' => __( 'Copyright Text', 'russell' ),
        'id' => 'footer_copyright_text',
        'type' => 'text',
-       'default' => '&copy; ' . date( 'Y' ) . ', theme created by Gambit',
+       'default' => '&copy ' . date( 'Y' ) . ' ' . get_bloginfo( 'name' ) . '<br /> Theme created by <a href="http://www.gambit.ph" target="_blank">Gambit Technologies, Inc</a>.',
     ) );
 	$section->createOption( array(
        'name' => __( 'Text Color', 'russell' ),

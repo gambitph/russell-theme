@@ -76,8 +76,8 @@ body.page .site-logo-link {
 	a:focus,
 	a:active,
 	a:visited {
-	  border: 0;
-	  border-bottom: 0;
+	  border: 0px none !important;
+	  border-bottom: 0px none !important;
     }
 }
 body.search h1.entry-title {

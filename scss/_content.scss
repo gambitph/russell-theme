@@ -1,13 +1,19 @@
 .site-content {
 	a,
 	a:hover,
-	a:focus,
-	a:active,
 	a:visited {
 		text-decoration: none;
 	    border-bottom: 1px solid black;
 		color: black;
 	};
+}
+a.site-logo-link {
+	&,
+	&:hover,
+	&:visited {
+	border:0;
+	border-bottom: 0;
+	}
 }
 body.page.has-header-image #content, 
 body.single.has-header-image #content {

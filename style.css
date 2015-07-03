@@ -133,7 +133,7 @@ a:active {
   outline: 0; }
 
 a img {
-  border: 0; }
+  border: 0px none; }
 
 /*--------------------------------------------------------------
 2.0 Typography
@@ -698,12 +698,14 @@ body.single.admin-bar .russell_left_content {
 
 .site-content a,
 .site-content a:hover,
-.site-content a:focus,
-.site-content a:active,
 .site-content a:visited {
   text-decoration: none;
   border-bottom: 1px solid black;
   color: black; }
+
+a.site-logo-link, a.site-logo-link:hover, a.site-logo-link:visited {
+  border: 0;
+  border-bottom: 0; }
 
 body.page.has-header-image #content,
 body.single.has-header-image #content {
@@ -802,8 +804,10 @@ body.archive a {
 
 #colophon {
   clear: both;
-  width: 75%;
   max-width: 800px; }
+
+.site-info {
+  display: block; }
 
 body.home .site-branding {
   text-align: center; }
@@ -965,8 +969,8 @@ body.page .site-logo-link {
 .site-header a:focus,
 .site-header a:active,
 .site-header a:visited {
-  border: 0;
-  border-bottom: 0; }
+  border: 0px none !important;
+  border-bottom: 0px none !important; }
 
 body.search h1.entry-title {
   margin: 0 0 15px; }

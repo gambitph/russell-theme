@@ -15,12 +15,12 @@ get_header(); ?>
 
 <div class="russell_left_content">
 	<div class="site-branding">
-		<?php //wp_head(); 
+		<?php if ( is_home() || is_front_page() ) {
 		    if ( class_exists( 'Jetpack' ) ) { 
 		        russell_feature_logo();
 	        } else { ?>
-	            <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-	        <?php }
+	            <h1 class="site-title">" rel="home"><?php bloginfo( 'name' ); ?></h1>
+	        <?php } }
 	        ?>
 		<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
 	</div><!-- .site-branding -->
@@ -30,9 +30,7 @@ get_header(); ?>
 		if ( class_exists( 'TitanFramework' ) ) {
 			$titan = TitanFramework::getInstance( 'russell' );
 			echo esc_attr( $titan->getOption( 'site_elaboration' ) ); 
-		} else {
-		    echo "Donec congue ultricies nisl nec ultricies. Maecenas porttitor maximus eros eget luctus. Donec dictum tempor elit iaculis molestie. Nulla efficitur id velit a ornare. Praesent quis ex mattis, tempor nunc sed, consequat diam. Nullam efficitur mi non magna mollis, non pretium orci vestibulum. Mauris molestie risus tincidunt risus condimentum dignissim. Nunc sagittis, ipsum eu vulputate mollis, dui metus facilisis tellus, ac ultrices nibh eros non risus.";
-		}
+		} 
 		?>
 	</div>
 	
