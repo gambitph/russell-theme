@@ -1,3 +1,6 @@
+#site-navigation {
+    padding: 0 50px;
+}
 body.home .site-branding, {
     text-align: center;
 }
@@ -8,17 +11,6 @@ body.home h1.site-title {
     color: #646464;
     text-align: center;
 }
-body.home #masthead {
-    top: 0;
-    right: 0;
-    left: 0;
-    height: 75px;
-    width: 100vw;
-    border-bottom: 1px solid #eee;
-    position: absolute;
-    z-index: 3;
-    box-sizing: border-box;
-}
 body.home #content {
     padding-top: 100px;
     width: 100%;
@@ -28,18 +20,6 @@ body.home #content {
     overflow-x: hidden;
     bottom: 0;
     box-sizing: border-box;
-}
-body.home .main-navigtaion, body.home .main-navigation li {
-    float: none;
-    display: inline-block;
-    padding: 1em 1em;
-    font-weight: bold;
-}
-body.home #site-navigation {
-    padding-left: 25px;
-    left: 0;
-    position: fixed;
-    top: 15px;
 }
 body.home ul > li > a {
     color: #646464;
