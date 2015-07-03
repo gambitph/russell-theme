@@ -7,21 +7,27 @@
 
 get_header(); ?>
 
-	<section id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+<section id="primary" class="content-area">
+	<main id="main" class="site-main" role="main">
+       
+	<?php if ( have_posts() ) : ?>
 
-		<?php if ( have_posts() ) : ?>
+		<header class="page-header">
+			<h1 class="page-title"><?php printf( __( 'Search Results for: %s', 'russell' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+		</header><!-- .page-header -->
 
-			<header class="page-header">
-				<h1 class="page-title"><?php printf( __( 'Search Results for: %s', 'russell' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
-			</header><!-- .page-header -->
-
-			<?php /* Start the Loop */ ?>
-			<?php russell_selected_post_tags(); ?>
-            
-		<?php endif; ?>
-		<?php get_footer(); ?>     
-		</main><!-- #main -->
+		<?php /* Start the Loop */ ?>
+		<?php russell_selected_post_tags(); ?>
         
-	</section><!-- #primary -->   
-<?php //get_sidebar(); ?>
+	<?php endif; ?>
+	</main><!-- #main -->
+</section><!-- #primary -->
+
+<div id="primary" class="content-area">
+
+    <?php //get_sidebar(); ?>
+    
+    <?php get_footer(); ?>
+    
+</div>
+</div><!-- #primary -->

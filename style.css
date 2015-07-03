@@ -756,6 +756,7 @@ body.archive #content {
   padding-top: 0px;
   width: 38.2vw;
   left: 0;
+  position: absolute;
   overflow-y: auto;
   overflow-x: hidden;
   bottom: 0;
@@ -794,8 +795,7 @@ body.single #colophon,
 body.archive #colophon,
 body.search #colophon {
   width: 75%;
-  max-width: 800px;
-  margin: 0 auto; }
+  max-width: 800px; }
 
 body.home .site-branding {
   text-align: center; }
