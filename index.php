@@ -61,8 +61,13 @@ get_header(); ?>
     	    ?>
     	</div>
     <?php } ?>
+<<<<<<< HEAD
 	<div id="primary" class="content-area">
 >>>>>>> home-content
+=======
+    
+    <div id="primary" class="content-area">
+>>>>>>> post-content
 
             <?php get_sidebar(); ?>
         

@@ -12,5 +12,31 @@
     position: absolute;
     font-style: italic;
     font-size: .80em;
+<<<<<<< HEAD
 >>>>>>> home-content
+=======
+}
+body.page #colophon,
+body.single #colophon {
+    position: relative;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+.widget-title {
+    font-size: 1em;
+}
+.footer-widgets {
+    ul {
+        list-style: none;
+        margin: 0;
+    }
+    li {
+        padding: 20px;
+        border-bottom: 1px solid #eee;
+    }
+    ul > li > a {
+        text-decoration: none;
+    }
+>>>>>>> post-content
 }

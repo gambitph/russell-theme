@@ -57,7 +57,7 @@ if ( ! empty( $headerImageUrl ) ) {
     if ( is_page() || is_single() ) {
         ?>
         <style id="regala_header">
-        	header#masthead .russell_left_content{
+        	.russell_left_content {
         		background-image: linear-gradient(45deg, rgba(<?php echo $headerImageGradientColor ?>,<?php echo $stop1Opacity ?>) 0%,rgba(<?php echo $headerImageGradientColor ?>,<?php echo $stop2Opacity ?>) 48%,rgba(<?php echo $headerImageGradientColor ?>, <?php echo $stop3Opacity ?>) 100%), url( <?php echo esc_url( $headerImageUrl ) ?> );
         	}
         </style>
@@ -76,27 +76,27 @@ if ( ! empty( $headerImageUrl ) ) {
         if ( is_page() || is_single() ) {
             russell_feature_logo();
         }
-    ?>
-		    <?php
-    		if ( ( is_page() || is_single() ) && has_post_thumbnail() ) { ?>
-    		    <div class="feature-image-caption">
+    ?>  
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+		<button class="menu-toggle" aria-controls="menu" aria-expanded="false"><?php _e( 'Primary Menu', 'russell' ); ?></button>
+		<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
+	</nav><!-- #site-navigation -->
+	<span class='social-navigation'><?php russell_create_social_icons() ?></span>
+    
+	</header><!-- #masthead -->
+    
+	<div id="content" class="site-content">
+        <?php
+        if ( ! empty( $headerImageUrl ) ) { ?>
+        	<div class="russell_left_content">
+        	    <?php
+            	if ( ( is_page() || is_single() ) && has_post_thumbnail() ) { ?>
+            	    <div class="feature-image-caption">
         	        <?php 
                         $id = get_post_thumbnail_id();
                         russell_image_caption( $id );
                     ?>
-                </div>
-            <?php } ?>
-		
-    		    	    <?php //echo russell_get_attached( '1', '12', '14' ); ?>
-        
-    		<nav id="site-navigation" class="main-navigation" role="navigation">
-    			<button class="menu-toggle" aria-controls="menu" aria-expanded="false"><?php _e( 'Primary Menu', 'russell' ); ?></button>
-    			<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
-    		</nav><!-- #site-navigation -->
-    		<span class='social-navigation'><?php russell_create_social_icons() ?></span>
-    	
-	</header><!-- #masthead -->
-    
-    
-	<div id="content" class="site-content">
-        
+                    </div>
+                <?php } ?>
+            </div>
+        <?php } ?>
