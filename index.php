@@ -38,7 +38,8 @@ get_header(); ?>
     	    ?>
     	</div>
     <?php } ?>
-	<div id="primary" class="content-area">
+    
+    <div id="primary" class="content-area">
 
         <?php get_sidebar(); ?>
         

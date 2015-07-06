@@ -3,9 +3,6 @@
     border-bottom: 1px solid #eee;
     position: absolute;
 }
-header.entry-header {
-    padding: 80px 0 20px 0
-}
 body.error404 .page-header {
     padding: 50px 0;
 }
@@ -17,14 +14,8 @@ body.single .site-branding, {
     top: 0;
     display: inline-block;
 }
-body.page #primary,
-body.single #primary,
-body.error404 #primary,
-body.search #primary,
-body.archive #primary {
-    width: 75%;
-    max-width: 800px;
-    margin: 0 auto;
+.russell_right_content {
+    padding: 100px 50px 50px 50px;
 }
 body.page h1.site-title,
 body.single h1.site-title {
@@ -34,18 +25,6 @@ body.single h1.site-title {
     color: #646464;
     padding: 25px 45px;
     position: absolute;
-}
-body.page.has-header-image #masthead,
-body.single.has-header-image #masthead {
-    top:0;
-    right: 0;
-    left: 0;
-    height: 75px;
-    width: 100vw;
-    border-bottom: 1px solid #eee;
-    position: absolute;
-    z-index: 3;
-    box-sizing: border-box;
 }
 body.home .site-logo-link img {
     height: auto;

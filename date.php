@@ -9,6 +9,7 @@
 
 get_header(); ?>
 
+<div class="russell_left_archive_content">
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
@@ -19,9 +20,10 @@ get_header(); ?>
 					the_archive_title( '<h1 class="page-title">', '</h1>' );
 					the_archive_description( '<div class="taxonomy-description">', '</div>' );
 				?>
+				<i class='line'></i>
+                <h4 class="archive"><?php printf( __( 'Archive') ); ?></h4>
 			</header><!-- .page-header -->
             
-            <?php /* Start the Loop */ ?>
             <?php russell_selected_post_tags(); ?>
 
 		<?php endif; ?>

@@ -682,7 +682,8 @@ object {
 .gallery-caption {
   display: block; }
 
-body.home.admin-bar #content {
+#content,
+.russell_left_content {
   margin-top: 32px; }
 
 body.page.has-header-image #content,
@@ -742,9 +743,7 @@ body.single #content {
 
 body.search #content,
 body.archive #content {
-  padding-top: 0px;
   width: 38.2vw;
-  left: 0;
   position: absolute;
   overflow-y: auto;
   overflow-x: hidden;
@@ -752,10 +751,6 @@ body.archive #content {
   top: 75px;
   box-sizing: border-box;
   border-right: 1px solid #eee; }
-
-body.search header.page-header,
-body.archive header.page-header {
-  padding: 80px 0 20px 0; }
 
 body.search li,
 body.archive li {
@@ -779,6 +774,25 @@ body.archive a {
   padding: 20px;
   color: white; }
 
+#comments {
+  padding-top: 50px; }
+
+.russell_left_search_content,
+.russell_left_archive_content {
+  padding: 100px 50px 50px 50px;
+  text-align: right; }
+  .russell_left_search_content i.line,
+  .russell_left_archive_content i.line {
+    float: right; }
+  .russell_left_search_content ul,
+  .russell_left_archive_content ul {
+    margin: 0;
+    padding-top: 50px; }
+  .russell_left_search_content li,
+  .russell_left_archive_content li {
+    padding: 20px;
+    border-bottom: 1px solid #eee; }
+
 #colophon {
   bottom: 20px;
   right: 50px;
@@ -786,6 +800,25 @@ body.archive a {
   position: absolute;
   font-style: italic;
   font-size: .80em; }
+
+body.page #colophon,
+body.single #colophon {
+  position: relative;
+  left: 0;
+  right: 0;
+  bottom: 0; }
+
+.widget-title {
+  font-size: 1em; }
+
+.footer-widgets ul {
+  list-style: none;
+  margin: 0; }
+.footer-widgets li {
+  padding: 20px;
+  border-bottom: 1px solid #eee; }
+.footer-widgets ul > li > a {
+  text-decoration: none; }
 
 #site-navigation {
   padding: 0 50px; }
@@ -813,7 +846,7 @@ body.home ul > li > a {
   color: #646464; }
 
 .russell_left_content_home {
-  padding: 80px 50px 50px 50px;
+  padding: 100px 50px 50px 50px;
   width: 38.2vw;
   overflow-y: auto;
   overflow-x: hidden;
@@ -858,9 +891,6 @@ body.home .site-elaboration {
   border-bottom: 1px solid #eee;
   position: absolute; }
 
-header.entry-header {
-  padding: 80px 0 20px 0; }
-
 body.error404 .page-header {
   padding: 50px 0; }
 
@@ -872,14 +902,8 @@ body.single .site-branding {
   top: 0;
   display: inline-block; }
 
-body.page #primary,
-body.single #primary,
-body.error404 #primary,
-body.search #primary,
-body.archive #primary {
-  width: 75%;
-  max-width: 800px;
-  margin: 0 auto; }
+.russell_right_content {
+  padding: 100px 50px 50px 50px; }
 
 body.page h1.site-title,
 body.single h1.site-title {
@@ -889,18 +913,6 @@ body.single h1.site-title {
   color: #646464;
   padding: 25px 45px;
   position: absolute; }
-
-body.page.has-header-image #masthead,
-body.single.has-header-image #masthead {
-  top: 0;
-  right: 0;
-  left: 0;
-  height: 75px;
-  width: 100vw;
-  border-bottom: 1px solid #eee;
-  position: absolute;
-  z-index: 3;
-  box-sizing: border-box; }
 
 body.home .site-logo-link img {
   height: auto;
@@ -1119,8 +1131,7 @@ i.line {
   height: 1px;
   width: 30px;
   background: #646464;
-  margin: 0 auto;
-  margin: 0 auto 15px; }
+  margin: 15px auto 15px; }
 
 h1.site-title a {
   text-decoration: none;
