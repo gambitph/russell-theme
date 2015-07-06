@@ -77,7 +77,6 @@ if ( ! empty( $headerImageUrl ) ) {
             russell_feature_logo();
         }
     ?>
-		<div class="russell_left_content">
 		    <?php
     		if ( ( is_page() || is_single() ) && has_post_thumbnail() ) { ?>
     		    <div class="feature-image-caption">
@@ -95,7 +94,7 @@ if ( ! empty( $headerImageUrl ) ) {
     			<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
     		</nav><!-- #site-navigation -->
     		<span class='social-navigation'><?php russell_create_social_icons() ?></span>
-    	</div>
+    	
 	</header><!-- #masthead -->
     
     

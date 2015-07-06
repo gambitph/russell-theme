@@ -12,33 +12,37 @@
  */
 
 get_header(); ?>
-
-<div class="russell_left_content">
-	<div class="site-branding">
-		<?php if ( is_home() || is_front_page() ) {
-		    if ( class_exists( 'Jetpack' ) ) { 
-		        russell_feature_logo();
-	        } else { ?>
-	            <h1 class="site-title">" rel="home"><?php bloginfo( 'name' ); ?></h1>
-	        <?php } }
-	        ?>
-		<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
-	</div><!-- .site-branding -->
+<?php
+    if ( is_home() ) {
+    ?> <div class="russell_left_content">
+        <div class="site-branding">
+    		<?php //wp_head(); 
+    		    if ( class_exists( 'Jetpack' ) ) { 
+    		        if ( is_home() || is_front() ) {
+    		            russell_feature_logo();
+    		            }
+    	        } else { ?>
+    	            <h1 class="site-title">" rel="home"><?php bloginfo( 'name' ); ?></h1>
+    	        <?php } }
+    	        ?>
+    		<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
+    	</div><!-- .site-branding -->
     
-    <div class="site-elaboration">
-	    <?php
-		if ( class_exists( 'TitanFramework' ) ) {
-			$titan = TitanFramework::getInstance( 'russell' );
-			echo esc_attr( $titan->getOption( 'site_elaboration' ) ); 
-		} 
-		?>
-	</div>
+        <div class="site-elaboration">
+    	    <?php
+    		if ( class_exists( 'TitanFramework' ) ) {
+    			$titan = TitanFramework::getInstance( 'russell' );
+    			echo esc_attr( $titan->getOption( 'site_elaboration' ) ); 
+    		} ?> 
+    	</div>
 	
-	<div id="primary" class="content-area">
+    	<div id="primary" class="content-area">
 
-        <?php get_sidebar(); ?>
+            <?php get_sidebar(); ?>
         
-        <?php get_footer(); ?>
+            <?php get_footer(); ?>
         
-    </div>
-	</div><!-- #primary -->
+        </div>
+    	</div><!-- #primary -->
+    <?php } ?>
+	

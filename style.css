@@ -683,12 +683,6 @@ object {
 .gallery-caption {
   display: block; }
 
-body.page.admin-bar #masthead,
-body.single.admin-bar #masthead,
-body.home.admin-bar #masthead,
-body.admin-bar #site-navigation,
-body.admin-bar #content,
-body.admin-bar.has-header-image #content,
 body.page.admin-bar .site-branding,
 body.single.admin-bar .site-branding,
 body.admin-bar .social-navigation,
@@ -808,6 +802,8 @@ body.archive a {
 
 .site-info {
   display: block; }
+#site-navigation {
+  padding: 0 50px; }
 
 body.home .site-branding {
   text-align: center; }
@@ -819,17 +815,6 @@ body.home h1.site-title {
   color: #646464;
   text-align: center; }
 
-body.home #masthead {
-  top: 0;
-  right: 0;
-  left: 0;
-  height: 75px;
-  width: 100vw;
-  border-bottom: 1px solid #eee;
-  position: absolute;
-  z-index: 3;
-  box-sizing: border-box; }
-
 body.home #content {
   padding-top: 100px;
   width: 100%;
@@ -839,18 +824,6 @@ body.home #content {
   overflow-x: hidden;
   bottom: 0;
   box-sizing: border-box; }
-
-body.home .main-navigtaion, body.home .main-navigation li {
-  float: none;
-  display: inline-block;
-  padding: 1em 1em;
-  font-weight: bold; }
-
-body.home #site-navigation {
-  padding-left: 25px;
-  left: 0;
-  position: fixed;
-  top: 15px; }
 
 body.home ul > li > a {
   color: #646464; }
@@ -890,6 +863,11 @@ body.home .site-elaboration {
   margin: 0 0 15px;
   padding-top: 50px; }
 
+#masthead {
+  width: 100vw;
+  border-bottom: 1px solid #eee;
+  position: absolute; }
+
 header.entry-header {
   padding: 80px 0 20px 0; }
 
@@ -919,15 +897,8 @@ body.single h1.site-title {
   font-size: 1.5em;
   text-decoration: none;
   color: #646464;
-  padding: 25px 45px; }
-
-body.page #masthead,
-body.single #masthead {
-  top: 0;
-  position: fixed;
-  height: 75px;
-  width: 100vw;
-  border-bottom: 1px solid #eee; }
+  padding: 25px 45px;
+  position: absolute; }
 
 body.page.has-header-image #masthead,
 body.single.has-header-image #masthead {
@@ -940,14 +911,6 @@ body.single.has-header-image #masthead {
   position: absolute;
   z-index: 3;
   box-sizing: border-box; }
-
-body.error404 #masthead.site-header,
-body.search #masthead.site-header,
-body.archive #masthead.site-header {
-  position: fixed;
-  width: 100vw;
-  border-bottom: 1px solid #eee;
-  height: 75px; }
 
 body.home .site-logo-link img {
   height: auto;
@@ -978,11 +941,7 @@ body.search h1.entry-title {
 .entry-meta {
   text-align: center; }
 
-body.page .main-navigation, body.page .main-navigation li,
-body.single .main-navigation, body.single .main-navigation li,
-body.error404 .main-navigation, body.error404 .main-navigation li,
-body.search .main-navigation, body.search .main-navigation li,
-body.archive .main-navigation, body.archive .main-navigation li {
+.main-navigation li {
   float: none;
   display: inline-block;
   font-weight: bold; }
@@ -999,14 +958,16 @@ body.page .main-navigation, body.page .main-navigation ul,
 body.single .main-navigation, body.single .main-navigation ul,
 body.error404 .main-navigation, body.error404 .main-navigation ul,
 body.archive .main-navigation, body.archive .main-navigation ul {
+  padding: 0 1em;
+  font-weight: bold;
+  line-height: 75px; }
+
+.main-navigation ul {
   font-size: 15px; }
 
 body.page #site-navigation,
 body.single #site-navigation {
-  text-align: center;
-  padding: 15px;
-  position: fixed;
-  top: 0; }
+  text-align: center; }
 
 body.page .social-navigation,
 body.single .social-navigation,
@@ -1017,14 +978,6 @@ body.archvie .social-navigation {
   float: right;
   padding: 25px;
   top: 0; }
-
-body.error404 #site-navigation,
-body.search #site-navigation,
-body.archive #site-navigation {
-  left: 0;
-  top: 0;
-  padding-left: 100px;
-  position: fixed; }
 
 .main-navigation ul ul.sub-menu {
   text-align: left;
