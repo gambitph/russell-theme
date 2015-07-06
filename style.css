@@ -800,8 +800,6 @@ body.archive a {
   clear: both;
   max-width: 800px; }
 
-.site-info {
-  display: block; }
 #site-navigation {
   padding: 0 50px; }
 
@@ -944,20 +942,6 @@ body.search h1.entry-title {
 .main-navigation li {
   float: none;
   display: inline-block;
-  font-weight: bold; }
-
-body.page .main-navigation a, body.page .main-navigation li a,
-body.single .main-navigation a, body.single .main-navigation li a,
-body.error404 .main-navigation a, body.error404 .main-navigation li a,
-body.search .main-navigation a, body.search .main-navigation li a,
-body.archive .main-navigation a, body.archive .main-navigation li a {
-  padding: 1em 1em 1.9em; }
-
-body.home .main-navigation, body.home .main-navigation ul,
-body.page .main-navigation, body.page .main-navigation ul,
-body.single .main-navigation, body.single .main-navigation ul,
-body.error404 .main-navigation, body.error404 .main-navigation ul,
-body.archive .main-navigation, body.archive .main-navigation ul {
   padding: 0 1em;
   font-weight: bold;
   line-height: 75px; }
