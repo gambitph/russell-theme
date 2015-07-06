@@ -14,22 +14,7 @@
 get_header(); ?>
 <?php
     if ( is_home() ) {
-<<<<<<< HEAD
-    ?> <div class="russell_left_content">
-        <div class="site-branding">
-    		<?php //wp_head(); 
-    		    if ( class_exists( 'Jetpack' ) ) { 
-    		        if ( is_home() || is_front() ) {
-    		            russell_feature_logo();
-    		            }
-    	        } else { ?>
-    	            <h1 class="site-title">" rel="home"><?php bloginfo( 'name' ); ?></h1>
-    	        <?php } }
-    	        ?>
-    		<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
-    	</div><!-- .site-branding -->
-    
-=======
+     
     ?> <div class="russell_left_content_home">
     <div class="site-branding">
 		<?php //wp_head(); 
@@ -43,31 +28,15 @@ get_header(); ?>
 	        ?>
 		<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
 	</div><!-- .site-branding -->
-    <?php 
-    if ( class_exists( 'TitanFramework' ) ) { ?>
->>>>>>> home-content
         <div class="site-elaboration">
     	    <?php
     		if ( class_exists( 'TitanFramework' ) ) {
     			$titan = TitanFramework::getInstance( 'russell' );
     			echo esc_attr( $titan->getOption( 'site_elaboration' ) ); 
-<<<<<<< HEAD
     		} ?> 
     	</div>
 	
-    	<div id="primary" class="content-area">
-=======
-    		}
-    	    ?>
-    	</div>
-    <?php } ?>
-<<<<<<< HEAD
-	<div id="primary" class="content-area">
->>>>>>> home-content
-=======
-    
     <div id="primary" class="content-area">
->>>>>>> post-content
 
             <?php get_sidebar(); ?>
         
