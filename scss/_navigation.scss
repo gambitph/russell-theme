@@ -11,12 +11,10 @@
 body.page #site-navigation,
 body.single #site-navigation {
     text-align: center;
+    top: 0;
+    position: absolute;
 }
-body.page .social-navigation,
-body.single .social-navigation,
-body.error404 .social-navigation,
-body.search .social-navigation,
-body.archvie .social-navigation {
+.social-navigation {
     display: inline-block;
     float: right;
     padding: 25px;

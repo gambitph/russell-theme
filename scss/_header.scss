@@ -2,6 +2,7 @@
     width: 100vw;
     border-bottom: 1px solid #eee;
     position: absolute;
+    height: 75px;
 }
 body.error404 .page-header {
     padding: 50px 0;
@@ -13,9 +14,6 @@ body.single .site-branding, {
     position: fixed;
     top: 0;
     display: inline-block;
-}
-.russell_right_content {
-    padding: 100px 50px 50px 50px;
 }
 body.page h1.site-title,
 body.single h1.site-title {

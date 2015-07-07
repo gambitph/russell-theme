@@ -1,7 +1,7 @@
 #colophon {
     bottom: 20px;
-    right: 50px;
-    left: 50px;
+    right: 0;
+    left: 0;
     position: absolute;
     font-style: italic;
     font-size: .80em;
@@ -22,7 +22,7 @@ body.single #colophon {
         margin: 0;
     }
     li {
-        padding: 20px;
+        padding: 10px;
     }
     ul > li > a {
         text-decoration: none;

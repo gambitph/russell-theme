@@ -1,10 +1,14 @@
+body.page.has-header-image #primary, 
+body.single.has-header-image #primary {
+    padding: 0;
+}
 .site-content {
 	a,
 	a:hover,
 	a:visited {
 		text-decoration: none;
-	    border-bottom: 1px solid black;
-		color: black;
+	    border-bottom: 1px solid #646464;
+		color: #646464;
 	};
 }
 a.site-logo-link {
@@ -17,7 +21,7 @@ a.site-logo-link {
 }
 body.page.has-header-image #content, 
 body.single.has-header-image #content {
-    padding-top: 0px;
+    padding: 0 50px;
     width: 38.2vw;
     float: right;
     right: 0;
@@ -57,12 +61,15 @@ body.single .site-branding h2.site-description, body.page .site-branding h2.site
     background-size: cover;
     background-position: center;
 }
+.russell_right_content {
+    padding-top: 80px;
+}
 body.error404 #content,
 body.page #content,
 body.single #content {
     padding-top: 100px;
     width: 100%;
-    right: 0;
+    padding: 0 150px;
     top: 75px;
     position: absolute;
     overflow-y: auto;
@@ -103,6 +110,8 @@ body.archive a {
     position: fixed;
     padding: 20px;
     color: white;
+    font-style: italic;
+    font-size: .85em;
 }
 #comments {
     padding-top: 50px;
@@ -119,7 +128,6 @@ body.archive a {
         padding-top: 50px;
     }
     li {
-        padding: 20px;
-        border-bottom: 1px solid #eee;
+        padding: 10px;
     }
 }
