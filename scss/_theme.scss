@@ -5,8 +5,7 @@ body,
 body.home .site-elaboration,
 body.page .site-content,
 body.single .site-content {
-    margin: 0;
-	overflow: hidden;
+    overflow: hidden;
 	font-family: 'Roboto Slab', serif;
 	font-size: 15px;
 	line-height: 1.6em;
@@ -35,6 +34,9 @@ h5 {
 }
 h6 {
 	font-size: .7em;
+}
+.entry-content, h1, h2, h3, h4, h5, h6, p, dl {
+    margin: 25px 0;
 }
 i.line {
 	display: block;

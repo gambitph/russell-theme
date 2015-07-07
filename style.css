@@ -750,9 +750,8 @@ body.single .site-branding h2.site-description, body.page .site-branding h2.site
 body.error404 #content,
 body.page #content,
 body.single #content {
-  padding-top: 100px;
   width: 100%;
-  padding: 0 150px;
+  padding: 0 200px;
   top: 75px;
   position: absolute;
   overflow-y: auto;
@@ -823,10 +822,7 @@ body.archive a {
 
 body.page #colophon,
 body.single #colophon {
-  position: relative;
-  left: 0;
-  right: 0;
-  bottom: 0; }
+  position: relative; }
 
 .widget-title {
   font-size: 1em; }
@@ -1118,7 +1114,6 @@ body,
 body.home .site-elaboration,
 body.page .site-content,
 body.single .site-content {
-  margin: 0;
   overflow: hidden;
   font-family: 'Roboto Slab', serif;
   font-size: 15px;
@@ -1148,6 +1143,9 @@ h5 {
 
 h6 {
   font-size: .7em; }
+
+.entry-content, h1, h2, h3, h4, h5, h6, p, dl {
+  margin: 25px 0; }
 
 i.line {
   display: block;
