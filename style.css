@@ -704,7 +704,7 @@ a.site-logo-link, a.site-logo-link:hover, a.site-logo-link:visited {
 
 body.page.has-header-image #content,
 body.single.has-header-image #content {
-  padding: 0 50px;
+  padding: 80px 50px 20px 50px;
   width: 38.2vw;
   float: right;
   right: 0;
@@ -743,9 +743,6 @@ body.single .site-branding h2.site-description, body.page .site-branding h2.site
   height: 100vh;
   background-size: cover;
   background-position: center; }
-
-.russell_right_content {
-  padding-top: 80px; }
 
 body.error404 #content,
 body.page #content,
@@ -812,11 +809,16 @@ body.archive a {
   .russell_left_archive_content li {
     padding: 10px; }
 
+body.page #content,
+body.single #content {
+  padding-top: 80px;
+  padding-bottom: 20px; }
+
 #colophon {
-  bottom: 20px;
+  bottom: 0;
   right: 0;
   left: 0;
-  position: absolute;
+  position: relative;
   font-style: italic;
   font-size: .80em; }
 
