@@ -53,6 +53,8 @@ if ( is_single() || is_page() ) {
 	
 }
 if ( ! empty( $headerImageUrl ) ) {
+    
+    russell_single_scripts_and_styles( $headerImageUrl );
 	$bodyClasses = ' has-header-image';
     if ( is_page() || is_single() ) {
         ?>

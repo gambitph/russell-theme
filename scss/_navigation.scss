@@ -22,7 +22,13 @@ body.single #site-navigation {
 }
 .main-navigation ul ul.sub-menu {
     text-align: left;
-    margin-top: 29px;
+    margin-top: 45px;
     top: 2em;
 	background-color: #fff;
+}
+#masthead ul > li > a {
+    line-height: 75px;
+    &:hover {
+        color: green;
+    };
 }

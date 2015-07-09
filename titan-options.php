@@ -104,7 +104,7 @@ function russell_create_options() {
 	) );
 	$section->createOption( array(
 	    'name' => __( 'Headings Font', 'russell' ),
-	    'id' => 'russell_headings_font',
+	    'id' => 'heading_font_russell',
 	    'type' => 'font',
 	    'desc' => __( 'Select the font for all headings in the site', 'russell' ),
 		'show_color' => false,
@@ -117,7 +117,7 @@ function russell_create_options() {
 	    'show_font_variant' => false,
 	    'show_text_shadow' => false,
 	    'default' => array(
-	        'font-family' => "'Montserrat', sans-serif",
+	        'font-family' => "'Roboto Slab', serif",
 	        'text-transform' => 'capitalize',
 			'line-height' => '1.1em',
 	    ),
@@ -300,43 +300,7 @@ function russell_create_options() {
 	    ),
 		'css' => 'body { value }',
 	) );
-	// $section->createOption( array(
-// 	    'name' => __( 'Smaller Body Font', 'russell' ),
-// 	    'id' => 'body_font_small',
-// 	    'type' => 'font',
-// 	    'desc' => __( 'The smaller body font found in various places in the theme', 'russell' ),
-// 		'show_font_family' => false,
-// 		'show_color' => false,
-// 		// 'show_font_size' => false,
-// 	    'show_font_weight' => false,
-// 	    'show_font_style' => false,
-// 	    'show_line_height' => false,
-// 	    // 'show_letter_spacing' => false,
-// 	    'show_text_transform' => false,
-// 	    'show_font_variant' => false,
-// 	    'show_text_shadow' => false,
-// 	    'default' => array(
-// 	        'font-size' => '12px',
-// 			// 'line-height' => '1.5em',
-// 			'letter-spacing' => 'normal',
-// 	    ),
-// 		'css' => 'article .entry-footer,
-// 		.entry-meta,
-// 		.entry-header .cat-links, .entry-header #breadcrumbs,
-// 		.page-header .taxonomy-description,
-// 		.navigation .nav-previous a span, .navigation .nav-next a span,
-// 		#comments .comment-metadata > a, #comments .comment-metadata > a:visited,
-// 		#comments .comment-reply-link,
-// 		#comments .logged-in-as,
-// 		body div#jp-relatedposts div.jp-relatedposts-items .jp-relatedposts-post .jp-relatedposts-post-context, body div#jp-relatedposts div.jp-relatedposts-items .jp-relatedposts-post .jp-relatedposts-post-date,
-// 		.featured-content figcaption span
-// 		{ value }
-// 		',
-// 	) );
 
-    /**
-	 *   Site title, font and color options
-	 */
 
 	 /**
  	 * Navigation
@@ -347,11 +311,25 @@ function russell_create_options() {
  		'desc' => __( 'The main navigation bar', 'russell' ),
  	) );
  	$section->createOption( array(
-	    'name' => __( 'Background Color', 'russell' ),
+	    'name' => __( 'Menu Background Color', 'russell' ),
 	    'id' => 'header_color_bg',
 	    'type' => 'color',
 		'default' => '#ffffff',
-		'css' => '#masthead, .sub-menu { background-color: value }'
+		'css' => '#masthead { background-color: value; border-color: value }'
+	) );
+	$section->createOption( array(
+	    'name' => __( 'Sub Menu Background Color', 'russell' ),
+	    'id' => 'sub_header_color_bg',
+	    'type' => 'color',
+		'default' => '#ffffff',
+		'css' => '.main-navigation ul ul.sub-menu { background-color: value }'
+	) );
+	$section->createOption( array(
+	    'name' => __( 'Menu Hover Color', 'russell' ),
+	    'id' => 'menu_hover_text_color',
+	    'type' => 'color',
+		'default' => '#eee',
+		'css' => '#masthead ul > li > a:hover { color: value }'
 	) );
     $section->createOption( array(
 	    'name' => __( 'Main Menu Text Color', 'russell' ),
@@ -388,7 +366,7 @@ function russell_create_options() {
        'name' => __( 'Copyright Text', 'russell' ),
        'id' => 'footer_copyright_text',
        'type' => 'text',
-       'default' => '&copy ' . date( 'Y' ) . ' ' . get_bloginfo( 'name' ) . '<br /> Theme created by <a href="http://www.gambit.ph" target="_blank">Gambit Technologies, Inc</a>.',
+       'default' => '&copy ' . date( 'Y' ) . ' ' . get_bloginfo( 'name' ) . ' Theme created by <a href="http://www.gambit.ph" target="_blank">Gambit Technologies, Inc.',
     ) );
 	$section->createOption( array(
        'name' => __( 'Text Color', 'russell' ),

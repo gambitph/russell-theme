@@ -17,7 +17,7 @@ global $titan;
     		if ( class_exists( 'TitanFramework' ) ) {
     		    echo $titan->getOption( 'footer_copyright_text' );
     		} else {
-    		    echo '&copy ' . date( 'Y' ) . ' ' .  get_bloginfo( 'name' ) . '<br /> Theme created by <a href="http://www.gambit.ph" target="_blank">Gambit Technologies, Inc</a>.';
+    		    echo '&copy ' . date( 'Y' ) . ' ' .  get_bloginfo( 'name' ) . ' Theme created by <a href="http://www.gambit.ph" target="_blank">Gambit Technologies, Inc.';
     		}
     		?>
 		</div><!-- .site-info -->
