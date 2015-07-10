@@ -18,7 +18,9 @@ body .footer-widgets.active-footers-1 {
     }
 }
 body.has-header-image .footer-widgets.active-footers-1 #footer-left,
-body.has-header-image .footer-widgets.active-footers-1 #footer-right {
+body.has-header-image .footer-widgets.active-footers-1 #footer-right,
+.russell_left_content_home .footer-widgets.active-footers-1 #footer-right,
+.russell_left_content_home .footer-widgets.active-footers-1 #footer-left {
     width: 100%;
     margin: 0;
 }

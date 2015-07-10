@@ -981,7 +981,7 @@ body.single #site-navigation {
   padding: 25px;
   top: 0; }
 
-.main-navigation ul ul.sub-menu {
+.main-navigation ul ul {
   text-align: left;
   margin-top: 45px;
   top: 2em;
@@ -1010,7 +1010,9 @@ body .footer-widgets.active-footers-1 #footer-right {
   margin: 20px; }
 
 body.has-header-image .footer-widgets.active-footers-1 #footer-left,
-body.has-header-image .footer-widgets.active-footers-1 #footer-right {
+body.has-header-image .footer-widgets.active-footers-1 #footer-right,
+.russell_left_content_home .footer-widgets.active-footers-1 #footer-right,
+.russell_left_content_home .footer-widgets.active-footers-1 #footer-left {
   width: 100%;
   margin: 0; }
 
@@ -1180,6 +1182,9 @@ body.search h1.entry-title a {
   color: #333333;
   text-align: center;
   text-decoration: none; }
+
+.site-title {
+  margin: 0; }
 
 body.page #reply-title.comment-reply-title {
   color: #646464; }
