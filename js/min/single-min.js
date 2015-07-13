@@ -1,1 +1,1 @@
-jQuery(document).ready(function($){"use strict";$(".gallery-container").each(function(){var e=$(this)})});
+jQuery(document).ready(function($){"use strict";$(".russell-left-content").each(function(){$(this).owlCarousel()})});

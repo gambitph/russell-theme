@@ -7,7 +7,7 @@
 
 get_header(); ?>
 
-<div class="russell_left_search_content">
+<div class="russell-left-search-content">
     <section id="primary" class="content-area">
     	<main id="main" class="site-main" role="main">
        

@@ -54,12 +54,11 @@ if ( is_single() || is_page() ) {
 }
 if ( ! empty( $headerImageUrl ) ) {
     
-    russell_single_scripts_and_styles( $headerImageUrl );
 	$bodyClasses = ' has-header-image';
     if ( is_page() || is_single() ) {
         ?>
         <style id="regala_header">
-        	.russell_left_content {
+        	.russell-featured-images {
         		background-image: linear-gradient(45deg, rgba(<?php echo $headerImageGradientColor ?>,<?php echo $stop1Opacity ?>) 0%,rgba(<?php echo $headerImageGradientColor ?>,<?php echo $stop2Opacity ?>) 48%,rgba(<?php echo $headerImageGradientColor ?>, <?php echo $stop3Opacity ?>) 100%), url( <?php echo esc_url( $headerImageUrl ) ?> );
         	}
         </style>
@@ -90,15 +89,18 @@ if ( ! empty( $headerImageUrl ) ) {
 	<div id="content" class="site-content">
         <?php
         if ( ! empty( $headerImageUrl ) ) { ?>
-        	<div class="russell_left_content">
-        	    <?php
-            	if ( ( is_page() || is_single() ) && has_post_thumbnail() ) { ?>
-            	    <div class="feature-image-caption">
-        	        <?php 
-                        $id = get_post_thumbnail_id();
-                        russell_image_caption( $id );
-                    ?>
-                    </div>
-                <?php } ?>
+        	<div class="russell-left-content">
+        	    <div class="russell-featured-images">
+        	        <?php
+                	if ( ( is_page() || is_single() ) && has_post_thumbnail() ) { ?>
+                	    <div class="feature-image-caption">
+            	        <?php 
+                            $id = get_post_thumbnail_id();
+                            russell_image_caption( $id );
+                        ?>
+                        </div>
+                    <?php } ?>
+                </div>
+                <?php russell_single_scripts_and_styles(); ?>
             </div>
         <?php } ?>

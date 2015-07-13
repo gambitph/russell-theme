@@ -9,7 +9,7 @@
 
 get_header(); ?>
 
-<div class="russell_left_archive_content">
+<div class="russell-left-archive-content">
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 

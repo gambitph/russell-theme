@@ -1,12 +1,15 @@
 jQuery(document).ready(function($) {
 	"use strict";
 
-	$(".gallery-container").each(function() {
+	$(".russell-left-content").each(function() {
 		
-		var $this = $(this);
-				
+		    //var $this = $(this);
+
+            $(this).owlCarousel();
+
+    });
 /*
-		$(this).owlGambitCarousel({
+		$(this).owlCarousel({
 			items : $(this).attr('data-items'),
 			itemsDesktop : [1199, $(this).attr('data-items')],
 			itemsDesktopSmall : [979, $(this).attr('data-items-small')],
@@ -33,7 +36,5 @@ jQuery(document).ready(function($) {
 	        },
 		});
 */
-
-	});
 	
 });

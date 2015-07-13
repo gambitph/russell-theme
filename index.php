@@ -15,7 +15,7 @@ get_header(); ?>
 <?php
     if ( is_home() ) {
      
-    ?> <div class="russell_left_content_home">
+    ?> <div class="russell-left-content-home">
     <div class="site-branding">
 		<?php //wp_head(); 
 		    if ( class_exists( 'Jetpack' ) ) { 

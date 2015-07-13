@@ -133,9 +133,23 @@ add_action( 'wp_enqueue_scripts', 'russell_scripts' );
  * Enqueue Owl Carousel for Single Post template.
  */
 function russell_single_scripts_and_styles() {
-	wp_enqueue_script( 'owl-carousel', get_template_directory_uri() . '/js/min/owl.carousel.min.js', array(), '20150623', true );
+	
+	if( class_exists('Dynamic_Featured_Image') ) {
+         global $dynamic_featured_image;
+         $featuredImages = $dynamic_featured_image->get_featured_images( $postId );
+         foreach( $featuredImages as $featuredImage ) {
+             ?>
+             <div class="dfi-images" style="background-image: url(<?php echo esc_url( $featuredImage['thumb'] ); ?>)"></div>
+             <?php
+         }
+         wp_enqueue_script( 'owl-carousel', get_template_directory_uri() . '/js/min/owl.carousel.min.js', array( 'jquery' ), '20150623', true );
+         wp_enqueue_style( 'owl-carousel', get_template_directory_uri() . '/css/owl.carousel.css' );
+         wp_enqueue_style( 'owl-carousel', get_template_directory_uri() . '/css/owl.theme.css' );
+        //You can now loop through the image to display them as required
+     }
+	
 	wp_enqueue_script( 'single-php', get_template_directory_uri() . '/js/min/single-min.js', array(), '20150623', true );
-	wp_enqueue_style( 'owl-carousel', get_template_directory_uri() . '/css/owl.carousel.css' );
+	
 }
 //add_filter( "single_template", "russell_single_scripts_and_styles" );
 
