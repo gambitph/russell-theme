@@ -715,7 +715,16 @@ body.admin-bar #page {
     #masthead nav li {
       display: inline-block; }
   #masthead h1 {
-    margin: -20px 0 -20px 50px; }
+    margin: -20px 0 -20px 50px;
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+    -webkit-align-items: center;
+    -ms-align-items: center;
+    align-items: center;
+    -webkit-justify-content: center;
+    -ms-justify-content: center;
+    justify-content: center; }
     #masthead h1 a {
       display: block; }
       #masthead h1 a img {
