@@ -256,7 +256,7 @@ function backup_create_options() {
 	
 	$section->createOption( array(
 	    'name' => __( 'Heading 6 Size', 'backup' ),
-	    'id' => 'backup_heading6_font',
+	    'id' => 'heading6_font',
 	    'type' => 'font',
 	    'desc' => __( 'The size of all <code>h6</code> headings', 'backup' ),
 		'show_font_family' => false,
@@ -283,6 +283,29 @@ function backup_create_options() {
 	) );
 	$section->createOption( array(
 	    'name' => __( 'Body Font', 'backup' ),
+	    'id' => 'body_font',
+	    'type' => 'font',
+	    'desc' => __( 'The normal body font', 'backup' ),
+		// 'show_font_family' => false,
+		'show_color' => false,
+		// 'show_font_size' => false,
+	    // 'show_font_weight' => false,
+	    // 'show_font_style' => false,
+	    // 'show_line_height' => false,
+	    // 'show_letter_spacing' => false,
+	    // 'show_text_transform' => false,
+	    // 'show_font_variant' => false,
+	    'show_text_shadow' => false,
+	    'default' => array(
+			'font-family' => "Roboto Slab",
+	        'font-size' => '15px',
+	        'line-height' => '1.6em',
+			'font-weight' => '300',
+	    ),
+		'css' => 'body { value }',
+	) );
+	$section->createOption( array(
+	    'name' => __( 'Menu Font', 'backup' ),
 	    'id' => 'backup_body_font',
 	    'type' => 'font',
 	    'desc' => __( 'The normal body font', 'backup' ),
@@ -290,20 +313,20 @@ function backup_create_options() {
 		'show_color' => false,
 		// 'show_font_size' => false,
 	    // 'show_font_weight' => false,
-	    'show_font_style' => false,
-	    // 'show_line_height' => false,
+	    // 'show_font_style' => false,
+	    'show_line_height' => false,
 	    // 'show_letter_spacing' => false,
-	    'show_text_transform' => false,
-	    'show_font_variant' => false,
+	    // 'show_text_transform' => false,
+	    // 'show_font_variant' => false,
 	    'show_text_shadow' => false,
 	    'default' => array(
 			'font-family' => "Montserrat",
-	        'font-size' => '15px',
+	        'font-size' => '12px',
 	        'line-height' => '1.6em',
-			'letter-spacing' => 'normal',
-			'font-weight' => '100',
+			'font-weight' => 'bold',
+			'text-transform' => 'uppercase',
 	    ),
-		'css' => 'body { value }',
+		'css' => 'header nav .menu li a { value }',
 	) );
 
 
