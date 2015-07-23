@@ -4,17 +4,13 @@
 }
 .social-navigation a {
 	display: inline-block;
-	height: 20px;
-	width: 30px;
-	vertical-align: middle;
-	text-align: center;
-	line-height: 20px;
-	text-decoration: none;
-	padding: 0 20px;
+    vertical-align: middle;
+    text-decoration: none;
+    padding: 0 10px;
 	&:before {
 		font-family: 'genericons';
 		display: block;
-		font-size: 25px;
+		font-size: 1.5em;
 	    -webkit-transition: all .4s;
 	    -moz-transition: all .4s;
 	    -ms-transition: all .4s;

@@ -1,15 +1,9 @@
 @import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
 @import url(http://fonts.googleapis.com/css?family=Roboto+Slab:300,700);
 
-body,
-body.home .site-elaboration,
-body.page .site-content,
-body.single .site-content {
-    overflow: hidden;
-	font-family: 'Roboto Slab', serif;
-	font-size: 15px;
-	line-height: 1.6em;
-	color: #646464;
+body {
+	overflow: hidden;
+	margin: 0;
 }
 h1, h2, h3, h4, h5, h6 {
 	font-family: 'Montserrat', sans-serif;
@@ -38,37 +32,15 @@ h6 {
 .entry-content, h1, h2, h3, h4, h5, h6, p, dl {
     margin: 25px 0;
 }
-i.line {
-	display: block;
-	height: 1px;
-	width: 30px;
-	background: #646464;
-	margin: 15px auto 15px;
+i {
+    height: 1px;
+    width: 30px;
+    display: block;
+    background-color: black;
+    margin: 15px auto 15px;
 }
-h1.site-title a {
+.site-content a, .site-content a:hover, .site-content a:visited {
     text-decoration: none;
-    color: #646464;
-}
-h2.site-description {
-    font-size: 1em;
-    color: #646464;
-}
-body.page ul > li > a,
-body.single ul > li > a {
-    color: #646464;
-}
-h1.entry-title,
-body.search h1.entry-title a {
-    font-family: 'Montserrat', sans-serif;
-    text-transform: uppercase;
-    line-height: 1.1em;
-    color: #333333;
-    text-align: center;
-    text-decoration: none;
-}
-.site-title {
-    margin: 0;
-}
-body.page #reply-title.comment-reply-title {
+    border-bottom: 1px solid #646464;
     color: #646464;
 }

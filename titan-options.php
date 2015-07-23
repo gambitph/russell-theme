@@ -7,14 +7,14 @@
  */
 
 
-add_action( 'tf_create_options', 'russell_create_options' );
+add_action( 'tf_create_options', 'backup_create_options' );
 
 /**
  * Initialize Titan & options here
  */
-function russell_create_options() {
+function backup_create_options() {
 
-	$titan = TitanFramework::getInstance( 'russell' );
+	$titan = TitanFramework::getInstance( 'backup' );
 	
 	
 	/**
@@ -26,11 +26,10 @@ function russell_create_options() {
         'name' => 'title_tagline',
     ) );
 	$siteDescription->createOption( array(
-	    'name' => __( 'Site Description', 'russell' ),
-	    'id' => 'site_elaboration',
+	    'name' => __( 'Site Description', 'backup' ),
+	    'id' => 'russell_site_elaboration',
 	    'type' => 'textarea',
-	    'default' => __( 'Donec congue ultricies nisl nec ultricies. Maecenas porttitor maximus eros eget luctus. Donec dictum tempor elit iaculis molestie. Nulla efficitur id velit a ornare. Praesent quis ex mattis, tempor nunc sed, consequat diam. Nullam efficitur mi non magna mollis, non pretium orci vestibulum. Mauris molestie risus tincidunt risus condimentum dignissim. Nunc sagittis, ipsum eu vulputate mollis, dui metus facilisis tellus, ac ultrices nibh eros non risus.', 'russell' ),
-	    'desc' => __( 'What is your site all about? You can write the details here.', 'russell' ),
+	    'desc' => __( 'What is your site all about? You can write the details here.', 'backup' ),
 	) );
 
 	
@@ -38,14 +37,14 @@ function russell_create_options() {
 	 * Social Icons
 	 */
 	$section = $titan->createThemeCustomizerSection( array(
-	    'name' => __( 'Social Icons', 'russell' ),
-		'panel' => __( 'Theme Options & Colors', 'russel' ),
+	    'name' => __( 'Social Icons', 'backup' ),
+		'panel' => __( 'Theme Options & Colors', 'backup' ),
 		'desc' => 'Social link icons are placed on the top of your site. Paste the links to your social profiles below.'
 	) );
 
 	for ( $i = 0; $i <= 10; $i++ ) {
 		$section->createOption( array(
-		    'name' => $i ? '' : __( 'Social Links', 'russell' ),
+		    'name' => $i ? '' : __( 'Social Links', 'backup' ),
 		    'id' => 'social_' . $i,
 		    'type' => 'text',
 		) );
@@ -58,18 +57,18 @@ function russell_create_options() {
 	 */
 	
 	$adminPanel = $titan->createAdminPanel( array(
-	    'name' => __( 'Theme Settings', 'russell' ),
+	    'name' => __( 'Theme Settings', 'backup' ),
 	) );
 	
 	$generalTab = $adminPanel->createTab( array(
-	    'name' => __( 'General', 'russell' ),
+	    'name' => __( 'General', 'backup' ),
 	) );
 
 	$generalTab->createOption( array(
-	    'name' => __( 'Custom Javascript Code', 'russell' ),
+	    'name' => __( 'Custom Javascript Code', 'backup' ),
 	    'id' => 'custom_js',
 	    'type' => 'code',
-	    'desc' => __( 'If you want to add some additional Javascript code into your site, add them here and it will be included in the frontend header. No need to add <code>script</code> tags', 'russell' ),
+	    'desc' => __( 'If you want to add some additional Javascript code into your site, add them here and it will be included in the frontend header. No need to add <code>script</code> tags', 'backup' ),
 	    'lang' => 'javascript',
 	) );
 	
@@ -79,14 +78,14 @@ function russell_create_options() {
 	
 	
 	$footerTab = $adminPanel->createTab( array(
-	    'name' => __( 'Footer', 'russell' ),
+	    'name' => __( 'Footer', 'backup' ),
 	) );
 	
 	$footerTab->createOption( array(
-		'name' => __( 'Copyright Text', 'russell' ),
+		'name' => __( 'Copyright Text', 'backup' ),
 		'id' => 'copyright',
 		'type' => 'text',
-		'desc' => __( 'Enter your copyright text here (sample only)', 'russell' ),
+		'desc' => __( 'Enter your copyright text here (sample only)', 'backup' ),
 	) );
 	
 	$footerTab->createOption( array(
@@ -98,15 +97,15 @@ function russell_create_options() {
 	 * Fonts
 	 */
 	$section = $titan->createThemeCustomizerSection( array(
-	    'name' => __( 'Fonts', 'russell' ),
-		'panel' => __( 'Theme Options & Colors', 'russell' ),
-		'desc' => __( 'Change the fonts used across your site', 'russell' ),
+	    'name' => __( 'Fonts', 'backup' ),
+		'panel' => __( 'Theme Options & Colors', 'backup' ),
+		'desc' => __( 'Change the fonts used across your site', 'backup' ),
 	) );
 	$section->createOption( array(
-	    'name' => __( 'Headings Font', 'russell' ),
-	    'id' => 'heading_font_russell',
+	    'name' => __( 'Headings Font', 'backup' ),
+	    'id' => 'heading_font_backup',
 	    'type' => 'font',
-	    'desc' => __( 'Select the font for all headings in the site', 'russell' ),
+	    'desc' => __( 'Select the font for all headings in the site', 'backup' ),
 		'show_color' => false,
 		'show_font_size' => false,
 	    'show_font_weight' => false,
@@ -117,7 +116,7 @@ function russell_create_options() {
 	    'show_font_variant' => false,
 	    'show_text_shadow' => false,
 	    'default' => array(
-	        'font-family' => "'Roboto Slab', serif",
+	        'font-family' => "Roboto Slab",
 	        'text-transform' => 'capitalize',
 			'line-height' => '1.1em',
 	    ),
@@ -125,10 +124,10 @@ function russell_create_options() {
 		{ value }',
 	) );
 	$section->createOption( array(
-	    'name' => __( 'Heading 1 Size', 'russell' ),
+	    'name' => __( 'Heading 1 Size', 'backup' ),
 	    'id' => 'russell_heading1_font',
 	    'type' => 'font',
-	    'desc' => __( 'The size of all <code>h1</code> headings', 'russell' ),
+	    'desc' => __( 'The size of all <code>h1</code> headings', 'backup' ),
 		'show_font_family' => false,
 		'show_color' => false,
 		// 'show_font_size' => false,
@@ -142,16 +141,16 @@ function russell_create_options() {
 	    'default' => array(
 	        'font-size' => '48px',
 			'letter-spacing' => 'normal',
-			'text-transform' => 'normal',
+			'text-transform' => 'capitalize',
 	    ),
 		'css' => 'body.home h1.site-title
 		{ value }',
 	) );
 	$section->createOption( array(
-	    'name' => __( 'Heading 2 Size', 'russell' ),
-	    'id' => 'russell_heading2_font',
+	    'name' => __( 'Heading 2 Size', 'backup' ),
+	    'id' => 'backup_heading2_font',
 	    'type' => 'font',
-	    'desc' => __( 'The size of all <code>h2</code> headings', 'russell' ),
+	    'desc' => __( 'The size of all <code>h2</code> headings', 'backup' ),
 		'show_font_family' => false,
 		'show_color' => false,
 		// 'show_font_size' => false,
@@ -174,10 +173,10 @@ function russell_create_options() {
 		}',
 	) );
 	$section->createOption( array(
-	    'name' => __( 'Heading 3 Size', 'russell' ),
-	    'id' => 'russell_heading3_font',
+	    'name' => __( 'Heading 3 Size', 'backup' ),
+	    'id' => 'backup_heading3_font',
 	    'type' => 'font',
-	    'desc' => __( 'The size of all <code>h3</code> headings', 'russell' ),
+	    'desc' => __( 'The size of all <code>h3</code> headings', 'backup' ),
 		'show_font_family' => false,
 		'show_color' => false,
 		// 'show_font_size' => false,
@@ -199,10 +198,10 @@ function russell_create_options() {
 		}',
 	) );
     $section->createOption( array(
-	    'name' => __( 'Heading 4 Size', 'russell' ),
-	    'id' => 'russell_heading4_font',
+	    'name' => __( 'Heading 4 Size', 'backup' ),
+	    'id' => 'backup_heading4_font',
 	    'type' => 'font',
-	    'desc' => __( 'The size of all <code>h4</code> headings', 'russell' ),
+	    'desc' => __( 'The size of all <code>h4</code> headings', 'backup' ),
 		'show_font_family' => false,
 		'show_color' => false,
 		// 'show_font_size' => false,
@@ -226,10 +225,10 @@ function russell_create_options() {
 	) );
 	
 	$section->createOption( array(
-	    'name' => __( 'Heading 5 Size', 'russell' ),
-	    'id' => 'russell_heading5_font',
+	    'name' => __( 'Heading 5 Size', 'backup' ),
+	    'id' => 'backup_heading5_font',
 	    'type' => 'font',
-	    'desc' => __( 'The size of all <code>h5</code> headings', 'russell' ),
+	    'desc' => __( 'The size of all <code>h5</code> headings', 'backup' ),
 		'show_font_family' => false,
 		'show_color' => false,
 		// 'show_font_size' => false,
@@ -252,10 +251,10 @@ function russell_create_options() {
 	) );
 	
 	$section->createOption( array(
-	    'name' => __( 'Heading 6 Size', 'russell' ),
-	    'id' => 'russell_heading6_font',
+	    'name' => __( 'Heading 6 Size', 'backup' ),
+	    'id' => 'backup_heading6_font',
 	    'type' => 'font',
-	    'desc' => __( 'The size of all <code>h6</code> headings', 'russell' ),
+	    'desc' => __( 'The size of all <code>h6</code> headings', 'backup' ),
 		'show_font_family' => false,
 		'show_color' => false,
 		// 'show_font_size' => false,
@@ -277,10 +276,10 @@ function russell_create_options() {
 		}',
 	) );
 	$section->createOption( array(
-	    'name' => __( 'Body Font', 'russell' ),
-	    'id' => 'russell_body_font',
+	    'name' => __( 'Body Font', 'backup' ),
+	    'id' => 'backup_body_font',
 	    'type' => 'font',
-	    'desc' => __( 'The normal body font', 'russell' ),
+	    'desc' => __( 'The normal body font', 'backup' ),
 		// 'show_font_family' => false,
 		'show_color' => false,
 		// 'show_font_size' => false,
@@ -306,48 +305,48 @@ function russell_create_options() {
  	 * Navigation
  	 */
  	$section = $titan->createThemeCustomizerSection( array(
- 	    'name' => __( 'Header & Social', 'russell' ),
- 		'panel' => __( 'Theme Options & Colors', 'russell' ),
- 		'desc' => __( 'The main navigation bar', 'russell' ),
+ 	    'name' => __( 'Header & Social', 'backup' ),
+ 		'panel' => __( 'Theme Options & Colors', 'backup' ),
+ 		'desc' => __( 'The main navigation bar', 'backup' ),
  	) );
  	$section->createOption( array(
-	    'name' => __( 'Menu Background Color', 'russell' ),
-	    'id' => 'header_color_bg',
+	    'name' => __( 'Menu Background Color', 'backup' ),
+	    'id' => 'russell_header_color_bg',
 	    'type' => 'color',
 		'default' => '#ffffff',
 		'css' => '#masthead { background-color: value; border-color: value }'
 	) );
 	$section->createOption( array(
-	    'name' => __( 'Sub Menu Background Color', 'russell' ),
-	    'id' => 'sub_header_color_bg',
+	    'name' => __( 'Sub Menu Background Color', 'backup' ),
+	    'id' => 'russell_sub_header_color_bg',
 	    'type' => 'color',
 		'default' => '#ffffff',
 		'css' => '.main-navigation ul ul.sub-menu { background-color: value }'
 	) );
 	$section->createOption( array(
-	    'name' => __( 'Menu Hover Color', 'russell' ),
-	    'id' => 'menu_hover_text_color',
+	    'name' => __( 'Menu Hover Color', 'backup' ),
+	    'id' => 'russell_menu_hover_text_color',
 	    'type' => 'color',
 		'default' => '#eee',
 		'css' => '#masthead ul > li > a:hover { color: value }'
 	) );
     $section->createOption( array(
-	    'name' => __( 'Main Menu Text Color', 'russell' ),
-	    'id' => 'navbar_text_color',
+	    'name' => __( 'Main Menu Text Color', 'backup' ),
+	    'id' => 'russell_navbar_text_color',
 	    'type' => 'color',
 		'default' => '#646464',
 		'css' => '#masthead ul > li > a { color: value }'
 	) );
 	$section->createOption( array(
-	    'name' => __( 'Social Icons Color', 'russell' ),
-	    'id' => 'social_text_color',
+	    'name' => __( 'Social Icons Color', 'backup' ),
+	    'id' => 'russell_social_text_color',
 	    'type' => 'color',
 		'default' => '#646464',
 		'css' => '#masthead .social-navigation a:before { color: value }'
 	) );
 	$section->createOption( array(
-	    'name' => __( 'Social Icons Hover Color', 'russell' ),
-	    'id' => 'social_hover_text_color',
+	    'name' => __( 'Social Icons Hover Color', 'backup' ),
+	    'id' => 'russell_social_hover_text_color',
 	    'type' => 'color',
 		'default' => 'orange',
 		'css' => '#masthead .social-navigation a:hover:before { color: value }'
@@ -358,18 +357,18 @@ function russell_create_options() {
 	 * Footer copyright
 	 */
 	$section = $titan->createThemeCustomizerSection( array(
-       'name' => __( 'Footer Copyright Area', 'russell' ),
-       'panel' => __( 'Theme Options & Colors', 'russell' ),
-       'desc' => __( 'Colors & text of the bottom-most copyright area of the site', 'russell' ),
+       'name' => __( 'Footer Copyright Area', 'backup' ),
+       'panel' => __( 'Theme Options & Colors', 'backup' ),
+       'desc' => __( 'Colors & text of the bottom-most copyright area of the site', 'backup' ),
     ) );
 	$section->createOption( array(
-       'name' => __( 'Copyright Text', 'russell' ),
-       'id' => 'footer_copyright_text',
+       'name' => __( 'Copyright Text', 'backup' ),
+       'id' => 'russell_footer_copyright_text',
        'type' => 'text',
-       'default' => '&copy ' . date( 'Y' ) . ' ' . get_bloginfo( 'name' ) . ' Theme created by <a href="http://www.gambit.ph" target="_blank">Gambit Technologies, Inc.',
+       'default' => '&copy ' . date( 'Y' ) . ' ' . get_bloginfo( 'name' ) . ' Theme created by <a href="http://www.gambit.ph" target="_blank">Gambit Technologies, Inc.</a>',
     ) );
 	$section->createOption( array(
-       'name' => __( 'Text Color', 'russell' ),
+       'name' => __( 'Text Color', 'backup' ),
        'id' => 'footer_copyright_text_color',
        'type' => 'color',
        'default' => '#000000',

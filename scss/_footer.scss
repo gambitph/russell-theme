@@ -1,30 +1,17 @@
-#colophon {
-    bottom: 20px;
-    right: 0;
-    left: 0;
-    position: absolute;
+.russell-copyright {
     font-style: italic;
+    position: absolute;
+    bottom: 20px;
+    text-align: center;
+    padding-top: 25px;
     font-size: .80em;
+    left: 0;
+    right: 0;
+    a {
+        color: #646464;
+    }
 }
-body.page #colophon,
-body.single #colophon {
+body.page .russell-copyright,
+body.single .russell-copyright {
     position: relative;
-}
-.widget-title {
-    font-size: 1em;
-}
-.footer-widgets {
-    ul {
-        list-style: none;
-        margin: 0;
-    }
-    li {
-        padding: 10px;
-    }
-    ul > li > a {
-        text-decoration: none;
-    }
-}
-.footer-widgets ul {
-    font-size:10px;
 }

@@ -2,35 +2,45 @@
 /**
  * The template for displaying search results pages.
  *
- * @package russell
+ * @package backup
  */
 
 get_header(); ?>
+<?php
+    if ( is_search() ) {
+        ?>
+        <div class="russell-search-left-content">
+        <?php 
+    }
+?>
 
-<div class="russell-left-search-content">
-    <section id="primary" class="content-area">
-    	<main id="main" class="site-main" role="main">
-       
-    	<?php if ( have_posts() ) : ?>
+	<section id="primary" class="content-area">
+		<main id="main" class="site-main" role="main">
 
-    		<header class="page-header">
-    			<h1 class="page-title"><?php printf( __( '%s', 'russell' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+		<?php if ( have_posts() ) : ?>
+
+			<header class="page-header">
+				<h1 class="page-title"><?php printf( __( '%s', 'russell' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
     			<i class='line'></i>
                 <h4 class="search"><?php printf( __( 'Search') ); ?></h4>
-    		</header><!-- .page-header -->
-
-    		<?php /* Start the Loop */ ?>
-    		<?php russell_selected_post_tags(); ?>
+			</header><!-- .page-header -->
+            
+            <?php russell_selected_post_tags(); ?>
+		
+		<?php endif; ?>
+		</main><!-- #main -->
+		<?php //get_sidebar(); ?>
         
-    	<?php endif; ?>
-    	</main><!-- #main -->
-    </section><!-- #primary -->
+        <div class="russell-copyright">
+            <?php russell_copyright(); ?>
+        </div>
+	</section><!-- #primary -->
 
-    <div id="primary" class="content-area">
-
-        <?php //get_sidebar(); ?>
-    
-        <?php get_footer(); ?>
-    
-    </div>
-    </div><!-- #primary -->
+<?php
+    if ( is_search() ) {
+        ?>
+        </div>
+        <?php 
+    }
+?>
+<?php get_footer(); ?>

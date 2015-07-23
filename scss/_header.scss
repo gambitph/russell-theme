@@ -1,54 +1,41 @@
-#masthead {
-    width: 100vw;
-    border-bottom: 1px solid #eee;
-    position: absolute;
-    height: 75px;
+#page {
+	display: -webkit-flex;
+	display: -ms-flexbox;
+    display: flex;
+	-webkit-flex-flow: column nowrap;
+	-ms-flex-flow: column nowrap;
+	flex-flow: column nowrap;
+	height: 100vh;
+	overflow: hidden;
+	> header {
+		flex: 0 0 auto;
+	}
 }
-body.error404 .page-header {
-    padding: 50px 0;
-}
-body.page .site-branding,
-body.single .site-branding, {
-    font-weight: 100;
-    padding: 25px;
-    position: fixed;
-    top: 0;
-    display: inline-block;
-}
-body.page h1.site-title,
-body.single h1.site-title {
-    font-weight: 100;
-    font-size: 1.5em;
-    text-decoration: none;
-    color: #646464;
-    padding: 25px 45px;
-    position: absolute;
-}
-body.home .site-logo-link img {
-    height: auto;
-    width: 100%;
-}
-body.singe .site-logo-link,
-body.page .site-logo-link {
-    position: relative;
-    z-index: 9999;
-}
-.site-logo-link img {
-    height: 75px;
-    width: auto;
-}
-.site-logo-link, .site-header {
-	a:hover,
-	a:focus,
-	a:active,
-	a:visited {
-	  border: 0px none !important;
-	  border-bottom: 0px none !important;
+body.admin-bar {
+    #page {
+        height: calc(100vh - 32px);
     }
 }
-body.search h1.entry-title {
-    margin: 0 0 15px;
-}
-.entry-meta {
-    text-align: center;
+#masthead {
+    border-bottom: 1px solid #eee;
+    .title {
+        font-weight: 100;
+        font-size: 1.5em;
+        padding: 25px 45px;
+        position: absolute;
+        margin: 0;
+        z-index: 99999;
+    }
+    .title a {
+        text-decoration: none;
+        color: #646464;
+    }
+    .site-logo-link img {
+        height: 75px;
+        width: auto;
+        position: absolute;
+    }
+    .social-navigation {
+        padding: 25px;
+    }
 }

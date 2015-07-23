@@ -4,7 +4,7 @@
  *
  * Eventually, some of the functionality here could be replaced by core features
  *
- * @package russell
+ * @package backup
  */
 
 /**
@@ -13,18 +13,15 @@
  * @param array $classes Classes for the body element.
  * @return array
  */
-function russell_body_classes( $classes ) {
+function backup_body_classes( $classes ) {
 	// Adds a class of group-blog to blogs with more than 1 published author.
 	if ( is_multi_author() ) {
 		$classes[] = 'group-blog';
 	}
-   
-    // logo feature
-	//$classes[] = $titan->getOption( 'logo_frontpage_feature' ) && is_front_page() ? 'has-logo-feature' : 'no-logo-feature';
 
 	return $classes;
 }
-add_filter( 'body_class', 'russell_body_classes' );
+add_filter( 'body_class', 'backup_body_classes' );
 
 if ( version_compare( $GLOBALS['wp_version'], '4.1', '<' ) ) :
 	/**
@@ -34,7 +31,7 @@ if ( version_compare( $GLOBALS['wp_version'], '4.1', '<' ) ) :
 	 * @param string $sep Optional separator.
 	 * @return string The filtered title.
 	 */
-	function russell_wp_title( $title, $sep ) {
+	function backup_wp_title( $title, $sep ) {
 		if ( is_feed() ) {
 			return $title;
 		}
@@ -52,12 +49,12 @@ if ( version_compare( $GLOBALS['wp_version'], '4.1', '<' ) ) :
 
 		// Add a page number if necessary:
 		if ( ( $paged >= 2 || $page >= 2 ) && ! is_404() ) {
-			$title .= " $sep " . sprintf( __( 'Page %s', 'russell' ), max( $paged, $page ) );
+			$title .= " $sep " . sprintf( __( 'Page %s', 'backup' ), max( $paged, $page ) );
 		}
 
 		return $title;
 	}
-	add_filter( 'wp_title', 'russell_wp_title', 10, 2 );
+	add_filter( 'wp_title', 'backup_wp_title', 10, 2 );
 
 	/**
 	 * Title shim for sites older than WordPress 4.1.
@@ -65,14 +62,29 @@ if ( version_compare( $GLOBALS['wp_version'], '4.1', '<' ) ) :
 	 * @link https://make.wordpress.org/core/2014/10/29/title-tags-in-4-1/
 	 * @todo Remove this function when WordPress 4.3 is released.
 	 */
-	function russell_render_title() {
+	function backup_render_title() {
 		?>
 		<title><?php wp_title( '|', true, 'right' ); ?></title>
 		<?php
 	}
-	add_action( 'wp_head', 'russell_render_title' );
+	add_action( 'wp_head', 'backup_render_title' );
 endif;
 
+function russell_feature_logo() {
+	global $titan;
+	
+	$thelogo = '<h1 class="title"><a href="' . esc_url( get_home_url( '/' ) ) . '" rel="home">' . get_bloginfo( 'name' ) . '</a></h1>';
+
+	if ( function_exists( 'jetpack_the_site_logo' ) ) {    
+	    $imglogo = '<div class="logo-feature">' . jetpack_the_site_logo() . '</div>';
+	} else {
+	    echo $thelogo;
+	}
+	    if ( function_exists( 'jetpack_has_site_logo' ) ) {    
+	        $logo = ( jetpack_has_site_logo() ? $imglogo : $thelogo );
+	        echo $logo;
+        }
+}
 function russell_create_social_icons() {
 	global $titan;
 	
@@ -86,23 +98,3 @@ function russell_create_social_icons() {
 		echo "<a href='{$url}' target='_blank'></a>";
 	}
 }
-
-function russell_feature_logo() {
-	global $titan;
-	// if ( ! $titan->getOption( 'logo_frontpage_feature' ) ) {
-	//         return;
-	//     }
-	//
-	$thelogo = '<h1 class="site-title"><a href="' . esc_url( get_home_url( '/' ) ) . '" rel="home">' . get_bloginfo( 'name' ) . '</a></h1>';
-
-	if ( function_exists( 'jetpack_the_site_logo' ) ) {    
-	    $imglogo = '<div class="logo-feature">' . jetpack_the_site_logo() . '</div>';
-	} else {
-	    echo $thelogo;
-	}
-	    if ( function_exists( 'jetpack_has_site_logo' ) ) {    
-	        $logo = ( jetpack_has_site_logo() ? $imglogo : $thelogo );
-	        echo $logo;
-        }
-}
-

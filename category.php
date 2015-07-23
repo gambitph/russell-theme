@@ -4,10 +4,17 @@
  *
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
- * @package russell
+ * @package backup
  */
 
 get_header(); ?>
+<?php
+    if ( is_category() ) {
+        ?>
+        <div class="russell-category-left-content">
+        <?php 
+    }
+?>
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
@@ -19,17 +26,27 @@ get_header(); ?>
 					the_archive_title( '<h1 class="page-title">', '</h1>' );
 					the_archive_description( '<div class="taxonomy-description">', '</div>' );
 				?>
+				<i class='line'></i>
+                <h4 class="archive"><?php printf( __( 'Archive') ); ?></h4>
 			</header><!-- .page-header -->
-
-			<?php russell_paging_nav(); ?>
-
-		<?php else : ?>
-
-			<?php get_template_part( 'content', 'none' ); ?>
-
+            
+            <?php russell_selected_post_tags(); ?>
+		
 		<?php endif; ?>
 
 		</main><!-- #main -->
+		<?php //get_sidebar(); ?>
+        
+        <div class="russell-copyright">
+            <?php russell_copyright(); ?>
+        </div>
 	</div><!-- #primary -->
-
+	
+<?php
+    if ( is_category() ) {
+        ?>
+        </div>
+        <?php 
+    }
+?>
 <?php get_footer(); ?>

@@ -4,22 +4,17 @@
  *
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
- * @package russell
+ * @package backup
  */
-$sticky = '';
-
-if ( is_sticky() ) {
-	$sticky = 'sticky';
-}
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class( $sticky ); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
 		<?php the_title( sprintf( '<h1 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h1>' ); ?>
 
 		<?php if ( 'post' == get_post_type() ) : ?>
 		<div class="entry-meta">
-			<?php russell_posted_on(); ?>
+			<?php backup_posted_on(); ?>
 		</div><!-- .entry-meta -->
 		<?php endif; ?>
 	</header><!-- .entry-header -->
@@ -29,6 +24,6 @@ if ( is_sticky() ) {
 	</div><!-- .entry-summary -->
 
 	<footer class="entry-footer">
-		<?php russell_entry_footer(); ?>
+		<?php backup_entry_footer(); ?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->

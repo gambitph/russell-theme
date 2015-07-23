@@ -1,6 +1,6 @@
 <?php
 /**
- * @package russell
+ * @package backup
  */
 $sticky = '';
 if ( is_sticky() ) {
@@ -8,18 +8,18 @@ if ( is_sticky() ) {
 }
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class( $sticky ); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-        <i class='line'></i>
+        <i class="line"></i>
         <div class="category">
             <?php 
                 $category = get_the_category();
-                echo $category[0]->cat_name; 
+                echo $category[0]->cat_name;
             ?>
         </div>
 		<div class="entry-meta">
-			<?php russell_posted_on(); ?>
+			<?php backup_posted_on(); ?>
 		</div><!-- .entry-meta -->
 	</header><!-- .entry-header -->
 
@@ -27,13 +27,13 @@ if ( is_sticky() ) {
 		<?php the_content(); ?>
 		<?php
 			wp_link_pages( array(
-				'before' => '<div class="page-links">' . __( 'Pages:', 'russell' ),
+				'before' => '<div class="page-links">' . __( 'Pages:', 'backup' ),
 				'after'  => '</div>',
 			) );
 		?>
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer">
-		<?php russell_entry_footer(); ?>
+		<?php backup_entry_footer(); ?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->
