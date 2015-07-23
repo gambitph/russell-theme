@@ -9,7 +9,7 @@
 
 get_header(); ?>
 
-        <div class="russell-category-left-content">
+<div class="russell-category-left-content">
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
@@ -21,8 +21,7 @@ get_header(); ?>
 					the_archive_title( '<h1 class="page-title">', '</h1>' );
 					the_archive_description( '<div class="taxonomy-description">', '</div>' );
 				?>
-				<i class='line'></i>
-                <h4 class="archive"><?php printf( __( 'Archive') ); ?></h4>
+				<span"><?php printf( __( 'Archive') ); ?></span>
 			</header><!-- .page-header -->
             
             <?php russell_selected_post_tags(); ?>
@@ -38,6 +37,6 @@ get_header(); ?>
 	</div><!-- #primary -->
 	
 
-        </div>
+</div>
 
 <?php get_footer(); ?>

@@ -758,45 +758,6 @@ body.search #site-navigation {
 /*body.admin-bar #content{
     margin-top:32px;
 }*/
-/*body.page #content,
-body.single #content {
-    padding: 80px 200px 20px 200px;
-    .entry-meta {
-        text-align: center;
-        font-size: 15px;
-    }
-    .entry-meta a {
-        text-decoration: none;
-        border-bottom: 1px solid #646464;
-        color: #646464;
-    }
-}
-body.has-featured-image #page {
-    .item {
-        height: 100vh;
-        background-size: cover;
-        background-position: center;
-    }
-    #content {
-        width: 38.2vw;
-        padding: 80px 50px 20px 50px;
-        right: 0;
-    }
-    .russell-images {
-        width: 61.8vw;
-        height: 100vh;
-        position: fixed;
-    }
-    .russell-images .featured-image-caption {
-        position: absolute;
-        left: 20px;
-        bottom: 120px;
-        padding: 20px;
-        color: #fff;
-        font-style: italic;
-        font-size: .90em;
-    }
-}*/
 #content {
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -883,7 +844,7 @@ body.has-featured-image #page .russell-featured-images {
   -webkit-flex: 1.618;
   -ms-flex: 1.618;
   flex: 1.618;
-  overflow: auto; }
+  overflow: hidden; }
 body.has-featured-image #page .russell-page-right-content,
 body.has-featured-image #page .russell-single-right-content {
   -webkit-flex: 1;
@@ -1027,8 +988,6 @@ body.archive #page .russell-category-left-content {
   body.archive #page .russell-archive-left-content li,
   body.archive #page .russell-category-left-content li {
     padding: 10px; }
-body.archive #page i {
-  float: right; }
 
 body.search #page .russell-search-left-content {
   width: 38.2vw;

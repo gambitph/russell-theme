@@ -4,17 +4,11 @@
  *
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
- * @package backup
+ * @package russell
  */
 
 get_header(); ?>
-<?php
-    if ( is_archive() ) {
-        ?>
-        <div class="russell-archive-left-content">
-        <?php 
-    }
-?>
+<div class="russell-archive-left-content">
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
@@ -40,11 +34,5 @@ get_header(); ?>
         </div>
 	</div><!-- #primary -->
 	
-<?php
-    if ( is_archive() ) {
-        ?>
-        </div>
-        <?php 
-    }
-?>
+</div>
 <?php get_footer(); ?>

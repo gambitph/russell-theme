@@ -1,6 +1,6 @@
 <?php
 /**
- * @package backup
+ * @package russell
  */
 $sticky = '';
 if ( is_sticky() ) {
@@ -19,7 +19,7 @@ if ( is_sticky() ) {
             ?>
         </div>
 		<div class="entry-meta">
-			<?php backup_posted_on(); ?>
+			<?php russell_posted_on(); ?>
 		</div><!-- .entry-meta -->
 	</header><!-- .entry-header -->
 
@@ -27,13 +27,13 @@ if ( is_sticky() ) {
 		<?php the_content(); ?>
 		<?php
 			wp_link_pages( array(
-				'before' => '<div class="page-links">' . __( 'Pages:', 'backup' ),
+				'before' => '<div class="page-links">' . __( 'Pages:', 'russell' ),
 				'after'  => '</div>',
 			) );
 		?>
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer">
-		<?php backup_entry_footer(); ?>
+		<?php russell_entry_footer(); ?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->

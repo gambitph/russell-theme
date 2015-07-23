@@ -2,7 +2,7 @@
 /**
  * The template for displaying all single posts.
  *
- * @package backup
+ * @package russell
  */
 
 get_header(); ?>
@@ -28,7 +28,7 @@ get_header(); ?>
 
 			<?php get_template_part( 'content', 'single' ); ?>
 
-			<?php backup_post_nav(); ?>
+			<?php russell_post_nav(); ?>
 
 			<?php
 				// If comments are open or we have at least one comment, load up the comment template

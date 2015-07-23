@@ -4,17 +4,11 @@
  *
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
- * @package backup
+ * @package russell
  */
 
 get_header(); ?>
-<?php
-    if ( is_date() ) {
-        ?>
-        <div class="russell-date-left-content">
-        <?php 
-    } 
-?>
+<div class="russell-date-left-content">
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
@@ -23,11 +17,22 @@ get_header(); ?>
 
 			<header class="page-header">
 				<?php
-					the_archive_title( '<h1 class="page-title">', '</h1>' );
-					the_archive_description( '<div class="taxonomy-description">', '</div>' );
+					$title = get_the_archive_title();
+					$description = get_the_archive_description();
 				?>
-				<i class='line'></i>
-                <h4 class="archive"><?php printf( __( 'Archive') ); ?></h4>
+				<h1 class="page-title">
+				    <?php echo $title; 
+				    if ( ! empty( $description ) ) {
+				        ?>
+				        <span><?php echo $description; ?></span>
+				        <?php
+				    } else {
+				        ?>
+				        <span><?php echo __( 'Archive' ); ?></span>
+				        <?php
+				    }
+				    ?>
+				</h1>
 			</header><!-- .page-header -->
             
             <?php russell_selected_post_tags(); ?>
@@ -42,11 +47,5 @@ get_header(); ?>
         </div>
 	</div><!-- #primary -->
 
-<?php
-    if ( is_date() ) {
-        ?>
-        </div>
-        <?php 
-    } 
-?>
+</div>
 <?php get_footer(); ?>

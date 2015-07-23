@@ -103,7 +103,7 @@ function backup_create_options() {
 	) );
 	$section->createOption( array(
 	    'name' => __( 'Headings Font', 'backup' ),
-	    'id' => 'heading_font',
+	    'id' => 'russell_heading_font',
 	    'type' => 'font',
 	    'desc' => __( 'Select the font for all headings in the site', 'backup' ),
 		'show_color' => false,
@@ -142,7 +142,7 @@ function backup_create_options() {
 			'font-size' => '30px',
 			'font-weight' => 'bold',
 	    ),
-		'css' => 'body.home h1.site-title
+		'css' => 'h1 
 		{ value }',
 	) );
 	$section->createOption( array(
@@ -166,7 +166,8 @@ function backup_create_options() {
 			'line-height' => '1.1em',
 			'font-weight' => 'bold',
 	    ),
-		'css' => 'body.home h2.site-description, body.single .category { value }
+		'css' => 'h2 
+		{ value }
 		@media screen and (max-width: 710px) {
 			h1 { value }
 		}',
@@ -192,7 +193,8 @@ function backup_create_options() {
 			'line-height' => '1.1em',
 			'font-weight' => 'bold',
 	    ),
-		'css' => 'h3 { value }
+		'css' => 'h3 
+		{ value }
 		@media screen and (max-width: 710px) {
 			h2 { value }
 		}',
@@ -275,7 +277,7 @@ function backup_create_options() {
 			'line-height' => '1.1em',
 			'font-weight' => 'bold',
 	    ),
-		'css' => 'h1.site-title span, h6
+		'css' => 'h1 span, h6
 		{ value }
 		@media screen and (max-width: 710px) {
 			h6 { value }

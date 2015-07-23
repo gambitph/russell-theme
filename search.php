@@ -2,17 +2,11 @@
 /**
  * The template for displaying search results pages.
  *
- * @package backup
+ * @package russell
  */
 
 get_header(); ?>
-<?php
-    if ( is_search() ) {
-        ?>
-        <div class="russell-search-left-content">
-        <?php 
-    }
-?>
+<div class="russell-search-left-content">
 
 	<section id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
@@ -21,8 +15,7 @@ get_header(); ?>
 
 			<header class="page-header">
 				<h1 class="page-title"><?php printf( __( '%s', 'russell' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
-    			<i class='line'></i>
-                <h4 class="search"><?php printf( __( 'Search') ); ?></h4>
+    			<span><?php printf( __( 'Search') ); ?></span>
 			</header><!-- .page-header -->
             
             <?php russell_selected_post_tags(); ?>
@@ -36,11 +29,5 @@ get_header(); ?>
         </div>
 	</section><!-- #primary -->
 
-<?php
-    if ( is_search() ) {
-        ?>
-        </div>
-        <?php 
-    }
-?>
+</div>
 <?php get_footer(); ?>
