@@ -3,20 +3,20 @@
  * Jetpack Compatibility File
  * See: http://jetpack.me/
  *
- * @package backup
+ * @package russell
  */
 
 /**
  * Add theme support for Infinite Scroll.
  * See: http://jetpack.me/support/infinite-scroll/
  */
-function backup_jetpack_setup() {
+function russell_jetpack_setup() {
 	add_theme_support( 'infinite-scroll', array(
 		'container' => 'main',
 		'footer'    => 'page',
 	) );
 }
-add_action( 'after_setup_theme', 'backup_jetpack_setup' );
+add_action( 'after_setup_theme', 'russell_jetpack_setup' );
 
 /**
  * Make all videos responsive

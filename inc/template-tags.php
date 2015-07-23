@@ -4,29 +4,29 @@
  *
  * Eventually, some of the functionality here could be replaced by core features.
  *
- * @package backup
+ * @package russell
  */
 
-if ( ! function_exists( 'backup_paging_nav' ) ) :
+if ( ! function_exists( 'russell_paging_nav' ) ) :
 /**
  * Display navigation to next/previous set of posts when applicable.
  */
-function backup_paging_nav() {
+function russell_paging_nav() {
 	// Don't print empty markup if there's only one page.
 	if ( $GLOBALS['wp_query']->max_num_pages < 2 ) {
 		return;
 	}
 	?>
 	<nav class="navigation paging-navigation" role="navigation">
-		<h1 class="screen-reader-text"><?php _e( 'Posts navigation', 'backup' ); ?></h1>
+		<h1 class="screen-reader-text"><?php _e( 'Posts navigation', 'russell' ); ?></h1>
 		<div class="nav-links">
 
 			<?php if ( get_next_posts_link() ) : ?>
-			<div class="nav-previous"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'backup' ) ); ?></div>
+			<div class="nav-previous"><?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'russell' ) ); ?></div>
 			<?php endif; ?>
 
 			<?php if ( get_previous_posts_link() ) : ?>
-			<div class="nav-next"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'backup' ) ); ?></div>
+			<div class="nav-next"><?php previous_posts_link( __( 'Newer posts <span class="meta-nav">&rarr;</span>', 'russell' ) ); ?></div>
 			<?php endif; ?>
 
 		</div><!-- .nav-links -->
@@ -35,11 +35,11 @@ function backup_paging_nav() {
 }
 endif;
 
-if ( ! function_exists( 'backup_post_nav' ) ) :
+if ( ! function_exists( 'russell_post_nav' ) ) :
 /**
  * Display navigation to next/previous post when applicable.
  */
-function backup_post_nav() {
+function russell_post_nav() {
 	// Don't print empty markup if there's nowhere to navigate.
 	$previous = ( is_attachment() ) ? get_post( get_post()->post_parent ) : get_adjacent_post( false, '', true );
 	$next     = get_adjacent_post( false, '', false );
@@ -49,11 +49,11 @@ function backup_post_nav() {
 	}
 	?>
 	<nav class="navigation post-navigation" role="navigation">
-		<h1 class="screen-reader-text"><?php _e( 'Post navigation', 'backup' ); ?></h1>
+		<h1 class="screen-reader-text"><?php _e( 'Post navigation', 'russell' ); ?></h1>
 		<div class="nav-links">
 			<?php
-				previous_post_link( '<div class="nav-previous">%link</div>', _x( '<span class="meta-nav">&larr;</span>&nbsp;%title', 'Previous post link', 'backup' ) );
-				next_post_link( '<div class="nav-next">%link</div>', _x( '%title&nbsp;<span class="meta-nav">&rarr;</span>', 'Next post link', 'backup' ) );
+				previous_post_link( '<div class="nav-previous">%link</div>', _x( '<span class="meta-nav">&larr;</span>&nbsp;%title', 'Previous post link', 'russell' ) );
+				next_post_link( '<div class="nav-next">%link</div>', _x( '%title&nbsp;<span class="meta-nav">&rarr;</span>', 'Next post link', 'russell' ) );
 			?>
 		</div><!-- .nav-links -->
 	</nav><!-- .navigation -->
@@ -61,11 +61,11 @@ function backup_post_nav() {
 }
 endif;
 
-if ( ! function_exists( 'backup_posted_on' ) ) :
+if ( ! function_exists( 'russell_posted_on' ) ) :
 /**
  * Prints HTML with meta information for the current post-date/time and author.
  */
-function backup_posted_on() {
+function russell_posted_on() {
 	$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
 	if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
 		$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
@@ -79,12 +79,12 @@ function backup_posted_on() {
 	);
 
 	$posted_on = sprintf(
-		_x( 'Posted on %s', 'post date', 'backup' ),
+		_x( 'Posted on %s', 'post date', 'russell' ),
 		'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
 	);
 
 	$byline = sprintf(
-		_x( 'by %s', 'post author', 'backup' ),
+		_x( 'by %s', 'post author', 'russell' ),
 		'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
 	);
 
@@ -93,33 +93,33 @@ function backup_posted_on() {
 }
 endif;
 
-if ( ! function_exists( 'backup_entry_footer' ) ) :
+if ( ! function_exists( 'russell_entry_footer' ) ) :
 /**
  * Prints HTML with meta information for the categories, tags and comments.
  */
-function backup_entry_footer() {
+function russell_entry_footer() {
 	// Hide category and tag text for pages.
 	if ( 'post' == get_post_type() ) {
 		/* translators: used between list items, there is a space after the comma */
-		$categories_list = get_the_category_list( __( ', ', 'backup' ) );
-		if ( $categories_list && backup_categorized_blog() ) {
-			printf( '<span class="cat-links">' . __( 'Posted in %1$s', 'backup' ) . '</span>', $categories_list );
+		$categories_list = get_the_category_list( __( ', ', 'russell' ) );
+		if ( $categories_list && russell_categorized_blog() ) {
+			printf( '<span class="cat-links">' . __( 'Posted in %1$s', 'russell' ) . '</span>', $categories_list );
 		}
 
 		/* translators: used between list items, there is a space after the comma */
-		$tags_list = get_the_tag_list( '', __( ', ', 'backup' ) );
+		$tags_list = get_the_tag_list( '', __( ', ', 'russell' ) );
 		if ( $tags_list ) {
-			printf( '<span class="tags-links">' . __( 'Tagged %1$s', 'backup' ) . '</span>', $tags_list );
+			printf( '<span class="tags-links">' . __( 'Tagged %1$s', 'russell' ) . '</span>', $tags_list );
 		}
 	}
 
 	if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
 		echo '<span class="comments-link">';
-		comments_popup_link( __( 'Leave a comment', 'backup' ), __( '1 Comment', 'backup' ), __( '% Comments', 'backup' ) );
+		comments_popup_link( __( 'Leave a comment', 'russell' ), __( '1 Comment', 'russell' ), __( '% Comments', 'russell' ) );
 		echo '</span>';
 	}
 
-	edit_post_link( __( 'Edit', 'backup' ), '<span class="edit-link">', '</span>' );
+	edit_post_link( __( 'Edit', 'russell' ), '<span class="edit-link">', '</span>' );
 }
 endif;
 
@@ -136,45 +136,45 @@ if ( ! function_exists( 'the_archive_title' ) ) :
  */
 function the_archive_title( $before = '', $after = '' ) {
 	if ( is_category() ) {
-		$title = sprintf( __( 'Category: %s', 'backup' ), single_cat_title( '', false ) );
+		$title = sprintf( __( 'Category: %s', 'russell' ), single_cat_title( '', false ) );
 	} elseif ( is_tag() ) {
-		$title = sprintf( __( 'Tag: %s', 'backup' ), single_tag_title( '', false ) );
+		$title = sprintf( __( 'Tag: %s', 'russell' ), single_tag_title( '', false ) );
 	} elseif ( is_author() ) {
-		$title = sprintf( __( 'Author: %s', 'backup' ), '<span class="vcard">' . get_the_author() . '</span>' );
+		$title = sprintf( __( 'Author: %s', 'russell' ), '<span class="vcard">' . get_the_author() . '</span>' );
 	} elseif ( is_year() ) {
-		$title = sprintf( __( 'Year: %s', 'backup' ), get_the_date( _x( 'Y', 'yearly archives date format', 'backup' ) ) );
+		$title = sprintf( __( 'Year: %s', 'russell' ), get_the_date( _x( 'Y', 'yearly archives date format', 'russell' ) ) );
 	} elseif ( is_month() ) {
-		$title = sprintf( __( 'Month: %s', 'backup' ), get_the_date( _x( 'F Y', 'monthly archives date format', 'backup' ) ) );
+		$title = sprintf( __( 'Month: %s', 'russell' ), get_the_date( _x( 'F Y', 'monthly archives date format', 'russell' ) ) );
 	} elseif ( is_day() ) {
-		$title = sprintf( __( 'Day: %s', 'backup' ), get_the_date( _x( 'F j, Y', 'daily archives date format', 'backup' ) ) );
+		$title = sprintf( __( 'Day: %s', 'russell' ), get_the_date( _x( 'F j, Y', 'daily archives date format', 'russell' ) ) );
 	} elseif ( is_tax( 'post_format' ) ) {
 		if ( is_tax( 'post_format', 'post-format-aside' ) ) {
-			$title = _x( 'Asides', 'post format archive title', 'backup' );
+			$title = _x( 'Asides', 'post format archive title', 'russell' );
 		} elseif ( is_tax( 'post_format', 'post-format-gallery' ) ) {
-			$title = _x( 'Galleries', 'post format archive title', 'backup' );
+			$title = _x( 'Galleries', 'post format archive title', 'russell' );
 		} elseif ( is_tax( 'post_format', 'post-format-image' ) ) {
-			$title = _x( 'Images', 'post format archive title', 'backup' );
+			$title = _x( 'Images', 'post format archive title', 'russell' );
 		} elseif ( is_tax( 'post_format', 'post-format-video' ) ) {
-			$title = _x( 'Videos', 'post format archive title', 'backup' );
+			$title = _x( 'Videos', 'post format archive title', 'russell' );
 		} elseif ( is_tax( 'post_format', 'post-format-quote' ) ) {
-			$title = _x( 'Quotes', 'post format archive title', 'backup' );
+			$title = _x( 'Quotes', 'post format archive title', 'russell' );
 		} elseif ( is_tax( 'post_format', 'post-format-link' ) ) {
-			$title = _x( 'Links', 'post format archive title', 'backup' );
+			$title = _x( 'Links', 'post format archive title', 'russell' );
 		} elseif ( is_tax( 'post_format', 'post-format-status' ) ) {
-			$title = _x( 'Statuses', 'post format archive title', 'backup' );
+			$title = _x( 'Statuses', 'post format archive title', 'russell' );
 		} elseif ( is_tax( 'post_format', 'post-format-audio' ) ) {
-			$title = _x( 'Audio', 'post format archive title', 'backup' );
+			$title = _x( 'Audio', 'post format archive title', 'russell' );
 		} elseif ( is_tax( 'post_format', 'post-format-chat' ) ) {
-			$title = _x( 'Chats', 'post format archive title', 'backup' );
+			$title = _x( 'Chats', 'post format archive title', 'russell' );
 		}
 	} elseif ( is_post_type_archive() ) {
-		$title = sprintf( __( 'Archives: %s', 'backup' ), post_type_archive_title( '', false ) );
+		$title = sprintf( __( 'Archives: %s', 'russell' ), post_type_archive_title( '', false ) );
 	} elseif ( is_tax() ) {
 		$tax = get_taxonomy( get_queried_object()->taxonomy );
 		/* translators: 1: Taxonomy singular name, 2: Current taxonomy term */
-		$title = sprintf( __( '%1$s: %2$s', 'backup' ), $tax->labels->singular_name, single_term_title( '', false ) );
+		$title = sprintf( __( '%1$s: %2$s', 'russell' ), $tax->labels->singular_name, single_term_title( '', false ) );
 	} else {
-		$title = __( 'Archives', 'backup' );
+		$title = __( 'Archives', 'russell' );
 	}
 
 	/**
@@ -222,8 +222,8 @@ endif;
  *
  * @return bool
  */
-function backup_categorized_blog() {
-	if ( false === ( $all_the_cool_cats = get_transient( 'backup_categories' ) ) ) {
+function russell_categorized_blog() {
+	if ( false === ( $all_the_cool_cats = get_transient( 'russell_categories' ) ) ) {
 		// Create an array of all the categories that are attached to posts.
 		$all_the_cool_cats = get_categories( array(
 			'fields'     => 'ids',
@@ -236,27 +236,27 @@ function backup_categorized_blog() {
 		// Count the number of categories that are attached to the posts.
 		$all_the_cool_cats = count( $all_the_cool_cats );
 
-		set_transient( 'backup_categories', $all_the_cool_cats );
+		set_transient( 'russell_categories', $all_the_cool_cats );
 	}
 
 	if ( $all_the_cool_cats > 1 ) {
-		// This blog has more than 1 category so backup_categorized_blog should return true.
+		// This blog has more than 1 category so russell_categorized_blog should return true.
 		return true;
 	} else {
-		// This blog has only 1 category so backup_categorized_blog should return false.
+		// This blog has only 1 category so russell_categorized_blog should return false.
 		return false;
 	}
 }
 
 /**
- * Flush out the transients used in backup_categorized_blog.
+ * Flush out the transients used in russell_categorized_blog.
  */
-function backup_category_transient_flusher() {
+function russell_category_transient_flusher() {
 	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
 		return;
 	}
 	// Like, beat it. Dig?
-	delete_transient( 'backup_categories' );
+	delete_transient( 'russell_categories' );
 }
-add_action( 'edit_category', 'backup_category_transient_flusher' );
-add_action( 'save_post',     'backup_category_transient_flusher' );
+add_action( 'edit_category', 'russell_category_transient_flusher' );
+add_action( 'save_post',     'russell_category_transient_flusher' );
