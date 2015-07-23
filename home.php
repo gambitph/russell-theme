@@ -15,27 +15,28 @@ get_header(); ?>
 <div class="russell-home-left-content">
     
     <div class="site-branding">
-		<?php //wp_head(); 
-		    if ( class_exists( 'Jetpack' ) ) { 
-		        if ( is_home() ) {
-		            russell_feature_logo();
-		            }
-	        } else { ?>
-	            <h1 class="site-title">
-					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
-					<?php
-					$description = get_bloginfo( 'description' );
-					if ( ! empty( $description ) ) {
-						?>
-						<span><?php echo $description ?></span>
-						<?php
-					}
-					?>
-				</h1>
-	        <?php
-	        	
-	        }
-	        ?>
+		<?php
+			
+		$siteTitle = get_bloginfo( 'name' );
+		if ( function_exists( 'jetpack_the_site_logo' ) && function_exists( 'jetpack_has_site_logo' ) ) {    
+			if ( jetpack_has_site_logo() ) {
+				$siteTitle = jetpack_the_site_logo();
+			}
+		}
+		
+        ?>
+        <h1 class="site-title">
+			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php echo $siteTitle ?></a>
+			<?php
+			$description = get_bloginfo( 'description' );
+			if ( ! empty( $description ) ) {
+				?>
+				<span><?php echo $description ?></span>
+				<?php
+			}
+			?>
+		</h1>
+			
 	</div><!-- .site-branding -->
 	
 	<?php

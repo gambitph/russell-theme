@@ -80,21 +80,28 @@ function russell_feature_logo() {
 	} else {
 	    echo $thelogo;
 	}
-	    if ( function_exists( 'jetpack_has_site_logo' ) ) {    
-	        $logo = ( jetpack_has_site_logo() ? $imglogo : $thelogo );
-	        echo $logo;
-        }
+	
+    if ( function_exists( 'jetpack_has_site_logo' ) ) {    
+        $logo = ( jetpack_has_site_logo() ? $imglogo : $thelogo );
+        echo $logo;
+    }
 }
 function russell_create_social_icons() {
-	global $titan;
+
+	if ( ! class_exists( 'TitanFramework' ) ) {
+		return;
+	}
+	$titan = TitanFramework::getInstance( 'russell' );
 	
+	$socialIcons = '';
 	for ( $i = 0; $i <= 10; $i++ ) {
-		if ( class_exists( 'TitanFramework' ) ) {
-		    $url = $titan->getOption( 'social_' . $i );
-		}
+	    $url = $titan->getOption( 'social_' . $i );
 		if ( empty( $url ) ) {
 			continue;
 		}
-		echo "<a href='{$url}' target='_blank'></a>";
+		$socialIcons .= "<a href='{$url}' target='_social'></a>";
+	}
+	if ( ! empty( $socialIcons ) ) {
+		echo "<div class='social-navigation'>" . $socialIcons . "</div>";
 	}
 }

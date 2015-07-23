@@ -696,28 +696,41 @@ body.admin-bar #page {
   height: calc(100vh - 32px); }
 
 #masthead {
-  border-bottom: 1px solid #eee; }
-  #masthead .title {
-    font-weight: 100;
-    font-size: 1.5em;
-    padding: 25px 45px;
-    position: absolute;
-    margin: 0;
-    z-index: 99999; }
-  #masthead .title a {
-    text-decoration: none;
-    color: #646464; }
-  #masthead .site-logo-link img {
-    height: 75px;
-    width: auto;
-    position: absolute; }
+  border-bottom: 1px solid #eee;
+  padding: 20px 0;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: row nowrap;
+  -ms-flex-flow: row nowrap;
+  flex-flow: row nowrap; }
+  #masthead > * {
+    -webkit-flex: 0 0 auto;
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto; }
+  #masthead nav {
+    -webkit-flex: 1 1 auto;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto; }
+    #masthead nav li {
+      display: inline-block; }
+  #masthead h1 {
+    margin: 0 0 0 50px; }
   #masthead .social-navigation {
-    padding: 25px; }
+    margin: 0 50px 0 0; }
+
+.main-navigation {
+  clear: both;
+  display: block;
+  float: none;
+  width: auto; }
 
 #site-navigation {
-  line-height: 75px;
-  padding: 0 50px; }
+  padding: 0 50px;
+  text-align: center; }
   #site-navigation li {
+    float: none;
+    display: inline-block;
     margin: 0 1em;
     font-weight: bold;
     text-transform: uppercase;
@@ -726,34 +739,16 @@ body.admin-bar #page {
       margin-right: 0;
       width: 215px; }
   #site-navigation a {
-    color: #646464;
-    line-height: 75px;
-    font-size: .88em; }
+    color: #545454;
+    font-size: 12px; }
   #site-navigation a:hover {
     color: #eee; }
   #site-navigation ul ul {
     margin-top: 48px;
     background-color: #fff; }
 
-body.single #site-navigation,
-body.page #site-navigation,
-body.error404 #site-navigation,
-body.archive #site-navigation,
-body.search #site-navigation {
-  text-align: center; }
-  body.single #site-navigation li,
-  body.page #site-navigation li,
-  body.error404 #site-navigation li,
-  body.archive #site-navigation li,
-  body.search #site-navigation li {
-    float: none;
-    display: inline-block; }
-  body.single #site-navigation ul ul,
-  body.page #site-navigation ul ul,
-  body.error404 #site-navigation ul ul,
-  body.archive #site-navigation ul ul,
-  body.search #site-navigation ul ul {
-    text-align: left; }
+body.home #site-navigation {
+  text-align: left; }
 
 /*body.admin-bar #content{
     margin-top:32px;
@@ -1050,19 +1045,15 @@ body.has-featured-image .footer-widgets.active-footers-1 #footer-left,
   width: 100%;
   margin: 0; }
 
-.social-navigation {
-  position: absolute;
-  right: 0; }
-
 .social-navigation a {
   display: inline-block;
-  vertical-align: middle;
   text-decoration: none;
   padding: 0 10px; }
   .social-navigation a:before {
     font-family: 'genericons';
     display: block;
-    font-size: 1.5em;
+    font-size: 18px;
+    line-height: 24px;
     -webkit-transition: all .4s;
     -moz-transition: all .4s;
     -ms-transition: all .4s;

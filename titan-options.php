@@ -220,7 +220,7 @@ function backup_create_options() {
 			'line-height' => '1.1em',
 			'font-weight' => 'bold',
 	    ),
-		'css' => 'h4,
+		'css' => 'h4, #masthead h1,
 		body div#jp-relatedposts div.jp-relatedposts-items .jp-relatedposts-post .jp-relatedposts-post-title a
 		{ value }
 		@media screen and (max-width: 710px) {

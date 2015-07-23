@@ -1,7 +1,14 @@
+.main-navigation {
+	clear: both;
+	display: block;
+	float: none;
+	width: auto;
+}
 #site-navigation {
-    line-height: 75px;
-    padding: 0 50px;
+	padding: 0 50px;
     li {
+		float: none;
+		display: inline-block;
         margin: 0 1em;
         font-weight: bold;
         text-transform: uppercase;
@@ -12,9 +19,8 @@
         }
     }
     a {
-        color: #646464;
-        line-height: 75px;
-        font-size: .88em;
+        color: #545454;
+        font-size: 12px;
     }
     a:hover {
         color: #eee;
@@ -23,19 +29,10 @@
         margin-top: 48px;
         background-color: #fff;
     }
+
+	text-align: center;
 }
-body.single #site-navigation,
-body.page #site-navigation,
-body.error404 #site-navigation, 
-body.archive #site-navigation,
-body.search #site-navigation {
-    text-align: center;
-    li {
-        float: none;
-        display: inline-block;
-    }
-    ul ul {
-        text-align: left;
-    }
-    
+
+body.home #site-navigation {
+	text-align: left;
 }
