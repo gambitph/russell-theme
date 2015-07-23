@@ -955,7 +955,7 @@ body.page .russell-copyright,
 body.single .russell-copyright {
   position: relative; }
 
-body {
+html, body {
   overflow: hidden;
   margin: 0; }
 
