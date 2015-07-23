@@ -934,6 +934,25 @@ body.single #content {
 
   #page {
     height: auto; } }
+h1 span {
+  position: relative;
+  margin-top: 41px; }
+  h1 span:before {
+    content: '';
+    width: 40px;
+    height: 1px;
+    background: #333;
+    position: absolute;
+    top: -21px;
+    left: 50%;
+    display: block;
+    transform: translateX(-50%); }
+
+body.archive h1 span:before {
+  left: auto;
+  right: 0;
+  transform: none; }
+
 .russell-copyright {
   font-style: italic;
   position: absolute;

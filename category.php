@@ -8,13 +8,8 @@
  */
 
 get_header(); ?>
-<?php
-    if ( is_category() ) {
-        ?>
+
         <div class="russell-category-left-content">
-        <?php 
-    }
-?>
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
@@ -42,11 +37,7 @@ get_header(); ?>
         </div>
 	</div><!-- #primary -->
 	
-<?php
-    if ( is_category() ) {
-        ?>
+
         </div>
-        <?php 
-    }
-?>
+
 <?php get_footer(); ?>
