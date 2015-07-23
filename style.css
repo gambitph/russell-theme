@@ -779,8 +779,8 @@ body.home #site-navigation {
   flex: 1;
   overflow: auto; }
   #content .entry-meta {
-    text-align: center;
-    font-size: 15px; }
+    font-style: italic;
+    text-align: center; }
   #content .entry-meta a {
     text-decoration: none;
     border-bottom: 1px solid #646464;
@@ -927,6 +927,8 @@ h1 span {
     display: block;
     -webkit-transform: translateX(-50%);
     transform: translateX(-50%); }
+  h1 span a {
+    text-decoration: none; }
 
 body.archive h1 span:before {
   left: auto;

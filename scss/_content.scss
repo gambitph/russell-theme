@@ -10,8 +10,8 @@
 	flex: 1;
 	overflow: auto;
     .entry-meta {
+		font-style: italic;
         text-align: center;
-        font-size: 15px;
     }
     .entry-meta a {
         text-decoration: none;
@@ -188,6 +188,9 @@ h1 {
 			display: block;
 			-webkit-transform: translateX(-50%);
 			transform: translateX(-50%);
+		}
+		a {
+			text-decoration: none;
 		}
 	}
 }

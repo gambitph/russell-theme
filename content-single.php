@@ -10,14 +10,25 @@ if ( is_sticky() ) {
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
-		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-        <i class="line"></i>
-        <div class="category">
-            <?php 
-                $category = get_the_category();
-                echo $category[0]->cat_name;
-            ?>
-        </div>
+		<?php
+		$title = get_the_title();
+        $categories = get_the_category();
+		?>
+		<h1 class="entry-title">
+			<?php echo $title ?>
+			<?php
+			if ( ! empty( $categories ) ) {
+				?><span><?php
+				foreach ( $categories as $i => $category ) {
+					if ( $i ) {
+						echo ", ";
+					}
+					?><a href='<?php echo esc_url( get_category_link( $category->cat_ID ) ) ?>'><?php echo $category->cat_name ?></a><?php
+				}
+				?></span><?php
+			}
+			?>
+		</h1>
 		<div class="entry-meta">
 			<?php russell_posted_on(); ?>
 		</div><!-- .entry-meta -->
