@@ -314,7 +314,14 @@ function backup_create_options() {
 	    'id' => 'russell_header_color_bg',
 	    'type' => 'color',
 		'default' => '#ffffff',
-		'css' => '#masthead { background-color: value; border-color: value }'
+		'css' => '#masthead { background-color: value; }'
+	) );
+ 	$section->createOption( array(
+	    'name' => __( 'Menu Border Color', 'backup' ),
+	    'id' => 'russell_header_border_color',
+	    'type' => 'color',
+		'default' => '#eeeeee',
+		'css' => '#masthead { border-color: value; }'
 	) );
 	$section->createOption( array(
 	    'name' => __( 'Sub Menu Background Color', 'backup' ),
@@ -327,7 +334,7 @@ function backup_create_options() {
 	    'name' => __( 'Menu Hover Color', 'backup' ),
 	    'id' => 'russell_menu_hover_text_color',
 	    'type' => 'color',
-		'default' => '#eee',
+		'default' => '#eeeeee',
 		'css' => '#masthead ul > li > a:hover { color: value }'
 	) );
     $section->createOption( array(
