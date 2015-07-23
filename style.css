@@ -897,7 +897,16 @@ body.single #content {
     height: auto; } }
 h1 span {
   position: relative;
-  margin-top: 41px; }
+  margin-top: 41px;
+  display: block;
+  color: #333;
+  font-size: 12px;
+  font-weight: bold;
+  font-style: normal;
+  line-height: 1.1em;
+  letter-spacing: normal;
+  text-transform: uppercase;
+  font-variant: normal; }
   h1 span:before {
     content: '';
     width: 40px;
@@ -907,11 +916,13 @@ h1 span {
     top: -21px;
     left: 50%;
     display: block;
+    -webkit-transform: translateX(-50%);
     transform: translateX(-50%); }
 
 body.archive h1 span:before {
   left: auto;
   right: 0;
+  -webkit-transform: none;
   transform: none; }
 
 .russell-copyright {

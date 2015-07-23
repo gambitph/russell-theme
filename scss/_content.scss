@@ -168,6 +168,15 @@ h1 {
 	span {
 		position: relative;
 		margin-top: 41px;
+		display: block;
+		color: #333;
+        font-size: 12px;
+        font-weight: bold;
+        font-style: normal;
+        line-height: 1.1em;
+        letter-spacing: normal;
+        text-transform: uppercase;
+        font-variant: normal;
 		&:before {
 			content: '';
 			width: 40px;
@@ -177,6 +186,7 @@ h1 {
 			top: -21px;
 			left: 50%;
 			display: block;
+			-webkit-transform: translateX(-50%);
 			transform: translateX(-50%);
 		}
 	}
@@ -187,6 +197,7 @@ body.archive {
 			&:before {
 				left: auto;
 				right: 0;
+				-webkit-transform: none;
 				transform: none;
 			}
 		}

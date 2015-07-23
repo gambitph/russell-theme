@@ -123,6 +123,13 @@ function russell_scripts() {
         wp_enqueue_style( 'owl-carousel-theme', get_template_directory_uri() . '/css/owl.theme.css' );
         wp_enqueue_script( 'single-php', get_template_directory_uri() . '/js/min/single-min.js', array(), '20150623', true );
     }
+    
+    if ( !class_exists( 'TitanFramework' ) ) {
+        wp_register_style( 'russell-font-monserrat', 'http://fonts.googleapis.com/css?family=Montserrat:400,700' );
+        wp_register_style( 'russell-font-roboto', 'http://fonts.googleapis.com/css?family=Roboto+Slab:300,700' );
+        wp_enqueue_style( 'russell-font-monserrat' );
+        wp_enqueue_style( 'russell-font-roboto' );
+    }
 	wp_enqueue_style( 'russell-style', get_stylesheet_uri() );
 
 	wp_enqueue_script( 'russell-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );

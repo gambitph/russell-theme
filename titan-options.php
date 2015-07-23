@@ -14,7 +14,7 @@ add_action( 'tf_create_options', 'backup_create_options' );
  */
 function backup_create_options() {
 
-	$titan = TitanFramework::getInstance( 'backup' );
+	$titan = TitanFramework::getInstance( 'russell' );
 	
 	
 	/**

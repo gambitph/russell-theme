@@ -40,7 +40,7 @@ get_header(); ?>
 	
 	<?php
     if ( class_exists( 'TitanFramework' ) ) {
-	    $titan = TitanFramework::getInstance( 'backup' ); 
+	    $titan = TitanFramework::getInstance( 'russell' ); 
 	    ?> <div class="site-elaboration"> <?php
 		echo esc_attr( $titan->getOption( 'russell_site_elaboration' ) ); 
 	    ?> </div> <?php        
