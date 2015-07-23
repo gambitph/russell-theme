@@ -24,10 +24,21 @@ get_header(); ?>
         		            russell_feature_logo();
         		            }
         	        } else { ?>
-        	            <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-        	        <?php }
+        	            <h1 class="site-title">
+							<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
+							<?php
+							$description = get_bloginfo( 'description' );
+							if ( ! empty( $description ) ) {
+								?>
+								<span><?php echo $description ?></span>
+								<?php
+							}
+							?>
+						</h1>
+        	        <?php
+        	        	
+        	        }
         	        ?>
-        		<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
         	</div><!-- .site-branding -->
         	
         	<?php

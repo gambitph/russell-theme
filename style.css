@@ -46,8 +46,6 @@ and Blueprint http://www.blueprintcss.org/
 /*--------------------------------------------------------------
 1.0 Reset
 --------------------------------------------------------------*/
-@import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
-@import url(http://fonts.googleapis.com/css?family=Roboto+Slab:300,700);
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -820,18 +818,15 @@ body.has-featured-image #page {
   #content .site-branding {
     text-align: center; }
   #content .site-title {
-    font-size: 3em;
     margin: 0 0 15px; }
-  #content .site-title a {
-    color: #646464;
-    text-decoration: none;
-    border-bottom: 1px solid #646464; }
+    #content .site-title a {
+      text-decoration: none; }
+    #content .site-title span {
+      display: block; }
   #content .site-description {
     font-size: 12px;
     line-height: 1.6em;
-    color: #999;
-    font-style: italic;
-    text-transform: none;
+    text-transform: uppercase;
     margin: 0 0 15px; }
   #content h1.entry-title {
     text-align: center; }
@@ -962,8 +957,9 @@ html, body {
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Montserrat', sans-serif;
   text-transform: uppercase;
-  line-height: 1.1em;
-  color: #333333; }
+  line-height: 1.1em; }
+  h1, h1 a, h1 a:visited, h2, h2 a, h2 a:visited, h3, h3 a, h3 a:visited, h4, h4 a, h4 a:visited, h5, h5 a, h5 a:visited, h6, h6 a, h6 a:visited {
+    color: #333333; }
 
 h1 {
   font-size: 2.5em; }
@@ -992,11 +988,6 @@ i {
   display: block;
   background-color: black;
   margin: 15px auto 15px; }
-
-.site-content a, .site-content a:hover, .site-content a:visited {
-  text-decoration: none;
-  border-bottom: 1px solid #646464;
-  color: #646464; }
 
 body.archive #page .russell-date-left-content,
 body.archive #page .russell-archive-left-content,
