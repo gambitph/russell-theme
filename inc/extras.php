@@ -71,20 +71,16 @@ if ( version_compare( $GLOBALS['wp_version'], '4.1', '<' ) ) :
 endif;
 
 function russell_feature_logo() {
-	global $titan;
-	
-	$thelogo = '<h1 class="title"><a href="' . esc_url( get_home_url( '/' ) ) . '" rel="home">' . get_bloginfo( 'name' ) . '</a></h1>';
-
-	if ( function_exists( 'jetpack_the_site_logo' ) ) {    
-	    $imglogo = '<div class="logo-feature">' . jetpack_the_site_logo() . '</div>';
-	} else {
-	    echo $thelogo;
+	if ( function_exists( 'jetpack_the_site_logo' ) && function_exists( 'jetpack_has_site_logo' ) ) {    
+		if ( jetpack_has_site_logo() ) {
+			echo "<h1>";
+			jetpack_the_site_logo();
+			echo "</h1>";
+			return;
+		}
 	}
 	
-    if ( function_exists( 'jetpack_has_site_logo' ) ) {    
-        $logo = ( jetpack_has_site_logo() ? $imglogo : $thelogo );
-        echo $logo;
-    }
+	echo '<h1 class="title"><a href="' . esc_url( get_home_url( '/' ) ) . '" rel="home">' . get_bloginfo( 'name' ) . '</a></h1>';
 }
 function russell_create_social_icons() {
 

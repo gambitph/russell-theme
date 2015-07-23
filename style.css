@@ -715,7 +715,12 @@ body.admin-bar #page {
     #masthead nav li {
       display: inline-block; }
   #masthead h1 {
-    margin: 0 0 0 50px; }
+    margin: -20px 0 -20px 50px; }
+    #masthead h1 a {
+      display: block; }
+      #masthead h1 a img {
+        max-height: 62px;
+        width: auto; }
   #masthead .social-navigation {
     margin: 0 50px 0 0; }
 
