@@ -15,19 +15,20 @@ get_header(); ?>
 <div class="russell-home-left-content">
     
     <div class="site-branding">
-		<?php
-			
-		$siteTitle = get_bloginfo( 'name' );
-		if ( function_exists( 'jetpack_the_site_logo' ) && function_exists( 'jetpack_has_site_logo' ) ) {    
-			if ( jetpack_has_site_logo() ) {
-				$siteTitle = jetpack_the_site_logo();
-			}
-		}
+		<?php		
 		
         ?>
         <h1 class="site-title">
-			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php echo $siteTitle ?></a>
 			<?php
+			
+			if ( function_exists( 'jetpack_the_site_logo' ) && function_exists( 'jetpack_has_site_logo' ) && jetpack_has_site_logo() ) {    
+				jetpack_the_site_logo();
+			} else {
+				?><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php
+				bloginfo( 'name' );
+				?></a><?php
+			}
+			
 			$description = get_bloginfo( 'description' );
 			if ( ! empty( $description ) ) {
 				?>

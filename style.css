@@ -788,9 +788,10 @@ body.home #site-navigation {
   #content .site-branding {
     text-align: center; }
   #content .site-title {
-    margin: 0 0 15px; }
+    margin: 0 0 50px; }
     #content .site-title a {
-      text-decoration: none; }
+      text-decoration: none;
+      display: block; }
     #content .site-title span {
       display: block; }
   #content .site-description {
@@ -980,9 +981,6 @@ h5 {
 
 h6 {
   font-size: .7em; }
-
-.entry-content, h1, h2, h3, h4, h5, h6, p, dl {
-  margin: 25px 0; }
 
 i {
   height: 1px;
