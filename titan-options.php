@@ -291,7 +291,7 @@ function backup_create_options() {
 	    'show_font_variant' => false,
 	    'show_text_shadow' => false,
 	    'default' => array(
-			'font-family' => "'Roboto Slab', regular",
+			'font-family' => "Roboto Slab",
 	        'font-size' => '15px',
 	        'line-height' => '1.6em',
 			'letter-spacing' => 'normal',
