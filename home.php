@@ -13,7 +13,6 @@
 
 get_header();
 
-
 ?>	
 <div id="content" class="russell-content-wrapper russell-content-reverse">
 	

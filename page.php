@@ -13,6 +13,7 @@
 get_header(); ?>
 
 <?php while ( have_posts() ) : the_post(); ?>
+<div id="content" class="russell-content-wrapper">
     
     <?php get_template_part( 'content', 'featured-image' ); 
     
@@ -21,9 +22,13 @@ get_header(); ?>
 
     	if ( ! empty( $imageAttachment ) ) {
     		?>
-            <div class="russell-page-right-content">
+            <section class="russell-content-small russell-content-area">
             <?php
     	}
+    } else {
+        ?>
+        <section class="russell-content-full russell-content-area">
+        <?php
     }
     
     ?>    
@@ -51,11 +56,12 @@ get_header(); ?>
     <?php
     if ( ( is_single() || is_page() ) && has_post_thumbnail() ) {
     	if ( ! empty( $imageAttachment ) ) {
-    		?></div><?php
+    		?></section><?php
 		}
     }
     ?>
 
+</div>
 <?php endwhile; // end of the loop. ?>
 
 

@@ -35,7 +35,7 @@ if ( ! empty( $headerImageUrl ) ) {
 
 <?php
 if ( ! empty( $headerImageUrl )  ) { ?>
-    <div class="russell-featured-images">
+    <section class="russell-content-large russell-content-image">
         <?php
     	if ( ( is_page() || is_single() ) && has_post_thumbnail() ) { ?>
             <div class="item" style="background-image: linear-gradient(45deg, rgba(<?php echo $headerImageGradientColor ?>,<?php echo $stop1Opacity ?>) 0%,rgba(<?php echo $headerImageGradientColor ?>,<?php echo $stop2Opacity ?>) 48%,rgba(<?php echo $headerImageGradientColor ?>, <?php echo $stop3Opacity ?>) 100%), url(<?php echo esc_url( $headerImageUrl ) ?>); background-size: cover; background-position: center;">
@@ -48,6 +48,6 @@ if ( ! empty( $headerImageUrl )  ) { ?>
             </div>
         <?php } ?>
         <?php russell_single_scripts_and_styles(); ?>
-    </div>
+    </section>
     
 <?php } ?> 
