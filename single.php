@@ -41,7 +41,7 @@ get_header(); ?>
 			?>
 
 		    <?php get_sidebar(); ?>
-	    <div>
+	    </div>
 		
 	    <div class="russell-copyright">
 	        <?php russell_copyright(); ?>
