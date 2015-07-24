@@ -67,7 +67,13 @@ if ( ! function_exists( 'russell_posted_on' ) ) :
  */
 function russell_posted_on() {
 	
-	echo get_avatar( get_the_author_meta( 'ID' ), 50 );
+	if ( class_exists( 'TitanFramework' ) ) {
+	    $titan = TitanFramework::getInstance( 'russell' );
+	    $avatar = $titan->getOption( 'blog_post_avatar' ); //true
+	    if ( $avatar == "true" ) {
+	        echo get_avatar( get_the_author_meta( 'ID' ), 50 );
+	    }
+	}
 	
 	
 	$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';

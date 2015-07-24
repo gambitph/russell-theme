@@ -397,6 +397,21 @@ function backup_create_options() {
 		'css' => '#masthead .social-navigation a:hover:before { color: value }'
 	) );   
 	
+	/**
+	* Post avatar 
+	*/
+	$section = $titan->createThemeCustomizerSection( array(
+	   'name' => __( 'Blog Post', 'backup' ),
+	   'panel' => __( 'Theme Options & Colors', 'backup' ),
+	   'desc' => __( 'Displaying avatar of the author in blog post', 'backup' ),
+	) );
+	$section->createOption( array(
+	   'name' => __( 'Blog Post Avatar', 'backup' ),
+	   'id' => 'blog_post_avatar',
+	   'type' => 'checkbox',
+	   'default' => true,
+	   'desc' => __( 'Check if you want to display the avatar of the author in blog post.', 'backup' ),
+	) );
 	
 	/**
 	 * Footer copyright
