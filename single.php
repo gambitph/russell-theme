@@ -19,11 +19,13 @@ get_header(); ?>
     	if ( ! empty( $imageAttachment ) ) {
     		?>
             <section class="russell-content-small russell-content-area">
+                <div>
             <?php
     	}
     } else {
         ?>
         <section class="russell-content-full russell-content-area">
+            <div>
         <?php
     }
     
@@ -57,7 +59,9 @@ get_header(); ?>
     <?php
     if ( ( is_single() || is_page() ) && has_post_thumbnail() ) {
     	if ( ! empty( $imageAttachment ) ) {
-    		?></section><?php
+    		?>
+    		</section>
+    		<?php
 		}
     }
     ?>

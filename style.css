@@ -893,6 +893,8 @@ body.has-featured-image #page .featured-image-caption {
       transform: translateX(-50%); }
     .russell-site-title span a {
       text-decoration: none; }
+  .russell-site-title a {
+    text-decoration: none; }
 
 body.archive .russell-site-title {
   text-align: right; }

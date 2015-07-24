@@ -24,11 +24,13 @@ get_header(); ?>
     	if ( ! empty( $imageAttachment ) ) {
     		?>
             <section class="russell-content-small russell-content-area">
+                <div>
             <?php
     	}
     } else {
         ?>
         <section class="russell-content-full russell-content-area">
+            <div>
         <?php
     }
     
