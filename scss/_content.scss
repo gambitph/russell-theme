@@ -1,14 +1,4 @@
 #content {
-	overflow: auto;
-    .entry-meta {
-		font-style: italic;
-        text-align: center;
-    }
-    .entry-meta a {
-        text-decoration: none;
-        border-bottom: 1px solid #646464;
-        color: #646464;
-    }
 	.site-branding {
         text-align: center;
     }
@@ -30,9 +20,6 @@
         text-transform: uppercase;
         margin: 0 0 15px;
     }
-    h1.entry-title {
-        text-align: center;
-    }
     .category {
         font-size: 12px;
         line-height: 1.6em;
@@ -52,7 +39,7 @@
 
 
 body.has-featured-image #page {
-    #content {
+    .russell-content-wrapper {
         padding: 0;
         display: -webkit-flex;
     	display: -ms-flexbox;
@@ -100,21 +87,6 @@ body.has-featured-image #page {
         font-style: italic;
         font-size: .90em;
         font-family: 'Roboto Stab';
-    }
-}
-body.page #content,
-body.single #content {
-    display: block;
-    padding: 80px 200px 20px 200px;
-    .footer-widgets {
-        position: relative;
-        padding-top: 50px;
-    }
-    #comments {
-        padding-top: 50px;
-    }
-    .post-navigation {
-        position: relative;
     }
 }
 @media screen and (max-width: 1024px) {
@@ -192,6 +164,15 @@ body.archive {
 		}
 	}
 }
+.russell-post-meta {
+	font-style: italic;
+    text-align: center;
+	a {
+	    text-decoration: none;
+	    border-bottom: 1px solid #646464;
+	    color: #646464;
+	}
+}
 
 
 
@@ -226,6 +207,7 @@ body.archive {
 	-webkit-flex: 1;
 	-ms-flex: 1;
 	flex: 1;
+	padding: 80px 50px 20px 50px;
 }
 .russell-content-large {
     overflow: hidden;
@@ -251,6 +233,7 @@ body.archive {
 	-webkit-flex: 1;
 	-ms-flex: 1;
 	flex: 1;
+	overflow: auto;
 }
 .russell-content-reverse {
 	-webkit-flex-flow: row-reverse nowrap;

@@ -33,6 +33,6 @@
 	text-align: center;
 }
 
-body.home #site-navigation {
+body.home:not(.page) #site-navigation {
 	text-align: left;
 }

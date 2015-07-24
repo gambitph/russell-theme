@@ -765,52 +765,41 @@ body.admin-bar #page {
     margin-top: 48px;
     background-color: #fff; }
 
-body.home #site-navigation {
+body.home:not(.page) #site-navigation {
   text-align: left; }
 
 /*body.admin-bar #content{
     margin-top:32px;
 }*/
-#content {
-  overflow: auto; }
-  #content .entry-meta {
-    font-style: italic;
-    text-align: center; }
-  #content .entry-meta a {
+#content .site-branding {
+  text-align: center; }
+#content .site-title {
+  margin: 0 0 50px;
+  text-align: center; }
+  #content .site-title a {
+    font-family: "Montseratt", sans-serif;
     text-decoration: none;
-    border-bottom: 1px solid #646464;
-    color: #646464; }
-  #content .site-branding {
-    text-align: center; }
-  #content .site-title {
-    margin: 0 0 50px;
-    text-align: center; }
-    #content .site-title a {
-      font-family: "Montseratt", sans-serif;
-      text-decoration: none;
-      display: block; }
-    #content .site-title span {
-      display: block; }
-  #content .site-description {
-    font-size: 12px;
-    line-height: 1.6em;
-    text-transform: uppercase;
-    margin: 0 0 15px; }
-  #content h1.entry-title {
-    text-align: center; }
-  #content .category {
-    font-size: 12px;
-    line-height: 1.6em;
-    color: #999;
-    font-style: italic;
-    margin: 0 0 15px;
-    text-align: center; }
-  #content .site-logo-link {
-    border-bottom: none; }
-    #content .site-logo-link img {
-      padding-bottom: 10px; }
+    display: block; }
+  #content .site-title span {
+    display: block; }
+#content .site-description {
+  font-size: 12px;
+  line-height: 1.6em;
+  text-transform: uppercase;
+  margin: 0 0 15px; }
+#content .category {
+  font-size: 12px;
+  line-height: 1.6em;
+  color: #999;
+  font-style: italic;
+  margin: 0 0 15px;
+  text-align: center; }
+#content .site-logo-link {
+  border-bottom: none; }
+  #content .site-logo-link img {
+    padding-bottom: 10px; }
 
-body.has-featured-image #page #content {
+body.has-featured-image #page .russell-content-wrapper {
   padding: 0;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -853,21 +842,6 @@ body.has-featured-image #page .russell-featured-images .featured-image-caption {
   font-style: italic;
   font-size: .90em;
   font-family: 'Roboto Stab'; }
-
-body.page #content,
-body.single #content {
-  display: block;
-  padding: 80px 200px 20px 200px; }
-  body.page #content .footer-widgets,
-  body.single #content .footer-widgets {
-    position: relative;
-    padding-top: 50px; }
-  body.page #content #comments,
-  body.single #content #comments {
-    padding-top: 50px; }
-  body.page #content .post-navigation,
-  body.single #content .post-navigation {
-    position: relative; }
 
 @media screen and (max-width: 1024px) {
   #page #content .russell-home-left-content, #page #content .russell-home-right-content {
@@ -924,6 +898,14 @@ body.archive h1 span:before {
   -webkit-transform: none;
   transform: none; }
 
+.russell-post-meta {
+  font-style: italic;
+  text-align: center; }
+  .russell-post-meta a {
+    text-decoration: none;
+    border-bottom: 1px solid #646464;
+    color: #646464; }
+
 .russell-content-area {
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -951,7 +933,8 @@ body.archive h1 span:before {
   overflow: auto;
   -webkit-flex: 1;
   -ms-flex: 1;
-  flex: 1; }
+  flex: 1;
+  padding: 80px 50px 20px 50px; }
 
 .russell-content-large {
   overflow: hidden;
@@ -973,7 +956,8 @@ body.archive h1 span:before {
   flex-flow: row nowrap;
   -webkit-flex: 1;
   -ms-flex: 1;
-  flex: 1; }
+  flex: 1;
+  overflow: auto; }
 
 .russell-content-reverse {
   -webkit-flex-flow: row-reverse nowrap;

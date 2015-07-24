@@ -12,10 +12,12 @@ if ( is_sticky() ) {
 }
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class( $sticky ); ?>>
-	<header class="entry-header">
-		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-	</header><!-- .entry-header -->
-
+	
+	
+	<h1 class="russell-site-title">
+		<?php the_title(); ?>
+	</h1>
+	
 	<div class="entry-content">
 		<?php the_content(); ?>
 		<?php

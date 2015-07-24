@@ -9,30 +9,30 @@ if ( is_sticky() ) {
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
+	
+	<?php
+	$title = get_the_title();
+    $categories = get_the_category();
+	?>
+	<h1 class="russell-site-title">
+		<?php echo $title ?>
 		<?php
-		$title = get_the_title();
-        $categories = get_the_category();
-		?>
-		<h1 class="entry-title">
-			<?php echo $title ?>
-			<?php
-			if ( ! empty( $categories ) ) {
-				?><span><?php
-				foreach ( $categories as $i => $category ) {
-					if ( $i ) {
-						echo ", ";
-					}
-					?><a href='<?php echo esc_url( get_category_link( $category->cat_ID ) ) ?>'><?php echo $category->cat_name ?></a><?php
+		if ( ! empty( $categories ) ) {
+			?><span><?php
+			foreach ( $categories as $i => $category ) {
+				if ( $i ) {
+					echo ", ";
 				}
-				?></span><?php
+				?><a href='<?php echo esc_url( get_category_link( $category->cat_ID ) ) ?>'><?php echo $category->cat_name ?></a><?php
 			}
-			?>
-		</h1>
-		<div class="entry-meta">
-			<?php russell_posted_on(); ?>
-		</div><!-- .entry-meta -->
-	</header><!-- .entry-header -->
+			?></span><?php
+		}
+		?>
+	</h1>
+	
+	<div class="russell-post-meta">
+		<?php russell_posted_on(); ?>
+	</div><!-- .entry-meta -->
 
 	<div class="entry-content">
 		<?php the_content(); ?>
