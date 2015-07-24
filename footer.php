@@ -9,7 +9,6 @@
 global $titan;
 ?>
 
-</div><!-- #content -->
 
 </div><!-- #page -->
 

@@ -13,51 +13,53 @@
 
 get_header();
 
-?>
-<section class="russell-home-left-content content-small">
-    
-    <div>
+
+?>	
+<div id="content" class="russell-content-wrapper russell-content-reverse">
+	
+	<section class="russell-content-large russell-content-image"></section>
+
+	<section class="russell-content-small russell-content-area">
+
+	    <div>
+	
+	        <h1 class="russell-site-title">
+				<?php
 		
-        <h1 class="site-title">
+				if ( function_exists( 'jetpack_the_site_logo' ) && function_exists( 'jetpack_has_site_logo' ) && jetpack_has_site_logo() ) {    
+					jetpack_the_site_logo();
+				} else {
+					?>
+					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+						<?php bloginfo( 'name' ); ?>
+					</a>
+					<?php
+				}
+		
+				$description = get_bloginfo( 'description' );
+				if ( ! empty( $description ) ) {
+					?>
+					<span><?php echo $description ?></span>
+					<?php
+				}
+				?>
+			</h1>
+	
 			<?php
-			
-			if ( function_exists( 'jetpack_the_site_logo' ) && function_exists( 'jetpack_has_site_logo' ) && jetpack_has_site_logo() ) {    
-				jetpack_the_site_logo();
-			} else {
-				?>
-				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-					<?php bloginfo( 'name' ); ?>
-				</a>
-				<?php
-			}
-			
-			$description = get_bloginfo( 'description' );
-			if ( ! empty( $description ) ) {
-				?>
-				<span><?php echo $description ?></span>
-				<?php
-			}
-			?>
-		</h1>
+		    if ( class_exists( 'TitanFramework' ) ) {
+			    $titan = TitanFramework::getInstance( 'russell' ); 
+			    echo wpautop( esc_attr( $titan->getOption( 'russell_site_elaboration' ) ) );
+			} ?> 	
 		
-		<?php
-	    if ( class_exists( 'TitanFramework' ) ) {
-		    $titan = TitanFramework::getInstance( 'russell' ); 
-		    ?> <div class="site-elaboration"> <?php
-			echo esc_attr( $titan->getOption( 'russell_site_elaboration' ) ); 
-		    ?> </div> <?php        
-		} ?> 	
-			
-	</div>
-	
-	
-    <div class="copyright">
-        <?php russell_copyright(); ?>
-    </div>
+		</div>
 
-</section><!-- .russell-home-left-content -->
+	    <div class="russell-copyright">
+	        <?php russell_copyright(); ?>
+	    </div>
 
-<div class="russell-home-right-content"></div>
+	</section><!-- .russell-content-small -->
 
-<?php //get_sidebar(); ?>
-<?php get_footer(); ?>
+</div><!-- .russell-content-wrapper -->
+<?php
+
+get_footer();
