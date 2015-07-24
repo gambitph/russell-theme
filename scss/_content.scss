@@ -25,6 +25,7 @@
         margin: 0 0 50px;
 		text-align: center;
 		a {
+		    font-family: "Montseratt", sans-serif;
 	        text-decoration: none;
 			display: block;
 		}
@@ -89,6 +90,7 @@ body.has-featured-image #page {
             text-decoration: none;
             border-bottom: 1px solid #646464;
             color: #646464;
+            font-family: "Montseratt", sans-serif;
         }
     }
     .item {
@@ -113,11 +115,12 @@ body.has-featured-image #page {
     .russell-featured-images .featured-image-caption {
         position: absolute;
         left: 20px;
-        bottom: 120px;
+        bottom: 0;
         padding: 20px;
         color: #fff;
         font-style: italic;
         font-size: .90em;
+        font-family: 'Roboto Stab';
     }
 }
 body.page #content,

@@ -39,7 +39,6 @@ body.admin-bar {
 			display: inline-block;
 		}
 	}
-	
 	h1 {
 		margin: -20px 0 -20px 50px;
 	    display: -webkit-flex;
@@ -61,5 +60,11 @@ body.admin-bar {
 	}
 	.social-navigation {
 		margin: 0 50px 0 0;
+	}
+	.title {
+	    font-family: "Montseratt", sans-serif;
+	    a {
+            text-decoration: none;
+        }
 	}
 }
