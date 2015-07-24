@@ -18,10 +18,22 @@ get_header(); ?>
 
 			<header class="page-header">
 				<?php
-					the_archive_title( '<h1 class="page-title">', '</h1>' );
-					the_archive_description( '<div class="taxonomy-description">', '</div>' );
+					$title = get_the_archive_title();
+					$description = get_the_archive_description();
 				?>
-				<span"><?php printf( __( 'Archive') ); ?></span>
+				<h1 class="page-title">
+				    <?php echo $title; 
+				    if ( ! empty( $description ) ) {
+				        ?>
+				        <span><?php echo $description; ?></span>
+				        <?php
+				    } else {
+				        ?>
+				        <span><?php echo __( 'Archive' ); ?></span>
+				        <?php
+				    }
+				    ?>
+				</h1>
 			</header><!-- .page-header -->
             
             <?php russell_selected_post_tags(); ?>
