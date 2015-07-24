@@ -309,7 +309,7 @@ function russell_selected_post_tags() {
         // sort
         natcasesort($recent_tags);
 		
-		echo "<ul>";
+		echo "<ul class='russell-taglist'>";
 		
         foreach( $recent_tags as $tags ) {
             ?>

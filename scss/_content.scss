@@ -121,6 +121,9 @@ body.has-featured-image #page {
 
 
 .russell-site-title {
+	&, a {
+		text-decoration: none;
+	}
     margin: 0 0 50px;
 	text-align: center;
 	span {
@@ -153,7 +156,8 @@ body.has-featured-image #page {
 	}
 }
 body.archive {
-	h1 {
+	.russell-site-title {
+		text-align: right;
 		span {
 			&:before {
 				left: auto;

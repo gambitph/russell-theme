@@ -7,7 +7,7 @@ Description: A half and half theme aimed to showcase both your content and image
 Version: 1.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Text Domain: backup
+Text Domain: russell
 Tags:
 
 This theme, like WordPress, is licensed under the GPL.
@@ -866,6 +866,8 @@ body.has-featured-image #page .featured-image-caption {
 .russell-site-title {
   margin: 0 0 50px;
   text-align: center; }
+  .russell-site-title, .russell-site-title a {
+    text-decoration: none; }
   .russell-site-title span {
     position: relative;
     margin-top: 41px;
@@ -892,11 +894,13 @@ body.has-featured-image #page .featured-image-caption {
     .russell-site-title span a {
       text-decoration: none; }
 
-body.archive h1 span:before {
-  left: auto;
-  right: 0;
-  -webkit-transform: none;
-  transform: none; }
+body.archive .russell-site-title {
+  text-align: right; }
+  body.archive .russell-site-title span:before {
+    left: auto;
+    right: 0;
+    -webkit-transform: none;
+    transform: none; }
 
 .russell-post-meta {
   font-style: italic;
