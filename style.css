@@ -934,7 +934,8 @@ body.archive .russell-site-title {
 .russell-copyright {
   padding: 50px 50px 20px;
   font-style: italic;
-  font-size: .80em; }
+  font-size: .80em;
+  text-align: center; }
 
 .russell-content-area {
   border-right: 1px solid #eee;
