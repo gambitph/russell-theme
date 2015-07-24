@@ -307,3 +307,34 @@ body.archive, body.search {
 		cursor: pointer;
 	}
 }
+
+
+
+
+.entry-content {
+	table {
+		tbody tr:nth-child(2n+1) {
+			td, th {
+				background: #eee;
+			}
+		}
+		td, th {
+			padding: 8px;
+		}
+		thead tr {
+			th, td {
+				background: #222;
+				color: #fff;
+			}
+		}
+		tfoot tr {
+			th, td {
+				background: #ABB7B7;
+				color: #fff;
+			}
+		}
+	}
+}
+a, a:visited {
+	color: #DB0A5B;
+}

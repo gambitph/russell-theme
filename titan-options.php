@@ -102,7 +102,14 @@ function backup_create_options() {
 		'desc' => __( 'Change the fonts used across your site', 'backup' ),
 	) );
 	
-	// TODO Highlight color: css a, a:visited
+	$section->createOption( array(
+	    'name' => __( 'Highlight Color', 'backup' ),
+	    'id' => 'highlight_color',
+	    'type' => 'color',
+	    'desc' => __( 'The color of links and other theme highlights', 'backup' ),
+	    'default' => '#DB0A5B',
+		'css' => 'a, a:visited { color: value }',
+	) );
 	
 	$section->createOption( array(
 	    'name' => __( 'Headings Font', 'backup' ),
@@ -124,6 +131,7 @@ function backup_create_options() {
 		'css' => 'h1, h2, h3, h4, h5, h6, .main-navigation ul a, #masthead .logo a
 		{ value }',
 	) );
+	
 	$section->createOption( array(
 	    'name' => __( 'Heading 1 Size', 'backup' ),
 	    'id' => 'russell_heading1_font',
