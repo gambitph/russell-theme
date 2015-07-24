@@ -232,6 +232,17 @@ body.archive, body.search {
 	-ms-flex: 1.618;
 	flex: 1.618;
 }
+.russell-content-full.russell-content-area {
+	> div {
+		width: 90%;
+		margin: 0 auto;
+		max-width: 900px;
+		padding: 0 0 20px;
+	}
+	> *:first-child {
+		padding: 80px 0 20px;
+	}
+}
 @media screen and (max-width: 1200px) {
 	.russell-content-large {
 		-webkit-flex: 1;
