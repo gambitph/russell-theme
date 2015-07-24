@@ -73,14 +73,14 @@ endif;
 function russell_feature_logo() {
 	if ( function_exists( 'jetpack_the_site_logo' ) && function_exists( 'jetpack_has_site_logo' ) ) {    
 		if ( jetpack_has_site_logo() ) {
-			echo "<h1>";
+			echo "<div class='logo'>";
 			jetpack_the_site_logo();
-			echo "</h1>";
+			echo "</div>";
 			return;
 		}
 	}
 	
-	echo '<h1 class="title"><a href="' . esc_url( get_home_url( '/' ) ) . '" rel="home">' . get_bloginfo( 'name' ) . '</a></h1>';
+	echo '<div class="logo"><a href="' . esc_url( get_home_url( '/' ) ) . '" rel="home">' . get_bloginfo( 'name' ) . '</a></div>';
 }
 function russell_create_social_icons() {
 

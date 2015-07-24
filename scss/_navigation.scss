@@ -9,26 +9,52 @@
     li {
 		float: none;
 		display: inline-block;
-        margin: 0 1em;
+        margin: 0 2px;
         font-weight: bold;
         text-transform: uppercase;
         font-family: "Roboto Slab", serif;
+        color: #545454;
+        font-size: 12px;
         li {
             margin-right: 0;
             width: 215px;
         }
     }
     a {
-        color: #545454;
-        font-size: 12px;
+		padding: .8em 1.2em;
+		background: transparent;
+		transition: all 0s ease-in-out;
     }
-    a:hover {
-        color: #eee;
+	li:hover {
+        color: #fff;
+		background: #222;
+		transition: all .3s ease-in-out;
     }
+	li li {
+		margin: 0;
+		display: block;
+	}
+	li li a {
+		padding: .7em 1.2em;
+		color: #fff;
+	}
+	ul {
+		box-shadow: none;
+	}
     ul ul {
-        margin-top: 48px;
-        background-color: #fff;
+		top: 100%;
+		text-align: left;
+        color: #fff;
+		background: #222;
+		opacity: 0;
+		transition: opacity .3s ease-in-out;
     }
+	ul ul ul {
+		top: 0;
+	}
+	li:hover > ul {
+		opacity: 1;
+	}
 
 	text-align: center;
 }

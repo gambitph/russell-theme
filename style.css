@@ -714,7 +714,7 @@ body.admin-bar #page {
     flex: 1 1 auto; }
     #masthead nav li {
       display: inline-block; }
-  #masthead h1 {
+  #masthead .logo {
     margin: -20px 0 -20px 50px;
     display: -webkit-flex;
     display: -ms-flex;
@@ -725,16 +725,16 @@ body.admin-bar #page {
     -webkit-justify-content: center;
     -ms-justify-content: center;
     justify-content: center; }
-    #masthead h1 a {
+    #masthead .logo a {
       display: block; }
-      #masthead h1 a img {
+      #masthead .logo a img {
         max-height: 62px;
         width: auto; }
   #masthead .social-navigation {
     margin: 0 50px 0 0; }
-  #masthead .title {
+  #masthead .logo {
     font-family: "Montseratt", sans-serif; }
-    #masthead .title a {
+    #masthead .logo a {
       text-decoration: none; }
 
 .main-navigation {
@@ -749,21 +749,42 @@ body.admin-bar #page {
   #site-navigation li {
     float: none;
     display: inline-block;
-    margin: 0 1em;
+    margin: 0 2px;
     font-weight: bold;
     text-transform: uppercase;
-    font-family: "Roboto Slab", serif; }
+    font-family: "Roboto Slab", serif;
+    color: #545454;
+    font-size: 12px; }
     #site-navigation li li {
       margin-right: 0;
       width: 215px; }
   #site-navigation a {
-    color: #545454;
-    font-size: 12px; }
-  #site-navigation a:hover {
-    color: #eee; }
+    padding: .8em 1.2em;
+    background: transparent;
+    transition: all 0s ease-in-out; }
+  #site-navigation li:hover {
+    color: #fff;
+    background: #222;
+    transition: all .3s ease-in-out; }
+  #site-navigation li li {
+    margin: 0;
+    display: block; }
+  #site-navigation li li a {
+    padding: .7em 1.2em;
+    color: #fff; }
+  #site-navigation ul {
+    box-shadow: none; }
   #site-navigation ul ul {
-    margin-top: 48px;
-    background-color: #fff; }
+    top: 100%;
+    text-align: left;
+    color: #fff;
+    background: #222;
+    opacity: 0;
+    transition: opacity .3s ease-in-out; }
+  #site-navigation ul ul ul {
+    top: 0; }
+  #site-navigation li:hover > ul {
+    opacity: 1; }
 
 body.home:not(.page) #site-navigation {
   text-align: left; }

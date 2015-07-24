@@ -118,7 +118,7 @@ function backup_create_options() {
 	    'default' => array(
 	        'font-family' => "Montserrat",
 	    ),
-		'css' => 'h1, h2, h3, h4, h5, h6, .main-navigation ul a
+		'css' => 'h1, h2, h3, h4, h5, h6, .main-navigation ul a, #masthead .logo a
 		{ value }',
 	) );
 	$section->createOption( array(
@@ -142,7 +142,7 @@ function backup_create_options() {
 			'font-size' => '30px',
 			'font-weight' => 'bold',
 	    ),
-		'css' => 'h1 
+		'css' => 'h1, #masthead .logo a
 		{ value }',
 	) );
 	$section->createOption( array(
@@ -336,44 +336,51 @@ function backup_create_options() {
  	 * Navigation
  	 */
  	$section = $titan->createThemeCustomizerSection( array(
- 	    'name' => __( 'Header & Social', 'backup' ),
+ 	    'name' => __( 'Header Colors', 'backup' ),
  		'panel' => __( 'Theme Options & Colors', 'backup' ),
  		'desc' => __( 'The main navigation bar', 'backup' ),
  	) );
  	$section->createOption( array(
-	    'name' => __( 'Menu Background Color', 'backup' ),
-	    'id' => 'russell_header_color_bg',
+	    'name' => __( 'Header Background Color', 'backup' ),
+	    'id' => 'header_bg_color',
 	    'type' => 'color',
 		'default' => '#ffffff',
 		'css' => '#masthead { background-color: value; }'
 	) );
  	$section->createOption( array(
-	    'name' => __( 'Menu Border Color', 'backup' ),
-	    'id' => 'russell_header_border_color',
+	    'name' => __( 'Header Border Color', 'backup' ),
+	    'id' => 'header_border_color',
 	    'type' => 'color',
 		'default' => '#eeeeee',
 		'css' => '#masthead { border-color: value; }'
 	) );
 	$section->createOption( array(
-	    'name' => __( 'Sub Menu Background Color', 'backup' ),
-	    'id' => 'russell_sub_header_color_bg',
-	    'type' => 'color',
-		'default' => '#ffffff',
-		'css' => '.main-navigation ul ul.sub-menu { background-color: value }'
-	) );
-	$section->createOption( array(
-	    'name' => __( 'Menu Hover Color', 'backup' ),
-	    'id' => 'russell_menu_hover_text_color',
-	    'type' => 'color',
-		'default' => '#95A5A6',
-		'css' => '#masthead ul > li > a:hover { color: value }'
-	) );
-    $section->createOption( array(
-	    'name' => __( 'Main Menu Text Color', 'backup' ),
-	    'id' => 'russell_navbar_text_color',
+	    'name' => __( 'Menu Text Color', 'backup' ),
+	    'id' => 'menu_text_color',
 	    'type' => 'color',
 		'default' => '#646464',
-		'css' => '#masthead ul > li > a { color: value }'
+		'css' => '#site-navigation li a { color: value }',
+	) );
+	$section->createOption( array(
+	    'name' => __( 'Menu Submenu Open Background Color', 'backup' ),
+	    'id' => 'menu_bg_color',
+	    'type' => 'color',
+		'default' => '#222222',
+		'css' => '#site-navigation li:hover, #site-navigation ul ul { background-color: value }'
+	) );
+	$section->createOption( array(
+	    'name' => __( 'Menu Submenu Open Text Color', 'backup' ),
+	    'id' => 'menu_submenu_text_color',
+	    'type' => 'color',
+		'default' => '#ffffff',
+		'css' => '#site-navigation li:hover > a, #site-navigation li:hover a, ul ul a { color: value }'
+	) );
+	$section->createOption( array(
+	    'name' => __( 'Menu Hovered Text Color', 'backup' ),
+	    'id' => 'menu_hover_text_color',
+	    'type' => 'color',
+		'default' => '#95A5A6',
+		'css' => '#site-navigation ul ul li:hover > a { color: value }',
 	) );
 	$section->createOption( array(
 	    'name' => __( 'Social Icons Color', 'backup' ),
