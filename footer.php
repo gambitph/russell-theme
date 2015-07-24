@@ -6,10 +6,8 @@
  *
  * @package russell
  */
-global $titan;
+
 ?>
-
-
 </div><!-- #page -->
 
 <?php wp_footer(); ?>

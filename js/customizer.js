@@ -8,12 +8,12 @@
 	// Site title and description.
 	wp.customize( 'blogname', function( value ) {
 		value.bind( function( to ) {
-			$( '.site-title a' ).text( to );
+			$( 'body.home:not(.page) .russell-site-title a, #masthead .logo a' ).text( to );
 		} );
 	} );
 	wp.customize( 'blogdescription', function( value ) {
 		value.bind( function( to ) {
-			$( '.site-description' ).text( to );
+			$( 'body.home:not(.page) .russell-site-title span' ).text( to );
 		} );
 	} );
 	// Header text color.

@@ -5,6 +5,10 @@
  * @package russell
  */
 
+// TODO:
+// - Add note if nothing found with search field
+// - if nothing found, display full-width
+
 get_header();
 ?>
 <div id="content" class="russell-content-wrapper russell-content-reverse">

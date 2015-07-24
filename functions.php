@@ -90,8 +90,8 @@ function russell_widgets_init() {
 		'description'   => __( 'The left widget area', 'russell' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
-		'before_title'  => '<h1 class="widget-title">',
-		'after_title'   => '</h1>',
+		'before_title'  => '<h4 class="widget-title">',
+		'after_title'   => '</h4>',
 	) );
 	register_sidebar( array(
 		'name'          => __( 'Sidebar Right', 'russell' ),

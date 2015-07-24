@@ -101,6 +101,9 @@ function backup_create_options() {
 		'panel' => __( 'Theme Options & Colors', 'backup' ),
 		'desc' => __( 'Change the fonts used across your site', 'backup' ),
 	) );
+	
+	// TODO Highlight color: css a, a:visited
+	
 	$section->createOption( array(
 	    'name' => __( 'Headings Font', 'backup' ),
 	    'id' => 'russell_heading_font',
@@ -215,7 +218,7 @@ function backup_create_options() {
 	    // 'show_font_variant' => false,
 	    'show_text_shadow' => false,
 	    'default' => array(
-	        'font-size' => '24px',
+	        'font-size' => '20px',
 	        'text-transform' => 'uppercase',
 			'line-height' => '1.1em',
 			'font-weight' => 'bold',

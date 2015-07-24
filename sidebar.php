@@ -5,6 +5,11 @@
  * @package russell
  */
 
+// TODO
+// - replace with just 1 sidebar named "Footer"
+// - Use flexbox 'flex-flow: row wrap' to display widgets in 2 columns
+// - add media query, if max-width < 700px, display in 1 column
+
  if ( ! is_active_sidebar( 'sidebar-left' ) && ! is_active_sidebar( 'sidebar-right' ) ) {
  	return;
  }

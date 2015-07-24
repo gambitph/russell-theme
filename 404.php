@@ -5,6 +5,10 @@
  * @package russell
  */
 
+// TODO:
+// - adjust layout
+// - cleanup
+
 get_header(); ?>
 <div class="russell-error404-left-content">
 

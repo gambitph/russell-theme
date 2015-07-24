@@ -5,11 +5,7 @@
  * @package russell
  */
 
-$sticky = '';
-
-if ( is_sticky() ) {
-	$sticky = 'sticky';
-}
+$sticky = is_sticky() ? 'sticky' : '';
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class( $sticky ); ?>>
 	

@@ -7,6 +7,9 @@
  * @package russell
  */
 
+// TODO
+// - hide filter list of no tags are found
+
 get_header();
 
 $subtitle = __( 'Archives', 'russell' );

@@ -41,6 +41,15 @@ body.admin-bar {
 	}
 	.logo {
 		margin: -20px 0 -20px 50px;
+		a {
+			display: block;
+			img {
+			    max-height: 62px;
+			    width: auto;
+			}
+		}
+	}
+	.logo, .social-navigation {
 	    display: -webkit-flex;
 	    display: -ms-flex;
 	    display: flex;
@@ -50,13 +59,6 @@ body.admin-bar {
 	    -webkit-justify-content: center;
 	    -ms-justify-content: center;
 	    justify-content: center;
-		a {
-			display: block;
-			img {
-			    max-height: 62px;
-			    width: auto;
-			}
-		}
 	}
 	.social-navigation {
 		margin: 0 50px 0 0;
