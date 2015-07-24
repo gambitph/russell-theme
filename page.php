@@ -13,6 +13,7 @@
 get_header(); ?>
 
 <?php while ( have_posts() ) : the_post(); ?>
+
 <div id="content" class="russell-content-wrapper">
     
     <?php get_template_part( 'content', 'featured-image' ); 
@@ -34,7 +35,9 @@ get_header(); ?>
     ?>    
     
     <div id="primary" class="content-area">
+		
 		<main id="main" class="site-main" role="main">
+            
             <?php get_template_part( 'content', 'page' ); ?>
 
 		    <?php
@@ -43,6 +46,7 @@ get_header(); ?>
     				comments_template();
     			endif;
 		    ?>
+		    
 	    </main><!-- #main -->
     
 	</div><!-- #primary -->
@@ -62,7 +66,7 @@ get_header(); ?>
     ?>
 
 </div>
-<?php endwhile; // end of the loop. ?>
 
+<?php endwhile; // end of the loop. ?>
 
 <?php get_footer(); ?>

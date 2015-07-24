@@ -9,6 +9,8 @@ get_header(); ?>
 
 <?php while ( have_posts() ) : the_post(); ?>
 
+<div id="content" class="russell-content-wrapper">
+
     <?php get_template_part( 'content', 'featured-image' );
 	
 	if ( ( is_single() || is_page() ) && has_post_thumbnail() ) {
@@ -16,14 +18,19 @@ get_header(); ?>
 
     	if ( ! empty( $imageAttachment ) ) {
     		?>
-            <div class="russell-single-right-content">
+            <section class="russell-content-small russell-content-area">
             <?php
     	}
+    } else {
+        ?>
+        <section class="russell-content-full russell-content-area">
+        <?php
     }
     
     ?>
     
 	<div id="primary" class="content-area">
+		
 		<main id="main" class="site-main" role="main">
 
 			<?php get_template_part( 'content', 'single' ); ?>
@@ -38,6 +45,7 @@ get_header(); ?>
 			?>
 
 		</main><!-- #main -->
+	
 	</div><!-- #primary -->
 
     <?php get_sidebar(); ?>
@@ -49,7 +57,7 @@ get_header(); ?>
     <?php
     if ( ( is_single() || is_page() ) && has_post_thumbnail() ) {
     	if ( ! empty( $imageAttachment ) ) {
-    		?></div><?php
+    		?></section><?php
 		}
     }
     ?>

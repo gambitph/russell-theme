@@ -833,7 +833,7 @@ body.has-featured-image #page .russell-single-right-content {
   -ms-flex: 1;
   flex: 1;
   overflow: auto; }
-body.has-featured-image #page .russell-featured-images .featured-image-caption {
+body.has-featured-image #page .featured-image-caption {
   position: absolute;
   left: 20px;
   bottom: 0;
