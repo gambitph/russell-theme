@@ -933,8 +933,7 @@ body.archive h1 span:before {
   overflow: auto;
   -webkit-flex: 1;
   -ms-flex: 1;
-  flex: 1;
-  padding: 80px 50px 20px 50px; }
+  flex: 1; }
 
 .russell-content-large {
   overflow: hidden;
