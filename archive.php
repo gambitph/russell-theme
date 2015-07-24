@@ -70,15 +70,17 @@ if ( is_category() ) {
 				<a href='#'><?php echo $title ?></a>
 				<span><?php echo $subtitle ?></span>
 			</h1>
-		
+
+		</div>
+		<div>
 			<?php if ( have_posts() ) : ?>
 			<?php russell_selected_post_tags(); ?>
 			<?php endif; ?>
-        
-	        <div class="russell-copyright">
-	            <?php russell_copyright(); ?>
-	        </div>
+
 		</div>
+        <div class="russell-copyright">
+            <?php russell_copyright(); ?>
+        </div>
 	</section>
 </div>
 <?php

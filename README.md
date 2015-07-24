@@ -10,6 +10,9 @@
 		<section class="russell-content-small russell-content-area">
 			<div>
 			</div>
+	        <div class="russell-copyright">
+	            <?php russell_copyright(); ?>
+	        </div>
 		</section>
 	</div>
 
@@ -20,6 +23,9 @@
 		<section class="russell-content-small russell-content-area">
 			<div>
 			</div>
+	        <div class="russell-copyright">
+	            <?php russell_copyright(); ?>
+	        </div>
 		</section>
 		<section class="russell-content-large russell-content-image"></section>
 	</div>
@@ -30,6 +36,9 @@
 		<section class="russell-content-full russell-content-area">
 			<div>
 			</div>
+	        <div class="russell-copyright">
+	            <?php russell_copyright(); ?>
+	        </div>
 		</section>
 	</div>
 
