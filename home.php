@@ -11,22 +11,24 @@
  * @package backup
  */
 
-get_header(); ?>
-<div class="russell-home-left-content">
+get_header();
+
+?>
+<section class="russell-home-left-content content-small">
     
-    <div class="site-branding">
-		<?php		
+    <div>
 		
-        ?>
         <h1 class="site-title">
 			<?php
 			
 			if ( function_exists( 'jetpack_the_site_logo' ) && function_exists( 'jetpack_has_site_logo' ) && jetpack_has_site_logo() ) {    
 				jetpack_the_site_logo();
 			} else {
-				?><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php
-				bloginfo( 'name' );
-				?></a><?php
+				?>
+				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+					<?php bloginfo( 'name' ); ?>
+				</a>
+				<?php
 			}
 			
 			$description = get_bloginfo( 'description' );
@@ -37,26 +39,23 @@ get_header(); ?>
 			}
 			?>
 		</h1>
+		
+		<?php
+	    if ( class_exists( 'TitanFramework' ) ) {
+		    $titan = TitanFramework::getInstance( 'russell' ); 
+		    ?> <div class="site-elaboration"> <?php
+			echo esc_attr( $titan->getOption( 'russell_site_elaboration' ) ); 
+		    ?> </div> <?php        
+		} ?> 	
 			
-	</div><!-- .site-branding -->
+	</div>
 	
-	<?php
-    if ( class_exists( 'TitanFramework' ) ) {
-	    $titan = TitanFramework::getInstance( 'russell' ); 
-	    ?> <div class="site-elaboration"> <?php
-		echo esc_attr( $titan->getOption( 'russell_site_elaboration' ) ); 
-	    ?> </div> <?php        
-	} ?> 	
 	
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
-		</main><!-- #main -->
-        <div class="russell-copyright">
-            <?php russell_copyright(); ?>
-        </div>
-	</div><!-- #primary -->    
+    <div class="copyright">
+        <?php russell_copyright(); ?>
+    </div>
 
-</div><!-- .russell-home-left-content -->
+</section><!-- .russell-home-left-content -->
 
 <div class="russell-home-right-content"></div>
 
