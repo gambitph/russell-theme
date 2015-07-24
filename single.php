@@ -13,42 +13,36 @@ get_header(); ?>
 
     <?php get_template_part( 'content', 'featured-image' );
 	
-	if ( ( is_single() || is_page() ) && has_post_thumbnail() ) {
+	if ( has_post_thumbnail() ) {
     	$imageAttachment = wp_get_attachment_image_src( get_post_thumbnail_id(), 'russell-featured-image' );
 
     	if ( ! empty( $imageAttachment ) ) {
+    	    $contentClass = "russell-content-small";
     		?>
-            <section class="russell-content-small russell-content-area">
+            <section class="<?php $contentClass ?> russell-content-area">
                 <div>
             <?php
     	}
     } else {
+        $contentClass = "russell-content-full"
         ?>
-        <section class="russell-content-full russell-content-area">
+        <section class="<?php echo esc_attr( $contentClass ); ?> russell-content-area">
             <div>
         <?php
     }
     
     ?>
     
-	<div id="primary" class="content-area">
-		
-		<main id="main" class="site-main" role="main">
+	<?php get_template_part( 'content', 'single' ); ?>
 
-			<?php get_template_part( 'content', 'single' ); ?>
+		<?php russell_post_nav(); ?>
 
-			<?php russell_post_nav(); ?>
-
-			<?php
-				// If comments are open or we have at least one comment, load up the comment template
-				if ( comments_open() || get_comments_number() ) :
-					comments_template();
-				endif;
-			?>
-
-		</main><!-- #main -->
-	
-	</div><!-- #primary -->
+		<?php
+			// If comments are open or we have at least one comment, load up the comment template
+			if ( comments_open() || get_comments_number() ) :
+				comments_template();
+			endif;
+		?>
 
     <?php get_sidebar(); ?>
     
@@ -57,7 +51,7 @@ get_header(); ?>
     </div>
     
     <?php
-    if ( ( is_single() || is_page() ) && has_post_thumbnail() ) {
+    if ( has_post_thumbnail() ) {
     	if ( ! empty( $imageAttachment ) ) {
     		?>
     		</section>
