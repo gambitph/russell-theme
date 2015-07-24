@@ -9,6 +9,11 @@ if ( is_sticky() ) {
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+
+	
+	<div class="russell-post-meta">
+		<?php russell_posted_on(); ?>
+	</div><!-- .entry-meta -->
 	
 	<?php
 	$title = get_the_title();
@@ -29,10 +34,6 @@ if ( is_sticky() ) {
 		}
 		?>
 	</h1>
-	
-	<div class="russell-post-meta">
-		<?php russell_posted_on(); ?>
-	</div><!-- .entry-meta -->
 
 	<div class="entry-content">
 		<?php the_content(); ?>

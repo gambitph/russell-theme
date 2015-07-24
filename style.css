@@ -864,7 +864,7 @@ body.has-featured-image #page .featured-image-caption {
   #page {
     height: auto; } }
 .russell-site-title {
-  margin: 0 0 50px;
+  margin: 0 0 100px;
   text-align: center; }
   .russell-site-title, .russell-site-title a {
     text-decoration: none; }
@@ -917,6 +917,10 @@ body.archive .russell-site-title, body.search .russell-site-title {
     .russell-post-meta a:hover, .russell-post-meta a:visited:hover {
       color: #646464;
       border-color: #646464; }
+  .russell-post-meta .avatar {
+    display: block;
+    margin: 0 auto 20px;
+    border-radius: 100%; }
 
 .russell-content-area {
   display: -webkit-flex;

@@ -365,7 +365,7 @@ function backup_create_options() {
 	    'name' => __( 'Menu Hover Color', 'backup' ),
 	    'id' => 'russell_menu_hover_text_color',
 	    'type' => 'color',
-		'default' => '#eeeeee',
+		'default' => '#95A5A6',
 		'css' => '#masthead ul > li > a:hover { color: value }'
 	) );
     $section->createOption( array(
@@ -379,14 +379,14 @@ function backup_create_options() {
 	    'name' => __( 'Social Icons Color', 'backup' ),
 	    'id' => 'russell_social_text_color',
 	    'type' => 'color',
-		'default' => '#646464',
+		'default' => '#959595',
 		'css' => '#masthead .social-navigation a:before { color: value }'
 	) );
 	$section->createOption( array(
 	    'name' => __( 'Social Icons Hover Color', 'backup' ),
 	    'id' => 'russell_social_hover_text_color',
 	    'type' => 'color',
-		'default' => 'orange',
+		'default' => '#646464',
 		'css' => '#masthead .social-navigation a:hover:before { color: value }'
 	) );   
 	

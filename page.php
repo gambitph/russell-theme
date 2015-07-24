@@ -50,7 +50,7 @@ get_header(); ?>
             <?php russell_copyright(); ?>
         </div>
     
-   </section>
+	</section>
 
 </div><!-- .russell-content-wrapper -->
 

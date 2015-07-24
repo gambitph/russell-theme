@@ -124,7 +124,7 @@ body.has-featured-image #page {
 	&, a {
 		text-decoration: none;
 	}
-    margin: 0 0 50px;
+    margin: 0 0 100px;
 	text-align: center;
 	span {
 		position: relative;
@@ -185,6 +185,11 @@ body.archive, body.search {
 			color: #646464;
 			border-color: #646464;
 		}
+	}
+	.avatar {
+		display: block;
+		margin: 0 auto 20px;
+		border-radius: 100%;
 	}
 }
 
