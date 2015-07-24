@@ -20,6 +20,7 @@
 #### Main wrapper large image left & small content right
 
 	<div id="content" class="russell-content-wrapper">
+		<section class="russell-content-large russell-content-image"></section>
 		<section class="russell-content-small russell-content-area">
 			<div>
 			</div>
@@ -27,7 +28,6 @@
 	            <?php russell_copyright(); ?>
 	        </div>
 		</section>
-		<section class="russell-content-large russell-content-image"></section>
 	</div>
 
 
