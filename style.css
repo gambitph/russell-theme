@@ -760,12 +760,10 @@ body.admin-bar #page {
       width: 215px; }
   #site-navigation a {
     padding: .8em 1.2em;
-    background: transparent;
-    transition: all 0s ease-in-out; }
+    background: transparent; }
   #site-navigation li:hover {
     color: #fff;
-    background: #222;
-    transition: all .3s ease-in-out; }
+    background: #222; }
   #site-navigation li li {
     margin: 0;
     display: block; }
@@ -780,7 +778,7 @@ body.admin-bar #page {
     color: #fff;
     background: #222;
     opacity: 0;
-    transition: opacity .3s ease-in-out; }
+    transition: opacity .2s ease-in-out; }
   #site-navigation ul ul ul {
     top: 0; }
   #site-navigation li:hover > ul {
