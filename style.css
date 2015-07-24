@@ -896,9 +896,9 @@ body.has-featured-image #page .featured-image-caption {
   .russell-site-title a {
     text-decoration: none; }
 
-body.archive .russell-site-title {
+body.archive .russell-site-title, body.search .russell-site-title {
   text-align: right; }
-  body.archive .russell-site-title span:before {
+  body.archive .russell-site-title span:before, body.search .russell-site-title span:before {
     left: auto;
     right: 0;
     -webkit-transform: none;
@@ -906,11 +906,17 @@ body.archive .russell-site-title {
 
 .russell-post-meta {
   font-style: italic;
-  text-align: center; }
-  .russell-post-meta a {
+  text-align: center;
+  font-size: .8em;
+  color: #999;
+  margin-bottom: 50px; }
+  .russell-post-meta a, .russell-post-meta a:visited {
     text-decoration: none;
-    border-bottom: 1px solid #646464;
-    color: #646464; }
+    border-bottom: 1px solid #ddd;
+    color: #999; }
+    .russell-post-meta a:hover, .russell-post-meta a:visited:hover {
+      color: #646464;
+      border-color: #646464; }
 
 .russell-content-area {
   display: -webkit-flex;
