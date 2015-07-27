@@ -39,8 +39,9 @@ get_header(); ?>
 					comments_template();
 				endif;
 			?>
-
-		    <?php get_sidebar(); ?>
+			<div class="widget-category">
+		    <?php dynamic_sidebar( 'footer-sidebar' ); ?>
+			</div>
 	    </div>
 		
 	    <div class="russell-copyright">

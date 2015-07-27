@@ -8,7 +8,7 @@
 
 get_header();
 ?>
-<div id="content" class="russell-content-wrapper">
+<div id="content" class="russell-content-wrapper russell-content-reverse">
 	<?php 
 		$recent_tags = get_the_tags();
 		if ( empty( $recent_tags ) ) {

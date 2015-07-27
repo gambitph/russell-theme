@@ -93,6 +93,15 @@ function russell_widgets_init() {
 		'before_title'  => '<h4 class="widget-title">',
 		'after_title'   => '</h4>',
 	) );
+	register_sidebar( array(
+		'name'          => __( '404 Sidebar', 'russell' ),
+		'id'            => '404-sidebar',
+		'description'   => __( 'The 404 widget area', 'russell' ),
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h4 class="widget-title">',
+		'after_title'   => '</h4>',
+	) );
 }
 add_action( 'widgets_init', 'russell_widgets_init' );
 

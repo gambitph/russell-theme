@@ -12,11 +12,10 @@
  
  $activeSidebars = 0;
  $activeSidebars += is_active_sidebar( 'footer-sidebar' ) ? 1 : 0;
+ $activeSidebars += is_active_sidebar( '404-sidebar' ) ? 1 : 0;
  
  
 ?>
-
-<div class="footer-widgets active-footers-<?php echo $activeSidebars ?>">
 
 <?php
 if ( is_active_sidebar( 'footer-sidebar' ) ) {
@@ -25,6 +24,10 @@ if ( is_active_sidebar( 'footer-sidebar' ) ) {
 		<?php dynamic_sidebar( 'footer-sidebar' ); ?>
 	</div><!-- #footer-left --><?php
 }
+if ( is_active_sidebar( '404-sidebar' ) ) {
+	?>
+	<div id="404-sidebar" class="widget-area" role="complementary">
+		<?php dynamic_sidebar( '404-sidebar' ); ?>
+	</div><!-- #footer-left --><?php
+}
 ?>
-
-</div>

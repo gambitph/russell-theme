@@ -351,3 +351,9 @@ body.archive, body.search {
 a, a:visited {
 	color: #DB0A5B;
 }
+
+.navigation .nav-previous,
+.navigation .nav-next {
+	float: none;
+	display: inline-block;
+}
