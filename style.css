@@ -1042,8 +1042,24 @@ body.archive .russell-site-title, body.search .russell-site-title {
     line-height: 2em;
     cursor: pointer; }
 
+<<<<<<< HEAD
 .nothing-found {
   text-align: right; }
+=======
+.entry-content table tbody tr:nth-child(2n+1) td, .entry-content table tbody tr:nth-child(2n+1) th {
+  background: #eee; }
+.entry-content table td, .entry-content table th {
+  padding: 8px; }
+.entry-content table thead tr th, .entry-content table thead tr td {
+  background: #222;
+  color: #fff; }
+.entry-content table tfoot tr th, .entry-content table tfoot tr td {
+  background: #ABB7B7;
+  color: #fff; }
+
+a, a:visited {
+  color: #DB0A5B; }
+>>>>>>> origin/master
 
 html, body {
   overflow: hidden;
@@ -1052,27 +1068,31 @@ html, body {
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Montserrat', sans-serif;
   text-transform: uppercase;
-  line-height: 1.1em; }
+  line-height: 1.1em;
+  margin-bottom: 20px; }
   h1, h1 a, h1 a:visited, h2, h2 a, h2 a:visited, h3, h3 a, h3 a:visited, h4, h4 a, h4 a:visited, h5, h5 a, h5 a:visited, h6, h6 a, h6 a:visited {
     color: #333333; }
 
+a:hover, a:visited:hover {
+  color: #333; }
+
 h1 {
-  font-size: 2.5em; }
+  font-size: 34px; }
 
 h2 {
-  font-size: 2em; }
+  font-size: 28px; }
 
 h3 {
-  font-size: 1.7em; }
+  font-size: 26px; }
 
 h4 {
-  font-size: 1.4em; }
+  font-size: 20px; }
 
 h5 {
-  font-size: 1em; }
+  font-size: 16px; }
 
 h6 {
-  font-size: .7em; }
+  font-size: 12px; }
 
 #footer-sidebar {
   display: -webkit-flex;
