@@ -85,18 +85,9 @@ add_action( 'after_setup_theme', 'russell_setup' );
  */
 function russell_widgets_init() {
 	register_sidebar( array(
-		'name'          => __( 'Sidebar Left', 'russell' ),
-		'id'            => 'sidebar-left',
-		'description'   => __( 'The left widget area', 'russell' ),
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</aside>',
-		'before_title'  => '<h4 class="widget-title">',
-		'after_title'   => '</h4>',
-	) );
-	register_sidebar( array(
-		'name'          => __( 'Sidebar Right', 'russell' ),
-		'id'            => 'sidebar-right',
-		'description'   => __( 'The right widget area', 'russell' ),
+		'name'          => __( 'Footer Sidebar', 'russell' ),
+		'id'            => 'footer-sidebar',
+		'description'   => __( 'The footer widget area', 'russell' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
 		'before_title'  => '<h4 class="widget-title">',
@@ -299,24 +290,34 @@ function russell_selected_post_tags() {
         $tags = get_the_tags();
         if ( $tags ) {
             while ( have_posts() ) : the_post();
-            //var_dump( get_the_tags() );
                 foreach( $tags as $t ) { $recent_tags[$t->slug] = $t->name; } // this adds to the array in the form ['slug']=>'name'
             endwhile;
         }
-        
         // de-dupe
         $recent_tags = array_unique($recent_tags);
         // sort
         natcasesort($recent_tags);
-		
-		echo "<ul class='russell-taglist'>";
-		
-        foreach( $recent_tags as $tags ) {
-            ?>
-		    <li><?php echo $tags ?></li>
-		    <?php    
-        }
-		echo "</ul>";
+		if ( ! empty ( $recent_tags ) ) {
+			?>
+			
+			<div>
+				<?php
+				echo "<ul class='russell-taglist'>";
+			    foreach( $recent_tags as $tags ) {
+			        ?>
+				    <li><?php echo $tags ?></li>
+				    <?php    
+			    }
+				echo "</ul>";
+				?>
+			</div>
+			
+			<?php
+		} else {
+			?>
+			<span class="nothing-found"><?php _e( 'Nothing Found', 'russell' ); ?></span>
+			<?php
+		}
     }                     
 }
 

@@ -7,8 +7,6 @@
  * @package russell
  */
 
-// TODO
-// - hide filter list of no tags are found
 
 get_header();
 
@@ -75,13 +73,12 @@ if ( is_category() ) {
 			</h1>
 
 		</div>
-		<div>
-			<?php if ( have_posts() ) : ?>
-			<?php russell_selected_post_tags(); ?>
-			<?php endif; ?>
+		
+		<?php if ( have_posts() ) : ?>
+		<?php russell_selected_post_tags(); ?>
+		<?php endif; ?>
 
-		</div>
-        <div class="russell-copyright">
+		<div class="russell-copyright">
             <?php russell_copyright(); ?>
         </div>
 	</section>

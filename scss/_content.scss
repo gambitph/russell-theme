@@ -159,6 +159,18 @@ body.has-featured-image #page {
 	}
 }
 body.archive, body.search {
+	.russell-content-full {
+		.russell-site-title, 
+		.nothing-found {
+			text-align: center;
+			span {
+				&:before {
+					left: 50%;
+					transform: translateX(-50%);
+				}
+			}
+		}
+	}
 	.russell-site-title {
 		text-align: right;
 		span {
@@ -306,4 +318,8 @@ body.archive, body.search {
 		line-height: 2em;
 		cursor: pointer;
 	}
+}
+
+.nothing-found {
+	text-align: right;
 }

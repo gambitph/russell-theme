@@ -6,28 +6,27 @@
  */
 
 // TODO:
-// - adjust layout
 // - cleanup
 
-get_header(); ?>
-<div class="russell-error404-left-content">
+get_header(); 
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+?>
+<div id="content" class="russell-content-wrapper">
 
-			<section class="error-404 not-found">
-				<header class="page-header">
-					<h1 class="page-title"><?php _e( 'Oops! That page can&rsquo;t be found.', 'russell' ); ?></h1>
-				</header><!-- .page-header -->
+	<section class="russell-content-full russell-content-area">
+		<div>
+			
+			<h1 class="russell-site-title"><?php _e( 'Oops! That page can&rsquo;t be found.', 'russell' ); ?></h1>
+		
+			<div class="page-content">
+				<p><?php _e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'russell' ); ?></p>
 
-				<div class="page-content">
-					<p><?php _e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'russell' ); ?></p>
+				<?php get_search_form(); ?>
 
-					<?php get_search_form(); ?>
+				<?php the_widget( 'WP_Widget_Recent_Posts' ); ?>
 
-					<?php the_widget( 'WP_Widget_Recent_Posts' ); ?>
+				<?php if ( russell_categorized_blog() ) : // Only show the widget if site has multiple categories. ?>
 
-					<?php if ( russell_categorized_blog() ) : // Only show the widget if site has multiple categories. ?>
 					<div class="widget widget_categories">
 						<h2 class="widget-title"><?php _e( 'Most Used Categories', 'russell' ); ?></h2>
 						<ul>
@@ -42,25 +41,26 @@ get_header(); ?>
 						?>
 						</ul>
 					</div><!-- .widget -->
-					<?php endif; ?>
 
-					<?php
-						/* translators: %1$s: smiley */
-						$archive_content = '<p>' . sprintf( __( 'Try looking in the monthly archives. %1$s', 'russell' ), convert_smilies( ':)' ) ) . '</p>';
-						the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$archive_content" );
-					?>
+				<?php endif; ?>
 
-					<?php the_widget( 'WP_Widget_Tag_Cloud' ); ?>
+				<?php
+					/* translators: %1$s: smiley */
+					$archive_content = '<p>' . sprintf( __( 'Try looking in the monthly archives. %1$s', 'russell' ), convert_smilies( ':)' ) ) . '</p>';
+					the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$archive_content" );
+				?>
 
-				</div><!-- .page-content -->
-			</section><!-- .error-404 -->
+				<?php the_widget( 'WP_Widget_Tag_Cloud' ); ?>
 
-		</main><!-- #main -->
-    </div><!-- #primary -->
-    
-	<div class="russell-copyright">
-        <?php russell_copyright(); ?>
-    </div>
-    
+			</div><!-- .page-content -->
+		
+		</div>
+		
+		<div class="russell-copyright">
+	        <?php russell_copyright(); ?>
+	    </div>
+		
+	</section><!-- .russell-content-full -->
+        
 </div>
 <?php get_footer(); ?>
