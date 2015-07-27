@@ -9,19 +9,10 @@
 get_header();
 ?>
 <div id="content" class="russell-content-wrapper russell-content-reverse">
-	<?php 
-		$recent_tags = get_the_tags();
-		if ( empty( $recent_tags ) ) {
-			?>
-			<section class="russell-content-full russell-content-area">
-			<?php
-		} else {
-			?>
-			<section class="russell-content-large russell-content-image"></section>
-			<section class="russell-content-small russell-content-area">
-			<?php
-		}
-	?>
+	
+	<section class="russell-content-large russell-content-image"></section>
+	<section class="russell-content-small russell-content-area">
+	
 		<div>
 			<h1 class="russell-site-title">
 				<a href='#'><?php echo get_search_query() ?></a>
@@ -36,6 +27,7 @@ get_header();
 		<div class="russell-copyright">
             <?php russell_copyright(); ?>
         </div>
+
 </div>
 <?php
 
