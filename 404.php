@@ -5,8 +5,6 @@
  * @package russell
  */
 
-// TODO:
-// - cleanup
 
 get_header(); 
 
