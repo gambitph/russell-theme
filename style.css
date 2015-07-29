@@ -789,7 +789,18 @@ body.home:not(.page) #site-navigation {
   text-align: left; }
 
 body #comments {
-  padding-top: 50px; }
+  position: relative;
+  padding-top: 100px; }
+  body #comments span.genericon {
+    background-color: #eee;
+    border-radius: 100%;
+    padding: 20px;
+    position: relative;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%); }
+  body #comments h1.russell-site-title {
+    margin: 50px 0 100px 0; }
   body #comments .comment-list article:after {
     content: "";
     display: block;
@@ -874,6 +885,15 @@ body #comments {
         text-transform: uppercase; }
     body #comments article:hover .reply {
       opacity: 1; }
+  body #comments #respond form div {
+    display: flex; }
+    body #comments #respond form div p {
+      flex: 1 1 310px;
+      margin: 5px 22px; }
+    body #comments #respond form div p.comment-form-author {
+      margin-left: 0; }
+    body #comments #respond form div p.comment-form-url {
+      margin-right: 0; }
 body span.cat-links,
 body span.tags-links,
 body span.edit-link {
@@ -894,6 +914,11 @@ body .nav-links a {
   text-decoration: none;
   padding: 10px; }
 
+@media screen and (max-width: 1015px) {
+  body #comments #respond form div {
+    display: block; }
+    body #comments #respond form div p {
+      margin: 10px 0; } }
 #content .site-branding {
   text-align: center; }
 #content .site-title {
@@ -1055,6 +1080,11 @@ body.archive .russell-site-title, body.search .russell-site-title {
     border-radius: 100%; }
 
 .russell-content-area {
+  border-right: 1px solid #eee;
+  overflow: auto;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
@@ -1078,13 +1108,6 @@ body.archive .russell-site-title, body.search .russell-site-title {
   font-style: italic;
   font-size: .80em;
   text-align: center; }
-
-.russell-content-area {
-  border-right: 1px solid #eee;
-  overflow: auto;
-  -webkit-flex: 1;
-  -ms-flex: 1;
-  flex: 1; }
 
 .russell-content-large {
   overflow: hidden;

@@ -208,6 +208,11 @@ body.archive, body.search {
 
 
 .russell-content-area {
+	border-right: 1px solid #eee;
+	overflow: auto;
+	-webkit-flex: 1;
+	-ms-flex: 1;
+	flex: 1;
 	display: -webkit-flex;
 	display: -ms-flexbox;
     display: flex;
@@ -234,14 +239,6 @@ body.archive, body.search {
 	font-style: italic;
     font-size: .80em;
 	text-align: center;
-}
-
-.russell-content-area {
-	border-right: 1px solid #eee;
-	overflow: auto;
-	-webkit-flex: 1;
-	-ms-flex: 1;
-	flex: 1;
 }
 .russell-content-large {
     overflow: hidden;

@@ -101,3 +101,31 @@ function russell_create_social_icons() {
 		echo "<div class='social-navigation'>" . $socialIcons . "</div>";
 	}
 }
+
+function russell_comment_form() {
+	
+	$fields =  array(
+
+	  'author' =>
+	    '<div><p class="comment-form-author"><label for="author">' . __( 'Name', 'domainreference' ) . '</label> ' .
+	    ( $req ? '<span class="required">*</span>' : '' ) .
+	    '<input id="author" name="author" type="text" placeholder="Name *" value="' . esc_attr( $commenter['comment_author'] ) .
+	    '" size="32"' . $aria_req . ' /></p>',
+
+	  'email' =>
+	    '<p class="comment-form-email"><label for="email">' . __( 'Email', 'domainreference' ) . '</label> ' .
+	    ( $req ? '<span class="required">*</span>' : '' ) .
+	    '<input id="email" name="email" type="text" placeholder="Email *" value="' . esc_attr(  $commenter['comment_author_email'] ) .
+	    '" size="32"' . $aria_req . ' /></p>',
+
+	  'url' =>
+	    '<p class="comment-form-url"><label for="url">' . __( 'Website', 'domainreference' ) . '</label>' .
+	    '<input id="url" name="url" type="text" placeholder="Website *" value="' . esc_attr( $commenter['comment_author_url'] ) .
+	    '" size="32" /></p></div>',
+	);
+	
+	comment_form( array(
+		'fields' => $fields,
+	) );
+	 //apply_filters( 'russell_comment_form', $fields );
+}

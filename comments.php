@@ -23,12 +23,13 @@ if ( post_password_required() ) {
 	<?php // You can start editing here -- including this comment! ?>
 
 	<?php if ( have_comments() ) : ?>
-		<h2 class="comments-title">
+		<span class="genericon genericon-quote"></span>
+		<h1 class="russell-site-title">
 			<?php
-				printf( _nx( 'One thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', get_comments_number(), 'comments title', 'russell' ),
+				printf( _nx( 'One thought &ldquo;%2$s&rdquo;', '%1$s thoughts %2$s', get_comments_number(), 'comments title', 'russell' ),
 					number_format_i18n( get_comments_number() ), '<span>' . get_the_title() . '</span>' );
 			?>
-		</h2>
+		</h1>
 
 		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // are there comments to navigate through ?>
 		<nav id="comment-nav-above" class="comment-navigation" role="navigation">
@@ -65,6 +66,6 @@ if ( post_password_required() ) {
 		<p class="no-comments"><?php _e( 'Comments are closed.', 'russell' ); ?></p>
 	<?php endif; ?>
 
-	<?php comment_form(); ?>
+	<?php russell_comment_form(); ?>
 
 </div><!-- #comments -->

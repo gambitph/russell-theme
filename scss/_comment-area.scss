@@ -1,6 +1,19 @@
 body {
 	#comments {
-		padding-top: 50px;
+		position: relative;
+		padding-top: 100px;
+		span.genericon {
+			background-color: #eee;
+		    border-radius: 100%;
+		    padding: 20px;
+		    position: relative;
+		    left: 50%;
+			-webkit-transform: translateX(-50%);
+		    transform: translateX(-50%);
+		}
+		h1.russell-site-title {
+			margin: 50px 0 100px 0;
+		}
 		.comment-list {
 			article:after {
 				content: "";
@@ -111,6 +124,19 @@ body {
 				}
 			}
 		}
+		#respond form div {
+			display: flex;
+			p {
+				flex: 1 1 310px;
+				margin: 5px 22px
+			}
+			p.comment-form-author {
+				margin-left: 0;
+			}
+			p.comment-form-url {
+				margin-right: 0;
+			}
+		}
 	}
 	span.cat-links,
 	span.tags-links,
@@ -131,5 +157,13 @@ body {
 		color: #000;
 		text-decoration: none;
 		padding: 10px;
+	}
+}
+@media screen and (max-width: 1015px) {
+	body #comments #respond form div {
+		display: block;
+		p {
+			margin: 10px 0;
+		}
 	}
 }
