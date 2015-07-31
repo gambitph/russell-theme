@@ -52,8 +52,8 @@ function russell_post_nav() {
 		<h1 class="screen-reader-text"><?php _e( 'Post navigation', 'russell' ); ?></h1>
 		<div class="nav-links">
 			<?php
-				previous_post_link( '<div class="nav-previous">%link</div>', _x( '<span class="meta-nav">&larr;</span>&nbsp;%title', 'Previous post link', 'russell' ) );
-				next_post_link( '<div class="nav-next">%link</div>', _x( '%title&nbsp;<span class="meta-nav">&rarr;</span>', 'Next post link', 'russell' ) );
+				previous_post_link( '<div class="nav-previous"><span class="meta-nav">&#x276e;</span><div class="nav-indicator">%link</div></div>', _x( 'Prev', 'russell' ) );
+				next_post_link( '<div class="nav-next"><span class="meta-nav">&#x276f;</span><div class="nav-indicator">%link</div></div>', _x( 'Next', 'russell' ) );
 			?>
 		</div><!-- .nav-links -->
 	</nav><!-- .navigation -->
