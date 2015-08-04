@@ -830,7 +830,7 @@ body #comments {
     list-style: none;
     margin: 0; }
   body #comments ol ol {
-    margin-left: 30px; }
+    margin-left: 20px; }
   body #comments h2.comments-title {
     margin: 0 0 40px;
     border-left-width: 3px;
@@ -974,36 +974,42 @@ body .nav-links a {
   margin-left: 10px; }
   #content .widget-category ul li {
     padding: 5px 0; }
-#content .navigation .nav-links .nav-previous, #content .navigation .nav-links .nav-next {
-  padding: 50px 30px 0 30px; }
+#content .navigation .nav-links {
+  padding-top: 50px; }
   #content .navigation .nav-links .nav-previous span, #content .navigation .nav-links .nav-next span {
     font-size: 40px; }
-#content .navigation .nav-links .nav-indicator a {
-  padding: 0; }
+  #content .navigation .nav-links .nav-indicator a {
+    padding: 0; }
 
-body.has-featured-image #page #comments {
-  /*&:before {
-  	content: '';
-      width: 40px;
-      height: 1px;
-      background: #333;
-      position: absolute;
-      top: 25px;
-      left: 50%;
-      display: block;
-      -webkit-transform: translateX(-50%);
-      transform: translateX(-50%);
-  }*/ }
-  body.has-featured-image #page #comments #respond form div {
-    display: block; }
-    body.has-featured-image #page #comments #respond form div p {
-      margin: 10px 0; }
-      body.has-featured-image #page #comments #respond form div p label {
-        padding-right: 16px; }
-    body.has-featured-image #page #comments #respond form div p.comment-form-url label {
-      padding-right: 5px; }
-    body.has-featured-image #page #comments #respond form div p input {
-      width: 310px; }
+body.has-featured-image #page #comments .comment-author img {
+  width: 40px;
+  height: 40px; }
+body.has-featured-image #page #comments .comment-content {
+  top: 20PX;
+  margin-left: 55px; }
+body.has-featured-image #page #comments .reply {
+  top: -30px; }
+body.has-featured-image #page #comments .comment-list article:after {
+  content: "";
+  display: block;
+  border-top: 1px dotted #ccc;
+  margin: 60px 0 40px 55px; }
+body.has-featured-image #page #comments .comment-list ol.children article:after {
+  content: "";
+  display: block;
+  border-top: 1px dotted #ccc;
+  width: 60px;
+  margin: 60px 0 40px 55px; }
+body.has-featured-image #page #comments #respond form div {
+  display: block; }
+  body.has-featured-image #page #comments #respond form div p {
+    margin: 10px 0; }
+    body.has-featured-image #page #comments #respond form div p label {
+      display: block; }
+  body.has-featured-image #page #comments #respond form div p.comment-form-url label {
+    padding-right: 5px; }
+  body.has-featured-image #page #comments #respond form div p input {
+    width: 100%; }
 body.has-featured-image #page .russell-content-wrapper {
   padding: 0;
   display: -webkit-flex;
@@ -1039,14 +1045,21 @@ body.has-featured-image #page .russell-single-right-content {
   flex: 1;
   overflow: auto; }
 body.has-featured-image #page .featured-image-caption {
+  background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.4) 100%);
+  width: 61.8vw;
+  padding: 100px 0 20px 40px;
   position: absolute;
-  left: 20px;
   bottom: 0;
-  padding: 20px;
   color: #fff;
   font-style: italic;
-  font-size: .90em;
-  font-family: 'Roboto Stab'; }
+  font-size: 1em;
+  font-family: Monseratt; }
+  body.has-featured-image #page .featured-image-caption:before {
+    content: "";
+    display: block;
+    border-top: 1px solid #ccc;
+    width: 30px;
+    padding: 8px 0; }
 
 @media screen and (max-width: 1024px) {
   #page #content .russell-home-left-content, #page #content .russell-home-right-content {
