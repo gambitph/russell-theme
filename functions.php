@@ -135,6 +135,15 @@ function russell_scripts() {
 	wp_enqueue_script( 'russell-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
 
 	wp_enqueue_script( 'russell-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
+	
+	wp_enqueue_script( 'bottom-scroll', get_template_directory_uri() . '/js/bottom-scroll.js', array( 'jquery' ), '20150810', true );
+	wp_localize_script(
+	    'bottom-scroll',
+	    'bottomScrollParams',
+	    array( 
+			'ajaxurl' => admin_url( 'admin-ajax.php' ),
+		)
+	);
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -142,25 +151,39 @@ function russell_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'russell_scripts' );
 
+function russell_display_image_data( $data ) {
+	$ret = '';
+	
+	foreach ( $data as $post ) {
+		$ret .= '<img src="' . $post['image'] . '"/>';
+	}
+	
+	echo $ret;
+}
+
+function ajax_russell_latest_post() {
+    
+	$page = 1;
+    if ( ! empty( $_GET['page'] ) ) {
+        $page = $_GET['page'];  
+    }
+	
+	echo json_encode( russell_latest_post( 10, $page, null ) );
+	die();
+}
+add_action( 'wp_ajax_russell_latest_post', 'ajax_russell_latest_post' );
+add_action( 'wp_ajax_nopriv_russell_latest_post', 'ajax_russell_latest_post' );
+
 /**
 *   Get 20 Latest Posts
 */
 function russell_latest_post( $num = 10, $page = 1, $tagID = null ) {
     
-    if ( ! empty( $_GET['num'] ) ) {
-        $num = $_GET['num'];
-    }
-    if ( ! empty( $_GET['page'] ) ) {
-        $page = $_GET['page'];  
-    }
-    if ( ! empty( $_GET['tagID'] ) ) {
-        $tagID = $_GET['tagID'];
-    }
-    
     $args = array( 
         'posts_per_page' => $num,
         'order' => 'DESC',
         'paged' => $page,
+	//	'ignore_sticky_posts' => 1,
     );
     
     if ( ! empty( $tagID ) ) {
@@ -195,7 +218,7 @@ function russell_latest_post( $num = 10, $page = 1, $tagID = null ) {
         $url = '';
         if ( ! empty( $featuredImageID ) ) {
             $url = wp_get_attachment_url( $featuredImageID, 'full' );
-        }
+        } 
         
         $data[] = array(
             'image' => $url,
@@ -204,9 +227,10 @@ function russell_latest_post( $num = 10, $page = 1, $tagID = null ) {
             'categories' => $categories,
             'tags' => $tags,
         );
-    } 
-    echo json_encode( $data );
-    die();
+	} 
+	return $data;
+	//echo json_encode( $data );
+    //die();
 }
 add_action( 'wp_ajax_get_latest_post', 'russell_latest_post' );
 add_action( 'wp_ajax_nopriv_get_latest_post', 'russell_latest_post' );
