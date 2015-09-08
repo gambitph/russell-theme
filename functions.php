@@ -8,6 +8,7 @@
 /**
  * Set the content width based on the theme's design and stylesheet.
  */
+
 if ( ! isset( $content_width ) ) {
 	$content_width = 640; /* pixels */
 }
@@ -109,6 +110,7 @@ add_action( 'widgets_init', 'russell_widgets_init' );
  * Enqueue scripts and styles.
  */
 function russell_scripts() {
+	global $wp_query;
     
     // Use our copy of genericons instead of Jetpack's since we are using a newer version
 	// wp_deregister_style( 'genericons' );
@@ -137,11 +139,13 @@ function russell_scripts() {
 	wp_enqueue_script( 'russell-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
 	
 	wp_enqueue_script( 'bottom-scroll', get_template_directory_uri() . '/js/bottom-scroll.js', array( 'jquery' ), '20150810', true );
+	
 	wp_localize_script(
 	    'bottom-scroll',
 	    'bottomScrollParams',
 	    array( 
 			'ajaxurl' => admin_url( 'admin-ajax.php' ),
+			'query' => $wp_query->query,
 		)
 	);
 
@@ -151,89 +155,110 @@ function russell_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'russell_scripts' );
 
-function russell_display_image_data( $data ) {
-	$ret = '';
-	
-	foreach ( $data as $post ) {
-		$ret .= '<img src="' . $post['image'] . '"/>';
-	}
-	
-	echo $ret;
-}
-
-function ajax_russell_latest_post() {
+function ajax_russell_large_content() {
     
 	$page = 1;
     if ( ! empty( $_GET['page'] ) ) {
         $page = $_GET['page'];  
     }
 	
-	echo json_encode( russell_latest_post( 10, $page, null ) );
+	$query = null;
+	if ( ! empty( $_GET['query'] ) ) {
+		$query = $_GET['query'];
+	}
+	
+	$tagID = null;
+	if ( ! empty( $_GET['tag_id'] ) ) {
+		$tagID = $_GET['tag_id'];
+	}
+	
+	echo json_encode( russell_large_content( 10, $page, $query, $tagID ) );
 	die();
 }
-add_action( 'wp_ajax_russell_latest_post', 'ajax_russell_latest_post' );
-add_action( 'wp_ajax_nopriv_russell_latest_post', 'ajax_russell_latest_post' );
+add_action( 'wp_ajax_russell_large_content', 'ajax_russell_large_content' );
+add_action( 'wp_ajax_nopriv_russell_large_content', 'ajax_russell_large_content' );
 
-/**
-*   Get 20 Latest Posts
-*/
-function russell_latest_post( $num = 10, $page = 1, $tagID = null ) {
-    
-    $args = array( 
-        'posts_per_page' => $num,
-        'order' => 'DESC',
-        'paged' => $page,
-	//	'ignore_sticky_posts' => 1,
-    );
-    
-    if ( ! empty( $tagID ) ) {
-        $args['tag__in'] = $tagID;
-    }    
-    
-    $data = array();
-    
-    $posts = get_posts( $args );
-    
-    foreach( $posts as $post ) {
-        
-        $postTags = get_the_tags( $post );
-        $tags = array();
-        
-        if ( ! empty( $postTags ) ) {
-            foreach ( $postTags as $postTag ) {
-                $tags[ $postTag->term_id ] = $postTag->name;
-            }
-        }
-        
-        $postCategories = get_the_category( $post );
-        $categories = array();
-        
-        if ( ! empty( $postCategories ) ) {
-            foreach ( $postCategories as $postCategory ) {
-                $categories[ $postCategory->term_id ] = $postCategory->name;
-            }
-        }
-        
-        $featuredImageID = get_post_thumbnail_id( $post->ID );
+function russell_large_content( $num = 10, $page = 1, $query = null, $tagID = null ) {
+	$args = array(
+		'posts_per_page' => $num,
+		'order' => 'DESC',
+		'paged' => $page,
+		'ignore_sticky_posts' => 1,
+		'meta_query' => array(
+			array(
+				'key' => '_thumbnail_id',
+				'compare' => 'EXISTS',
+			),
+		)
+	);
+	if ( empty( $query ) ) {
+		global $wp_query;
+		$query = $wp_query->query;
+	}
+	
+	if ( ! empty( $query ) ) {
+		foreach ( $query as $key => $value ) {
+			$args[ $key ] = $value;
+		}
+	}
+	
+	if ( ! empty( $tagID ) ) {
+		$args['tag_id'] = $tagID;
+	}
+	
+	$query = new WP_Query( $args );
+	
+	$data = array();
+		
+	while ( $query->have_posts() ) {
+		$query->the_post();
+		
+		$title = get_the_title();
+		$postId = get_the_ID();
+		$link = get_permalink( $postId );
+		
+		$featuredImageID = get_post_thumbnail_id( $postId );
         $url = '';
         if ( ! empty( $featuredImageID ) ) {
             $url = wp_get_attachment_url( $featuredImageID, 'full' );
         } 
-        
-        $data[] = array(
+		
+        $postTags = get_the_tags();
+    	$tags = array();
+		
+		if ( ! empty( $postTags ) ) {
+            foreach ( $postTags as $postTag ) {
+                $tags[ $postTag->term_id ] = $postTag->name;
+			}
+        }
+		
+        $postCategories = get_the_category( );
+        $categories = array();
+		$catLinks = array();
+    
+        if ( ! empty( $postCategories ) ) {
+            foreach ( $postCategories as $postCategory ) {		
+			    $categories[ $postCategory->term_id ] = $postCategory->name;
+				$catID = $postCategory->term_id;
+				$catLinks[ $postCategory->term_id ] = get_category_link( $catID );
+				
+			}
+		}
+		$data[] = array(
             'image' => $url,
-            'post_id' => $post->ID,
-            'title' => $post->post_title,
+            'post_id' => $postId,
+            'title' => $title,
             'categories' => $categories,
             'tags' => $tags,
+			'link' => $link,
+			'cat_link' => $catLinks,
         );
-	} 
+	}	
+	
+	wp_reset_postdata();
 	return $data;
-	//echo json_encode( $data );
-    //die();
+		
 }
-add_action( 'wp_ajax_get_latest_post', 'russell_latest_post' );
-add_action( 'wp_ajax_nopriv_get_latest_post', 'russell_latest_post' );
 
 /**
 *   Get post author, avatar, date & content
@@ -312,46 +337,92 @@ function russell_copyright() {
     }
 }
 
+function ajax_russell_selected_post_tags() {
+    
+	$page = 1;
+    if ( ! empty( $_GET['page'] ) ) {
+        $page = $_GET['page'];  
+    }
+	
+	$query = null;
+	if ( ! empty( $_GET['query'] ) ) {
+		$query = $_GET['query'];
+	}
+	
+	echo json_encode( russell_archive_post( 10, $page, $query ) );
+	die();
+}
+add_action( 'wp_ajax_russell_selected_post_tags', 'ajax_russell_selected_post_tags' );
+add_action( 'wp_ajax_nopriv_russell_selected_post_tags', 'ajax_russell_selected_post_tags' );
+
 /**
 *   Get tags of the selected posts
 */
 function russell_selected_post_tags() {
-    if ( have_posts() ) {
-        // get tags for found posts
-        $recent_tags = array();
-        
-        $tags = get_the_tags();
-        if ( $tags ) {
-            while ( have_posts() ) : the_post();
-                foreach( $tags as $t ) { $recent_tags[$t->slug] = $t->name; } // this adds to the array in the form ['slug']=>'name'
-            endwhile;
-        }
-        // de-dupe
-        $recent_tags = array_unique($recent_tags);
-        // sort
-        natcasesort($recent_tags);
-		if ( ! empty ( $recent_tags ) ) {
-			?>
-			
-			<div>
-				<?php
-				echo "<ul class='russell-taglist'>";
-			    foreach( $recent_tags as $tags ) {
-			        ?>
-				    <li><?php echo $tags ?></li>
-				    <?php    
-			    }
-				echo "</ul>";
-				?>
-			</div>
-			
-			<?php
-		} else {
-			?>
-			<span class="nothing-found"><?php _e( 'Nothing Found', 'russell' ); ?></span>
-			<?php
+	
+	$args = array(
+		'posts_per_archive_page' => 10,
+		'order' => 'DESC',
+		'paged' => $page,
+		'ignore_sticky_posts' => 1,
+		'meta_query' => array(
+	        array(
+	         'key' => '_thumbnail_id',
+	         'compare' => 'EXISTS'
+	        ),
+	  	)
+	);
+	if ( empty( $query ) ) {
+		global $wp_query;
+		$query = $wp_query->query;
+	}
+
+	if ( ! empty( $query )) {
+		foreach ( $query as $key => $value ) {
+			$args[ $key ] = $value;
 		}
-    }                     
+	}	
+	$query = new WP_Query( $args );
+
+	// get tags for found posts
+    $recent_tags = array();
+    
+	while ( $query->have_posts() ) {
+		$query->the_post();
+		
+		// this adds to the array in the form ['slug']=>'name'
+		$tags = get_the_tags();
+		foreach ( $tags as $t ) {
+			$recent_tags[ $t->slug ] = $t->name;
+		} 
+		//var_dump( $recent_tags);
+    }
+	
+	wp_reset_postdata();
+	// sort
+    natcasesort($recent_tags);
+	if ( ! empty ( $recent_tags ) ) {
+		?>
+		
+		<div>
+			<?php
+			echo "<ul class='russell-taglist'>";
+		    foreach( $recent_tags as $tags ) {
+				$tag = get_term_by('name', $tags, 'post_tag');
+				if ( ! empty ( $tag) ) {
+					$tagID = $tag->term_id;	
+					$args['tag_id'] = $tagID;
+				}
+				?>
+			    <li><a href="#" data-tag-id="<?php echo $tagID ?>"><?php echo $tags ?></a></li>
+			    <?php    
+		    }
+			echo "</ul>";
+			?>
+		</div>
+		
+		<?php
+	}
 }
 
 /**

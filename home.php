@@ -8,48 +8,7 @@ get_header();
 	<section class="russell-content-large russell-content-image">
 		
 		<div class="russell-gallery">
-			
-			<?php
-			$posts = russell_latest_post(); 
-		
-			$img = '';
-			?>
-		
-			<div class="russell-gallery-left">
-				
-				<?php
-				foreach ( $posts as $i => $post ) {
-					foreach ( $post['categories'] as $tag) {
-						if ( $i < count( $post ) ) {
-							?><div class="gallery-image"><?php
-							echo '<span class="image-title">' . $post['title'] . '</span>';
-							$img = '<img src="' . $post['image'] . '"/>';
-							echo $img;
-							echo '<span class="image-tag">' . $tag . '</span>';
-							?></div><?php
-						}	
-					}
-				}		
-				?>
-			</div>
-		
-			<div class="russell-gallery-right">
-				
-				<?php
-				foreach ( $posts as $i => $post ) {
-					if ( $i + 1 > count( $post ) ) 
-					{
-						?><div class="gallery-image"><?php
-						echo '<span class="image-title">' . $post['title'] . '</span>';
-						$img = '<img src="' . $post['image'] . '"/>';
-						echo $img;	
-						echo '<span class="image-tag">' . $post['tags'] . '</span>';
-						?></div><?php	
-					}
-				}
-				?>
-			</div>
-		
+			<?php get_template_part( 'content', 'home-gallery' ); ?>
 		</div>
 		
 	</section>

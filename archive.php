@@ -63,7 +63,15 @@ if ( is_category() ) {
 
 ?>
 <div id="content" class="russell-content-wrapper russell-content-reverse">
-	<section class="russell-content-large russell-content-image"></section>
+	
+	<section class="russell-content-large russell-content-image">
+	
+		<div class="russell-gallery">
+			<?php get_template_part( 'content', 'archive-gallery');?>
+			<?php //russell_archive_filters(); ?>
+		</div>
+	
+	</section>
 	
 	<section class="russell-content-small russell-content-area">
 		<div>
@@ -74,10 +82,9 @@ if ( is_category() ) {
 
 		</div>
 		
-		<?php if ( have_posts() ) : ?>
-		<?php russell_selected_post_tags(); ?>
-		<?php endif; ?>
-
+		<?php russell_selected_post_tags();
+		//russell_filter_tags(); ?>
+		
 		<div class="russell-copyright">
             <?php russell_copyright(); ?>
         </div>

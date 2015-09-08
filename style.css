@@ -1005,6 +1005,9 @@ body .nav-links a {
     -webkit-flex: 0 0 auto;
     -ms-flex: 0 0 auto;
     flex: 0 0 auto; }
+  #content .russell-content-area ul li a {
+    color: #333;
+    text-decoration: none; }
 #content .russell-content-large {
   overflow: auto;
   -webkit-flex: 1.618;
@@ -1016,45 +1019,59 @@ body .nav-links a {
     display: -ms-flexbox;
     display: flex;
     overflow: auto; }
-    #content .russell-content-large .russell-gallery .gallery-image-left, #content .russell-content-large .russell-gallery .gallery-image-right {
+    #content .russell-content-large .russell-gallery .gallery-image {
       position: relative; }
-      #content .russell-content-large .russell-gallery .gallery-image-left span.image-title, #content .russell-content-large .russell-gallery .gallery-image-right span.image-title {
+      #content .russell-content-large .russell-gallery .gallery-image span.image-title {
         text-transform: uppercase;
         font-family: Monseratt;
         font-weight: bold;
         position: absolute;
         bottom: 0;
         right: 0;
-        padding: 100px 50px;
-        color: transparent; }
-      #content .russell-content-large .russell-gallery .gallery-image-left span.image-tag, #content .russell-content-large .russell-gallery .gallery-image-right span.image-tag {
+        margin: 0px 50px 100px 0;
+        color: transparent;
+        text-align: right; }
+      #content .russell-content-large .russell-gallery .gallery-image ul {
+        text-align: right;
         font-style: italic;
+        list-style: none;
         font-size: 12px;
         position: absolute;
         bottom: 0;
         right: 0;
-        padding: 50px 50px;
-        color: transparent; }
-      #content .russell-content-large .russell-gallery .gallery-image-left img, #content .russell-content-large .russell-gallery .gallery-image-right img {
+        margin: 0px 50px 40px 0; }
+        #content .russell-content-large .russell-gallery .gallery-image ul li {
+          display: inline-block;
+          margin-left: 3px; }
+          #content .russell-content-large .russell-gallery .gallery-image ul li a {
+            color: transparent;
+            text-decoration: none; }
+          #content .russell-content-large .russell-gallery .gallery-image ul li:after {
+            content: ",  "; }
+        #content .russell-content-large .russell-gallery .gallery-image ul li:last-child:after {
+          content: "" !important; }
+      #content .russell-content-large .russell-gallery .gallery-image img {
         height: auto;
         width: 100%;
         display: block; }
-        #content .russell-content-large .russell-gallery .gallery-image-left img:hover, #content .russell-content-large .russell-gallery .gallery-image-right img:hover {
-          opacity: .4; }
-      #content .russell-content-large .russell-gallery .gallery-image-left:hover span.image-tag, #content .russell-content-large .russell-gallery .gallery-image-right:hover span.image-tag {
+      #content .russell-content-large .russell-gallery .gallery-image:hover img {
+        opacity: .4; }
+      #content .russell-content-large .russell-gallery .gallery-image:hover ul li a {
         color: #000; }
-      #content .russell-content-large .russell-gallery .gallery-image-left:hover span.image-title, #content .russell-content-large .russell-gallery .gallery-image-right:hover span.image-title {
+      #content .russell-content-large .russell-gallery .gallery-image:hover span.image-title {
         color: #000; }
-        #content .russell-content-large .russell-gallery .gallery-image-left:hover span.image-title:after, #content .russell-content-large .russell-gallery .gallery-image-right:hover span.image-title:after {
+        #content .russell-content-large .russell-gallery .gallery-image:hover span.image-title:after {
           content: "";
           display: block;
           border-top: 1.5px solid #000;
           width: 40px;
           right: 0;
           position: absolute;
-          margin: 20px 50px; }
+          margin: 20px 0px; }
     #content .russell-content-large .russell-gallery .russell-gallery-left, #content .russell-content-large .russell-gallery .russell-gallery-right {
-      flex-direction: column; }
+      flex-direction: column;
+      display: flex;
+      flex: 1 1; }
 
 body.has-featured-image #page #comments .comment-author img {
   width: 40px;
@@ -1312,6 +1329,10 @@ a, a:visited {
 .navigation .nav-previous,
 .navigation .nav-next {
   display: inline-block; }
+
+body.single #content .russell-content-image,
+body.page #content .russell-content-image {
+  overflow: hidden !important; }
 
 html, body {
   overflow: hidden;

@@ -10,7 +10,14 @@ get_header();
 ?>
 <div id="content" class="russell-content-wrapper russell-content-reverse">
 	
-	<section class="russell-content-large russell-content-image"></section>
+	<section class="russell-content-large russell-content-image">
+	
+		<div class="russell-gallery">
+			<?php get_template_part( 'content', 'archive-gallery');?>
+		</div>
+		
+	</section>
+	
 	<section class="russell-content-small russell-content-area">
 	
 		<div>
@@ -20,9 +27,7 @@ get_header();
 			</h1>
 		</div>
 
-		<?php if ( have_posts() ) : ?>
 		<?php russell_selected_post_tags(); ?>
-		<?php endif; ?>
 
 		<div class="russell-copyright">
             <?php russell_copyright(); ?>

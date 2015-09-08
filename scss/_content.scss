@@ -93,11 +93,15 @@
 			-ms-flex: 0 0 auto;
 			flex: 0 0 auto;
 		}
+		ul li a {
+			color: #333;
+			text-decoration: none;
+		}
 	}
 	
 	.russell-content-large {
-	    overflow: auto;
-		-webkit-flex: 1.618;
+		overflow: auto;
+	    -webkit-flex: 1.618;
 		-ms-flex: 1.618;
 		flex: 1.618;
 		.russell-gallery {
@@ -106,7 +110,7 @@
 			display: -ms-flexbox;
 			display: flex;
 			overflow: auto;
-			.gallery-image-left, .gallery-image-right {
+			.gallery-image {
 				position: relative;
 				span.image-title {
 					text-transform: uppercase;
@@ -115,28 +119,44 @@
 					position: absolute;
 					bottom: 0;
 					right: 0;
-					padding: 100px 50px;
+					margin: 0px 50px 100px 0;
 					color: transparent;
+					text-align: right;
 				}
-				span.image-tag {
+				ul {
+					text-align: right;
 					font-style: italic;
+					list-style: none;
 					font-size: 12px;
 					position: absolute;
 					bottom: 0;
 					right: 0;
-					padding: 50px 50px;
-					color: transparent;
+					margin: 0px 50px 40px 0;
+					li {
+						display: inline-block;
+						margin-left: 3px;
+						a {
+							color: transparent;
+							text-decoration: none;
+						}	
+						&:after {
+							content: ",  ";
+						}
+					}
+					li:last-child:after {
+						content: '' ! important;
+					}
 				}
 				img {
 					height: auto;
 					width: 100%;
 					display: block;
-					&:hover {
-						opacity: .4;
-					}
 				}
 				&:hover {
-					span.image-tag {
+					img {
+						opacity: .4;
+					}
+					ul li a {
 						color: #000;
 					}
 					span.image-title {
@@ -148,7 +168,7 @@
 						    width: 40px;
 						    right: 0;
 						    position: absolute;
-						    margin: 20px 50px;
+						    margin: 20px 0px;
 						}
 					}
 				}
@@ -156,6 +176,8 @@
 			
 			.russell-gallery-left, .russell-gallery-right {
 				flex-direction: column;
+				display: flex;
+				flex: 1 1;
 			}
 		}
 	}
@@ -507,4 +529,9 @@ a, a:visited {
 .navigation .nav-previous,
 .navigation .nav-next {
 	display: inline-block;
+}
+
+body.single #content .russell-content-image, 
+body.page  #content .russell-content-image {
+	overflow: hidden !important;
 }
