@@ -19,8 +19,8 @@ get_header();
 	
 	        <h1 class="russell-site-title">
 				<?php
-		
-				if ( function_exists( 'jetpack_the_site_logo' ) && function_exists( 'jetpack_has_site_logo' ) && jetpack_has_site_logo() ) {    
+
+				if ( function_exists( 'jetpack_the_site_logo' ) && function_exists( 'jetpack_has_site_logo' ) && jetpack_has_site_logo() ) {
 					jetpack_the_site_logo();
 				} else {
 					?>
@@ -29,7 +29,7 @@ get_header();
 					</a>
 					<?php
 				}
-		
+
 				$description = get_bloginfo( 'description' );
 				if ( ! empty( $description ) ) {
 					?>
@@ -41,7 +41,7 @@ get_header();
 	
 			<?php
 		    if ( class_exists( 'TitanFramework' ) ) {
-			    $titan = TitanFramework::getInstance( 'russell' ); 
+			    $titan = TitanFramework::getInstance( 'russell' );
 			    echo wpautop( esc_attr( $titan->getOption( 'russell_site_elaboration' ) ) );
 			} ?> 	
 		

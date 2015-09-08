@@ -11,21 +11,20 @@ get_header(); ?>
 
 <div id="content" class="russell-content-wrapper">
     <?php
-	
-	$contentClass = "russell-content-full";
-	if ( has_post_thumbnail() ) {
-		
-    	$imageAttachment = wp_get_attachment_image_src( get_post_thumbnail_id(), 'russell-featured-image' );
-    	if ( ! empty( $imageAttachment ) ) {
 
-    	    $contentClass = "russell-content-small";
+	$contentClass = 'russell-content-full';
+	if ( has_post_thumbnail() ) {
+
+		$imageAttachment = wp_get_attachment_image_src( get_post_thumbnail_id(), 'russell-featured-image' );
+		if ( ! empty( $imageAttachment ) ) {
+
+		    $contentClass = 'russell-content-small';
 			get_template_part( 'content', 'featured-image' );
-			
-    	}
-		
-    }
-    
-    ?>
+
+		}
+	}
+
+	?>
     <section class="<?php echo esc_attr( $contentClass ); ?> russell-content-area">
         <div>
     
@@ -35,8 +34,8 @@ get_header(); ?>
 
 			<?php
 				// If comments are open or we have at least one comment, load up the comment template
-				if ( comments_open() || get_comments_number() ) :
-					comments_template();
+			if ( comments_open() || get_comments_number() ) :
+				comments_template();
 				endif;
 			?>
 			<div class="widget-category">

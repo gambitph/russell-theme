@@ -71,15 +71,15 @@ if ( version_compare( $GLOBALS['wp_version'], '4.1', '<' ) ) :
 endif;
 
 function russell_feature_logo() {
-	if ( function_exists( 'jetpack_the_site_logo' ) && function_exists( 'jetpack_has_site_logo' ) ) {    
+	if ( function_exists( 'jetpack_the_site_logo' ) && function_exists( 'jetpack_has_site_logo' ) ) {
 		if ( jetpack_has_site_logo() ) {
 			echo "<div class='logo'>";
 			jetpack_the_site_logo();
-			echo "</div>";
+			echo '</div>';
 			return;
 		}
 	}
-	
+
 	echo '<div class="logo"><a href="' . esc_url( get_home_url( '/' ) ) . '" rel="home">' . get_bloginfo( 'name' ) . '</a></div>';
 }
 function russell_create_social_icons() {
@@ -88,7 +88,7 @@ function russell_create_social_icons() {
 		return;
 	}
 	$titan = TitanFramework::getInstance( 'russell' );
-	
+
 	$socialIcons = '';
 	for ( $i = 0; $i <= 10; $i++ ) {
 	    $url = $titan->getOption( 'social_' . $i );
@@ -98,13 +98,13 @@ function russell_create_social_icons() {
 		$socialIcons .= "<a href='{$url}' target='_social'></a>";
 	}
 	if ( ! empty( $socialIcons ) ) {
-		echo "<div class='social-navigation'>" . $socialIcons . "</div>";
+		echo "<div class='social-navigation'>" . $socialIcons . '</div>';
 	}
 }
 
 function russell_comment_form() {
-	
-	$fields =  array(
+
+	$fields = array(
 
 	  'author' =>
 	    '<div><p class="comment-form-author"><label for="author">' . __( 'Name', 'domainreference' ) . '</label> ' .
@@ -115,7 +115,7 @@ function russell_comment_form() {
 	  'email' =>
 	    '<p class="comment-form-email"><label for="email">' . __( 'Email', 'domainreference' ) . '</label> ' .
 	    ( $req ? '<span class="required">*</span>' : '' ) .
-	    '<input id="email" name="email" type="text" value="' . esc_attr(  $commenter['comment_author_email'] ) .
+	    '<input id="email" name="email" type="text" value="' . esc_attr( $commenter['comment_author_email'] ) .
 	    '" size="32"' . $aria_req . ' /></p>',
 
 	  'url' =>
@@ -123,9 +123,9 @@ function russell_comment_form() {
 	    '<input id="url" name="url" type="text" value="' . esc_attr( $commenter['comment_author_url'] ) .
 	    '" size="32" /></p></div>',
 	);
-	
+
 	comment_form( array(
 		'fields' => $fields,
 	) );
-	 //apply_filters( 'russell_comment_form', $fields );
+	 // apply_filters( 'russell_comment_form', $fields );
 }

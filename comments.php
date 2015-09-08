@@ -27,7 +27,7 @@ if ( post_password_required() ) {
 		<h1 class="russell-site-title">
 			<?php
 				printf( _nx( 'One thought &ldquo;%2$s&rdquo;', '%1$s thoughts %2$s', get_comments_number(), 'comments title', 'russell' ),
-					number_format_i18n( get_comments_number() ), '<span>' . get_the_title() . '</span>' );
+				number_format_i18n( get_comments_number() ), '<span>' . get_the_title() . '</span>' );
 			?>
 		</h1>
 
@@ -61,9 +61,9 @@ if ( post_password_required() ) {
 
 	<?php
 		// If comments are closed and there are comments, let's leave a little note, shall we?
-		if ( ! comments_open() && '0' != get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) :
+	if ( ! comments_open() && '0' != get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) :
 	?>
-		<p class="no-comments"><?php _e( 'Comments are closed.', 'russell' ); ?></p>
+	<p class="no-comments"><?php _e( 'Comments are closed.', 'russell' ); ?></p>
 	<?php endif; ?>
 
 	<?php russell_comment_form(); ?>

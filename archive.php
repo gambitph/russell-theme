@@ -13,7 +13,7 @@ get_header();
 $subtitle = __( 'Archives', 'russell' );
 
 if ( is_category() ) {
-    $title = single_cat_title( '', false );
+	$title = single_cat_title( '', false );
 	$subtitle = __( 'Categories', 'russell' );
 } elseif ( is_tag() ) {
 	$title = single_tag_title( '', false );
@@ -67,8 +67,8 @@ if ( is_category() ) {
 	<section class="russell-content-large russell-content-image">
 	
 		<div class="russell-gallery">
-			<?php get_template_part( 'content', 'archive-gallery');?>
-			<?php //russell_archive_filters(); ?>
+			<?php get_template_part( 'content', 'archive-gallery' );?>
+			<?php // russell_archive_filters(); ?>
 		</div>
 	
 	</section>
@@ -83,7 +83,7 @@ if ( is_category() ) {
 		</div>
 		
 		<?php russell_selected_post_tags();
-		//russell_filter_tags(); ?>
+		// russell_filter_tags(); ?>
 		
 		<div class="russell-copyright">
             <?php russell_copyright(); ?>

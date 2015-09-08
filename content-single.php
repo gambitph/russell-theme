@@ -1,7 +1,9 @@
 <?php
 /**
+ * Template for single post entries
  * @package russell
  */
+
 $sticky = '';
 if ( is_sticky() ) {
 	$sticky = 'sticky';
@@ -17,19 +19,19 @@ if ( is_sticky() ) {
 	
 	<?php
 	$title = get_the_title();
-    $categories = get_the_category();
+	$categories = get_the_category();
 	?>
 	<h1 class="russell-site-title">
 		<?php echo $title ?>
 		<?php
 		if ( ! empty( $categories ) ) {
 			?><span><?php
-			foreach ( $categories as $i => $category ) {
-				if ( $i ) {
-					echo ", ";
-				}
-				?><a href='<?php echo esc_url( get_category_link( $category->cat_ID ) ) ?>'><?php echo $category->cat_name ?></a><?php
-			}
+foreach ( $categories as $i => $category ) {
+	if ( $i ) {
+		echo ', ';
+	}
+	?><a href='<?php echo esc_url( get_category_link( $category->cat_ID ) ) ?>'><?php echo $category->cat_name ?></a><?php
+}
 			?></span><?php
 		}
 		?>

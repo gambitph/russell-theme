@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 $bodyClasses = '';
 
@@ -23,11 +23,11 @@ if ( ( is_single() || is_page() ) && has_post_thumbnail() ) {
 	}
 }
 if ( is_single() || is_page() ) {
-	
+
 	$headerImageGradientColor = '41,51,56';
 	$stop1Opacity = 0.7;
 	$stop2Opacity = 0.5;
-	
+
 }
 if ( ! empty( $headerImageUrl ) ) {
 	$bodyClasses = ' has-featured-image';
@@ -37,11 +37,11 @@ if ( ! empty( $headerImageUrl ) ) {
 if ( ! empty( $headerImageUrl )  ) { ?>
     <section class="russell-content-large russell-content-image">
         <?php
-    	if ( ( is_page() || is_single() ) && has_post_thumbnail() ) { ?>
+		if ( ( is_page() || is_single() ) && has_post_thumbnail() ) { ?>
             <div class="item" style="background-image: linear-gradient(45deg, rgba(<?php echo $headerImageGradientColor ?>,<?php echo $stop1Opacity ?>) 0%,rgba(<?php echo $headerImageGradientColor ?>,<?php echo $stop2Opacity ?>) 48%,rgba(<?php echo $headerImageGradientColor ?>, <?php echo $stop3Opacity ?>) 100%), url(<?php echo esc_url( $headerImageUrl ) ?>); background-size: cover; background-position: center;">
 				<?php
-                $id = get_post_thumbnail_id();
-                
+				$id = get_post_thumbnail_id();
+
 				if ( ! empty( $d ) ) {
 					?>
 		            <span class="featured-image-caption">
@@ -55,4 +55,4 @@ if ( ! empty( $headerImageUrl )  ) { ?>
         <?php russell_single_scripts_and_styles(); ?>
     </section>
     
-<?php } ?> 
+<?php } ?>

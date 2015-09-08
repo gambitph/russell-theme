@@ -6,15 +6,15 @@
  */
 
 
- if ( ! is_active_sidebar( 'footer-sidebar' ) ) {
- 	return;
- }
- 
- $activeSidebars = 0;
- $activeSidebars += is_active_sidebar( 'footer-sidebar' ) ? 1 : 0;
- $activeSidebars += is_active_sidebar( '404-sidebar' ) ? 1 : 0;
- 
- 
+if ( ! is_active_sidebar( 'footer-sidebar' ) ) {
+	return;
+}
+
+	$activeSidebars = 0;
+	$activeSidebars += is_active_sidebar( 'footer-sidebar' ) ? 1 : 0;
+	$activeSidebars += is_active_sidebar( '404-sidebar' ) ? 1 : 0;
+
+
 ?>
 
 <?php

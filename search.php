@@ -13,7 +13,7 @@ get_header();
 	<section class="russell-content-large russell-content-image">
 	
 		<div class="russell-gallery">
-			<?php get_template_part( 'content', 'archive-gallery');?>
+			<?php get_template_part( 'content', 'archive-gallery' );?>
 		</div>
 		
 	</section>
