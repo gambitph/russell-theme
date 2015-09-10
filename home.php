@@ -6,11 +6,9 @@ get_header();
 <div id="content" class="russell-content-wrapper russell-content-reverse">
 	
 	<section class="russell-content-large russell-content-image">
-		
-		<div class="russell-gallery">
-			<?php get_template_part( 'content', 'home-gallery' ); ?>
+		<div id="loader-wrapper">
+			<div id="loader"></div>
 		</div>
-		
 	</section>
 
 	<section class="russell-content-small russell-content-area">

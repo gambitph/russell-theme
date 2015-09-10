@@ -143,6 +143,8 @@ function russell_scripts() {
 
 	wp_enqueue_script( 'russell-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
 
+	wp_enqueue_script( 'loading-bar', get_template_directory_uri() . '/js/loading-bar.js', array( ' jquery' ), '20150908', true );
+
 	wp_enqueue_script( 'russell-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
 
 	wp_enqueue_script( 'bottom-scroll', get_template_directory_uri() . '/js/bottom-scroll.js', array( 'jquery' ), '20150810', true );
@@ -370,7 +372,7 @@ function russell_selected_post_tags() {
 	$args = array(
 		'posts_per_archive_page' => 10,
 		'order' => 'DESC',
-		'paged' => $page,
+		'paged' => 1,
 		'ignore_sticky_posts' => 1,
 		'meta_query' => array(
 	        array(

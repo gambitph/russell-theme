@@ -1,0 +1,1 @@
+jQuery(document).ready(function(e){var t=document.getElementById("russell-wrapper").getContext("2d"),d=0;t.div.width,t.div.height;d++});

@@ -55,7 +55,7 @@ jQuery(document).ready(function($) {
 						}
 						console.log( data[i].categories, data[i].cat_link);
 						// var l = "<li>" + data[ i ].categories[k] + "</li>";
-						myNewDiv += "<div class='gallery-image'>" +	"<span class='image-title'>" + data[ i ].title + "</span>" + "<a href='" + data[i].link + "'><img src='" + data[ i ].image + "'></a>" + "<ul>" + categoryLinks + "</ul>" + "</div>";
+						myNewDiv += "<div class='gallery-image russell_hide'>" +	"<span class='image-title'>" + data[ i ].title + "</span>" + "<a href='" + data[i].link + "'><img src='" + data[ i ].image + "'></a>" + "<ul>" + categoryLinks + "</ul>" + "</div>";
 							
 						if ( i === Math.ceil( data.length / 2 ) ) {
 							myNewDiv += "</div>";
@@ -71,7 +71,10 @@ jQuery(document).ready(function($) {
 					myNewDiv += "</div>";
 
 					$('.russell-content-large').append(myNewDiv);
-
+					setTimeout(function() {
+						var $ = jQuery;
+						$('.russell_hide').removeClass('russell_hide');
+					}, 10 );
 					isDoingAjax = false;
 
 					page++;
@@ -84,4 +87,9 @@ jQuery(document).ready(function($) {
 	
 	$('body.home .russell-content-large, body.archive .russell-content-large, body.search .russell-content-large').bind('scroll', ajaxRightposts );
 	$('body.archive .russell-content-small .russell-taglist li a, body.search .russell-content-small .russell-taglist li a').click( ajaxRightposts );
+	
+	if ( $('body').hasClass('home') | $('body').hasClass('archive') | $('body').hasClass('search') ) {
+		page = 1;
+		ajaxRightposts();
+	}
 });

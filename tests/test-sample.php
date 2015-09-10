@@ -14,6 +14,5 @@ class SampleTest extends WP_UnitTestCase {
 		// $this->assertTrue( is_plugin_active( 'plugin-template/class-plugin.php' ) );
 		$this->assertTrue( 'Russell' == wp_get_theme() );
 	}
-	
 }
 
