@@ -724,7 +724,15 @@ body.admin-bar #page {
   #masthead .logo {
     margin: -20px 0 -20px 50px; }
     #masthead .logo a {
-      display: block; }
+      display: block;
+      color: #333;
+      font-size: 30px;
+      font-weight: bold;
+      font-style: normal;
+      line-height: 1.1em;
+      letter-spacing: normal;
+      text-transform: uppercase;
+      font-variant: normal; }
       #masthead .logo a img {
         max-height: 62px;
         width: auto; }
@@ -774,7 +782,11 @@ body.admin-bar #page {
       width: 215px; }
   #site-navigation a {
     padding: .8em 1.2em;
-    background: transparent; }
+    background: transparent;
+    font-family: 'Montserrat';
+    color: #646464; }
+    #site-navigation a:hover {
+      color: #fff; }
   #site-navigation li:hover {
     color: #fff;
     background: #222; }
@@ -1044,6 +1056,8 @@ body .nav-links a {
   -ms-flex: 1.618;
   -webkit-box-flex: 1.618;
           flex: 1.618; }
+  #content .russell-content-large #loader-wrapper {
+    height: 100vh; }
   #content .russell-content-large #loader {
     display: block;
     position: relative;
@@ -1101,8 +1115,8 @@ body .nav-links a {
     display: flex;
     overflow: auto; }
     #content .russell-content-large .russell-gallery .gallery-image {
-      -webkit-transition: opacity 10s ease-in-out;
-              transition: opacity 10s ease-in-out;
+      -webkit-transition: opacity 5s ease-in-out;
+              transition: opacity 5s ease-in-out;
       position: relative; }
       #content .russell-content-large .russell-gallery .gallery-image span.image-title {
         text-transform: uppercase;

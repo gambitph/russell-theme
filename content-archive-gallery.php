@@ -1,4 +1,9 @@
 <?php
+/**
+ * Template for archive/search gallery russell content large.
+ * @package russell
+ */
+
 $posts = russell_large_content();
 ?>	
 <div class="russell-gallery-left">

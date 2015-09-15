@@ -5,7 +5,6 @@
  * @package russell
  */
 
-
 get_header();
 
 ?>

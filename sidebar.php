@@ -5,7 +5,6 @@
  * @package russell
  */
 
-
 if ( ! is_active_sidebar( 'footer-sidebar' ) ) {
 	return;
 }

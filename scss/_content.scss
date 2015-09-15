@@ -104,6 +104,9 @@
 	    -webkit-flex: 1.618;
 		-ms-flex: 1.618;
 		flex: 1.618;
+		#loader-wrapper {
+			height: 100vh;
+		}	
 		#loader {
 		  display: block;
 		  position: relative;
@@ -159,7 +162,7 @@
 			display: flex;
 			overflow: auto;
 			.gallery-image {
-				transition: opacity 10s ease-in-out;
+				transition: opacity 5s ease-in-out;
 				position: relative;
 				span.image-title {
 					text-transform: uppercase;

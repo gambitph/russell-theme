@@ -10,11 +10,11 @@
  *
  * To use this script, just copy it into your theme/plugin directory and do a
  * require_once( 'titan-framework-checker.php' );
+ *
+ * @package russell
  */
 
-
 if ( ! class_exists( 'TitanFrameworkChecker' ) ) {
-
 
 	/**
 	 * Titan Framework Checker
@@ -92,6 +92,8 @@ if ( ! class_exists( 'TitanFrameworkChecker' ) ) {
 		 * Checks if the files for Titan Framework does exist in the path.
 		 *
 		 * @since 1.6
+		 *
+		 * @param string $needle get the plugin path.
 		 */
 		public function is_plugin_exist( $needle ) {
 			// Required function as it is only loaded in admin pages.

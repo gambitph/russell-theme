@@ -12,39 +12,39 @@ msgstr ""
 
 "Plural-Forms: nplurals=2; plural=(n != 1);\n\n"
 
-#: 404.php:17
+#: 404.php:16
 msgid "Oops! That page can&rsquo;t be found."
 msgstr ""
 
-#: 404.php:18
+#: 404.php:17
 msgid "It looks like nothing was found at this location. Maybe try one of the links below or a search?"
 msgstr ""
 
-#: archive.php:13, inc/template-tags.php:186
+#: archive.php:12, inc/template-tags.php:186
 msgid "Archives"
 msgstr ""
 
-#: archive.php:17
+#: archive.php:16
 msgid "Categories"
 msgstr ""
 
-#: archive.php:20
+#: archive.php:19
 msgid "Tags"
 msgstr ""
 
-#: archive.php:23
+#: archive.php:22
 msgid "Author"
 msgstr ""
 
-#: archive.php:26
+#: archive.php:25
 msgid "Yearly Archives"
 msgstr ""
 
-#: archive.php:29
+#: archive.php:28
 msgid "Monthly Archives"
 msgstr ""
 
-#: archive.php:32
+#: archive.php:31
 msgid "Daily Archives"
 msgstr ""
 
@@ -79,23 +79,23 @@ msgstr ""
 msgid "Edit"
 msgstr ""
 
-#: functions.php:54, header.php:58
+#: functions.php:53, header.php:58
 msgid "Primary Menu"
 msgstr ""
 
-#: functions.php:97
+#: functions.php:96
 msgid "Footer Sidebar"
 msgstr ""
 
-#: functions.php:99
+#: functions.php:98
 msgid "The footer widget area"
 msgstr ""
 
-#: functions.php:106
+#: functions.php:105
 msgid "404 Sidebar"
 msgstr ""
 
-#: functions.php:108
+#: functions.php:107
 msgid "The 404 widget area"
 msgstr ""
 
@@ -259,6 +259,6 @@ msgstr ""
 msgid "%1$s: %2$s"
 msgstr ""
 
-#: search.php:26
+#: search.php:23
 msgid "Search"
 msgstr ""

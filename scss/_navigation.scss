@@ -23,7 +23,12 @@
     a {
 		padding: .8em 1.2em;
 		background: transparent;
+		font-family: 'Montserrat';
+		color: #646464;
 //		transition: all 0s ease-in-out;
+		&:hover {
+			color: #fff;
+		}
     }
 	li:hover {
         color: #fff;

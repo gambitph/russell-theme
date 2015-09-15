@@ -38,7 +38,7 @@ if ( version_compare( $GLOBALS['wp_version'], '4.1', '<' ) ) :
 
 		global $page, $paged;
 
-		// Add the blog name
+		// Add the blog name.
 		$title .= get_bloginfo( 'name', 'display' );
 
 		// Add the blog description for the home/front page.
@@ -47,7 +47,7 @@ if ( version_compare( $GLOBALS['wp_version'], '4.1', '<' ) ) :
 			$title .= " $sep $site_description";
 		}
 
-		// Add a page number if necessary:
+		// Add a page number if necessary.
 		if ( ( $paged >= 2 || $page >= 2 ) && ! is_404() ) {
 			$title .= " $sep " . sprintf( __( 'Page %s', 'russell' ), max( $paged, $page ) );
 		}
@@ -70,6 +70,9 @@ if ( version_compare( $GLOBALS['wp_version'], '4.1', '<' ) ) :
 	add_action( 'wp_head', 'russell_render_title' );
 endif;
 
+/**
+ * Get featured logo using Jetpack.
+ */
 function russell_feature_logo() {
 	if ( function_exists( 'jetpack_the_site_logo' ) && function_exists( 'jetpack_has_site_logo' ) ) {
 		if ( jetpack_has_site_logo() ) {
@@ -82,6 +85,10 @@ function russell_feature_logo() {
 
 	echo '<div class="logo"><a href="' . esc_url( get_home_url( '/' ) ) . '" rel="home">' . get_bloginfo( 'name' ) . '</a></div>';
 }
+
+/**
+ * Get social icons using TitanFramework.
+ */
 function russell_create_social_icons() {
 
 	if ( ! class_exists( 'TitanFramework' ) ) {
@@ -102,7 +109,13 @@ function russell_create_social_icons() {
 	}
 }
 
+/**
+ * Customize comment form.
+ */
 function russell_comment_form() {
+	$commenter = wp_get_current_commenter();
+	$req = get_option( 'require_name_email' );
+	$aria_req = ( $req ? " aria-required='true'" : '' );
 
 	$fields = array(
 
@@ -127,5 +140,5 @@ function russell_comment_form() {
 	comment_form( array(
 		'fields' => $fields,
 	) );
-	 // apply_filters( 'russell_comment_form', $fields );
+	 // Apply_filters( 'russell_comment_form', $fields );.
 }

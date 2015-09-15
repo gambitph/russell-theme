@@ -69,7 +69,7 @@ if ( ! function_exists( 'russell_posted_on' ) ) :
 
 		if ( class_exists( 'TitanFramework' ) ) {
 			$titan = TitanFramework::getInstance( 'russell' );
-			$avatar = $titan->getOption( 'blog_post_avatar' ); // true
+			$avatar = $titan->getOption( 'blog_post_avatar' ); // True.
 			if ( $avatar == 'true' ) {
 				echo get_avatar( get_the_author_meta( 'ID' ), 50 );
 			}

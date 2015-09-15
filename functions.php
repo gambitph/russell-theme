@@ -1,6 +1,6 @@
 <?php
 /**
- * russell functions and definitions
+ * Russell functions and definitions
  *
  * @package russell
  */
@@ -22,7 +22,6 @@ if ( ! function_exists( 'russell_setup' ) ) :
 	 * as indicating support for post thumbnails.
 	 */
 	function russell_setup() {
-
 		/*
 		 * Make theme available for translation.
 		 * Translations can be filed in the /languages/ directory.
@@ -84,7 +83,7 @@ if ( ! function_exists( 'russell_setup' ) ) :
 			'default-image' => '',
 		) ) );
 	}
-endif; // russell_setup
+endif; // Russell_setup.
 add_action( 'after_setup_theme', 'russell_setup' );
 
 /**
@@ -120,8 +119,7 @@ add_action( 'widgets_init', 'russell_widgets_init' );
 function russell_scripts() {
 	global $wp_query;
 
-	// Use our copy of genericons instead of Jetpack's since we are using a newer version
-	// wp_deregister_style( 'genericons' );
+	// Use our copy of genericons instead of Jetpack's since we are using a newer version.
 	if ( ! wp_script_is( 'genericons', 'registered' ) ) {
 		wp_enqueue_style( 'genericons', get_template_directory_uri() . '/fonts/genericons.css' );
 	}
@@ -164,6 +162,9 @@ function russell_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'russell_scripts' );
 
+/**
+ * Functions for php to ajax request.
+ */
 function ajax_russell_large_content() {
 
 	$page = 1;
@@ -187,6 +188,14 @@ function ajax_russell_large_content() {
 add_action( 'wp_ajax_russell_large_content', 'ajax_russell_large_content' );
 add_action( 'wp_ajax_nopriv_russell_large_content', 'ajax_russell_large_content' );
 
+/**
+ * Functions for query posts.
+ *
+ * @param string       $num number of posts.
+ * @param string       $page page of posts.
+ * @param string|array $query query of posts/archives.
+ * @param string       $tagID ID's of tags in archives filters.
+ */
 function russell_large_content( $num = 10, $page = 1, $query = null, $tagID = null ) {
 	$args = array(
 		'posts_per_page' => $num,
@@ -270,7 +279,9 @@ function russell_large_content( $num = 10, $page = 1, $query = null, $tagID = nu
 }
 
 /**
- *   Get post author, avatar, date & content
+ *  Get post author, avatar, date & content.
+ *
+ * @param string $id get the id of every posts.
  */
 function russell_get_post( $id ) {
 
@@ -304,13 +315,16 @@ add_action( 'wp_ajax_get_post', 'russell_get_post' );
 add_action( 'wp_ajax_nopriv_get_post', 'russell_get_post' );
 
 /**
- *   Get all tags of all posts
+ *   Ajax for get all tags of all posts.
  */
 function ajax_russell_get_post_tags() {
 	echo json_encode( russell_get_post_tags() );
 	die();
 }
 
+/**
+ *   Get all tags of all posts.
+ */
 function russell_get_post_tags() {
 	$tags = get_terms( 'post_tag', array( 'fields' => 'id=>name', 'get' => 'all' ) );
 	return $tags;
@@ -319,7 +333,9 @@ add_action( 'wp_ajax_get_post_tags', 'ajax_russell_get_post_tags' );
 add_action( 'wp_ajax_nopriv_get_post_tags', 'ajax_russell_get_post_tags' );
 
 /**
- *   Get caption of featured image
+ *   Get caption of featured image.
+ *
+ * @param string $id get the id of every posts.
  */
 function russell_image_caption( $id ) {
 	$attachment = get_post( $id );
@@ -335,7 +351,7 @@ function russell_image_caption( $id ) {
 }
 
 /**
- *   Get copyright
+ *   Get copyright.
  */
 function russell_copyright() {
 	if ( class_exists( 'TitanFramework' ) ) {
@@ -346,6 +362,9 @@ function russell_copyright() {
 	}
 }
 
+/**
+ *   Ajax for get tags of the selected posts.
+ */
 function ajax_russell_selected_post_tags() {
 
 	$page = 1;
@@ -365,7 +384,7 @@ add_action( 'wp_ajax_russell_selected_post_tags', 'ajax_russell_selected_post_ta
 add_action( 'wp_ajax_nopriv_russell_selected_post_tags', 'ajax_russell_selected_post_tags' );
 
 /**
- *   Get tags of the selected posts
+ *   Get tags of the selected posts.
  */
 function russell_selected_post_tags() {
 
@@ -399,16 +418,15 @@ function russell_selected_post_tags() {
 	while ( $query->have_posts() ) {
 		$query->the_post();
 
-		// this adds to the array in the form ['slug']=>'name'
+		// This adds to the array in the form ['slug']=>'name'.
 		$tags = get_the_tags();
 		foreach ( $tags as $t ) {
 			$recent_tags[ $t->slug ] = $t->name;
 		}
-		// var_dump( $recent_tags);
 	}
 
 	wp_reset_postdata();
-	// sort
+	// Sorting of Tags.
 	natcasesort( $recent_tags );
 	if ( ! empty( $recent_tags ) ) {
 		?>
@@ -454,13 +472,13 @@ function russell_single_scripts_and_styles() {
          	 </div>
 				<?php
 		}
-		 // wp_enqueue_style( 'owl-carousel', get_template_directory_uri() . '/css/owl.theme.css' );
-		// You can now loop through the image to display them as required
 	}
 }
-// add_filter( "single_template", "russell_single_scripts_and_styles" );
+// Add_filter( "single_template", "russell_single_scripts_and_styles" );.
 /**
  *  Makes it so that archives are pulled with infinite amount all the time.
+ *
+ * @param string|array $query get queries of archieves.
  */
 function russell_all_archives( $query ) {
 	if ( is_archive() ) {
@@ -473,7 +491,7 @@ add_action( 'pre_get_posts', 'russell_all_archives', 1 );
 /**
  * Implement the Custom Header feature.
  */
-// require get_template_directory() . '/inc/custom-header.php';
+// Require get_template_directory() . '/inc/custom-header.php';.
 /**
  * Custom template tags for this theme.
  */

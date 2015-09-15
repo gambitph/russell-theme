@@ -1,4 +1,8 @@
 <?php
+/**
+ * Template for featured images of posts.
+ * @package russell
+ */
 
 $bodyClasses = '';
 

@@ -1,4 +1,11 @@
 <?php
+/**
+ * The template for displaying home page.
+ *
+ * This is the template that displays home page of site.
+ *
+ * @package russell
+ */
 
 get_header();
 

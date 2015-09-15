@@ -1,11 +1,12 @@
 <?php
-
-/*
+/**
  * Titan Framework options sample code. We've placed here some
  * working examples to get your feet wet
+ *
  * @see	http://www.titanframework.net/get-started/
+ *
+ * @package russell
  */
-
 
 add_action( 'tf_create_options', 'backup_create_options' );
 
@@ -438,5 +439,35 @@ function backup_create_options() {
 			'type' => 'color',
 			'default' => '#000000',
 			'css' => '#colophon.site-footer .site-info { color: value }',
+		) );
+
+		/**
+		 * Loading bar color option
+		 */
+		$section = $titan->createThemeCustomizerSection( array(
+			'name' => __( 'Loading Section Color Option', 'backup' ),
+			'panel' => __( 'Theme Options & Colors', 'backup' ),
+			'desc' => __( 'Colors of the Loading Circles', 'backup' ),
+		) );
+		$section->createOption( array(
+			'name' => __( 'Large Loading Circle', 'backup' ),
+			'id' => 'russell_lloading_circle',
+			'type' => 'color',
+			'default' => '#3498db',
+			'css' => '#content .russell-content-large #loader { border-top-color: value }',
+		) );
+		$section->createOption( array(
+			'name' => __( 'Medium Loading Circle', 'backup' ),
+			'id' => 'russell_mloading_circle',
+			'type' => 'color',
+			'default' => '#e74c3c',
+			'css' => '#content .russell-content-large #loader:before { border-top-color: value }',
+		) );
+		$section->createOption( array(
+			'name' => __( 'Small Loading Circle', 'backup' ),
+			'id' => 'russell_sloading_circle',
+			'type' => 'color',
+			'default' => '#f9c922',
+			'css' => '#content .russell-content-large #loader:after { border-top-color: value }',
 		) );
 }

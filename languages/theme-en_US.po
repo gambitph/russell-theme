@@ -13,11 +13,11 @@ msgstr ""
 "\n"
 "Language: en_US\n"
 
-#: 404.php:17
+#: 404.php:16
 msgid "Oops! That page can&rsquo;t be found."
 msgstr "Oops! That page can&rsquo;t be found."
 
-#: 404.php:18
+#: 404.php:17
 msgid ""
 "It looks like nothing was found at this location. Maybe try one of the links "
 "below or a search?"
@@ -25,31 +25,31 @@ msgstr ""
 "It looks like nothing was found at this location. Maybe try one of the links "
 "below or a search?"
 
-#: archive.php:13, inc/template-tags.php:186
+#: archive.php:12, inc/template-tags.php:186
 msgid "Archives"
 msgstr "Archives"
 
-#: archive.php:17
+#: archive.php:16
 msgid "Categories"
 msgstr "Categories"
 
-#: archive.php:20
+#: archive.php:19
 msgid "Tags"
 msgstr "Tags"
 
-#: archive.php:23
+#: archive.php:22
 msgid "Author"
 msgstr "Author"
 
-#: archive.php:26
+#: archive.php:25
 msgid "Yearly Archives"
 msgstr "Yearly Archives"
 
-#: archive.php:29
+#: archive.php:28
 msgid "Monthly Archives"
 msgstr "Monthly Archives"
 
-#: archive.php:32
+#: archive.php:31
 msgid "Daily Archives"
 msgstr "Daily Archives"
 
@@ -84,23 +84,23 @@ msgstr "Pages:"
 msgid "Edit"
 msgstr "Edit"
 
-#: functions.php:54, header.php:58
+#: functions.php:53, header.php:58
 msgid "Primary Menu"
 msgstr "Primary Menu"
 
-#: functions.php:97
+#: functions.php:96
 msgid "Footer Sidebar"
 msgstr "Footer Sidebar"
 
-#: functions.php:99
+#: functions.php:98
 msgid "The footer widget area"
 msgstr "The footer widget area"
 
-#: functions.php:106
+#: functions.php:105
 msgid "404 Sidebar"
 msgstr "404 Sidebar"
 
-#: functions.php:108
+#: functions.php:107
 msgid "The 404 widget area"
 msgstr "The 404 widget area"
 
@@ -264,6 +264,6 @@ msgstr "Archives: %s"
 msgid "%1$s: %2$s"
 msgstr "%1$s: %2$s"
 
-#: search.php:26
+#: search.php:23
 msgid "Search"
 msgstr "Search"

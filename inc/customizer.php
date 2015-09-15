@@ -1,6 +1,6 @@
 <?php
 /**
- * russell Theme Customizer
+ * Russell Theme Customizer
  *
  * @package russell
  */

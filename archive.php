@@ -7,7 +7,6 @@
  * @package russell
  */
 
-
 get_header();
 
 $subtitle = __( 'Archives', 'russell' );
@@ -64,7 +63,11 @@ if ( is_category() ) {
 ?>
 <div id="content" class="russell-content-wrapper russell-content-reverse">
 	
-	<section class="russell-content-large russell-content-image"></section>
+	<section class="russell-content-large russell-content-image">
+		<div id="loader-wrapper">
+			<div id="loader"></div>
+		</div>
+	</section>
 	
 	<section class="russell-content-small russell-content-area">
 		<div>
@@ -75,8 +78,7 @@ if ( is_category() ) {
 
 		</div>
 		
-		<?php russell_selected_post_tags();
-		// russell_filter_tags(); ?>
+		<?php russell_selected_post_tags(); ?>
 		
 		<div class="russell-copyright">
             <?php russell_copyright(); ?>

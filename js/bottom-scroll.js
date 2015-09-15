@@ -5,6 +5,7 @@ jQuery(document).ready(function($) {
 	var previousTagID = null;
 
 	var ajaxRightposts = function() {
+		
 		if ( $('body').hasClass('archive') ) {
 			query = bottomScrollParams.query;
 		}
@@ -12,19 +13,31 @@ jQuery(document).ready(function($) {
 		if ( isDoingAjax ) {
 			return;
 		}
-		
+	
 		if ( $(this).attr('data-tag-id') ) {
 			// Function was called by a filter link
 			page = 1;
 			previousTagID = $(this).attr('data-tag-id');
 			$('.russell-gallery').remove();
+			
+			var newDiv = '<div id="loader-wrapper"><div id="loader"></div></div>';
+			setTimeout(function() {
+				var $ = jQuery;
+				$('.russell-content-large').append( newDiv );
+			});
+		
+			setTimeout(function() {
+				var $ = jQuery;
+				$('div#loader-wrapper').remove();
+			}, 3000);
+			
 		} else {
 				// Function was called by a scroll
 			if ( $(this).scrollTop() + $(this).innerHeight() < $(this)[0].scrollHeight ) {
 				return;
 			}
 		}
-
+		
 		isDoingAjax = true;
 			
 		$.ajax({
@@ -62,19 +75,22 @@ jQuery(document).ready(function($) {
 							myNewDiv += "<div class='russell-gallery-right'>";
 						}
 
-
 						if ( i === data.length - 1 ) {
 							myNewDiv += "</div>";
 
 						}
 					}
 					myNewDiv += "</div>";
-
-					$('.russell-content-large').append(myNewDiv);
+					
 					setTimeout(function() {
 						var $ = jQuery;
-						$('.russell_hide').removeClass('russell_hide');
-					}, 10 );
+						$('.russell-content-large').append(myNewDiv);
+						setTimeout(function() {
+							var $ = jQuery;
+							$('.russell_hide').removeClass('russell_hide');
+						}, 10);
+					}, 2000);
+					
 					isDoingAjax = false;
 
 					page++;
@@ -87,9 +103,13 @@ jQuery(document).ready(function($) {
 	
 	$('body.home .russell-content-large, body.archive .russell-content-large, body.search .russell-content-large').bind('scroll', ajaxRightposts );
 	$('body.archive .russell-content-small .russell-taglist li a, body.search .russell-content-small .russell-taglist li a').click( ajaxRightposts );
-	
+		
 	if ( $('body').hasClass('home') | $('body').hasClass('archive') | $('body').hasClass('search') ) {
 		page = 1;
 		ajaxRightposts();
 	}
+	setTimeout(function() {
+		var $ = jQuery;
+		$('div#loader-wrapper').remove();
+	}, 3000);	
 });

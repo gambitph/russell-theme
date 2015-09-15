@@ -33,7 +33,7 @@ get_header(); ?>
 			<?php russell_post_nav(); ?>
 
 			<?php
-				// If comments are open or we have at least one comment, load up the comment template
+				// If comments are open or we have at least one comment, load up the comment template.
 			if ( comments_open() || get_comments_number() ) :
 				comments_template();
 				endif;
@@ -51,6 +51,6 @@ get_header(); ?>
 
 </div><!-- .russell-content-wrapper -->
 	
-<?php endwhile; // end of the loop. ?>
+<?php endwhile; // End of the loop. ?>
 
 <?php get_footer(); ?>

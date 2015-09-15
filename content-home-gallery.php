@@ -1,4 +1,9 @@
 <?php
+/**
+ * Template for home gallery russell content large.
+ * @package russell
+ */
+
 $posts = russell_large_content();
 ?>	
 <div class="russell-gallery-left">
@@ -35,11 +40,12 @@ foreach ( $post['categories'] as $category ) {
 	
 	<?php
 	foreach ( $posts as $i => $post ) {
-		if ( $i + 1 > count( $post ) ) {
+		if ( $i - 1 > count( $post ) ) {
 			?><div class="gallery-image"><?php
 			echo '<span class="image-title">' . $post['title'] . '</span>';
 			echo '<a href="' . $post['link'] . '"><img src="' . $post['image'] . '"></a>';
 			echo "<ul class='russell-catlist'>";
+
 foreach ( $post['categories'] as $category ) {
 	$id = get_cat_ID( $category );
 	$link = get_category_link( $id );

@@ -1,6 +1,6 @@
 <?php
 /**
- * Template for single post entries
+ * Template for single post entries.
  * @package russell
  */
 
