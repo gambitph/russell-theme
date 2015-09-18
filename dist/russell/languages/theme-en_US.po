@@ -1,0 +1,269 @@
+# Copyright (C) 2015 Russell
+# This file is distributed under the same license as the Russell package.
+msgid ""
+msgstr ""
+"Project-Id-Version: Russell\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2015-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"\n"
+"Language: en_US\n"
+
+#: 404.php:16
+msgid "Oops! That page can&rsquo;t be found."
+msgstr "Oops! That page can&rsquo;t be found."
+
+#: 404.php:17
+msgid ""
+"It looks like nothing was found at this location. Maybe try one of the links "
+"below or a search?"
+msgstr ""
+"It looks like nothing was found at this location. Maybe try one of the links "
+"below or a search?"
+
+#: archive.php:12, inc/template-tags.php:186
+msgid "Archives"
+msgstr "Archives"
+
+#: archive.php:16
+msgid "Categories"
+msgstr "Categories"
+
+#: archive.php:19
+msgid "Tags"
+msgstr "Tags"
+
+#: archive.php:22
+msgid "Author"
+msgstr "Author"
+
+#: archive.php:25
+msgid "Yearly Archives"
+msgstr "Yearly Archives"
+
+#: archive.php:28
+msgid "Monthly Archives"
+msgstr "Monthly Archives"
+
+#: archive.php:31
+msgid "Daily Archives"
+msgstr "Daily Archives"
+
+#: comments.php:29
+msgctxt "comments title"
+msgid "One thought &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s thoughts %2$s"
+msgstr[0] "One thought &ldquo;%2$s&rdquo;"
+msgstr[1] "%1$s thoughts %2$s"
+
+#: comments.php:36, comments.php:54
+msgid "Comment navigation"
+msgstr "Comment navigation"
+
+#: comments.php:37, comments.php:55
+msgid "&larr; Older Comments"
+msgstr "&larr; Older Comments"
+
+#: comments.php:38, comments.php:56
+msgid "Newer Comments &rarr;"
+msgstr "Newer Comments &rarr;"
+
+#: comments.php:66
+msgid "Comments are closed."
+msgstr "Comments are closed."
+
+#: content-page.php:21, content-single.php:44, content.php:20
+msgid "Pages:"
+msgstr "Pages:"
+
+#: content-page.php:28, content.php:27, inc/template-tags.php:131
+msgid "Edit"
+msgstr "Edit"
+
+#: functions.php:53, header.php:58
+msgid "Primary Menu"
+msgstr "Primary Menu"
+
+#: functions.php:96
+msgid "Footer Sidebar"
+msgstr "Footer Sidebar"
+
+#: functions.php:98
+msgid "The footer widget area"
+msgstr "The footer widget area"
+
+#: functions.php:105
+msgid "404 Sidebar"
+msgstr "404 Sidebar"
+
+#: functions.php:107
+msgid "The 404 widget area"
+msgstr "The 404 widget area"
+
+#: header.php:48
+msgid "Skip to content"
+msgstr "Skip to content"
+
+#: inc/extras.php:52
+msgid "Page %s"
+msgstr "Page %s"
+
+#: inc/template-tags.php:21
+msgid "Posts navigation"
+msgstr "Posts navigation"
+
+#: inc/template-tags.php:25
+msgid "Older posts"
+msgstr "Older posts"
+
+#: inc/template-tags.php:29
+msgid "Newer posts"
+msgstr "Newer posts"
+
+#: inc/template-tags.php:52
+msgid "Post navigation"
+msgstr "Post navigation"
+
+#: inc/template-tags.php:55
+msgctxt "russell"
+msgid "Prev"
+msgstr "Prev"
+
+#: inc/template-tags.php:56
+msgctxt "russell"
+msgid "Next"
+msgstr "Next"
+
+#: inc/template-tags.php:91
+msgctxt "post date"
+msgid "Posted on %s"
+msgstr "Posted on %s"
+
+#: inc/template-tags.php:96
+msgctxt "post author"
+msgid "by %s"
+msgstr "by %s"
+
+#: inc/template-tags.php:113, inc/template-tags.php:119
+msgid ", "
+msgstr ", "
+
+#: inc/template-tags.php:115
+msgid "Posted in %1$s"
+msgstr "Posted in %1$s"
+
+#: inc/template-tags.php:121
+msgid "Tagged %1$s"
+msgstr "Tagged %1$s"
+
+#: inc/template-tags.php:127
+msgid "Leave a comment"
+msgstr "Leave a comment"
+
+#: inc/template-tags.php:127
+msgid "1 Comment"
+msgstr "1 Comment"
+
+#: inc/template-tags.php:127
+msgid "% Comments"
+msgstr "% Comments"
+
+#: inc/template-tags.php:148
+msgid "Category: %s"
+msgstr "Category: %s"
+
+#: inc/template-tags.php:150
+msgid "Tag: %s"
+msgstr "Tag: %s"
+
+#: inc/template-tags.php:152
+msgid "Author: %s"
+msgstr "Author: %s"
+
+#: inc/template-tags.php:154
+msgid "Year: %s"
+msgstr "Year: %s"
+
+#: inc/template-tags.php:154
+msgctxt "yearly archives date format"
+msgid "Y"
+msgstr "Y"
+
+#: inc/template-tags.php:156
+msgid "Month: %s"
+msgstr "Month: %s"
+
+#: inc/template-tags.php:156
+msgctxt "monthly archives date format"
+msgid "F Y"
+msgstr "F Y"
+
+#: inc/template-tags.php:158
+msgid "Day: %s"
+msgstr "Day: %s"
+
+#: inc/template-tags.php:158
+msgctxt "daily archives date format"
+msgid "F j, Y"
+msgstr "F j, Y"
+
+#: inc/template-tags.php:161
+msgctxt "post format archive title"
+msgid "Asides"
+msgstr "Asides"
+
+#: inc/template-tags.php:163
+msgctxt "post format archive title"
+msgid "Galleries"
+msgstr "Galleries"
+
+#: inc/template-tags.php:165
+msgctxt "post format archive title"
+msgid "Images"
+msgstr "Images"
+
+#: inc/template-tags.php:167
+msgctxt "post format archive title"
+msgid "Videos"
+msgstr "Videos"
+
+#: inc/template-tags.php:169
+msgctxt "post format archive title"
+msgid "Quotes"
+msgstr "Quotes"
+
+#: inc/template-tags.php:171
+msgctxt "post format archive title"
+msgid "Links"
+msgstr "Links"
+
+#: inc/template-tags.php:173
+msgctxt "post format archive title"
+msgid "Statuses"
+msgstr "Statuses"
+
+#: inc/template-tags.php:175
+msgctxt "post format archive title"
+msgid "Audio"
+msgstr "Audio"
+
+#: inc/template-tags.php:177
+msgctxt "post format archive title"
+msgid "Chats"
+msgstr "Chats"
+
+#: inc/template-tags.php:180
+msgid "Archives: %s"
+msgstr "Archives: %s"
+
+#: inc/template-tags.php:184
+msgid "%1$s: %2$s"
+msgstr "%1$s: %2$s"
+
+#: search.php:23
+msgid "Search"
+msgstr "Search"

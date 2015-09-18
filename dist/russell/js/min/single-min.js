@@ -1,0 +1,1 @@
+jQuery(document).ready(function(e){e(".russell-images").owlCarousel({autoPlay:3e3,singleItem:!0}),console.log("carousel active.")});

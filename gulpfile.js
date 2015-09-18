@@ -64,6 +64,7 @@ var url = 'local.wordpress.dev',
 		'fonts/**/*', // Font icons
 		'images/**/*.+(jpg|png|gif|jpeg)', // Include images
 		'inc/**/*', // Include files if any
+		'js/**/*',
 		'layouts/**/*'
 	];
 

@@ -161,6 +161,12 @@
 			display: -ms-flexbox;
 			display: flex;
 			overflow: auto;
+			.gallery-image.has-no-featured-image {
+				img {
+					background-color: #BDC3C7;
+					height: 300px;
+				}	
+			}
 			.gallery-image {
 				transition: opacity 5s ease-in-out;
 				position: relative;

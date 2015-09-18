@@ -66,10 +66,14 @@ jQuery(document).ready(function($) {
 						for ( var k in data[ i ].categories ) {
 							categoryLinks += "<li><a href='" + data[ i ].cat_link[ k ] + "'>" +  data[ i ].categories[ k ] + "</a></li>";
 						}
-						console.log( data[i].categories, data[i].cat_link);
+						//console.log( data[i].categories, data[i].cat_link);
 						// var l = "<li>" + data[ i ].categories[k] + "</li>";
-						myNewDiv += "<div class='gallery-image russell_hide'>" +	"<span class='image-title'>" + data[ i ].title + "</span>" + "<a href='" + data[i].link + "'><img src='" + data[ i ].image + "'></a>" + "<ul>" + categoryLinks + "</ul>" + "</div>";
-							
+						if ( data[ i ].image === "" ) {
+							myNewDiv += "<div class='gallery-image has-no-featured-image russell_hide'>" + "<span class='image-title'>" + data[ i ].title + "</span>" + "<a href='" + data[i].link + "'><img src='" + data[ i ].image + "'></a>" + "<ul>" + categoryLinks + "</ul>" + "</div>";
+						} else {
+							myNewDiv += "<div class='gallery-image russell_hide'>" + "<span class='image-title'>" + data[ i ].title + "</span>" + "<a href='" + data[i].link + "'><img src='" + data[ i ].image + "'></a>" + "<ul>" + categoryLinks + "</ul>" + "</div>";
+						}
+						
 						if ( i === Math.ceil( data.length / 2 ) ) {
 							myNewDiv += "</div>";
 							myNewDiv += "<div class='russell-gallery-right'>";
@@ -77,8 +81,8 @@ jQuery(document).ready(function($) {
 
 						if ( i === data.length - 1 ) {
 							myNewDiv += "</div>";
-
 						}
+						//console.log(data[i].image);
 					}
 					myNewDiv += "</div>";
 					
@@ -103,7 +107,7 @@ jQuery(document).ready(function($) {
 	
 	$('body.home .russell-content-large, body.archive .russell-content-large, body.search .russell-content-large').bind('scroll', ajaxRightposts );
 	$('body.archive .russell-content-small .russell-taglist li a, body.search .russell-content-small .russell-taglist li a').click( ajaxRightposts );
-		
+
 	if ( $('body').hasClass('home') | $('body').hasClass('archive') | $('body').hasClass('search') ) {
 		page = 1;
 		ajaxRightposts();
