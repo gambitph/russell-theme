@@ -45,13 +45,8 @@ if ( ! empty( $headerImageUrl )  ) { ?>
             <div class="item" style="background-image: linear-gradient(45deg, rgba(<?php echo $headerImageGradientColor ?>,<?php echo $stop1Opacity ?>) 0%,rgba(<?php echo $headerImageGradientColor ?>,<?php echo $stop2Opacity ?>) 48%,rgba(<?php echo $headerImageGradientColor ?>, <?php echo $stop3Opacity ?>) 100%), url(<?php echo esc_url( $headerImageUrl ) ?>); background-size: cover; background-position: center;">
 				<?php
 				$id = get_post_thumbnail_id();
-
-				if ( ! empty( $d ) ) {
-					?>
-		            <span class="featured-image-caption">
-	                    <?php russell_image_caption( $id ); ?>
-	                </span>
-					<?php
+				if ( ! empty( $id ) ) {
+					russell_image_caption( $id );
 				}
 				?>
             </div>

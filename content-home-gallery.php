@@ -40,7 +40,7 @@ foreach ( $post['categories'] as $category ) {
 	
 	<?php
 	foreach ( $posts as $i => $post ) {
-		if ( $i - 1 > count( $post ) ) {
+		if ( $i > count( $post ) ) {
 			?><div class="gallery-image"><?php
 			echo '<span class="image-title">' . $post['title'] . '</span>';
 			echo '<a href="' . $post['link'] . '"><img src="' . $post['image'] . '"></a>';

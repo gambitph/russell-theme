@@ -17,7 +17,7 @@ get_header();
 			<div id="loader"></div>
 		</div>
 	</section>
-
+	
 	<section class="russell-content-small russell-content-area">
 
 	    <div>
@@ -53,10 +53,11 @@ get_header();
 		</div>
 
 	    <div class="russell-copyright">
-	        <?php russell_copyright(); ?>
+			<?php russell_copyright(); ?>
 	    </div>
 
 	</section><!-- .russell-content-small -->
+	
 
 </div><!-- .russell-content-wrapper -->
 <?php

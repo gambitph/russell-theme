@@ -109,7 +109,7 @@ function backup_create_options() {
 
 	$section->createOption( array(
 	    'name' => __( 'Headings Font', 'backup' ),
-	    'id' => 'russell_heading_font',
+	    'id' => 'russell_heading_fonts',
 	    'type' => 'font',
 	    'desc' => __( 'Select the font for all headings in the site', 'backup' ),
 		'show_color' => false,
@@ -130,7 +130,7 @@ function backup_create_options() {
 
 	$section->createOption( array(
 	    'name' => __( 'Heading 1 Size', 'backup' ),
-	    'id' => 'russell_heading1_font',
+	    'id' => 'russell_heading1_fonts',
 	    'type' => 'font',
 	    'desc' => __( 'The size of all <code>h1</code> headings', 'backup' ),
 		'show_font_family' => false,
@@ -149,12 +149,12 @@ function backup_create_options() {
 			'font-size' => '30px',
 			'font-weight' => 'bold',
 	    ),
-		'css' => 'h1, #masthead .logo a
+		'css' => 'h1, h1 a, h1 a:visited, #masthead .logo a
 		{ value }',
 	) );
 	$section->createOption( array(
 	    'name' => __( 'Heading 2 Size', 'backup' ),
-	    'id' => 'backup_heading2_font',
+	    'id' => 'backup_heading2_fonts',
 	    'type' => 'font',
 	    'desc' => __( 'The size of all <code>h2</code> headings', 'backup' ),
 		'show_font_family' => false,
@@ -181,7 +181,7 @@ function backup_create_options() {
 	) );
 	$section->createOption( array(
 	    'name' => __( 'Heading 3 Size', 'backup' ),
-	    'id' => 'backup_heading3_font',
+	    'id' => 'backup_heading3_fonts',
 	    'type' => 'font',
 	    'desc' => __( 'The size of all <code>h3</code> headings', 'backup' ),
 		'show_font_family' => false,
@@ -208,7 +208,7 @@ function backup_create_options() {
 	) );
 	$section->createOption( array(
 	    'name' => __( 'Heading 4 Size', 'backup' ),
-	    'id' => 'backup_heading4_font',
+	    'id' => 'backup_heading4_fonts',
 	    'type' => 'font',
 	    'desc' => __( 'The size of all <code>h4</code> headings', 'backup' ),
 		'show_font_family' => false,
@@ -237,7 +237,7 @@ function backup_create_options() {
 
 	$section->createOption( array(
 	    'name' => __( 'Heading 5 Size', 'backup' ),
-	    'id' => 'backup_heading5_font',
+	    'id' => 'backup_heading5_fonts',
 	    'type' => 'font',
 	    'desc' => __( 'The size of all <code>h5</code> headings', 'backup' ),
 		'show_font_family' => false,
@@ -265,7 +265,7 @@ function backup_create_options() {
 
 	$section->createOption( array(
 	    'name' => __( 'Heading 6 Size', 'backup' ),
-	    'id' => 'heading6_font',
+	    'id' => 'russell_heading6_fonts',
 	    'type' => 'font',
 	    'desc' => __( 'The size of all <code>h6</code> headings', 'backup' ),
 		'show_font_family' => false,
@@ -284,7 +284,7 @@ function backup_create_options() {
 			'line-height' => '1.1em',
 			'font-weight' => 'bold',
 	    ),
-		'css' => 'h1 span, h6
+		'css' => 'h6, .russell-site-title span
 		{ value }
 		@media screen and (max-width: 710px) {
 			h6 { value }
@@ -292,7 +292,7 @@ function backup_create_options() {
 	) );
 	$section->createOption( array(
 	    'name' => __( 'Body Font', 'backup' ),
-	    'id' => 'body_font',
+	    'id' => 'body_fonts',
 	    'type' => 'font',
 	    'desc' => __( 'The normal body font', 'backup' ),
 		// 'show_font_family' => false,
@@ -315,7 +315,7 @@ function backup_create_options() {
 	) );
 	$section->createOption( array(
 	    'name' => __( 'Menu Font', 'backup' ),
-	    'id' => 'backup_body_font',
+	    'id' => 'russell_body_fonts',
 	    'type' => 'font',
 	    'desc' => __( 'The normal body font', 'backup' ),
 		// 'show_font_family' => false,
@@ -357,7 +357,7 @@ function backup_create_options() {
 		'name' => __( 'Header Border Color', 'backup' ),
 		'id' => 'header_border_color',
 		'type' => 'color',
-		'default' => '#eeeeee',
+		'default' => '#e0e0e0',
 		'css' => '#masthead { border-color: value; }',
 	) );
 	$section->createOption( array(
@@ -371,7 +371,7 @@ function backup_create_options() {
 		'name' => __( 'Menu Submenu Open Background Color', 'backup' ),
 		'id' => 'menu_bg_color',
 		'type' => 'color',
-		'default' => '#222222',
+		'default' => '#646464',
 		'css' => '#site-navigation li:hover, #site-navigation ul ul { background-color: value }',
 	) );
 	$section->createOption( array(
@@ -385,21 +385,21 @@ function backup_create_options() {
 		'name' => __( 'Menu Hovered Text Color', 'backup' ),
 		'id' => 'menu_hover_text_color',
 		'type' => 'color',
-		'default' => '#95A5A6',
+		'default' => '#000000',
 		'css' => '#site-navigation ul ul li:hover > a { color: value }',
 	) );
 	$section->createOption( array(
 		'name' => __( 'Social Icons Color', 'backup' ),
 		'id' => 'russell_social_text_color',
 		'type' => 'color',
-		'default' => '#959595',
+		'default' => '#646464',
 		'css' => '#masthead .social-navigation a:before { color: value }',
 	) );
 	$section->createOption( array(
 		'name' => __( 'Social Icons Hover Color', 'backup' ),
 		'id' => 'russell_social_hover_text_color',
 		'type' => 'color',
-		'default' => '#646464',
+		'default' => '#959595',
 		'css' => '#masthead .social-navigation a:hover:before { color: value }',
 	) );
 
@@ -419,7 +419,7 @@ function backup_create_options() {
 		'desc' => __( 'Check if you want to display the avatar of the author in blog post.', 'backup' ),
 	) );
 	$section->createOption( array(
-		'name' => __( 'Posting of posts without featured image', 'backup' ),
+		'name' => __( 'Enable if you want to display posts without featured image', 'backup' ),
 		'type' => 'enable',
 		'default' => false,
 		'id' => 'display_post',
@@ -427,11 +427,35 @@ function backup_create_options() {
 
 	) );
 	$section->createOption( array(
-		'name' => __( 'Background Color of your posts', 'backup' ),
+		'name' => __( 'Background Color', 'backup' ),
 		'type' => 'color',
 		'default' => '#BDC3C7',
 		'id' => 'bg_color_post',
-		'css' => '#content .russell-content-large .russell-gallery .gallery-image.has-no-featured-image img { background-color: value }',
+		'css' => '#content .russell-content-large .russell-gallery .gallery-image.has-no-featured-image { background-color: value }',
+	) );
+	$section->createOption( array(
+		'name' => __( 'Overlay Color', 'backup' ),
+		'type' => 'color',
+		'default' => '#000000',
+		'id' => 'overlay_color',
+		'css' => '#content .russell-content-large .russell-gallery .gallery-image .overlay { background-color: value }',
+	) );
+	$section->createOption( array(
+	    'name' => __( 'Overlay Opacity', 'backup' ),
+	    'id' => 'overlay_opacity',
+	    'type' => 'number',
+		'default' => '0.0',
+		'min' => '0.0',
+		'max' => '1.0',
+		'step' => '0.01',
+		'css' => '#content .russell-content-large .russell-gallery .gallery-image:hover .overlay { opacity: value }',
+	) );
+	$section->createOption( array(
+		'name' => __( 'Gallery Text Color', 'backup' ),
+		'type' => 'color',
+		'default' => '#fff',
+		'id' => 'gallery_text_color',
+		'css' => '#content .russell-content-large .russell-gallery .gallery-image:hover span.image-title, #content .russell-content-large .russell-gallery .gallery-image:hover span.image-title:after, #content .russell-content-large .russell-gallery .gallery-image:hover ul li a { color: value }',
 	) );
 
 	/**
@@ -453,7 +477,7 @@ function backup_create_options() {
 		'id' => 'footer_copyright_text_color',
 		'type' => 'color',
 		'default' => '#000000',
-		'css' => '#colophon.site-footer .site-info { color: value }',
+		'css' => '.russell-copyright { color: value }',
 	) );
 
 	/**

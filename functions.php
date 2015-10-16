@@ -211,8 +211,8 @@ function russell_large_content( $num = 10, $page = 1, $query = null, $tagID = nu
 		if ( $enable == false ) {
 			$args['meta_query'] = array(
 				array(
-				'key' => '_thumbnail_id',
-				'compare' => 'EXISTS',
+					'key' => '_thumbnail_id',
+					'compare' => 'EXISTS',
 				),
 			);
 		}
@@ -250,6 +250,10 @@ function russell_large_content( $num = 10, $page = 1, $query = null, $tagID = nu
 			$url = wp_get_attachment_url( $featuredImageID, 'full' );
 		}
 
+		$imageSize = wp_get_attachment_image_src( $featuredImageID, 'full' );
+		$imageHeight = $imageSize[2];
+		$imageWidth = $imageSize[1];
+
 		$postTags = get_the_tags();
 		$tags = array();
 
@@ -268,7 +272,6 @@ function russell_large_content( $num = 10, $page = 1, $query = null, $tagID = nu
 			    $categories[ $postCategory->term_id ] = $postCategory->name;
 				$catID = $postCategory->term_id;
 				$catLinks[ $postCategory->term_id ] = get_category_link( $catID );
-
 			}
 		}
 		$data[] = array(
@@ -279,6 +282,8 @@ function russell_large_content( $num = 10, $page = 1, $query = null, $tagID = nu
 			'tags' => $tags,
 			'link' => $link,
 			'cat_link' => $catLinks,
+			'image_height' => $imageHeight,
+			'image_width' => $imageWidth,
 		);
 	}
 
@@ -348,15 +353,18 @@ add_action( 'wp_ajax_nopriv_get_post_tags', 'ajax_russell_get_post_tags' );
  */
 function russell_image_caption( $id ) {
 	$attachment = get_post( $id );
-		$imageInfo = array(
-			'alt' => get_post_meta( $attachment->ID, '_wp_attachment_image_alt', true ),
-			'caption' => $attachment->post_excerpt,
-			'description' => $attachment->post_content,
-			'href' => get_permalink( $attachment->ID ),
-			'src' => $attachment->guid,
-			'title' => $attachment->post_title,
-		);
-		echo $imageInfo['caption'];
+	$imageInfo = array(
+		'alt' => get_post_meta( $attachment->ID, '_wp_attachment_image_alt', true ),
+		'caption' => $attachment->post_excerpt,
+		'description' => $attachment->post_content,
+		'href' => get_permalink( $attachment->ID ),
+		'src' => $attachment->guid,
+		'title' => $attachment->post_title,
+	);
+
+	if ( ! empty( $imageInfo['caption'] ) ) {
+		echo "<span class='featured-image-caption'>" . $imageInfo['caption'] . '</span>';
+	}
 }
 
 /**
@@ -429,6 +437,7 @@ function russell_selected_post_tags() {
 
 		// This adds to the array in the form ['slug']=>'name'.
 		$tags = get_the_tags();
+		// var_dump( $tags );
 		foreach ( $tags as $t ) {
 			$recent_tags[ $t->slug ] = $t->name;
 		}
@@ -468,7 +477,7 @@ function russell_single_scripts_and_styles() {
 
 	if ( class_exists( 'Dynamic_Featured_Image' ) ) {
 		 global $dynamic_featured_image;
-		 $featuredImages = $dynamic_featured_image->get_featured_images( $postId );
+		 $featuredImages = $dynamic_featured_image->get_featured_images();
 		foreach ( $featuredImages as $featuredImage ) {
 			?>
 			<div class="item" style="background-image: url(<?php echo esc_url( $featuredImage['full'] ) ?>); background-size: cover; background-position: center">
@@ -520,6 +529,11 @@ require get_template_directory() . '/inc/customizer.php';
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
+
+/**
+ * Load TGM Plugin Activation
+ */
+require get_template_directory() . '/tgm-plugin-activation.php';
 
 /**
  * Load Titan Framework plugin checker

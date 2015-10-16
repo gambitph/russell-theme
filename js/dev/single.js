@@ -1,8 +1,7 @@
 jQuery(document).ready(function($) {
  
-  $(".russell-images").owlCarousel({
- 
-    
+  $(".russell-content-large").owlCarousel({
+  
       autoPlay: 3000, //Set AutoPlay to 3 seconds
       singleItem: true
 // pagination: true,
@@ -11,6 +10,6 @@ jQuery(document).ready(function($) {
       // itemsDesktopSmall : [979,3]
  
   });
-  console.log('carousel active.');
+  console.log(' carousel active.');
  
 });

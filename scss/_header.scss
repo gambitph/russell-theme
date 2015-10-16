@@ -78,3 +78,27 @@ body.admin-bar {
         }
 	}
 }
+
+@media screen and (max-width: 600px) {
+	#masthead {
+		.logo {
+			a {
+				font-size: 20px;
+			}
+		}
+	}
+}
+@media screen and (max-width:400px) {
+	#masthead {
+		.logo {
+			margin: -20px 0 -20px 20px;
+		}
+		#site-navigation {
+			padding-left: 0;
+		}
+		.social-navigation {
+			flex: 1 1;
+		}
+	}
+	
+}

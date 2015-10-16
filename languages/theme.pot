@@ -79,7 +79,7 @@ msgstr ""
 msgid "Edit"
 msgstr ""
 
-#: functions.php:53, header.php:58
+#: functions.php:53
 msgid "Primary Menu"
 msgstr ""
 

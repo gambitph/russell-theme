@@ -1,9 +1,11 @@
 jQuery(document).ready(function($) {
+	
+	var smallestValue = 9999.99;
 	var isDoingAjax = false;
 	var page = 2;
 	var query = null;
 	var previousTagID = null;
-
+	
 	var ajaxRightposts = function() {
 		
 		if ( $('body').hasClass('archive') ) {
@@ -50,40 +52,90 @@ jQuery(document).ready(function($) {
 				},
 			success: function( data ) {
 					data = JSON.parse( data );
-					
-					if ( typeof data === 'undefined' || data === null ) {
+				
+					if ( typeof data === 'undefined' || data === null  || data.length === 0 ) {
 						return;
 					}
-
 					var myNewDiv = "<div class='russell-gallery'>";
 
+					var smallestValue = 9999;
+					var leftY = rightY = 0;
+					var leftArr = [], rightArr = [];
+					
 					for ( var i = 0; i < data.length; i++ ) {
-
-						if ( i === 0 ) {
-							myNewDiv += "<div class='russell-gallery-left'>";
-						}
-						var categoryLinks = '';
-						for ( var k in data[ i ].categories ) {
-							categoryLinks += "<li><a href='" + data[ i ].cat_link[ k ] + "'>" +  data[ i ].categories[ k ] + "</a></li>";
-						}
-						//console.log( data[i].categories, data[i].cat_link);
-						// var l = "<li>" + data[ i ].categories[k] + "</li>";
-						if ( data[ i ].image === "" ) {
-							myNewDiv += "<div class='gallery-image has-no-featured-image russell_hide'>" + "<span class='image-title'>" + data[ i ].title + "</span>" + "<a href='" + data[i].link + "'><img src='" + data[ i ].image + "'></a>" + "<ul>" + categoryLinks + "</ul>" + "</div>";
-						} else {
-							myNewDiv += "<div class='gallery-image russell_hide'>" + "<span class='image-title'>" + data[ i ].title + "</span>" + "<a href='" + data[i].link + "'><img src='" + data[ i ].image + "'></a>" + "<ul>" + categoryLinks + "</ul>" + "</div>";
-						}
+						var value = 1;
 						
-						if ( i === Math.ceil( data.length / 2 ) ) {
-							myNewDiv += "</div>";
-							myNewDiv += "<div class='russell-gallery-right'>";
+						if ( data[i].image_height !== null ) {
+							value = data[i].image_height / data[i].image_width;
 						}
-
-						if ( i === data.length - 1 ) {
-							myNewDiv += "</div>";
+						if ( value < smallestValue ) {
+							smallestValue = value;	
+					    }
+						var finalValue = value / smallestValue;
+						
+						if ( leftY <= rightY ) {
+							leftArr.push(data[i]);
+							leftY += value;
+						} else {
+							rightArr.push(data[i]);
+							rightY += value;
 						}
-						//console.log(data[i].image);
 					}
+					
+					if ( leftArr.length >= rightArr.length ) {
+						if ( leftArr.length === 9 || leftArr.length === 8 || leftArr.length === 7 || leftArr.length === 6 || leftArr.length === 5 || leftArr.length === 4 || leftArr.length === 3 || leftArr.length === 2 || leftArr.length === 1 ) {
+							var value = leftArr.length;
+							$(".russell-content-large").addClass('left-' + value );
+						} 
+					} else {
+						if ( rightArr.length === 9 || rightArr.length === 8 || rightArr.length === 7 || rightArr.length === 6 || rightArr.length === 5 || rightArr.length === 4 || rightArr.length === 3 || rightArr.length === 2 || rightArr.length === 1 ) {
+							var value = rightArr.length;
+							$(".russell-content-large").addClass('right-' + value );
+						} 
+					}
+					
+					// Print opening div.
+					if ( leftArr.length ) {
+						myNewDiv += "<div class='russell-gallery-left'>";
+					}
+					// Print out all left images.
+					for ( var h in leftArr ) {
+						
+						var categoryLinks = '';
+						for ( var k in leftArr[ h ].categories ) {
+							categoryLinks += "<li><a href='" + leftArr[ h ].cat_link[ k ] + "'>" +  leftArr[ h ].categories[ k ] + "</a></li>";
+						}
+						if ( leftArr[ h ].image === "" ) {
+							myNewDiv += "<div class='gallery-image has-no-featured-image russell_hide' style='flex-grow:1;'>" + "<span class='image-title'>" + leftArr[ h ].title + "</span>" + "<a href='" + leftArr[ h ].link + "' class='link'>Link</a>" + "<ul>" + categoryLinks + "</ul>" + "</div>";
+						} else {
+							myNewDiv += "<div class='gallery-image russell_hide' style='flex-grow:" + finalValue + "; background-image: url(" + leftArr[h].image + ");'>" + "<div class='overlay'>" + "<span class='image-title'>" + leftArr[ h ].title + "</span>" + "<a href='" + leftArr[ h ].link + "' class='link'>Link</a>" + "<ul>" + categoryLinks + "</ul>" + "</div>" + "</div>";
+						}
+					}
+					// Print closing div.
+					if ( leftArr.length ) {	
+						myNewDiv += "</div>";
+						myNewDiv += "<div class='russell-gallery-right'>";
+					}
+					// Print out all right images.
+					for ( var h in rightArr ) {
+					
+						var categoryLinks = '';
+						for ( var k in rightArr[ h ].categories ) {
+							categoryLinks += "<li><a href='" + rightArr[ h ].cat_link[ k ] + "'>" +  rightArr[ h ].categories[ k ] + "</a></li>";
+						}
+						if ( rightArr[ h ].image === "" ) {
+							myNewDiv += "<div class='gallery-image has-no-featured-image russell_hide' style='flex-grow:1;'>" + "<span class='image-title'>" + rightArr[ h ].title + "</span>" + "<a href='" + rightArr[ h ].link + "' class='link'>Link</a>" + "<ul>" + categoryLinks + "</ul>" + "</div>";
+						} else {
+							myNewDiv += "<div class='gallery-image russell_hide' style='flex-grow:" + finalValue + "; background-image: url(" + rightArr[h].image + ");'>" + "<div class='overlay'>" + "<span class='image-title'>" + rightArr[ h ].title + "</span>" + "<a href='" + rightArr[ h ].link + "' class='link'>Link</a>" + "<ul>" + categoryLinks + "</ul>" + "</div>" + "</div>";	
+						}
+					
+					}
+					
+					// Print closing div.
+					if ( rightArr.length ) {
+						myNewDiv += "</div>";
+					}
+					
 					myNewDiv += "</div>";
 					
 					setTimeout(function() {
@@ -115,5 +167,5 @@ jQuery(document).ready(function($) {
 	setTimeout(function() {
 		var $ = jQuery;
 		$('div#loader-wrapper').remove();
-	}, 3000);	
+	}, 3000 );	
 });

@@ -48,14 +48,14 @@ if ( ! empty( $headerImageUrl ) ) {
 	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'russell' ); ?></a>
 	<header id="masthead" class="site-header" role="banner">
 	    <?php
-
+		// russell_large_content();
 		if ( ! is_home() ) {
 			russell_feature_logo();
 		}
 
 		?>
 		<nav id="site-navigation" class="main-navigation" role="navigation">
-			<button class="menu-toggle" aria-controls="menu" aria-expanded="false"><?php _e( 'Primary Menu', 'russell' ); ?></button>
+			<button class="menu-toggle" aria-controls="menu" aria-expanded="false"><span class="genericon genericon-menu"></span></button>
 			<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
 		</nav><!-- #site-navigation -->
 		<?php
