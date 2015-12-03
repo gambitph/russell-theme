@@ -105,7 +105,7 @@ jQuery(document).ready(function($) {
 						for ( var k in leftArr[ h ].categories ) {
 							categoryLinks += "<li><a href='" + leftArr[ h ].cat_link[ k ] + "'>" +  leftArr[ h ].categories[ k ] + "</a></li>";
 						}
-						if ( leftArr[ h ].image === "" ) {
+						if ( leftArr[ h ].image === false ) {
 							myNewDiv += "<div class='gallery-image has-no-featured-image russell_hide' style='flex-grow:1;'>" + "<span class='image-title'>" + leftArr[ h ].title + "</span>" + "<a href='" + leftArr[ h ].link + "' class='link'>Link</a>" + "<ul>" + categoryLinks + "</ul>" + "</div>";
 						} else {
 							myNewDiv += "<div class='gallery-image russell_hide' style='flex-grow:" + finalValue + "; background-image: url(" + leftArr[h].image + ");'>" + "<div class='overlay'>" + "<span class='image-title'>" + leftArr[ h ].title + "</span>" + "<a href='" + leftArr[ h ].link + "' class='link'>Link</a>" + "<ul>" + categoryLinks + "</ul>" + "</div>" + "</div>";
@@ -123,7 +123,7 @@ jQuery(document).ready(function($) {
 						for ( var k in rightArr[ h ].categories ) {
 							categoryLinks += "<li><a href='" + rightArr[ h ].cat_link[ k ] + "'>" +  rightArr[ h ].categories[ k ] + "</a></li>";
 						}
-						if ( rightArr[ h ].image === "" ) {
+						if ( rightArr[ h ].image === false ) {
 							myNewDiv += "<div class='gallery-image has-no-featured-image russell_hide' style='flex-grow:1;'>" + "<span class='image-title'>" + rightArr[ h ].title + "</span>" + "<a href='" + rightArr[ h ].link + "' class='link'>Link</a>" + "<ul>" + categoryLinks + "</ul>" + "</div>";
 						} else {
 							myNewDiv += "<div class='gallery-image russell_hide' style='flex-grow:" + finalValue + "; background-image: url(" + rightArr[h].image + ");'>" + "<div class='overlay'>" + "<span class='image-title'>" + rightArr[ h ].title + "</span>" + "<a href='" + rightArr[ h ].link + "' class='link'>Link</a>" + "<ul>" + categoryLinks + "</ul>" + "</div>" + "</div>";	

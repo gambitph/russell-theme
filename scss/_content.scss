@@ -278,10 +278,9 @@
 		}
 	}
 }
-
-body.has-featured-image #page {
-	.owl-wrapper-outer .featured-image-caption {
-		transform: translateY(-65%);
+body.admin-bar.has-featured-image #page {
+	.item {
+		height: 84vh;
 	}
 }
 body.has-featured-image #page {
@@ -325,7 +324,7 @@ body.has-featured-image #page {
 			p.comment-form-url label {
 				padding-right: 5px;
 			}
-			p input {
+			p {
 				width: 100%;
 			}
 		}
@@ -351,7 +350,7 @@ body.has-featured-image #page {
         }
     }
     .item {
-        height: 100vh;
+        height: 88vh;
         background-size: cover;
         background-position: center;
     }
@@ -421,9 +420,6 @@ body.has-featured-image #page {
 	}
 	body, #page {
 		overflow: auto;
-	}
-	#page {
-		height: auto;
 	}
 }
 

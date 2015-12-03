@@ -123,18 +123,19 @@ function russell_comment_form() {
 	    '<div><p class="comment-form-author"><label for="author">' . __( 'Name', 'domainreference' ) . '</label> ' .
 	    ( $req ? '<span class="required">*</span>' : '' ) .
 	    '<input id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) .
-	    '" size="32"' . $aria_req . ' /></p>',
+	    '" size="28"' . $aria_req . ' /></p>',
 
 	  'email' =>
 	    '<p class="comment-form-email"><label for="email">' . __( 'Email', 'domainreference' ) . '</label> ' .
 	    ( $req ? '<span class="required">*</span>' : '' ) .
 	    '<input id="email" name="email" type="text" value="' . esc_attr( $commenter['comment_author_email'] ) .
-	    '" size="32"' . $aria_req . ' /></p>',
+	    '" size="28"' . $aria_req . ' /></p>',
 
 	  'url' =>
 	    '<p class="comment-form-url"><label for="url">' . __( 'Website', 'domainreference' ) . '</label>' .
+		( $req ? '<span class="required">*</span>' : '' ) .
 	    '<input id="url" name="url" type="text" value="' . esc_attr( $commenter['comment_author_url'] ) .
-	    '" size="32" /></p></div>',
+	    '" size="28" /></p></div>',
 	);
 
 	comment_form( array(

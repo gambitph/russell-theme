@@ -887,6 +887,7 @@ body #comments {
     body #comments .comment-meta .says {
       display: none; }
     body #comments .comment-meta img {
+      display: inline-block;
       border-radius: 100%; }
   body #comments b {
     vertical-align: top;
@@ -949,12 +950,14 @@ body #comments {
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex; }
+    body #comments #respond form div input[type="text"] {
+      display: block; }
     body #comments #respond form div p {
       -webkit-box-flex: 1;
       -webkit-flex: 1 1 310px;
           -ms-flex: 1 1 310px;
               flex: 1 1 310px;
-      margin: 5px 22px; }
+      margin: 5px 18px; }
     body #comments #respond form div p.comment-form-author {
       margin-left: 0; }
     body #comments #respond form div p.comment-form-url {
@@ -1240,10 +1243,8 @@ body .nav-links a {
           -ms-flex: 1 1;
               flex: 1 1; }
 
-body.has-featured-image #page .owl-wrapper-outer .featured-image-caption {
-  -webkit-transform: translateY(-65%);
-      -ms-transform: translateY(-65%);
-          transform: translateY(-65%); }
+body.admin-bar.has-featured-image #page .item {
+  height: 84vh; }
 
 body.has-featured-image #page {
   	/*.russell-featured-images {
@@ -1280,7 +1281,7 @@ body.has-featured-image #page {
         display: block; }
     body.has-featured-image #page #comments #respond form div p.comment-form-url label {
       padding-right: 5px; }
-    body.has-featured-image #page #comments #respond form div p input {
+    body.has-featured-image #page #comments #respond form div p {
       width: 100%; }
   body.has-featured-image #page .russell-content-wrapper {
     padding: 0;
@@ -1302,7 +1303,7 @@ body.has-featured-image #page {
       color: #646464;
       font-family: "Montseratt", sans-serif; }
   body.has-featured-image #page .item {
-    height: 100vh;
+    height: 88vh;
     background-size: cover;
     background-position: center; }
   body.has-featured-image #page .russell-page-right-content,
@@ -1353,10 +1354,7 @@ body.has-featured-image #page {
     flex-flow: column-reverse nowrap; }
 
   body, #page {
-    overflow: auto; }
-
-  #page {
-    height: auto; } }
+    overflow: auto; } }
 .russell-site-title {
   margin: 0 0 100px;
   text-align: center; }
@@ -1634,7 +1632,7 @@ h6 {
 
 .widget-category {
   position: relative;
-  padding-top: 100px;
+  padding-top: 50px;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: -webkit-box;
@@ -1647,25 +1645,24 @@ h6 {
   -webkit-box-flex: 1;
           flex: 1;
   overflow: auto;
-  clear: both; }
+  clear: both;
+  /*&:before {
+  	content: '';
+      width: 40px;
+      height: 1px;
+      background: #333;
+      position: absolute;
+      top: 30px;
+      left: 50%;
+      display: block;
+      transform: translateX(-50%);
+  }*/ }
   .widget-category .widget {
     overflow: hidden;
     -webkit-flex: 1 1 450px;
     -ms-flex: 1 1 450px;
     -webkit-box-flex: 1;
             flex: 1 1 450px; }
-  .widget-category:before {
-    content: '';
-    width: 40px;
-    height: 1px;
-    background: #333;
-    position: absolute;
-    top: 30px;
-    left: 50%;
-    display: block;
-    -webkit-transform: translateX(-50%);
-        -ms-transform: translateX(-50%);
-            transform: translateX(-50%); }
 
 .russell-content-small #footer-sidebar {
   display: block; }
@@ -1771,34 +1768,5 @@ h6 {
   right: 0;
   left: 0; }
 
-body.error404 #page .russell-error404-left-content {
-  padding: 80px 200px 20px 200px; }
-  body.error404 #page .russell-error404-left-content .entry-meta {
-    text-align: center;
-    font-size: 15px; }
-  body.error404 #page .russell-error404-left-content .entry-meta a {
-    text-decoration: none;
-    border-bottom: 1px solid #646464;
-    color: #646464; }
-  body.error404 #page .russell-error404-left-content .search-form {
-    margin: 0 0 1.5em; }
-  body.error404 #page .russell-error404-left-content .widgettitle {
-    font-size: 1em;
-    font-style: normal;
-    color: #333333;
-    margin: 25px 0;
-    text-transform: uppercase; }
-  body.error404 #page .russell-error404-left-content ul {
-    list-style: none;
-    margin: 0; }
-  body.error404 #page .russell-error404-left-content li {
-    padding: 10px; }
-  body.error404 #page .russell-error404-left-content .tagcloud a {
-    background-color: #eee;
-    padding: 5px;
-    border-radius: 2px;
-    border-bottom: none; }
-  body.error404 #page .russell-error404-left-content .widget .tagcloud a {
-    font-size: 1em; }
-body.error404 #page i {
-  float: right; }
+body.error404 .russell-content-full p {
+  text-align: center; }

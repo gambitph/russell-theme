@@ -1,43 +1,5 @@
-body.error404 #page {
-    .russell-error404-left-content {
-        padding: 80px 200px 20px 200px;
-        .entry-meta {
-            text-align: center;
-            font-size: 15px;
-        }
-        .entry-meta a {
-            text-decoration: none;
-            border-bottom: 1px solid #646464;
-            color: #646464;
-        }
-        .search-form {
-            margin: 0 0 1.5em;
-        }
-        .widgettitle {
-            font-size: 1em;
-            font-style: normal;
-            color: #333333;
-            margin: 25px 0;
-            text-transform: uppercase;
-        }
-        ul {
-            list-style: none;
-            margin: 0;
-        }
-        li {
-            padding: 10px;
-        }
-        .tagcloud a {
-            background-color: #eee;
-            padding: 5px;
-            border-radius: 2px;
-            border-bottom: none;
-        }
-        .widget .tagcloud a {
-            font-size: 1em;
-        }
-    }
-    i {
-        float: right;
-    }
+body.error404 {
+	.russell-content-full p {
+		text-align: center;
+	}
 }

@@ -296,7 +296,7 @@ function backup_create_options() {
 	    'type' => 'font',
 	    'desc' => __( 'The normal body font', 'backup' ),
 		// 'show_font_family' => false,
-		'show_color' => false,
+		// 'show_color' => false,
 		// 'show_font_size' => false,
 	    // 'show_font_weight' => false,
 	    // 'show_font_style' => false,
