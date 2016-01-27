@@ -23,10 +23,11 @@ function backup_create_options() {
 	 */
 
 	$siteDescription = $titan->createThemeCustomizerSection( array(
-		'name' => 'title_tagline',
+		'name' => __( 'Site Description', 'backup' ),
+		'panel' => __( 'Theme Options & Colors', 'backup' ),
 	) );
 	$siteDescription->createOption( array(
-	    'name' => __( 'Site Description', 'backup' ),
+	    'name' => __( 'Textarea', 'backup' ),
 	    'id' => 'russell_site_elaboration',
 	    'type' => 'textarea',
 	    'desc' => __( 'What is your site all about? You can write the details here.', 'backup' ),
@@ -431,7 +432,7 @@ function backup_create_options() {
 		'type' => 'color',
 		'default' => '#BDC3C7',
 		'id' => 'bg_color_post',
-		'css' => '#content .russell-content-large .russell-gallery .gallery-image.has-no-featured-image { background-color: value }',
+		'css' => '#content .gallery-image.has-no-featured-image { background-color: value }',
 	) );
 	$section->createOption( array(
 		'name' => __( 'Overlay Color', 'backup' ),

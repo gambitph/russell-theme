@@ -1,0 +1,19 @@
+footer {
+	span {
+		background: #fafafa;
+	    padding: 1em 2em;
+	    border-radius: 3px;
+	    border: 1px solid #ECF0F1;
+	    color: #646464;
+	    font-weight: lighter;
+		font-style: italic;
+	    font-size: 12px;
+	    margin: 0 3px;
+		a {
+			color: #646464 !important;
+		}
+	}
+	.comment-metadata .edit-link {
+		padding: .5em .8em;
+	}
+}

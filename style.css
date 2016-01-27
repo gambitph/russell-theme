@@ -755,7 +755,7 @@ body.admin-bar #page {
   #masthead .social-navigation {
     margin: 0 50px 0 0; }
   #masthead .logo {
-    font-family: "Montseratt", sans-serif; }
+    font-family: "Montserrat", sans-serif; }
     #masthead .logo a {
       text-decoration: none; }
 
@@ -828,11 +828,11 @@ body.home:not(.page) #site-navigation {
   text-align: left; }
 
 body #comments {
+  margin-top: 50px;
   position: relative;
-  padding-top: 40px; }
+  padding-top: 70px; }
   body #comments #respond {
-    position: relative;
-    padding-top: 80px; }
+    padding-top: 100px; }
     body #comments #respond:before {
       content: '';
       width: 40px;
@@ -843,8 +843,7 @@ body #comments {
       left: 50%;
       display: block;
       -webkit-transform: translateX(-50%);
-      -ms-transform: translateX(-50%);
-          transform: translateX(-50%); }
+      transform: translateX(-50%); }
   body #comments span.genericon {
     background-color: #eee;
     border-radius: 100%;
@@ -852,8 +851,7 @@ body #comments {
     position: relative;
     left: 50%;
     -webkit-transform: translateX(-50%);
-    -ms-transform: translateX(-50%);
-        transform: translateX(-50%); }
+    transform: translateX(-50%); }
   body #comments h1.russell-site-title {
     margin: 50px 0 100px 0; }
   body #comments .comment-list article:after {
@@ -949,9 +947,11 @@ body #comments {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
-    display: flex; }
+    display: flex;
+    padding-bottom: 1.5em; }
     body #comments #respond form div input[type="text"] {
-      display: block; }
+      display: block;
+      width: 100%; }
     body #comments #respond form div p {
       -webkit-box-flex: 1;
       -webkit-flex: 1 1 310px;
@@ -962,25 +962,9 @@ body #comments {
       margin-left: 0; }
     body #comments #respond form div p.comment-form-url {
       margin-right: 0; }
-body span.cat-links,
-body span.tags-links,
-body span.edit-link {
-  background: #fafafa;
-  padding: .1em .4em;
-  border-radius: 3px;
-  border: 1px solid #ECF0F1;
-  color: #646464;
-  font-weight: lighter;
-  font-size: 12px; }
-  body span.cat-links a,
-  body span.tags-links a,
-  body span.edit-link a {
-    color: #646464;
-    font-style: italic; }
 body .nav-links a {
   color: #000;
-  text-decoration: none;
-  padding: 10px; }
+  text-decoration: none; }
 
 @media screen and (max-width: 1015px) {
   body #comments #respond form div {
@@ -991,13 +975,22 @@ body .nav-links a {
         padding-right: 16px; }
     body #comments #respond form div p.comment-form-url label {
       padding-right: 5px; } }
+#comments input[type="submit"] {
+  padding: 1em 2em;
+  font-size: 14px;
+  font-family: "Montserrat";
+  color: #646464;
+  box-shadow: none;
+  text-shadow: none;
+  background: #eee; }
+
 #content .site-branding {
   text-align: center; }
 #content .site-title {
   margin: 0 0 50px;
   text-align: center; }
   #content .site-title a {
-    font-family: "Montseratt", sans-serif;
+    font-family: "Montserrat", sans-serif;
     text-decoration: none;
     display: block; }
   #content .site-title span {
@@ -1034,8 +1027,10 @@ body .nav-links a {
     font-size: 40px; }
   #content .navigation .nav-links .nav-indicator a {
     padding: 0; }
-#content .entry-content iframe, #content .entry-content embed {
-  margin: 0 130px 1.5em 130px; }
+#content .entry-content {
+  margin-bottom: 50px; }
+  #content .entry-content iframe, #content .entry-content embed {
+    margin: 0 130px 1.5em 130px; }
 #content .russell-content-area {
   border-right: 1px solid #eee;
   overflow: auto;
@@ -1137,6 +1132,8 @@ body .nav-links a {
     display: -webkit-box;
     display: flex;
     overflow: auto; }
+    #content .russell-content-large .russell-gallery .gallery-image.hide-gallery-image {
+      display: none; }
     #content .russell-content-large .russell-gallery .gallery-image.has-no-featured-image {
       background-color: #BDC3C7; }
       #content .russell-content-large .russell-gallery .gallery-image.has-no-featured-image:hover {
@@ -1160,7 +1157,7 @@ body .nav-links a {
       #content .russell-content-large .russell-gallery .gallery-image .overlay {
         position: absolute;
         z-index: 2;
-        background-color: #000000;
+        background-color: #fff;
         top: 0px;
         left: 0px;
         right: 0px;
@@ -1168,14 +1165,16 @@ body .nav-links a {
         opacity: 0; }
       #content .russell-content-large .russell-gallery .gallery-image span.image-title {
         text-transform: uppercase;
-        font-family: Monseratt;
+        font-family: "Montserrat";
         font-weight: bold;
         position: absolute;
         bottom: 0;
         right: 0;
-        margin: 0px 30px 60px 0;
-        color: transparent;
-        text-align: right; }
+        margin: 0px 40px 80px 0;
+        color: #000;
+        opacity: 0;
+        text-align: right;
+        z-index: 3; }
       #content .russell-content-large .russell-gallery .gallery-image .link {
         display: block;
         position: absolute;
@@ -1183,7 +1182,7 @@ body .nav-links a {
         left: 0;
         right: 0;
         bottom: 0;
-        z-index: 2;
+        z-index: 3;
         text-indent: -99999px;
         overflow: hidden; }
       #content .russell-content-large .russell-gallery .gallery-image ul {
@@ -1194,8 +1193,9 @@ body .nav-links a {
         position: absolute;
         bottom: 0;
         right: 0;
-        margin: 0px 30px 15px 0;
-        z-index: 2; }
+        margin: 0px 40px 35px 0;
+        z-index: 3;
+        opacity: 0; }
         #content .russell-content-large .russell-gallery .gallery-image ul li {
           display: inline-block;
           margin-left: 3px; }
@@ -1206,28 +1206,28 @@ body .nav-links a {
             content: ",  "; }
         #content .russell-content-large .russell-gallery .gallery-image ul li:last-child:after {
           content: "" !important; }
-      #content .russell-content-large .russell-gallery .gallery-image:hover {
-        -webkit-transition: opacity .5s ease-in-out;
-                transition: opacity .5s ease-in-out; }
-        #content .russell-content-large .russell-gallery .gallery-image:hover .overlay {
-          opacity: .5;
-          -webkit-transition: opacity .5s ease-in-out;
-                  transition: opacity .5s ease-in-out; }
-        #content .russell-content-large .russell-gallery .gallery-image:hover ul li a {
-          opacity: 1;
-          color: #fff; }
-        #content .russell-content-large .russell-gallery .gallery-image:hover span.image-title {
-          color: #fff;
-          opacity: 1; }
-          #content .russell-content-large .russell-gallery .gallery-image:hover span.image-title:after {
-            content: "";
-            display: block;
-            border-top: 1.5px solid;
-            width: 40px;
-            right: 0;
-            position: absolute;
-            margin: 10px 0;
-            opacity: 1; }
+      #content .russell-content-large .russell-gallery .gallery-image:hover .overlay {
+        opacity: .5;
+        -webkit-transition: opacity 1s ease-in-out;
+                transition: opacity 1s ease-in-out; }
+      #content .russell-content-large .russell-gallery .gallery-image:hover ul {
+        opacity: 1;
+        color: #000;
+        -webkit-transition: opacity 1s ease-in-out;
+                transition: opacity 1s ease-in-out; }
+      #content .russell-content-large .russell-gallery .gallery-image:hover span.image-title {
+        color: #000;
+        opacity: 1;
+        -webkit-transition: opacity 1s ease-in-out;
+                transition: opacity 1s ease-in-out; }
+        #content .russell-content-large .russell-gallery .gallery-image:hover span.image-title:after {
+          content: "";
+          display: block;
+          border-top: 1.5px solid;
+          width: 40px;
+          right: 0;
+          position: absolute;
+          margin: 10px 0; }
     #content .russell-content-large .russell-gallery .russell-gallery-left, #content .russell-content-large .russell-gallery .russell-gallery-right {
       -webkit-box-orient: vertical;
       -webkit-box-direction: normal;
@@ -1246,96 +1246,86 @@ body .nav-links a {
 body.admin-bar.has-featured-image #page .item {
   height: 84vh; }
 
-body.has-featured-image #page {
-  	/*.russell-featured-images {
-          width: 61.8vw;
-          -webkit-flex: 1.618;
-          -ms-flex: 1.618;
-  		flex: 1.618;
-          overflow: hidden;
-      }*/ }
-  body.has-featured-image #page #comments .comment-author img {
-    width: 40px;
-    height: 40px; }
-  body.has-featured-image #page #comments .comment-content {
-    top: 20PX;
-    margin-left: 55px; }
-  body.has-featured-image #page #comments .reply {
-    top: -30px; }
-  body.has-featured-image #page #comments .comment-list article:after {
+body.has-featured-image #page #comments .comment-author img {
+  width: 40px;
+  height: 40px; }
+body.has-featured-image #page #comments .comment-content {
+  top: 20PX;
+  margin-left: 55px; }
+body.has-featured-image #page #comments .reply {
+  top: -30px; }
+body.has-featured-image #page #comments .comment-list article:after {
+  content: "";
+  display: block;
+  border-top: 1px dotted #ccc;
+  margin: 60px 0 40px 55px; }
+body.has-featured-image #page #comments .comment-list ol.children article:after {
+  content: "";
+  display: block;
+  border-top: 1px dotted #ccc;
+  width: 60px;
+  margin: 60px 0 40px 55px; }
+body.has-featured-image #page #comments #respond form div {
+  display: block; }
+  body.has-featured-image #page #comments #respond form div p {
+    margin: 10px 0; }
+  body.has-featured-image #page #comments #respond form div p.comment-form-url label {
+    padding-right: 5px; }
+  body.has-featured-image #page #comments #respond form div p {
+    width: 100%; }
+body.has-featured-image #page .russell-content-wrapper {
+  padding: 0;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: -webkit-box;
+  display: flex; }
+body.has-featured-image #page .russell-page-right-content,
+body.has-featured-image #page .russell-single-right-content {
+  padding: 80px 50px 20px 50px; }
+  body.has-featured-image #page .russell-page-right-content .entry-meta,
+  body.has-featured-image #page .russell-single-right-content .entry-meta {
+    text-align: center;
+    font-size: 15px; }
+  body.has-featured-image #page .russell-page-right-content .entry-meta a,
+  body.has-featured-image #page .russell-single-right-content .entry-meta a {
+    text-decoration: none;
+    border-bottom: 1px solid #646464;
+    color: #646464;
+    font-family: "Montserrat", sans-serif; }
+body.has-featured-image #page .item {
+  height: 100vh;
+  background-size: cover;
+  background-position: center; }
+body.has-featured-image #page .russell-page-right-content,
+body.has-featured-image #page .russell-single-right-content {
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  -webkit-box-flex: 1;
+          flex: 1;
+  overflow: auto; }
+body.has-featured-image #page .featured-image-caption {
+  background: -webkit-linear-gradient(top, transparent 0%, rgba(0, 0, 0, 0.4) 100%);
+  background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.4) 100%);
+  width: 61.8vw;
+  padding: 100px 0 120px 50px;
+  position: absolute;
+  bottom: 0;
+  color: #fff;
+  font-style: italic;
+  font-size: 1em;
+  font-family: "Montserrat"; }
+  body.has-featured-image #page .featured-image-caption:before {
     content: "";
     display: block;
-    border-top: 1px dotted #ccc;
-    margin: 60px 0 40px 55px; }
-  body.has-featured-image #page #comments .comment-list ol.children article:after {
-    content: "";
-    display: block;
-    border-top: 1px dotted #ccc;
-    width: 60px;
-    margin: 60px 0 40px 55px; }
-  body.has-featured-image #page #comments #respond form div {
-    display: block; }
-    body.has-featured-image #page #comments #respond form div p {
-      margin: 10px 0; }
-      body.has-featured-image #page #comments #respond form div p label {
-        display: block; }
-    body.has-featured-image #page #comments #respond form div p.comment-form-url label {
-      padding-right: 5px; }
-    body.has-featured-image #page #comments #respond form div p {
-      width: 100%; }
-  body.has-featured-image #page .russell-content-wrapper {
-    padding: 0;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: -webkit-box;
-    display: flex; }
-  body.has-featured-image #page .russell-page-right-content,
-  body.has-featured-image #page .russell-single-right-content {
-    padding: 80px 50px 20px 50px; }
-    body.has-featured-image #page .russell-page-right-content .entry-meta,
-    body.has-featured-image #page .russell-single-right-content .entry-meta {
-      text-align: center;
-      font-size: 15px; }
-    body.has-featured-image #page .russell-page-right-content .entry-meta a,
-    body.has-featured-image #page .russell-single-right-content .entry-meta a {
-      text-decoration: none;
-      border-bottom: 1px solid #646464;
-      color: #646464;
-      font-family: "Montseratt", sans-serif; }
-  body.has-featured-image #page .item {
-    height: 88vh;
-    background-size: cover;
-    background-position: center; }
-  body.has-featured-image #page .russell-page-right-content,
-  body.has-featured-image #page .russell-single-right-content {
-    -webkit-flex: 1;
-    -ms-flex: 1;
-    -webkit-box-flex: 1;
-            flex: 1;
-    overflow: auto; }
-  body.has-featured-image #page .featured-image-caption {
-    background: -webkit-linear-gradient(top, transparent 0%, rgba(0, 0, 0, 0.4) 100%);
-    background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.4) 100%);
-    width: 61.8vw;
-    padding: 100px 0 30px 40px;
-    position: absolute;
-    bottom: 0;
-    color: #fff;
-    font-style: italic;
-    font-size: 1em;
-    font-family: Monseratt; }
-    body.has-featured-image #page .featured-image-caption:before {
-      content: "";
-      display: block;
-      border-top: 1px solid #ccc;
-      width: 30px;
-      padding: 8px 0; }
-  body.has-featured-image #page figure.gallery-item {
-    display: block;
-    max-width: 100%;
-    margin-bottom: 30px; }
-    body.has-featured-image #page figure.gallery-item figcaption {
-      margin-top: 15px; }
+    border-top: 1px solid #ccc;
+    width: 30px;
+    padding: 8px 0; }
+body.has-featured-image #page figure.gallery-item {
+  display: block;
+  max-width: 100%;
+  margin-bottom: 30px; }
+  body.has-featured-image #page figure.gallery-item figcaption {
+    margin-top: 15px; }
 
 @media screen and (max-width: 1024px) {
   #page #content .russell-home-left-content, #page #content .russell-home-right-content {
@@ -1382,8 +1372,7 @@ body.has-featured-image #page {
       left: 50%;
       display: block;
       -webkit-transform: translateX(-50%);
-      -ms-transform: translateX(-50%);
-          transform: translateX(-50%); }
+      transform: translateX(-50%); }
     .russell-site-title span a {
       text-decoration: none; }
   .russell-site-title a {
@@ -1398,7 +1387,6 @@ body.search .russell-content-full .nothing-found {
   body.search .russell-content-full .nothing-found span:before {
     left: 50%;
     -webkit-transform: translateX(-50%);
-        -ms-transform: translateX(-50%);
             transform: translateX(-50%); }
 body.archive .russell-site-title, body.search .russell-site-title {
   text-align: right; }
@@ -1406,8 +1394,7 @@ body.archive .russell-site-title, body.search .russell-site-title {
     left: auto;
     right: 0;
     -webkit-transform: none;
-    -ms-transform: none;
-        transform: none; }
+    transform: none; }
 
 .russell-post-meta {
   font-style: italic;
@@ -1479,7 +1466,6 @@ body.archive .russell-site-title, body.search .russell-site-title {
     body.single #page .item span.featured-image-caption {
       width: 100%;
       -webkit-transform: none;
-          -ms-transform: none;
               transform: none; }
 
   #page #content {
@@ -1546,7 +1532,9 @@ a, a:visited {
 
 .navigation .nav-previous,
 .navigation .nav-next {
-  display: inline-block; }
+  display: inline-block;
+  text-align: center;
+  float: none; }
 
 body.single #content .russell-content-image,
 body.page #content .russell-content-image {
@@ -1584,18 +1572,20 @@ body.page #content .russell-content-image {
     height: auto !important; }
     .russell-gallery .gallery-image {
       height: 60vh; } }
-body .entry-footer span.cat-links, body .entry-footer span.tags-links, body .entry-footer span.edit-link {
+footer span {
   background: #fafafa;
-  padding: .3em .6em;
+  padding: 1em 2em;
   border-radius: 3px;
   border: 1px solid #ECF0F1;
   color: #646464;
   font-weight: lighter;
+  font-style: italic;
   font-size: 12px;
   margin: 0 3px; }
-
-body.single #comments {
-  padding-top: 70px; }
+  footer span a {
+    color: #646464 !important; }
+footer .comment-metadata .edit-link {
+  padding: .5em .8em; }
 
 html, body {
   overflow: hidden;

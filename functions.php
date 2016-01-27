@@ -215,6 +215,8 @@ function russell_large_content( $num = 10, $page = 1, $query = null, $tagID = nu
 					'compare' => 'EXISTS',
 				),
 			);
+		} else {
+
 		}
 	}
 
@@ -438,8 +440,10 @@ function russell_selected_post_tags() {
 		// This adds to the array in the form ['slug']=>'name'.
 		$tags = get_the_tags();
 		// var_dump( $tags );
-		foreach ( $tags as $t ) {
-			$recent_tags[ $t->slug ] = $t->name;
+		if ( $tags ) {
+			foreach ( $tags as $t ) {
+				$recent_tags[ $t->slug ] = $t->name;
+			}
 		}
 	}
 

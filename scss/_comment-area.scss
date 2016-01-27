@@ -1,10 +1,10 @@
 body {
 	#comments {
+		margin-top: 50px;
 		position: relative;
-		padding-top: 40px;
+		padding-top: 70px;
 		#respond {
-			position: relative;
-			padding-top: 80px;
+			padding-top: 100px;
 			&:before {
 				content: '';
 			    width: 40px;
@@ -143,8 +143,10 @@ body {
 		}
 		#respond form div {
 			display: flex;
+			padding-bottom: 1.5em;
 			input[type="text"] {
 				display: block;
+				width: 100%;
 			}
 			p {
 				flex: 1 1 310px;
@@ -158,25 +160,9 @@ body {
 			}
 		}
 	}
-	span.cat-links,
-	span.tags-links,
-	span.edit-link {
-		background: #fafafa;
-	    padding: .1em .4em;
-	    border-radius: 3px;
-	    border: 1px solid #ECF0F1;
-	    color: #646464;
-	    font-weight: lighter;
-	    font-size: 12px;
-		a {
-			color: #646464;
-			font-style: italic;
-		}
-	}
 	.nav-links a {
 		color: #000;
 		text-decoration: none;
-		padding: 10px;
 	}
 }
 @media screen and (max-width: 1015px) {
@@ -192,4 +178,14 @@ body {
 			padding-right: 5px;
 		}
 	}
+}
+
+#comments input[type="submit"] {
+	padding: 1em 2em;
+	font-size: 14px;
+	font-family: "Montserrat";
+	color: #646464;
+	box-shadow: none;
+	text-shadow: none;
+	background: #eee;
 }
